@@ -16,6 +16,8 @@
 		B0462AE7242B8FA900B51854 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AE6242B8FA900B51854 /* Search.storyboard */; };
 		B0462AE9242B8FBF00B51854 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AE8242B8FBF00B51854 /* MyPage.storyboard */; };
 		B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AEA242B8FE800B51854 /* Home.storyboard */; };
+		B0462AEE242B920000B51854 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AED242B920000B51854 /* Schedule.swift */; };
+		B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AEF242B921000B51854 /* APIResponseCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		B0462AE6242B8FA900B51854 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		B0462AE8242B8FBF00B51854 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		B0462AEA242B8FE800B51854 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B0462AED242B920000B51854 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		B0462AEF242B921000B51854 /* APIResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		B0462ACD242B8E5F00B51854 /* erooja */ = {
 			isa = PBXGroup;
 			children = (
+				B0462AEC242B91CE00B51854 /* Module */,
 				B0462AE5242B8F9400B51854 /* storyboard */,
 				B0462ACE242B8E5F00B51854 /* AppDelegate.swift */,
 				B0462AD2242B8E5F00B51854 /* ViewController.swift */,
@@ -82,6 +87,15 @@
 				B0462AEA242B8FE800B51854 /* Home.storyboard */,
 			);
 			path = storyboard;
+			sourceTree = "<group>";
+		};
+		B0462AEC242B91CE00B51854 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				B0462AED242B920000B51854 /* Schedule.swift */,
+				B0462AEF242B921000B51854 /* APIResponseCode.swift */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */,
 				B0462AD3242B8E5F00B51854 /* ViewController.swift in Sources */,
 				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,
+				B0462AEE242B920000B51854 /* Schedule.swift in Sources */,
 				B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
