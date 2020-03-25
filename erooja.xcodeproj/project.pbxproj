@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,11 @@
 		B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AEA242B8FE800B51854 /* Home.storyboard */; };
 		B0462AEE242B920000B51854 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AED242B920000B51854 /* Schedule.swift */; };
 		B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AEF242B921000B51854 /* APIResponseCode.swift */; };
+		B0462AF2242B944100B51854 /* HomeAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AF1242B944100B51854 /* HomeAPIRequest.swift */; };
+		B0462AF5242B945D00B51854 /* EroojaAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AF4242B945D00B51854 /* EroojaAPIRequest.swift */; };
+		B0462AF7242B949E00B51854 /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AF6242B949E00B51854 /* URLConstant.swift */; };
+		B0462B1B242B953D00B51854 /* BasicAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1A242B953D00B51854 /* BasicAPIError.swift */; };
+		B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1C242B95CF00B51854 /* AlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,11 @@
 		B0462AEA242B8FE800B51854 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B0462AED242B920000B51854 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		B0462AEF242B921000B51854 /* APIResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseCode.swift; sourceTree = "<group>"; };
+		B0462AF1242B944100B51854 /* HomeAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPIRequest.swift; sourceTree = "<group>"; };
+		B0462AF4242B945D00B51854 /* EroojaAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaAPIRequest.swift; sourceTree = "<group>"; };
+		B0462AF6242B949E00B51854 /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
+		B0462B1A242B953D00B51854 /* BasicAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAPIError.swift; sourceTree = "<group>"; };
+		B0462B1C242B95CF00B51854 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.debug.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +91,7 @@
 		B0462ACD242B8E5F00B51854 /* erooja */ = {
 			isa = PBXGroup;
 			children = (
+				B0462AF3242B944E00B51854 /* Network */,
 				B0462AEC242B91CE00B51854 /* Module */,
 				B0462AE5242B8F9400B51854 /* storyboard */,
 				B0462ACE242B8E5F00B51854 /* AppDelegate.swift */,
@@ -89,6 +100,7 @@
 				B0462ADC242B8E6100B51854 /* LaunchScreen.storyboard */,
 				B0462ADF242B8E6100B51854 /* Info.plist */,
 				B0462AD7242B8E5F00B51854 /* erooja.xcdatamodeld */,
+				B0462B1C242B95CF00B51854 /* AlertController.swift */,
 			);
 			path = erooja;
 			sourceTree = "<group>";
@@ -113,13 +125,23 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
+		B0462AF3242B944E00B51854 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B0462AF1242B944100B51854 /* HomeAPIRequest.swift */,
+				B0462AF4242B945D00B51854 /* EroojaAPIRequest.swift */,
+				B0462AF6242B949E00B51854 /* URLConstant.swift */,
+				B0462B1A242B953D00B51854 /* BasicAPIError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		E289B42C32A309B73ED34963 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */,
 				9CAC2CCFB91AEFC6FE7A332D /* Pods-erooja.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -242,9 +264,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */,
+				B0462AF7242B949E00B51854 /* URLConstant.swift in Sources */,
 				B0462AD3242B8E5F00B51854 /* ViewController.swift in Sources */,
 				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,
+				B0462AF2242B944100B51854 /* HomeAPIRequest.swift in Sources */,
+				B0462B1B242B953D00B51854 /* BasicAPIError.swift in Sources */,
+				B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */,
 				B0462AEE242B920000B51854 /* Schedule.swift in Sources */,
+				B0462AF5242B945D00B51854 /* EroojaAPIRequest.swift in Sources */,
 				B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
