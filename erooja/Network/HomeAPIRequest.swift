@@ -10,7 +10,5 @@ import Foundation
 import Alamofire
 
 public class HomeAPIRequest: EroojaAPIRequest {
-    init() {
-        
-    }
+    
 }

@@ -49,63 +49,6 @@ public enum EroojaAPIError: Error {
         return message
     }
     
-    public var onlyDebugMessage: Bool {
-        switch self {
-        case .onFetchingError:
-            return true
-        default:
-            return false
-        }
-    }
-    
-    public func handleErrorProcess(ignoreAlert: Bool) {
-        if let message = errorMessage {
-            if onlyDebugMessage == true || ignoreAlert == true {
-                print(message)
-            } else {
-                let alert = AlertController(title: nil, message: message, preferredStyle: .alert)
-                alert.addAction(AlertAction(title: "Common_String_Confirm".localizedDrawer, style: .default))
-                alert.show()
-            }
-        }
-        if case .tokenExpired = self {
-            DrawerProperty.provider.requestKnock()
-        }
-    }
-    
-    public func handleErrorProcess() {
-        self.handleErrorProcess(ignoreAlert: false)
-    }
-    
-    private struct DrawerErrorReason: Codable {
-        struct DetailReason: Codable {
-            let detailCode: Int
-        }
-        
-        let code: Int
-        let message: String
-        let reason: DetailReason
-        
-        var isTokenExpired: Bool {
-            return reason.detailCode == 9503
-        }
-    }
-    
-    public init(error: Error?) {
-        if let talkAPIError = error as? TalkAPIError {
-            if talkAPIError.statusCode == 401,
-                let reason: DrawerErrorReason = talkAPIError.rawData?.mapping(),
-                let errorMessage = talkAPIError.message,
-                reason.isTokenExpired == true {
-                self = .tokenExpired(errorMessage)
-            } else {
-                self = .talkAPIError(talkAPIError)
-            }
-        } else {
-            self = .unknown
-        }
-    }
-    
     public var isTokenExpired: Bool {
         if case .tokenExpired = self {
             return true
@@ -114,8 +57,8 @@ public enum EroojaAPIError: Error {
     }
     
     public var isNetworkConnectionError: Bool {
-        if case let .talkAPIError(talkAPIError) = self {
-            let errorCode = talkAPIError.errorCode
+        if case let .basicAPIError(basicAPIError) = self {
+            let errorCode = basicAPIError.errorCode
             if errorCode == .unauthorizedNetwork || errorCode == .notConnectedToInternet || errorCode == .timedOut || errorCode == .cannotConnectToHost {
                 return true
             } else {
@@ -127,8 +70,8 @@ public enum EroojaAPIError: Error {
     }
     
     public var isServerError: Bool {
-        if case let .talkAPIError(talkAPIError) = self {
-            return talkAPIError.isServerError
+        if case let .basicAPIError(basicAPIError) = self {
+            return basicAPIError.isServerError
         } else {
             return false
         }
@@ -143,7 +86,7 @@ public enum EroojaAPIError: Error {
     }
     
     public var statusCode: Int? {
-        if case let .talkAPIError(talkAPIError) = self, let statusCode = talkAPIError.statusCode {
+        if case let .basicAPIError(basicAPIError) = self, let statusCode = basicAPIError.statusCode {
             return statusCode
         } else {
             return nil

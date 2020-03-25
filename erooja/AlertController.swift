@@ -25,7 +25,7 @@ public enum AlertType {
     }
 }
 
-class AlertController {
+public class AlertController {
     
     func showAlert(viewController: UIViewController, title: String?, message: String?, completion: @escaping (AlertType) -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
