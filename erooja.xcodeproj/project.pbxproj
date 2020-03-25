@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		46A805F72F56F5C060778B16 /* Pods_erooja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */; };
 		B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462ACE242B8E5F00B51854 /* AppDelegate.swift */; };
-		B0462AD3242B8E5F00B51854 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD2242B8E5F00B51854 /* ViewController.swift */; };
+		B0462AD3242B8E5F00B51854 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD2242B8E5F00B51854 /* MainViewController.swift */; };
 		B0462AD6242B8E5F00B51854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AD4242B8E5F00B51854 /* Main.storyboard */; };
 		B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD7242B8E5F00B51854 /* erooja.xcdatamodeld */; };
 		B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0462ADA242B8E6100B51854 /* Assets.xcassets */; };
@@ -19,6 +19,21 @@
 		B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AEA242B8FE800B51854 /* Home.storyboard */; };
 		B0462AEE242B920000B51854 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AED242B920000B51854 /* Schedule.swift */; };
 		B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AEF242B921000B51854 /* APIResponseCode.swift */; };
+		B0462AF2242B944100B51854 /* HomeAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AF1242B944100B51854 /* HomeAPIRequest.swift */; };
+		B0462AF5242B945D00B51854 /* EroojaAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AF4242B945D00B51854 /* EroojaAPIRequest.swift */; };
+		B0462AF7242B949E00B51854 /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AF6242B949E00B51854 /* URLConstant.swift */; };
+		B0462B1B242B953D00B51854 /* BasicAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1A242B953D00B51854 /* BasicAPIError.swift */; };
+		B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1C242B95CF00B51854 /* AlertController.swift */; };
+		B0462B20242BA97800B51854 /* EUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1F242BA97800B51854 /* EUINavigationController.swift */; };
+		B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B22242BA99F00B51854 /* EUINavigationBar.swift */; };
+		B0462B25242BA9CF00B51854 /* EUINavigationBar+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */; };
+		B0462B27242BAA4A00B51854 /* UIImage+Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B26242BAA4A00B51854 /* UIImage+Average.swift */; };
+		B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B28242BAA9200B51854 /* Notification+Common.swift */; };
+		B0462B2C242BAAE800B51854 /* UIColor+ContrastingColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B2B242BAAE800B51854 /* UIColor+ContrastingColor.swift */; };
+		B0462B2E242BAB2000B51854 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B2D242BAB2000B51854 /* UIView+Frame.swift */; };
+		B0462B30242BAB5E00B51854 /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B2F242BAB5E00B51854 /* UIImage+Crop.swift */; };
+		B0462B32242BAB8100B51854 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B31242BAB8100B51854 /* UIImage+Resize.swift */; };
+		B0462B34242BAD7B00B51854 /* UIImage+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B33242BAD7B00B51854 /* UIImage+Initialize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +41,7 @@
 		9CAC2CCFB91AEFC6FE7A332D /* Pods-erooja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.release.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.release.xcconfig"; sourceTree = "<group>"; };
 		B0462ACB242B8E5F00B51854 /* erooja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = erooja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0462ACE242B8E5F00B51854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0462AD2242B8E5F00B51854 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B0462AD2242B8E5F00B51854 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B0462AD5242B8E5F00B51854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0462AD8242B8E5F00B51854 /* erooja.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = erooja.xcdatamodel; sourceTree = "<group>"; };
 		B0462ADA242B8E6100B51854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +52,21 @@
 		B0462AEA242B8FE800B51854 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B0462AED242B920000B51854 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		B0462AEF242B921000B51854 /* APIResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseCode.swift; sourceTree = "<group>"; };
+		B0462AF1242B944100B51854 /* HomeAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPIRequest.swift; sourceTree = "<group>"; };
+		B0462AF4242B945D00B51854 /* EroojaAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaAPIRequest.swift; sourceTree = "<group>"; };
+		B0462AF6242B949E00B51854 /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
+		B0462B1A242B953D00B51854 /* BasicAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAPIError.swift; sourceTree = "<group>"; };
+		B0462B1C242B95CF00B51854 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		B0462B1F242BA97800B51854 /* EUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationController.swift; sourceTree = "<group>"; };
+		B0462B22242BA99F00B51854 /* EUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationBar.swift; sourceTree = "<group>"; };
+		B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EUINavigationBar+Style.swift"; sourceTree = "<group>"; };
+		B0462B26242BAA4A00B51854 /* UIImage+Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Average.swift"; sourceTree = "<group>"; };
+		B0462B28242BAA9200B51854 /* Notification+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Common.swift"; sourceTree = "<group>"; };
+		B0462B2B242BAAE800B51854 /* UIColor+ContrastingColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ContrastingColor.swift"; sourceTree = "<group>"; };
+		B0462B2D242BAB2000B51854 /* UIView+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
+		B0462B2F242BAB5E00B51854 /* UIImage+Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Crop.swift"; sourceTree = "<group>"; };
+		B0462B31242BAB8100B51854 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		B0462B33242BAD7B00B51854 /* UIImage+Initialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Initialize.swift"; sourceTree = "<group>"; };
 		B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.debug.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,14 +111,17 @@
 		B0462ACD242B8E5F00B51854 /* erooja */ = {
 			isa = PBXGroup;
 			children = (
+				B0462B2A242BAAA400B51854 /* Extensions */,
+				B0462B1E242BA93C00B51854 /* View */,
+				B0462AF3242B944E00B51854 /* Network */,
 				B0462AEC242B91CE00B51854 /* Module */,
 				B0462AE5242B8F9400B51854 /* storyboard */,
 				B0462ACE242B8E5F00B51854 /* AppDelegate.swift */,
-				B0462AD2242B8E5F00B51854 /* ViewController.swift */,
 				B0462ADA242B8E6100B51854 /* Assets.xcassets */,
 				B0462ADC242B8E6100B51854 /* LaunchScreen.storyboard */,
 				B0462ADF242B8E6100B51854 /* Info.plist */,
 				B0462AD7242B8E5F00B51854 /* erooja.xcdatamodeld */,
+				B0462B1C242B95CF00B51854 /* AlertController.swift */,
 			);
 			path = erooja;
 			sourceTree = "<group>";
@@ -113,13 +146,56 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
+		B0462AF3242B944E00B51854 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B0462AF1242B944100B51854 /* HomeAPIRequest.swift */,
+				B0462AF4242B945D00B51854 /* EroojaAPIRequest.swift */,
+				B0462AF6242B949E00B51854 /* URLConstant.swift */,
+				B0462B1A242B953D00B51854 /* BasicAPIError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B0462B1E242BA93C00B51854 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B0462B21242BA98D00B51854 /* EUINavigation */,
+				B0462AD2242B8E5F00B51854 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0462B21242BA98D00B51854 /* EUINavigation */ = {
+			isa = PBXGroup;
+			children = (
+				B0462B1F242BA97800B51854 /* EUINavigationController.swift */,
+				B0462B22242BA99F00B51854 /* EUINavigationBar.swift */,
+				B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */,
+			);
+			path = EUINavigation;
+			sourceTree = "<group>";
+		};
+		B0462B2A242BAAA400B51854 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B0462B26242BAA4A00B51854 /* UIImage+Average.swift */,
+				B0462B28242BAA9200B51854 /* Notification+Common.swift */,
+				B0462B2B242BAAE800B51854 /* UIColor+ContrastingColor.swift */,
+				B0462B2D242BAB2000B51854 /* UIView+Frame.swift */,
+				B0462B2F242BAB5E00B51854 /* UIImage+Crop.swift */,
+				B0462B31242BAB8100B51854 /* UIImage+Resize.swift */,
+				B0462B33242BAD7B00B51854 /* UIImage+Initialize.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E289B42C32A309B73ED34963 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */,
 				9CAC2CCFB91AEFC6FE7A332D /* Pods-erooja.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -241,11 +317,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */,
 				B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */,
-				B0462AD3242B8E5F00B51854 /* ViewController.swift in Sources */,
+				B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */,
+				B0462B25242BA9CF00B51854 /* EUINavigationBar+Style.swift in Sources */,
+				B0462AF7242B949E00B51854 /* URLConstant.swift in Sources */,
+				B0462B2E242BAB2000B51854 /* UIView+Frame.swift in Sources */,
+				B0462AD3242B8E5F00B51854 /* MainViewController.swift in Sources */,
 				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,
+				B0462B20242BA97800B51854 /* EUINavigationController.swift in Sources */,
+				B0462AF2242B944100B51854 /* HomeAPIRequest.swift in Sources */,
+				B0462B1B242B953D00B51854 /* BasicAPIError.swift in Sources */,
+				B0462B27242BAA4A00B51854 /* UIImage+Average.swift in Sources */,
+				B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */,
+				B0462B2C242BAAE800B51854 /* UIColor+ContrastingColor.swift in Sources */,
+				B0462B32242BAB8100B51854 /* UIImage+Resize.swift in Sources */,
 				B0462AEE242B920000B51854 /* Schedule.swift in Sources */,
+				B0462AF5242B945D00B51854 /* EroojaAPIRequest.swift in Sources */,
+				B0462B34242BAD7B00B51854 /* UIImage+Initialize.swift in Sources */,
 				B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */,
+				B0462B30242BAB5E00B51854 /* UIImage+Crop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
