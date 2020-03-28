@@ -11,7 +11,7 @@ import UIKit
 // MARK: - init with UIColor
 extension UIImage {
     
-    internal convenience init?(color: UIColor, size: CGSize = CGSize(width: 2, height: 2)) {
+    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 2, height: 2)) {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         defer { UIGraphicsEndImageContext() }
         
