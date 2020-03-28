@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		46A805F72F56F5C060778B16 /* Pods_erooja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */; };
+		B02DFA22242F611E00B6DF89 /* EroojaUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD9E0242F60F1001CE297 /* EroojaUI.framework */; };
+		B02DFA23242F611E00B6DF89 /* EroojaUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD9E0242F60F1001CE297 /* EroojaUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462ACE242B8E5F00B51854 /* AppDelegate.swift */; };
 		B0462AD3242B8E5F00B51854 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD2242B8E5F00B51854 /* MainViewController.swift */; };
 		B0462AD6242B8E5F00B51854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AD4242B8E5F00B51854 /* Main.storyboard */; };
@@ -19,32 +21,38 @@
 		B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AEA242B8FE800B51854 /* Home.storyboard */; };
 		B0462AEE242B920000B51854 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AED242B920000B51854 /* Schedule.swift */; };
 		B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AEF242B921000B51854 /* APIResponseCode.swift */; };
-		B0462AF2242B944100B51854 /* HomeAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AF1242B944100B51854 /* HomeAPIRequest.swift */; };
-		B0462AF5242B945D00B51854 /* EroojaAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AF4242B945D00B51854 /* EroojaAPIRequest.swift */; };
-		B0462AF7242B949E00B51854 /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AF6242B949E00B51854 /* URLConstant.swift */; };
-		B0462B1B242B953D00B51854 /* BasicAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1A242B953D00B51854 /* BasicAPIError.swift */; };
 		B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1C242B95CF00B51854 /* AlertController.swift */; };
 		B0462B20242BA97800B51854 /* EUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1F242BA97800B51854 /* EUINavigationController.swift */; };
 		B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B22242BA99F00B51854 /* EUINavigationBar.swift */; };
 		B0462B25242BA9CF00B51854 /* EUINavigationBar+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */; };
-		B0462B27242BAA4A00B51854 /* UIImage+Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B26242BAA4A00B51854 /* UIImage+Average.swift */; };
 		B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B28242BAA9200B51854 /* Notification+Common.swift */; };
-		B0462B2C242BAAE800B51854 /* UIColor+ContrastingColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B2B242BAAE800B51854 /* UIColor+ContrastingColor.swift */; };
-		B0462B2E242BAB2000B51854 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B2D242BAB2000B51854 /* UIView+Frame.swift */; };
-		B0462B30242BAB5E00B51854 /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B2F242BAB5E00B51854 /* UIImage+Crop.swift */; };
-		B0462B32242BAB8100B51854 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B31242BAB8100B51854 /* UIImage+Resize.swift */; };
-		B0462B34242BAD7B00B51854 /* UIImage+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B33242BAD7B00B51854 /* UIImage+Initialize.swift */; };
 		B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; };
 		B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; };
+		B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B02DFA8A242F64E100B6DF89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B02DFA7B242F643700B6DF89;
+			remoteInfo = EroojaNetwork;
+		};
 		B08AD997242F41D8001CE297 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = B08AD988242F41CF001CE297;
 			remoteInfo = EroojaCommon;
+		};
+		B08AD9DF242F60F1001CE297 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B08AD9B0242F5FFD001CE297;
+			remoteInfo = EroojaUI;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -55,6 +63,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */,
+				B02DFA23242F611E00B6DF89 /* EroojaUI.framework in Embed Frameworks */,
 				B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -65,6 +75,7 @@
 /* Begin PBXFileReference section */
 		3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_erooja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAC2CCFB91AEFC6FE7A332D /* Pods-erooja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.release.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.release.xcconfig"; sourceTree = "<group>"; };
+		B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaNetwork.xcodeproj; path = EroojaNetwork/EroojaNetwork.xcodeproj; sourceTree = "<group>"; };
 		B0462ACB242B8E5F00B51854 /* erooja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = erooja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0462ACE242B8E5F00B51854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0462AD2242B8E5F00B51854 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -78,22 +89,13 @@
 		B0462AEA242B8FE800B51854 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B0462AED242B920000B51854 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		B0462AEF242B921000B51854 /* APIResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseCode.swift; sourceTree = "<group>"; };
-		B0462AF1242B944100B51854 /* HomeAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPIRequest.swift; sourceTree = "<group>"; };
-		B0462AF4242B945D00B51854 /* EroojaAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaAPIRequest.swift; sourceTree = "<group>"; };
-		B0462AF6242B949E00B51854 /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
-		B0462B1A242B953D00B51854 /* BasicAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAPIError.swift; sourceTree = "<group>"; };
 		B0462B1C242B95CF00B51854 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		B0462B1F242BA97800B51854 /* EUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationController.swift; sourceTree = "<group>"; };
 		B0462B22242BA99F00B51854 /* EUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationBar.swift; sourceTree = "<group>"; };
 		B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EUINavigationBar+Style.swift"; sourceTree = "<group>"; };
-		B0462B26242BAA4A00B51854 /* UIImage+Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Average.swift"; sourceTree = "<group>"; };
 		B0462B28242BAA9200B51854 /* Notification+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Common.swift"; sourceTree = "<group>"; };
-		B0462B2B242BAAE800B51854 /* UIColor+ContrastingColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ContrastingColor.swift"; sourceTree = "<group>"; };
-		B0462B2D242BAB2000B51854 /* UIView+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
-		B0462B2F242BAB5E00B51854 /* UIImage+Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Crop.swift"; sourceTree = "<group>"; };
-		B0462B31242BAB8100B51854 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
-		B0462B33242BAD7B00B51854 /* UIImage+Initialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Initialize.swift"; sourceTree = "<group>"; };
 		B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaCommon.xcodeproj; path = EroojaCommon/EroojaCommon.xcodeproj; sourceTree = "<group>"; };
+		B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaUI.xcodeproj; path = EroojaUI/EroojaUI.xcodeproj; sourceTree = "<group>"; };
 		B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.debug.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02DFA22242F611E00B6DF89 /* EroojaUI.framework in Frameworks */,
+				B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */,
 				46A805F72F56F5C060778B16 /* Pods_erooja.framework in Frameworks */,
 				B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */,
 			);
@@ -118,9 +122,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B02DFA87242F64E000B6DF89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B0462AC2242B8E5F00B51854 = {
 			isa = PBXGroup;
 			children = (
+				B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */,
+				B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */,
 				B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */,
 				B0462ACD242B8E5F00B51854 /* erooja */,
 				B0462ACC242B8E5F00B51854 /* Products */,
@@ -142,7 +156,6 @@
 			children = (
 				B0462B2A242BAAA400B51854 /* Extensions */,
 				B0462B1E242BA93C00B51854 /* View */,
-				B0462AF3242B944E00B51854 /* Network */,
 				B0462AEC242B91CE00B51854 /* Module */,
 				B0462AE5242B8F9400B51854 /* storyboard */,
 				B0462ACE242B8E5F00B51854 /* AppDelegate.swift */,
@@ -175,17 +188,6 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
-		B0462AF3242B944E00B51854 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				B0462AF1242B944100B51854 /* HomeAPIRequest.swift */,
-				B0462AF4242B945D00B51854 /* EroojaAPIRequest.swift */,
-				B0462AF6242B949E00B51854 /* URLConstant.swift */,
-				B0462B1A242B953D00B51854 /* BasicAPIError.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		B0462B1E242BA93C00B51854 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,13 +210,7 @@
 		B0462B2A242BAAA400B51854 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B0462B26242BAA4A00B51854 /* UIImage+Average.swift */,
 				B0462B28242BAA9200B51854 /* Notification+Common.swift */,
-				B0462B2B242BAAE800B51854 /* UIColor+ContrastingColor.swift */,
-				B0462B2D242BAB2000B51854 /* UIView+Frame.swift */,
-				B0462B2F242BAB5E00B51854 /* UIImage+Crop.swift */,
-				B0462B31242BAB8100B51854 /* UIImage+Resize.swift */,
-				B0462B33242BAD7B00B51854 /* UIImage+Initialize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -223,6 +219,14 @@
 			isa = PBXGroup;
 			children = (
 				B08AD998242F41D8001CE297 /* EroojaCommon.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B08AD9DC242F60F1001CE297 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B08AD9E0242F60F1001CE297 /* EroojaUI.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +294,14 @@
 					ProductGroup = B08AD994242F41D8001CE297 /* Products */;
 					ProjectRef = B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */;
 				},
+				{
+					ProductGroup = B02DFA87242F64E000B6DF89 /* Products */;
+					ProjectRef = B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */;
+				},
+				{
+					ProductGroup = B08AD9DC242F60F1001CE297 /* Products */;
+					ProjectRef = B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -299,11 +311,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EroojaNetwork.framework;
+			remoteRef = B02DFA8A242F64E100B6DF89 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		B08AD998242F41D8001CE297 /* EroojaCommon.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = EroojaCommon.framework;
 			remoteRef = B08AD997242F41D8001CE297 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B08AD9E0242F60F1001CE297 /* EroojaUI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EroojaUI.framework;
+			remoteRef = B08AD9DF242F60F1001CE297 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -375,22 +401,12 @@
 				B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */,
 				B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */,
 				B0462B25242BA9CF00B51854 /* EUINavigationBar+Style.swift in Sources */,
-				B0462AF7242B949E00B51854 /* URLConstant.swift in Sources */,
-				B0462B2E242BAB2000B51854 /* UIView+Frame.swift in Sources */,
 				B0462AD3242B8E5F00B51854 /* MainViewController.swift in Sources */,
 				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,
 				B0462B20242BA97800B51854 /* EUINavigationController.swift in Sources */,
-				B0462AF2242B944100B51854 /* HomeAPIRequest.swift in Sources */,
-				B0462B1B242B953D00B51854 /* BasicAPIError.swift in Sources */,
-				B0462B27242BAA4A00B51854 /* UIImage+Average.swift in Sources */,
 				B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */,
-				B0462B2C242BAAE800B51854 /* UIColor+ContrastingColor.swift in Sources */,
-				B0462B32242BAB8100B51854 /* UIImage+Resize.swift in Sources */,
 				B0462AEE242B920000B51854 /* Schedule.swift in Sources */,
-				B0462AF5242B945D00B51854 /* EroojaAPIRequest.swift in Sources */,
-				B0462B34242BAD7B00B51854 /* UIImage+Initialize.swift in Sources */,
 				B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */,
-				B0462B30242BAB5E00B51854 /* UIImage+Crop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

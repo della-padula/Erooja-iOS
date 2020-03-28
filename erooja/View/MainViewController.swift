@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EroojaNetwork
 import EroojaCommon
 
 class MainViewController: UIViewController {
@@ -14,6 +15,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        ELog.debug(message: EURLConstant.hostURL)
         
         if let encrypted = ECrypto.encryptEData("Hello World") {
             ELog.debug(message: encrypted)
