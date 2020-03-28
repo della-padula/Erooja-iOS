@@ -18,6 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+      if KOSession.isKakaoAccountLoginCallback(url.absoluteURL) {
+        return KOSession.handleOpen(url)
+      }
+      
+      return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+      if KOSession.isKakaoAccountLoginCallback(url.absoluteURL) {
+        return KOSession.handleOpen(url)
+      }
+      return true
+    }
 
     // MARK: - Core Data stack
 
