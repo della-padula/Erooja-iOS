@@ -10,15 +10,15 @@ import Foundation
 
 final public class ELog {
     public class func debug(message: String?) {
-        print("🗣 [\(getCurrentTime())] \(String(describing: message))")
+        print("🗣 [\(getCurrentTime())] EROOJA - \(String(describing: message))")
     }
     
     public class func warning(message: String?) {
-        print("⚡️ [\(getCurrentTime())] \(String(describing: message))")
+        print("⚡️ [\(getCurrentTime())] EROOJA - \(String(describing: message))")
     }
     
     public class func error(message: String?) {
-        print("🚨 [\(getCurrentTime())] \(String(describing: message))")
+        print("🚨 [\(getCurrentTime())] EROOJA - \(String(describing: message))")
     }
     
     fileprivate class func getCurrentTime() -> String {
