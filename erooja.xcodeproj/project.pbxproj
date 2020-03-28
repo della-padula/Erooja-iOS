@@ -26,6 +26,7 @@
 		B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B22242BA99F00B51854 /* EUINavigationBar.swift */; };
 		B0462B25242BA9CF00B51854 /* EUINavigationBar+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */; };
 		B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B28242BAA9200B51854 /* Notification+Common.swift */; };
+		B04FB43E242F757100003A8D /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */; };
 		B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; };
 		B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; };
@@ -94,6 +95,8 @@
 		B0462B22242BA99F00B51854 /* EUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationBar.swift; sourceTree = "<group>"; };
 		B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EUINavigationBar+Style.swift"; sourceTree = "<group>"; };
 		B0462B28242BAA9200B51854 /* Notification+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Common.swift"; sourceTree = "<group>"; };
+		B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = "../../Downloads/kakao-ios-sdk-1.22.0/KakaoOpenSDK.framework"; sourceTree = "<group>"; };
+		B04FB43F242F769700003A8D /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaCommon.xcodeproj; path = EroojaCommon/EroojaCommon.xcodeproj; sourceTree = "<group>"; };
 		B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaUI.xcodeproj; path = EroojaUI/EroojaUI.xcodeproj; sourceTree = "<group>"; };
 		B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.debug.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 			files = (
 				B02DFA22242F611E00B6DF89 /* EroojaUI.framework in Frameworks */,
 				B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */,
+				B04FB43E242F757100003A8D /* KakaoOpenSDK.framework in Frameworks */,
 				46A805F72F56F5C060778B16 /* Pods_erooja.framework in Frameworks */,
 				B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */,
 			);
@@ -117,6 +121,7 @@
 		66A0F7608C7BB3837D0680FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */,
 				3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */,
 			);
 			name = Frameworks;
@@ -133,6 +138,7 @@
 		B0462AC2242B8E5F00B51854 = {
 			isa = PBXGroup;
 			children = (
+				B04FB43F242F769700003A8D /* KakaoOpenSDK-Bridging-Header.h */,
 				B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */,
 				B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */,
 				B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */,
@@ -553,13 +559,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = erooja/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eroom.erooja;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -572,13 +584,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = erooja/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eroom.erooja;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
