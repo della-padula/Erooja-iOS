@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import EroojaCommon
 
-class HomeViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        if let encrypted = ECrypto.encryptEData("Hello World") {
+            ELog.debug(message: encrypted)
+            
+            if let decrypted = ECrypto.decryptEData(encrypted) {
+                ELog.debug(message: decrypted)
+            } else {
+                ELog.error(message: "ERROR")
+            }
+        } else {
+            ELog.error(message: "ERROR")
+        }
     }
 
 
