@@ -45,9 +45,19 @@ extension EroojaDevViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EroojaDevCell", for: indexPath) as! EroojaDevTableViewCell
         cell.lblTitle.text = types[indexPath.row].rawValue
-        
+        cell.selectionStyle = .none
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let type = types[indexPath.row]
+        switch type {
+        case .onboard:
+            let vc = UIStoryboard.onboardViewController()!
+            present(vc, animated: true, completion: nil)
+        default:
+            break
+        }
+    }
     
 }

@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
-class OnboardViewController: UIViewController {
-    override func viewDidLoad() {
+public class OnboardViewController: UIViewController {
+    override public func viewDidLoad() {
         
     }
 }
