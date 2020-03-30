@@ -49,6 +49,7 @@
 		B0FE8ED9243249D000103A54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AEA242B8FE800B51854 /* Home.storyboard */; };
 		B0FE8EDA243249D000103A54 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8ECB2432404F00103A54 /* Onboard.storyboard */; };
 		B0FE8EE22432B77600103A54 /* eroojaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EE12432B77600103A54 /* eroojaUITests.swift */; };
+		B0FE8EF22432B85C00103A54 /* eroojaUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EF12432B85C00103A54 /* eroojaUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,13 @@
 			remoteInfo = EroojaUI;
 		};
 		B0FE8EE42432B77600103A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0462AC3242B8E5F00B51854 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0462ACA242B8E5F00B51854;
+			remoteInfo = erooja;
+		};
+		B0FE8EF42432B85C00103A54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0462AC3242B8E5F00B51854 /* Project object */;
 			proxyType = 1;
@@ -137,6 +145,9 @@
 		B0FE8EDF2432B77600103A54 /* eroojaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eroojaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE8EE12432B77600103A54 /* eroojaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eroojaUITests.swift; sourceTree = "<group>"; };
 		B0FE8EE32432B77600103A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0FE8EEF2432B85C00103A54 /* eroojaUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eroojaUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0FE8EF12432B85C00103A54 /* eroojaUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eroojaUnitTests.swift; sourceTree = "<group>"; };
+		B0FE8EF32432B85C00103A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.debug.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +172,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B0FE8EDC2432B77600103A54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EEC2432B85C00103A54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -197,6 +215,7 @@
 				B0462ACD242B8E5F00B51854 /* erooja */,
 				B0FE8EAB24323CCB00103A54 /* EroojaDev */,
 				B0FE8EE02432B77600103A54 /* eroojaUITests */,
+				B0FE8EF02432B85C00103A54 /* eroojaUnitTests */,
 				B0462ACC242B8E5F00B51854 /* Products */,
 				E289B42C32A309B73ED34963 /* Pods */,
 				66A0F7608C7BB3837D0680FE /* Frameworks */,
@@ -209,6 +228,7 @@
 				B0462ACB242B8E5F00B51854 /* erooja.app */,
 				B0FE8EAA24323CCB00103A54 /* EroojaDev.app */,
 				B0FE8EDF2432B77600103A54 /* eroojaUITests.xctest */,
+				B0FE8EEF2432B85C00103A54 /* eroojaUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +354,15 @@
 			path = eroojaUITests;
 			sourceTree = "<group>";
 		};
+		B0FE8EF02432B85C00103A54 /* eroojaUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8EF12432B85C00103A54 /* eroojaUnitTests.swift */,
+				B0FE8EF32432B85C00103A54 /* Info.plist */,
+			);
+			path = eroojaUnitTests;
+			sourceTree = "<group>";
+		};
 		E289B42C32A309B73ED34963 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +430,24 @@
 			productReference = B0FE8EDF2432B77600103A54 /* eroojaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B0FE8EEE2432B85C00103A54 /* eroojaUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0FE8EF62432B85C00103A54 /* Build configuration list for PBXNativeTarget "eroojaUnitTests" */;
+			buildPhases = (
+				B0FE8EEB2432B85C00103A54 /* Sources */,
+				B0FE8EEC2432B85C00103A54 /* Frameworks */,
+				B0FE8EED2432B85C00103A54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0FE8EF52432B85C00103A54 /* PBXTargetDependency */,
+			);
+			name = eroojaUnitTests;
+			productName = eroojaUnitTests;
+			productReference = B0FE8EEF2432B85C00103A54 /* eroojaUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -418,6 +465,10 @@
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					B0FE8EDE2432B77600103A54 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = B0462ACA242B8E5F00B51854;
+					};
+					B0FE8EEE2432B85C00103A54 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = B0462ACA242B8E5F00B51854;
 					};
@@ -453,6 +504,7 @@
 				B0462ACA242B8E5F00B51854 /* erooja */,
 				B0FE8EA924323CCB00103A54 /* EroojaDev */,
 				B0FE8EDE2432B77600103A54 /* eroojaUITests */,
+				B0FE8EEE2432B85C00103A54 /* eroojaUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -507,6 +559,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B0FE8EDD2432B77600103A54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EED2432B85C00103A54 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -603,6 +662,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0FE8EEB2432B85C00103A54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0FE8EF22432B85C00103A54 /* eroojaUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -610,6 +677,11 @@
 			isa = PBXTargetDependency;
 			target = B0462ACA242B8E5F00B51854 /* erooja */;
 			targetProxy = B0FE8EE42432B77600103A54 /* PBXContainerItemProxy */;
+		};
+		B0FE8EF52432B85C00103A54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0462ACA242B8E5F00B51854 /* erooja */;
+			targetProxy = B0FE8EF42432B85C00103A54 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1119,6 +1191,86 @@
 			};
 			name = Release;
 		};
+		B0FE8EF72432B85C00103A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/erooja.app/erooja";
+			};
+			name = Debug;
+		};
+		B0FE8EF82432B85C00103A54 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/erooja.app/erooja";
+			};
+			name = Inhouse;
+		};
+		B0FE8EF92432B85C00103A54 /* UITest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/erooja.app/erooja";
+			};
+			name = UITest;
+		};
+		B0FE8EFA2432B85C00103A54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/erooja.app/erooja";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1162,6 +1314,17 @@
 				B0FE8EE82432B77600103A54 /* Inhouse */,
 				B0FE8EE92432B77600103A54 /* UITest */,
 				B0FE8EEA2432B77600103A54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0FE8EF62432B85C00103A54 /* Build configuration list for PBXNativeTarget "eroojaUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0FE8EF72432B85C00103A54 /* Debug */,
+				B0FE8EF82432B85C00103A54 /* Inhouse */,
+				B0FE8EF92432B85C00103A54 /* UITest */,
+				B0FE8EFA2432B85C00103A54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
