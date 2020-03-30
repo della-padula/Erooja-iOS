@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B0462ACA242B8E5F00B51854"
-               BuildableName = "erooja.app"
-               BlueprintName = "erooja"
+               BlueprintIdentifier = "B0FE8EA924323CCB00103A54"
+               BuildableName = "EroojaDev.app"
+               BlueprintName = "EroojaDev"
                ReferencedContainer = "container:erooja.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B0462ACA242B8E5F00B51854"
-            BuildableName = "erooja.app"
-            BlueprintName = "erooja"
+            BlueprintIdentifier = "B0FE8EA924323CCB00103A54"
+            BuildableName = "EroojaDev.app"
+            BlueprintName = "EroojaDev"
             ReferencedContainer = "container:erooja.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B0462ACA242B8E5F00B51854"
-            BuildableName = "erooja.app"
-            BlueprintName = "erooja"
+            BlueprintIdentifier = "B0FE8EA924323CCB00103A54"
+            BuildableName = "EroojaDev.app"
+            BlueprintName = "EroojaDev"
             ReferencedContainer = "container:erooja.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

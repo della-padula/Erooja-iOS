@@ -4,20 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>EroojaUITest.xcscheme_^#shared#^_</key>
+		<key>EroojaDev.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>15</integer>
 		</dict>
 		<key>Inhouse(erooja).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>14</integer>
-		</dict>
-		<key>UITest(erooja).xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>15</integer>
 		</dict>
 		<key>erooja.xcscheme_^#shared#^_</key>
 		<dict>
@@ -28,6 +23,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>B0462ACA242B8E5F00B51854</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0FE8EA924323CCB00103A54</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0FE8EDE2432B77600103A54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
