@@ -12,12 +12,9 @@
 		B02DFA23242F611E00B6DF89 /* EroojaUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD9E0242F60F1001CE297 /* EroojaUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462ACE242B8E5F00B51854 /* AppDelegate.swift */; };
 		B0462AD3242B8E5F00B51854 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD2242B8E5F00B51854 /* MainViewController.swift */; };
-		B0462AD6242B8E5F00B51854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AD4242B8E5F00B51854 /* Main.storyboard */; };
 		B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD7242B8E5F00B51854 /* erooja.xcdatamodeld */; };
 		B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0462ADA242B8E6100B51854 /* Assets.xcassets */; };
 		B0462ADE242B8E6100B51854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462ADC242B8E6100B51854 /* LaunchScreen.storyboard */; };
-		B0462AE7242B8FA900B51854 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AE6242B8FA900B51854 /* Search.storyboard */; };
-		B0462AE9242B8FBF00B51854 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AE8242B8FBF00B51854 /* MyPage.storyboard */; };
 		B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AEA242B8FE800B51854 /* Home.storyboard */; };
 		B0462AEE242B920000B51854 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AED242B920000B51854 /* Schedule.swift */; };
 		B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AEF242B921000B51854 /* APIResponseCode.swift */; };
@@ -30,9 +27,16 @@
 		B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; };
 		B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B0FE8E7F2432328400103A54 /* UITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E7E2432328400103A54 /* UITestViewController.swift */; };
-		B0FE8E812432329600103A54 /* UITestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E802432329600103A54 /* UITestTableViewCell.swift */; };
-		B0FE8E83243232A100103A54 /* UITest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8E82243232A100103A54 /* UITest.storyboard */; };
+		B0FE8E7F2432328400103A54 /* EroojaDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */; };
+		B0FE8E812432329600103A54 /* EroojaDevTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */; };
+		B0FE8EAD24323CCB00103A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EAC24323CCB00103A54 /* AppDelegate.swift */; };
+		B0FE8EB124323CCB00103A54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EB024323CCB00103A54 /* ViewController.swift */; };
+		B0FE8EB624323CCB00103A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8EB524323CCB00103A54 /* Assets.xcassets */; };
+		B0FE8EB924323CCB00103A54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8EB724323CCB00103A54 /* LaunchScreen.storyboard */; };
+		B0FE8EC024323DE900103A54 /* EroojaDev.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8E82243232A100103A54 /* EroojaDev.storyboard */; };
+		B0FE8EC124323DEE00103A54 /* EroojaDev.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8E82243232A100103A54 /* EroojaDev.storyboard */; };
+		B0FE8EC224323DEE00103A54 /* EroojaDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */; };
+		B0FE8EC324323DEE00103A54 /* EroojaDevTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,13 +86,10 @@
 		B0462ACB242B8E5F00B51854 /* erooja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = erooja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0462ACE242B8E5F00B51854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0462AD2242B8E5F00B51854 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		B0462AD5242B8E5F00B51854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0462AD8242B8E5F00B51854 /* erooja.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = erooja.xcdatamodel; sourceTree = "<group>"; };
 		B0462ADA242B8E6100B51854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0462ADD242B8E6100B51854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0462ADF242B8E6100B51854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0462AE6242B8FA900B51854 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
-		B0462AE8242B8FBF00B51854 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		B0462AEA242B8FE800B51854 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B0462AED242B920000B51854 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		B0462AEF242B921000B51854 /* APIResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseCode.swift; sourceTree = "<group>"; };
@@ -99,9 +100,15 @@
 		B0462B28242BAA9200B51854 /* Notification+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Common.swift"; sourceTree = "<group>"; };
 		B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaCommon.xcodeproj; path = EroojaCommon/EroojaCommon.xcodeproj; sourceTree = "<group>"; };
 		B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaUI.xcodeproj; path = EroojaUI/EroojaUI.xcodeproj; sourceTree = "<group>"; };
-		B0FE8E7E2432328400103A54 /* UITestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestViewController.swift; sourceTree = "<group>"; };
-		B0FE8E802432329600103A54 /* UITestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestTableViewCell.swift; sourceTree = "<group>"; };
-		B0FE8E82243232A100103A54 /* UITest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UITest.storyboard; sourceTree = "<group>"; };
+		B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevViewController.swift; sourceTree = "<group>"; };
+		B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevTableViewCell.swift; sourceTree = "<group>"; };
+		B0FE8E82243232A100103A54 /* EroojaDev.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EroojaDev.storyboard; sourceTree = "<group>"; };
+		B0FE8EAA24323CCB00103A54 /* EroojaUITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EroojaUITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0FE8EAC24323CCB00103A54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0FE8EB024323CCB00103A54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B0FE8EB524323CCB00103A54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0FE8EB824323CCB00103A54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0FE8EBA24323CCB00103A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.debug.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +121,13 @@
 				B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */,
 				46A805F72F56F5C060778B16 /* Pods_erooja.framework in Frameworks */,
 				B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EA724323CCB00103A54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +157,7 @@
 				B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */,
 				B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */,
 				B0462ACD242B8E5F00B51854 /* erooja */,
+				B0FE8EAB24323CCB00103A54 /* EroojaUITest */,
 				B0462ACC242B8E5F00B51854 /* Products */,
 				E289B42C32A309B73ED34963 /* Pods */,
 				66A0F7608C7BB3837D0680FE /* Frameworks */,
@@ -153,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				B0462ACB242B8E5F00B51854 /* erooja.app */,
+				B0FE8EAA24323CCB00103A54 /* EroojaUITest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,9 +193,6 @@
 		B0462AE5242B8F9400B51854 /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				B0462AD4242B8E5F00B51854 /* Main.storyboard */,
-				B0462AE6242B8FA900B51854 /* Search.storyboard */,
-				B0462AE8242B8FBF00B51854 /* MyPage.storyboard */,
 				B0462AEA242B8FE800B51854 /* Home.storyboard */,
 			);
 			path = storyboard;
@@ -197,7 +210,6 @@
 		B0462B1E242BA93C00B51854 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B0FE8E7D2432326D00103A54 /* UITest */,
 				B0462B21242BA98D00B51854 /* EUINavigation */,
 				B0462AD2242B8E5F00B51854 /* MainViewController.swift */,
 			);
@@ -238,14 +250,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B0FE8E7D2432326D00103A54 /* UITest */ = {
+		B0FE8E7D2432326D00103A54 /* Dev */ = {
 			isa = PBXGroup;
 			children = (
-				B0FE8E7E2432328400103A54 /* UITestViewController.swift */,
-				B0FE8E802432329600103A54 /* UITestTableViewCell.swift */,
-				B0FE8E82243232A100103A54 /* UITest.storyboard */,
+				B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */,
+				B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */,
+				B0FE8E82243232A100103A54 /* EroojaDev.storyboard */,
 			);
-			path = UITest;
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		B0FE8EAB24323CCB00103A54 /* EroojaUITest */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8E7D2432326D00103A54 /* Dev */,
+				B0FE8EAC24323CCB00103A54 /* AppDelegate.swift */,
+				B0FE8EB024323CCB00103A54 /* ViewController.swift */,
+				B0FE8EB524323CCB00103A54 /* Assets.xcassets */,
+				B0FE8EB724323CCB00103A54 /* LaunchScreen.storyboard */,
+				B0FE8EBA24323CCB00103A54 /* Info.plist */,
+			);
+			path = EroojaUITest;
 			sourceTree = "<group>";
 		};
 		E289B42C32A309B73ED34963 /* Pods */ = {
@@ -280,6 +305,23 @@
 			productReference = B0462ACB242B8E5F00B51854 /* erooja.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B0FE8EA924323CCB00103A54 /* EroojaUITest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0FE8EBB24323CCB00103A54 /* Build configuration list for PBXNativeTarget "EroojaUITest" */;
+			buildPhases = (
+				B0FE8EA624323CCB00103A54 /* Sources */,
+				B0FE8EA724323CCB00103A54 /* Frameworks */,
+				B0FE8EA824323CCB00103A54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EroojaUITest;
+			productName = EroojaUITest;
+			productReference = B0FE8EAA24323CCB00103A54 /* EroojaUITest.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -291,6 +333,9 @@
 				ORGANIZATIONNAME = "김태인";
 				TargetAttributes = {
 					B0462ACA242B8E5F00B51854 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B0FE8EA924323CCB00103A54 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
@@ -323,6 +368,7 @@
 			projectRoot = "";
 			targets = (
 				B0462ACA242B8E5F00B51854 /* erooja */,
+				B0FE8EA924323CCB00103A54 /* EroojaUITest */,
 			);
 		};
 /* End PBXProject section */
@@ -357,12 +403,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0462ADE242B8E6100B51854 /* LaunchScreen.storyboard in Resources */,
-				B0462AE9242B8FBF00B51854 /* MyPage.storyboard in Resources */,
 				B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */,
-				B0FE8E83243232A100103A54 /* UITest.storyboard in Resources */,
 				B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */,
-				B0462AE7242B8FA900B51854 /* Search.storyboard in Resources */,
-				B0462AD6242B8E5F00B51854 /* Main.storyboard in Resources */,
+				B0FE8EC124323DEE00103A54 /* EroojaDev.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EA824323CCB00103A54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0FE8EC024323DE900103A54 /* EroojaDev.storyboard in Resources */,
+				B0FE8EB924323CCB00103A54 /* LaunchScreen.storyboard in Resources */,
+				B0FE8EB624323CCB00103A54 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0FE8E7F2432328400103A54 /* UITestViewController.swift in Sources */,
+				B0FE8E7F2432328400103A54 /* EroojaDevViewController.swift in Sources */,
 				B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */,
 				B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */,
 				B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */,
@@ -424,27 +477,38 @@
 				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,
 				B0462B20242BA97800B51854 /* EUINavigationController.swift in Sources */,
 				B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */,
-				B0FE8E812432329600103A54 /* UITestTableViewCell.swift in Sources */,
+				B0FE8E812432329600103A54 /* EroojaDevTableViewCell.swift in Sources */,
 				B0462AEE242B920000B51854 /* Schedule.swift in Sources */,
 				B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EA624323CCB00103A54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0FE8EB124323CCB00103A54 /* ViewController.swift in Sources */,
+				B0FE8EC324323DEE00103A54 /* EroojaDevTableViewCell.swift in Sources */,
+				B0FE8EC224323DEE00103A54 /* EroojaDevViewController.swift in Sources */,
+				B0FE8EAD24323CCB00103A54 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B0462AD4242B8E5F00B51854 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0462AD5242B8E5F00B51854 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B0462ADC242B8E6100B51854 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B0462ADD242B8E6100B51854 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B0FE8EB724323CCB00103A54 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0FE8EB824323CCB00103A54 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -573,8 +637,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				ENDPOINT_URL = erooja.debug;
 				Erooja_Bundle_Identifier = com.eroom.erooja.debug;
 				INFOPLIST_FILE = erooja/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,8 +659,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				ENDPOINT_URL = erooja.release;
 				Erooja_Bundle_Identifier = com.eroom.erooja;
 				INFOPLIST_FILE = erooja/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -673,8 +741,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				ENDPOINT_URL = erooja.uitest;
 				Erooja_Bundle_Identifier = com.eroom.erooja.uitest;
 				INFOPLIST_FILE = erooja/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -753,8 +823,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				ENDPOINT_URL = erooja.inhouse;
 				Erooja_Bundle_Identifier = com.eroom.erooja.inhouse;
 				INFOPLIST_FILE = erooja/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -765,6 +837,82 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Inhouse;
+		};
+		B0FE8EBC24323CCB00103A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = EroojaUITest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaUITest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B0FE8EBD24323CCB00103A54 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = EroojaUITest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaUITest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Inhouse;
+		};
+		B0FE8EBE24323CCB00103A54 /* UITest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = EroojaUITest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaUITest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = UITest;
+		};
+		B0FE8EBF24323CCB00103A54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = EroojaUITest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaUITest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -787,6 +935,17 @@
 				B0FE8E7C2432316900103A54 /* Inhouse */,
 				B0FE8E772432316700103A54 /* UITest */,
 				B0462AE4242B8E6100B51854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0FE8EBB24323CCB00103A54 /* Build configuration list for PBXNativeTarget "EroojaUITest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0FE8EBC24323CCB00103A54 /* Debug */,
+				B0FE8EBD24323CCB00103A54 /* Inhouse */,
+				B0FE8EBE24323CCB00103A54 /* UITest */,
+				B0FE8EBF24323CCB00103A54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
