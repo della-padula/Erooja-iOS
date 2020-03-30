@@ -30,6 +30,9 @@
 		B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; };
 		B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B0FE8E7F2432328400103A54 /* UITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E7E2432328400103A54 /* UITestViewController.swift */; };
+		B0FE8E812432329600103A54 /* UITestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E802432329600103A54 /* UITestTableViewCell.swift */; };
+		B0FE8E83243232A100103A54 /* UITest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8E82243232A100103A54 /* UITest.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,9 @@
 		B0462B28242BAA9200B51854 /* Notification+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Common.swift"; sourceTree = "<group>"; };
 		B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaCommon.xcodeproj; path = EroojaCommon/EroojaCommon.xcodeproj; sourceTree = "<group>"; };
 		B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaUI.xcodeproj; path = EroojaUI/EroojaUI.xcodeproj; sourceTree = "<group>"; };
+		B0FE8E7E2432328400103A54 /* UITestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestViewController.swift; sourceTree = "<group>"; };
+		B0FE8E802432329600103A54 /* UITestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestTableViewCell.swift; sourceTree = "<group>"; };
+		B0FE8E82243232A100103A54 /* UITest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UITest.storyboard; sourceTree = "<group>"; };
 		B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.debug.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +197,7 @@
 		B0462B1E242BA93C00B51854 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B0FE8E7D2432326D00103A54 /* UITest */,
 				B0462B21242BA98D00B51854 /* EUINavigation */,
 				B0462AD2242B8E5F00B51854 /* MainViewController.swift */,
 			);
@@ -229,6 +236,16 @@
 				B08AD9E0242F60F1001CE297 /* EroojaUI.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B0FE8E7D2432326D00103A54 /* UITest */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8E7E2432328400103A54 /* UITestViewController.swift */,
+				B0FE8E802432329600103A54 /* UITestTableViewCell.swift */,
+				B0FE8E82243232A100103A54 /* UITest.storyboard */,
+			);
+			path = UITest;
 			sourceTree = "<group>";
 		};
 		E289B42C32A309B73ED34963 /* Pods */ = {
@@ -342,6 +359,7 @@
 				B0462ADE242B8E6100B51854 /* LaunchScreen.storyboard in Resources */,
 				B0462AE9242B8FBF00B51854 /* MyPage.storyboard in Resources */,
 				B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */,
+				B0FE8E83243232A100103A54 /* UITest.storyboard in Resources */,
 				B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */,
 				B0462AE7242B8FA900B51854 /* Search.storyboard in Resources */,
 				B0462AD6242B8E5F00B51854 /* Main.storyboard in Resources */,
@@ -397,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FE8E7F2432328400103A54 /* UITestViewController.swift in Sources */,
 				B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */,
 				B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */,
 				B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */,
@@ -405,6 +424,7 @@
 				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,
 				B0462B20242BA97800B51854 /* EUINavigationController.swift in Sources */,
 				B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */,
+				B0FE8E812432329600103A54 /* UITestTableViewCell.swift in Sources */,
 				B0462AEE242B920000B51854 /* Schedule.swift in Sources */,
 				B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */,
 			);
@@ -553,6 +573,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				Erooja_Bundle_Identifier = com.eroom.erooja.debug;
 				INFOPLIST_FILE = erooja/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -572,6 +593,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				Erooja_Bundle_Identifier = com.eroom.erooja;
 				INFOPLIST_FILE = erooja/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -584,6 +606,166 @@
 			};
 			name = Release;
 		};
+		B0FE8E762432316700103A54 /* UITest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = UITest;
+		};
+		B0FE8E772432316700103A54 /* UITest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				Erooja_Bundle_Identifier = com.eroom.erooja.uitest;
+				INFOPLIST_FILE = erooja/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eroom.erooja;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = UITest;
+		};
+		B0FE8E7B2432316900103A54 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Inhouse;
+		};
+		B0FE8E7C2432316900103A54 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				Erooja_Bundle_Identifier = com.eroom.erooja.inhouse;
+				INFOPLIST_FILE = erooja/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eroom.erooja;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Inhouse;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -591,6 +773,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0462AE0242B8E6100B51854 /* Debug */,
+				B0FE8E7B2432316900103A54 /* Inhouse */,
+				B0FE8E762432316700103A54 /* UITest */,
 				B0462AE1242B8E6100B51854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -600,6 +784,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0462AE3242B8E6100B51854 /* Debug */,
+				B0FE8E7C2432316900103A54 /* Inhouse */,
+				B0FE8E772432316700103A54 /* UITest */,
 				B0462AE4242B8E6100B51854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
