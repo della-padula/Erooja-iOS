@@ -8,8 +8,10 @@
 
 import UIKit
 
-class UITestTableViewCell: UITableViewCell {
+class EroojaDevTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
