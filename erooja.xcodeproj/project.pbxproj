@@ -88,6 +88,13 @@
 			remoteGlobalIDString = B0462ACA242B8E5F00B51854;
 			remoteInfo = erooja;
 		};
+		B0FE8F142432B8D700103A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0FE8F102432B8D700103A54 /* EroojaSharedBase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B0FE8F052432B8B800103A54;
+			remoteInfo = EroojaSharedBase;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -148,6 +155,7 @@
 		B0FE8EEF2432B85C00103A54 /* eroojaUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eroojaUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE8EF12432B85C00103A54 /* eroojaUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eroojaUnitTests.swift; sourceTree = "<group>"; };
 		B0FE8EF32432B85C00103A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0FE8F102432B8D700103A54 /* EroojaSharedBase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaSharedBase.xcodeproj; path = EroojaSharedBase/EroojaSharedBase.xcodeproj; sourceTree = "<group>"; };
 		B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.debug.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				B04FB43F242F769700003A8D /* KakaoOpenSDK-Bridging-Header.h */,
+				B0FE8F102432B8D700103A54 /* EroojaSharedBase.xcodeproj */,
 				B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */,
 				B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */,
 				B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */,
@@ -363,6 +372,14 @@
 			path = eroojaUnitTests;
 			sourceTree = "<group>";
 		};
+		B0FE8F112432B8D700103A54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		E289B42C32A309B73ED34963 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +512,10 @@
 					ProjectRef = B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */;
 				},
 				{
+					ProductGroup = B0FE8F112432B8D700103A54 /* Products */;
+					ProjectRef = B0FE8F102432B8D700103A54 /* EroojaSharedBase.xcodeproj */;
+				},
+				{
 					ProductGroup = B08AD9DC242F60F1001CE297 /* Products */;
 					ProjectRef = B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */;
 				},
@@ -529,6 +550,13 @@
 			fileType = wrapper.framework;
 			path = EroojaUI.framework;
 			remoteRef = B08AD9DF242F60F1001CE297 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EroojaSharedBase.framework;
+			remoteRef = B0FE8F142432B8D700103A54 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
