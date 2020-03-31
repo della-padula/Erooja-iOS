@@ -1,0 +1,1481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		46A805F72F56F5C060778B16 /* Pods_erooja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */; };
+		559951987FDE28CB97331449 /* libPods-EroojaDev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98AA8764ABF85FD2E9495BE1 /* libPods-EroojaDev.a */; };
+		B02B71192432BA5200045F93 /* EroojaSharedBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */; };
+		B02B711A2432BA5200045F93 /* EroojaSharedBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B02DFA22242F611E00B6DF89 /* EroojaUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD9E0242F60F1001CE297 /* EroojaUI.framework */; };
+		B02DFA23242F611E00B6DF89 /* EroojaUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD9E0242F60F1001CE297 /* EroojaUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B03D4A3224333C9D009180E9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3124333C9D009180E9 /* BaseViewController.swift */; };
+		B03D4A3324333C9D009180E9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3124333C9D009180E9 /* BaseViewController.swift */; };
+		B03D4A3924338DE3009180E9 /* LoginSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3824338DE3009180E9 /* LoginSwitcher.swift */; };
+		B03D4A3A24338DE3009180E9 /* LoginSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3824338DE3009180E9 /* LoginSwitcher.swift */; };
+		B03D4A4024339001009180E9 /* EroojaProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3F24339001009180E9 /* EroojaProperty.swift */; };
+		B03D4A4124339001009180E9 /* EroojaProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3F24339001009180E9 /* EroojaProperty.swift */; };
+		B03D4A6924339ECF009180E9 /* Roboto-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6424339ECB009180E9 /* Roboto-Regular.otf */; };
+		B03D4A6A24339ECF009180E9 /* Roboto-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6424339ECB009180E9 /* Roboto-Regular.otf */; };
+		B03D4A6D2433A2DC009180E9 /* OnboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A6B2433A2DC009180E9 /* OnboardCollectionViewCell.swift */; };
+		B03D4A6E2433A2DC009180E9 /* OnboardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6C2433A2DC009180E9 /* OnboardCollectionViewCell.xib */; };
+		B03D4A6F2433A874009180E9 /* OnboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A6B2433A2DC009180E9 /* OnboardCollectionViewCell.swift */; };
+		B03D4A702433A87F009180E9 /* OnboardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6C2433A2DC009180E9 /* OnboardCollectionViewCell.xib */; };
+		B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462ACE242B8E5F00B51854 /* AppDelegate.swift */; };
+		B0462AD3242B8E5F00B51854 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD2242B8E5F00B51854 /* MainViewController.swift */; };
+		B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD7242B8E5F00B51854 /* erooja.xcdatamodeld */; };
+		B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0462ADA242B8E6100B51854 /* Assets.xcassets */; };
+		B0462ADE242B8E6100B51854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462ADC242B8E6100B51854 /* LaunchScreen.storyboard */; };
+		B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AEA242B8FE800B51854 /* Home.storyboard */; };
+		B0462AEE242B920000B51854 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AED242B920000B51854 /* Schedule.swift */; };
+		B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AEF242B921000B51854 /* APIResponseCode.swift */; };
+		B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1C242B95CF00B51854 /* AlertController.swift */; };
+		B0462B20242BA97800B51854 /* EUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1F242BA97800B51854 /* EUINavigationController.swift */; };
+		B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B22242BA99F00B51854 /* EUINavigationBar.swift */; };
+		B0462B25242BA9CF00B51854 /* EUINavigationBar+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */; };
+		B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B28242BAA9200B51854 /* Notification+Common.swift */; };
+		B04FB43E242F757100003A8D /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */; };
+		B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; };
+		B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B0A8C5562433341D002B2C83 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5552433341D002B2C83 /* StartViewController.swift */; };
+		B0A8C55724333426002B2C83 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5552433341D002B2C83 /* StartViewController.swift */; };
+		B0A8C5632433392B002B2C83 /* UIImage+EroojaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5622433392B002B2C83 /* UIImage+EroojaImage.swift */; };
+		B0A8C5642433394B002B2C83 /* UIImage+EroojaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5622433392B002B2C83 /* UIImage+EroojaImage.swift */; };
+		B0A8C5662433395B002B2C83 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A8C5652433395B002B2C83 /* Image.xcassets */; };
+		B0A8C5672433395F002B2C83 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A8C5652433395B002B2C83 /* Image.xcassets */; };
+		B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; };
+		B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B0FE8E7F2432328400103A54 /* EroojaDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */; };
+		B0FE8E812432329600103A54 /* EroojaDevTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */; };
+		B0FE8EAD24323CCB00103A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EAC24323CCB00103A54 /* AppDelegate.swift */; };
+		B0FE8EB624323CCB00103A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8EB524323CCB00103A54 /* Assets.xcassets */; };
+		B0FE8EB924323CCB00103A54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8EB724323CCB00103A54 /* LaunchScreen.storyboard */; };
+		B0FE8EC024323DE900103A54 /* EroojaDev.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8E82243232A100103A54 /* EroojaDev.storyboard */; };
+		B0FE8EC124323DEE00103A54 /* EroojaDev.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8E82243232A100103A54 /* EroojaDev.storyboard */; };
+		B0FE8EC224323DEE00103A54 /* EroojaDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */; };
+		B0FE8EC324323DEE00103A54 /* EroojaDevTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */; };
+		B0FE8ECC2432404F00103A54 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8ECB2432404F00103A54 /* Start.storyboard */; };
+		B0FE8ECE2432407E00103A54 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ECD2432407E00103A54 /* OnboardViewController.swift */; };
+		B0FE8ED42432491300103A54 /* UIStoryboard+Onboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ED32432491300103A54 /* UIStoryboard+Onboard.swift */; };
+		B0FE8ED5243249C600103A54 /* UIStoryboard+Onboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ED32432491300103A54 /* UIStoryboard+Onboard.swift */; };
+		B0FE8ED6243249C900103A54 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ECD2432407E00103A54 /* OnboardViewController.swift */; };
+		B0FE8ED9243249D000103A54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AEA242B8FE800B51854 /* Home.storyboard */; };
+		B0FE8EDA243249D000103A54 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8ECB2432404F00103A54 /* Start.storyboard */; };
+		B0FE8EE22432B77600103A54 /* eroojaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EE12432B77600103A54 /* eroojaUITests.swift */; };
+		B0FE8EF22432B85C00103A54 /* eroojaUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EF12432B85C00103A54 /* eroojaUnitTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B02DFA8A242F64E100B6DF89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B02DFA7B242F643700B6DF89;
+			remoteInfo = EroojaNetwork;
+		};
+		B08AD997242F41D8001CE297 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B08AD988242F41CF001CE297;
+			remoteInfo = EroojaCommon;
+		};
+		B08AD9DF242F60F1001CE297 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B08AD9B0242F5FFD001CE297;
+			remoteInfo = EroojaUI;
+		};
+		B0FE8EE42432B77600103A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0462AC3242B8E5F00B51854 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0462ACA242B8E5F00B51854;
+			remoteInfo = erooja;
+		};
+		B0FE8EF42432B85C00103A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0462AC3242B8E5F00B51854 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0462ACA242B8E5F00B51854;
+			remoteInfo = erooja;
+		};
+		B0FE8F142432B8D700103A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0FE8F102432B8D700103A54 /* EroojaSharedBase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B0FE8F052432B8B800103A54;
+			remoteInfo = EroojaSharedBase;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B08AD99F242F42CE001CE297 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B02B711A2432BA5200045F93 /* EroojaSharedBase.framework in Embed Frameworks */,
+				B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */,
+				B02DFA23242F611E00B6DF89 /* EroojaUI.framework in Embed Frameworks */,
+				B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1D69FCA9AAE9F8DAA5076410 /* Pods-EroojaDev.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.uitest.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.uitest.xcconfig"; sourceTree = "<group>"; };
+		3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_erooja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4200223CE7B85D57036384AF /* Pods-erooja.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.inhouse.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.inhouse.xcconfig"; sourceTree = "<group>"; };
+		8A23D11EE96F66578868B5A2 /* Pods-erooja.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.uitest.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.uitest.xcconfig"; sourceTree = "<group>"; };
+		98AA8764ABF85FD2E9495BE1 /* libPods-EroojaDev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EroojaDev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CAC2CCFB91AEFC6FE7A332D /* Pods-erooja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.release.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.release.xcconfig"; sourceTree = "<group>"; };
+		AE2CA5D8F5338CEE1C20830F /* Pods-EroojaDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.release.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.release.xcconfig"; sourceTree = "<group>"; };
+		B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaNetwork.xcodeproj; path = EroojaNetwork/EroojaNetwork.xcodeproj; sourceTree = "<group>"; };
+		B03D4A3124333C9D009180E9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B03D4A3824338DE3009180E9 /* LoginSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwitcher.swift; sourceTree = "<group>"; };
+		B03D4A3F24339001009180E9 /* EroojaProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaProperty.swift; sourceTree = "<group>"; };
+		B03D4A6424339ECB009180E9 /* Roboto-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.otf"; sourceTree = "<group>"; };
+		B03D4A6B2433A2DC009180E9 /* OnboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardCollectionViewCell.swift; sourceTree = "<group>"; };
+		B03D4A6C2433A2DC009180E9 /* OnboardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardCollectionViewCell.xib; sourceTree = "<group>"; };
+		B0462ACB242B8E5F00B51854 /* erooja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = erooja.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0462ACE242B8E5F00B51854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0462AD2242B8E5F00B51854 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B0462AD8242B8E5F00B51854 /* erooja.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = erooja.xcdatamodel; sourceTree = "<group>"; };
+		B0462ADA242B8E6100B51854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0462ADD242B8E6100B51854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0462ADF242B8E6100B51854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0462AEA242B8FE800B51854 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B0462AED242B920000B51854 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		B0462AEF242B921000B51854 /* APIResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseCode.swift; sourceTree = "<group>"; };
+		B0462B1C242B95CF00B51854 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		B0462B1F242BA97800B51854 /* EUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationController.swift; sourceTree = "<group>"; };
+		B0462B22242BA99F00B51854 /* EUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationBar.swift; sourceTree = "<group>"; };
+		B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EUINavigationBar+Style.swift"; sourceTree = "<group>"; };
+		B0462B28242BAA9200B51854 /* Notification+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Common.swift"; sourceTree = "<group>"; };
+		B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = "../../Downloads/kakao-ios-sdk-1.22.0/KakaoOpenSDK.framework"; sourceTree = "<group>"; };
+		B04FB43F242F769700003A8D /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaCommon.xcodeproj; path = EroojaCommon/EroojaCommon.xcodeproj; sourceTree = "<group>"; };
+		B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaUI.xcodeproj; path = EroojaUI/EroojaUI.xcodeproj; sourceTree = "<group>"; };
+		B0A8C5552433341D002B2C83 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		B0A8C5622433392B002B2C83 /* UIImage+EroojaImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+EroojaImage.swift"; sourceTree = "<group>"; };
+		B0A8C5652433395B002B2C83 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevViewController.swift; sourceTree = "<group>"; };
+		B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevTableViewCell.swift; sourceTree = "<group>"; };
+		B0FE8E82243232A100103A54 /* EroojaDev.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EroojaDev.storyboard; sourceTree = "<group>"; };
+		B0FE8EAA24323CCB00103A54 /* EroojaDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EroojaDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0FE8EAC24323CCB00103A54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0FE8EB524323CCB00103A54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0FE8EB824323CCB00103A54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0FE8EBA24323CCB00103A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0FE8ECB2432404F00103A54 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
+		B0FE8ECD2432407E00103A54 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		B0FE8ED32432491300103A54 /* UIStoryboard+Onboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Onboard.swift"; sourceTree = "<group>"; };
+		B0FE8EDF2432B77600103A54 /* eroojaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eroojaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0FE8EE12432B77600103A54 /* eroojaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eroojaUITests.swift; sourceTree = "<group>"; };
+		B0FE8EE32432B77600103A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0FE8EEF2432B85C00103A54 /* eroojaUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eroojaUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0FE8EF12432B85C00103A54 /* eroojaUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eroojaUnitTests.swift; sourceTree = "<group>"; };
+		B0FE8EF32432B85C00103A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0FE8F102432B8D700103A54 /* EroojaSharedBase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaSharedBase.xcodeproj; path = EroojaSharedBase/EroojaSharedBase.xcodeproj; sourceTree = "<group>"; };
+		B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.debug.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
+		F839532DC0F68802565B88E6 /* Pods-EroojaDev.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.inhouse.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.inhouse.xcconfig"; sourceTree = "<group>"; };
+		F87B7FEA3CF76898E1A4522D /* Pods-EroojaDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.debug.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0462AC8242B8E5F00B51854 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B02B71192432BA5200045F93 /* EroojaSharedBase.framework in Frameworks */,
+				B02DFA22242F611E00B6DF89 /* EroojaUI.framework in Frameworks */,
+				B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */,
+				B04FB43E242F757100003A8D /* KakaoOpenSDK.framework in Frameworks */,
+				46A805F72F56F5C060778B16 /* Pods_erooja.framework in Frameworks */,
+				B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EA724323CCB00103A54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559951987FDE28CB97331449 /* libPods-EroojaDev.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EDC2432B77600103A54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EEC2432B85C00103A54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66A0F7608C7BB3837D0680FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */,
+				3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */,
+				98AA8764ABF85FD2E9495BE1 /* libPods-EroojaDev.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B02DFA87242F64E000B6DF89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0462AC2242B8E5F00B51854 = {
+			isa = PBXGroup;
+			children = (
+				B04FB43F242F769700003A8D /* KakaoOpenSDK-Bridging-Header.h */,
+				B0FE8F102432B8D700103A54 /* EroojaSharedBase.xcodeproj */,
+				B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */,
+				B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */,
+				B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */,
+				B0462ACD242B8E5F00B51854 /* erooja */,
+				B0FE8EAB24323CCB00103A54 /* EroojaDev */,
+				B0FE8EE02432B77600103A54 /* eroojaUITests */,
+				B0FE8EF02432B85C00103A54 /* eroojaUnitTests */,
+				B0462ACC242B8E5F00B51854 /* Products */,
+				E289B42C32A309B73ED34963 /* Pods */,
+				66A0F7608C7BB3837D0680FE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B0462ACC242B8E5F00B51854 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0462ACB242B8E5F00B51854 /* erooja.app */,
+				B0FE8EAA24323CCB00103A54 /* EroojaDev.app */,
+				B0FE8EDF2432B77600103A54 /* eroojaUITests.xctest */,
+				B0FE8EEF2432B85C00103A54 /* eroojaUnitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0462ACD242B8E5F00B51854 /* erooja */ = {
+			isa = PBXGroup;
+			children = (
+				B0462B2A242BAAA400B51854 /* Extensions */,
+				B0462B1E242BA93C00B51854 /* ViewHierarchy */,
+				B0462AEC242B91CE00B51854 /* Module */,
+				B0462AE5242B8F9400B51854 /* storyboard */,
+				B0462ACE242B8E5F00B51854 /* AppDelegate.swift */,
+				B0462ADA242B8E6100B51854 /* Assets.xcassets */,
+				B0462ADC242B8E6100B51854 /* LaunchScreen.storyboard */,
+				B0462ADF242B8E6100B51854 /* Info.plist */,
+				B0462AD7242B8E5F00B51854 /* erooja.xcdatamodeld */,
+				B0462B1C242B95CF00B51854 /* AlertController.swift */,
+				B03D4A3F24339001009180E9 /* EroojaProperty.swift */,
+			);
+			path = erooja;
+			sourceTree = "<group>";
+		};
+		B0462AE5242B8F9400B51854 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B0462AEA242B8FE800B51854 /* Home.storyboard */,
+				B0FE8ECB2432404F00103A54 /* Start.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		B0462AEC242B91CE00B51854 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				B0462AED242B920000B51854 /* Schedule.swift */,
+				B0462AEF242B921000B51854 /* APIResponseCode.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		B0462B1E242BA93C00B51854 /* ViewHierarchy */ = {
+			isa = PBXGroup;
+			children = (
+				B0A8C55F243338FF002B2C83 /* Resources */,
+				B0A8C5542433340E002B2C83 /* Start */,
+				B0462B21242BA98D00B51854 /* EUINavigation */,
+				B0462AD2242B8E5F00B51854 /* MainViewController.swift */,
+				B03D4A3124333C9D009180E9 /* BaseViewController.swift */,
+			);
+			path = ViewHierarchy;
+			sourceTree = "<group>";
+		};
+		B0462B21242BA98D00B51854 /* EUINavigation */ = {
+			isa = PBXGroup;
+			children = (
+				B0462B1F242BA97800B51854 /* EUINavigationController.swift */,
+				B0462B22242BA99F00B51854 /* EUINavigationBar.swift */,
+				B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */,
+			);
+			path = EUINavigation;
+			sourceTree = "<group>";
+		};
+		B0462B2A242BAAA400B51854 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B0462B28242BAA9200B51854 /* Notification+Common.swift */,
+				B0FE8ED32432491300103A54 /* UIStoryboard+Onboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B08AD994242F41D8001CE297 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B08AD998242F41D8001CE297 /* EroojaCommon.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B08AD9DC242F60F1001CE297 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B08AD9E0242F60F1001CE297 /* EroojaUI.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0A8C5542433340E002B2C83 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8EC72432403600103A54 /* Onboarding */,
+				B0A8C5552433341D002B2C83 /* StartViewController.swift */,
+				B03D4A3824338DE3009180E9 /* LoginSwitcher.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		B0A8C55F243338FF002B2C83 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B03D4A6424339ECB009180E9 /* Roboto-Regular.otf */,
+				B0A8C5622433392B002B2C83 /* UIImage+EroojaImage.swift */,
+				B0A8C5652433395B002B2C83 /* Image.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B0FE8E7D2432326D00103A54 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */,
+				B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */,
+				B0FE8E82243232A100103A54 /* EroojaDev.storyboard */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		B0FE8EAB24323CCB00103A54 /* EroojaDev */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8E7D2432326D00103A54 /* Dev */,
+				B0FE8EAC24323CCB00103A54 /* AppDelegate.swift */,
+				B0FE8EB524323CCB00103A54 /* Assets.xcassets */,
+				B0FE8EB724323CCB00103A54 /* LaunchScreen.storyboard */,
+				B0FE8EBA24323CCB00103A54 /* Info.plist */,
+			);
+			path = EroojaDev;
+			sourceTree = "<group>";
+		};
+		B0FE8EC72432403600103A54 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8ECD2432407E00103A54 /* OnboardViewController.swift */,
+				B03D4A6B2433A2DC009180E9 /* OnboardCollectionViewCell.swift */,
+				B03D4A6C2433A2DC009180E9 /* OnboardCollectionViewCell.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B0FE8EE02432B77600103A54 /* eroojaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8EE12432B77600103A54 /* eroojaUITests.swift */,
+				B0FE8EE32432B77600103A54 /* Info.plist */,
+			);
+			path = eroojaUITests;
+			sourceTree = "<group>";
+		};
+		B0FE8EF02432B85C00103A54 /* eroojaUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8EF12432B85C00103A54 /* eroojaUnitTests.swift */,
+				B0FE8EF32432B85C00103A54 /* Info.plist */,
+			);
+			path = eroojaUnitTests;
+			sourceTree = "<group>";
+		};
+		B0FE8F112432B8D700103A54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E289B42C32A309B73ED34963 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */,
+				9CAC2CCFB91AEFC6FE7A332D /* Pods-erooja.release.xcconfig */,
+				4200223CE7B85D57036384AF /* Pods-erooja.inhouse.xcconfig */,
+				8A23D11EE96F66578868B5A2 /* Pods-erooja.uitest.xcconfig */,
+				F87B7FEA3CF76898E1A4522D /* Pods-EroojaDev.debug.xcconfig */,
+				F839532DC0F68802565B88E6 /* Pods-EroojaDev.inhouse.xcconfig */,
+				1D69FCA9AAE9F8DAA5076410 /* Pods-EroojaDev.uitest.xcconfig */,
+				AE2CA5D8F5338CEE1C20830F /* Pods-EroojaDev.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0462ACA242B8E5F00B51854 /* erooja */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0462AE2242B8E6100B51854 /* Build configuration list for PBXNativeTarget "erooja" */;
+			buildPhases = (
+				FE1B4E5C0EB2135D9F4E72F8 /* [CP] Check Pods Manifest.lock */,
+				B0462AC7242B8E5F00B51854 /* Sources */,
+				B0462AC8242B8E5F00B51854 /* Frameworks */,
+				B0462AC9242B8E5F00B51854 /* Resources */,
+				5925D18F5E03B2F29739C437 /* [CP] Embed Pods Frameworks */,
+				B08AD99F242F42CE001CE297 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = erooja;
+			productName = erooja;
+			productReference = B0462ACB242B8E5F00B51854 /* erooja.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B0FE8EA924323CCB00103A54 /* EroojaDev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0FE8EBB24323CCB00103A54 /* Build configuration list for PBXNativeTarget "EroojaDev" */;
+			buildPhases = (
+				18E69E4590CDBADD6E3AED47 /* [CP] Check Pods Manifest.lock */,
+				B0FE8EA624323CCB00103A54 /* Sources */,
+				B0FE8EA724323CCB00103A54 /* Frameworks */,
+				B0FE8EA824323CCB00103A54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EroojaDev;
+			productName = EroojaUITest;
+			productReference = B0FE8EAA24323CCB00103A54 /* EroojaDev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B0FE8EDE2432B77600103A54 /* eroojaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0FE8EE62432B77600103A54 /* Build configuration list for PBXNativeTarget "eroojaUITests" */;
+			buildPhases = (
+				B0FE8EDB2432B77600103A54 /* Sources */,
+				B0FE8EDC2432B77600103A54 /* Frameworks */,
+				B0FE8EDD2432B77600103A54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0FE8EE52432B77600103A54 /* PBXTargetDependency */,
+			);
+			name = eroojaUITests;
+			productName = eroojaUITests;
+			productReference = B0FE8EDF2432B77600103A54 /* eroojaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B0FE8EEE2432B85C00103A54 /* eroojaUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0FE8EF62432B85C00103A54 /* Build configuration list for PBXNativeTarget "eroojaUnitTests" */;
+			buildPhases = (
+				B0FE8EEB2432B85C00103A54 /* Sources */,
+				B0FE8EEC2432B85C00103A54 /* Frameworks */,
+				B0FE8EED2432B85C00103A54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0FE8EF52432B85C00103A54 /* PBXTargetDependency */,
+			);
+			name = eroojaUnitTests;
+			productName = eroojaUnitTests;
+			productReference = B0FE8EEF2432B85C00103A54 /* eroojaUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0462AC3242B8E5F00B51854 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "김태인";
+				TargetAttributes = {
+					B0462ACA242B8E5F00B51854 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B0FE8EA924323CCB00103A54 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B0FE8EDE2432B77600103A54 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = B0462ACA242B8E5F00B51854;
+					};
+					B0FE8EEE2432B85C00103A54 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = B0462ACA242B8E5F00B51854;
+					};
+				};
+			};
+			buildConfigurationList = B0462AC6242B8E5F00B51854 /* Build configuration list for PBXProject "erooja" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0462AC2242B8E5F00B51854;
+			productRefGroup = B0462ACC242B8E5F00B51854 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B08AD994242F41D8001CE297 /* Products */;
+					ProjectRef = B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */;
+				},
+				{
+					ProductGroup = B02DFA87242F64E000B6DF89 /* Products */;
+					ProjectRef = B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */;
+				},
+				{
+					ProductGroup = B0FE8F112432B8D700103A54 /* Products */;
+					ProjectRef = B0FE8F102432B8D700103A54 /* EroojaSharedBase.xcodeproj */;
+				},
+				{
+					ProductGroup = B08AD9DC242F60F1001CE297 /* Products */;
+					ProjectRef = B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B0462ACA242B8E5F00B51854 /* erooja */,
+				B0FE8EA924323CCB00103A54 /* EroojaDev */,
+				B0FE8EDE2432B77600103A54 /* eroojaUITests */,
+				B0FE8EEE2432B85C00103A54 /* eroojaUnitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EroojaNetwork.framework;
+			remoteRef = B02DFA8A242F64E100B6DF89 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B08AD998242F41D8001CE297 /* EroojaCommon.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EroojaCommon.framework;
+			remoteRef = B08AD997242F41D8001CE297 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B08AD9E0242F60F1001CE297 /* EroojaUI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EroojaUI.framework;
+			remoteRef = B08AD9DF242F60F1001CE297 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EroojaSharedBase.framework;
+			remoteRef = B0FE8F142432B8D700103A54 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0462AC9242B8E5F00B51854 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0462ADE242B8E6100B51854 /* LaunchScreen.storyboard in Resources */,
+				B0A8C5662433395B002B2C83 /* Image.xcassets in Resources */,
+				B03D4A6E2433A2DC009180E9 /* OnboardCollectionViewCell.xib in Resources */,
+				B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */,
+				B03D4A6A24339ECF009180E9 /* Roboto-Regular.otf in Resources */,
+				B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */,
+				B0FE8ECC2432404F00103A54 /* Start.storyboard in Resources */,
+				B0FE8EC124323DEE00103A54 /* EroojaDev.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EA824323CCB00103A54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0FE8EC024323DE900103A54 /* EroojaDev.storyboard in Resources */,
+				B0A8C5672433395F002B2C83 /* Image.xcassets in Resources */,
+				B03D4A702433A87F009180E9 /* OnboardCollectionViewCell.xib in Resources */,
+				B0FE8EB924323CCB00103A54 /* LaunchScreen.storyboard in Resources */,
+				B03D4A6924339ECF009180E9 /* Roboto-Regular.otf in Resources */,
+				B0FE8EB624323CCB00103A54 /* Assets.xcassets in Resources */,
+				B0FE8EDA243249D000103A54 /* Start.storyboard in Resources */,
+				B0FE8ED9243249D000103A54 /* Home.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EDD2432B77600103A54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EED2432B85C00103A54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18E69E4590CDBADD6E3AED47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EroojaDev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5925D18F5E03B2F29739C437 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-erooja/Pods-erooja-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-erooja/Pods-erooja-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-erooja/Pods-erooja-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE1B4E5C0EB2135D9F4E72F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-erooja-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0462AC7242B8E5F00B51854 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0FE8E7F2432328400103A54 /* EroojaDevViewController.swift in Sources */,
+				B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */,
+				B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */,
+				B0A8C5632433392B002B2C83 /* UIImage+EroojaImage.swift in Sources */,
+				B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */,
+				B0462B25242BA9CF00B51854 /* EUINavigationBar+Style.swift in Sources */,
+				B0A8C5562433341D002B2C83 /* StartViewController.swift in Sources */,
+				B03D4A3224333C9D009180E9 /* BaseViewController.swift in Sources */,
+				B0462AD3242B8E5F00B51854 /* MainViewController.swift in Sources */,
+				B03D4A4024339001009180E9 /* EroojaProperty.swift in Sources */,
+				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,
+				B0FE8ECE2432407E00103A54 /* OnboardViewController.swift in Sources */,
+				B0462B20242BA97800B51854 /* EUINavigationController.swift in Sources */,
+				B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */,
+				B0FE8ED42432491300103A54 /* UIStoryboard+Onboard.swift in Sources */,
+				B03D4A3924338DE3009180E9 /* LoginSwitcher.swift in Sources */,
+				B0FE8E812432329600103A54 /* EroojaDevTableViewCell.swift in Sources */,
+				B0462AEE242B920000B51854 /* Schedule.swift in Sources */,
+				B03D4A6D2433A2DC009180E9 /* OnboardCollectionViewCell.swift in Sources */,
+				B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EA624323CCB00103A54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B03D4A6F2433A874009180E9 /* OnboardCollectionViewCell.swift in Sources */,
+				B0FE8ED6243249C900103A54 /* OnboardViewController.swift in Sources */,
+				B0FE8ED5243249C600103A54 /* UIStoryboard+Onboard.swift in Sources */,
+				B0FE8EC324323DEE00103A54 /* EroojaDevTableViewCell.swift in Sources */,
+				B0A8C5642433394B002B2C83 /* UIImage+EroojaImage.swift in Sources */,
+				B0FE8EC224323DEE00103A54 /* EroojaDevViewController.swift in Sources */,
+				B03D4A3A24338DE3009180E9 /* LoginSwitcher.swift in Sources */,
+				B03D4A4124339001009180E9 /* EroojaProperty.swift in Sources */,
+				B03D4A3324333C9D009180E9 /* BaseViewController.swift in Sources */,
+				B0FE8EAD24323CCB00103A54 /* AppDelegate.swift in Sources */,
+				B0A8C55724333426002B2C83 /* StartViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EDB2432B77600103A54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0FE8EE22432B77600103A54 /* eroojaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0FE8EEB2432B85C00103A54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0FE8EF22432B85C00103A54 /* eroojaUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0FE8EE52432B77600103A54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0462ACA242B8E5F00B51854 /* erooja */;
+			targetProxy = B0FE8EE42432B77600103A54 /* PBXContainerItemProxy */;
+		};
+		B0FE8EF52432B85C00103A54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0462ACA242B8E5F00B51854 /* erooja */;
+			targetProxy = B0FE8EF42432B85C00103A54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B0462ADC242B8E6100B51854 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0462ADD242B8E6100B51854 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B0FE8EB724323CCB00103A54 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0FE8EB824323CCB00103A54 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0462AE0242B8E6100B51854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B0462AE1242B8E6100B51854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0462AE3242B8E6100B51854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				ENDPOINT_URL = erooja.debug;
+				Erooja_Bundle_Identifier = com.eroom.erooja.debug;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = erooja/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eroom.erooja;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KakaoOpenSDK-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B0462AE4242B8E6100B51854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CAC2CCFB91AEFC6FE7A332D /* Pods-erooja.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				ENDPOINT_URL = erooja.release;
+				Erooja_Bundle_Identifier = com.eroom.erooja;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = erooja/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eroom.erooja;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KakaoOpenSDK-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B0FE8E762432316700103A54 /* UITest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = UITest;
+		};
+		B0FE8E772432316700103A54 /* UITest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A23D11EE96F66578868B5A2 /* Pods-erooja.uitest.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				ENDPOINT_URL = erooja.uitest;
+				Erooja_Bundle_Identifier = com.eroom.erooja.uitest;
+				INFOPLIST_FILE = erooja/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eroom.erooja;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = UITest;
+		};
+		B0FE8E7B2432316900103A54 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Inhouse;
+		};
+		B0FE8E7C2432316900103A54 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4200223CE7B85D57036384AF /* Pods-erooja.inhouse.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				ENDPOINT_URL = erooja.inhouse;
+				Erooja_Bundle_Identifier = com.eroom.erooja.inhouse;
+				INFOPLIST_FILE = erooja/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eroom.erooja;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Inhouse;
+		};
+		B0FE8EBC24323CCB00103A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F87B7FEA3CF76898E1A4522D /* Pods-EroojaDev.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = EroojaDev/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B0FE8EBD24323CCB00103A54 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F839532DC0F68802565B88E6 /* Pods-EroojaDev.inhouse.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = EroojaDev/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Inhouse;
+		};
+		B0FE8EBE24323CCB00103A54 /* UITest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D69FCA9AAE9F8DAA5076410 /* Pods-EroojaDev.uitest.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = EroojaDev/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = UITest;
+		};
+		B0FE8EBF24323CCB00103A54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE2CA5D8F5338CEE1C20830F /* Pods-EroojaDev.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = EroojaDev/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B0FE8EE72432B77600103A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = erooja;
+			};
+			name = Debug;
+		};
+		B0FE8EE82432B77600103A54 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = erooja;
+			};
+			name = Inhouse;
+		};
+		B0FE8EE92432B77600103A54 /* UITest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = erooja;
+			};
+			name = UITest;
+		};
+		B0FE8EEA2432B77600103A54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = erooja;
+			};
+			name = Release;
+		};
+		B0FE8EF72432B85C00103A54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/erooja.app/erooja";
+			};
+			name = Debug;
+		};
+		B0FE8EF82432B85C00103A54 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/erooja.app/erooja";
+			};
+			name = Inhouse;
+		};
+		B0FE8EF92432B85C00103A54 /* UITest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/erooja.app/erooja";
+			};
+			name = UITest;
+		};
+		B0FE8EFA2432B85C00103A54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79H9K226Y;
+				INFOPLIST_FILE = eroojaUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.denny.eroojaUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/erooja.app/erooja";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0462AC6242B8E5F00B51854 /* Build configuration list for PBXProject "erooja" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0462AE0242B8E6100B51854 /* Debug */,
+				B0FE8E7B2432316900103A54 /* Inhouse */,
+				B0FE8E762432316700103A54 /* UITest */,
+				B0462AE1242B8E6100B51854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0462AE2242B8E6100B51854 /* Build configuration list for PBXNativeTarget "erooja" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0462AE3242B8E6100B51854 /* Debug */,
+				B0FE8E7C2432316900103A54 /* Inhouse */,
+				B0FE8E772432316700103A54 /* UITest */,
+				B0462AE4242B8E6100B51854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0FE8EBB24323CCB00103A54 /* Build configuration list for PBXNativeTarget "EroojaDev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0FE8EBC24323CCB00103A54 /* Debug */,
+				B0FE8EBD24323CCB00103A54 /* Inhouse */,
+				B0FE8EBE24323CCB00103A54 /* UITest */,
+				B0FE8EBF24323CCB00103A54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0FE8EE62432B77600103A54 /* Build configuration list for PBXNativeTarget "eroojaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0FE8EE72432B77600103A54 /* Debug */,
+				B0FE8EE82432B77600103A54 /* Inhouse */,
+				B0FE8EE92432B77600103A54 /* UITest */,
+				B0FE8EEA2432B77600103A54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0FE8EF62432B85C00103A54 /* Build configuration list for PBXNativeTarget "eroojaUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0FE8EF72432B85C00103A54 /* Debug */,
+				B0FE8EF82432B85C00103A54 /* Inhouse */,
+				B0FE8EF92432B85C00103A54 /* UITest */,
+				B0FE8EFA2432B85C00103A54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B0462AD7242B8E5F00B51854 /* erooja.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B0462AD8242B8E5F00B51854 /* erooja.xcdatamodel */,
+			);
+			currentVersion = B0462AD8242B8E5F00B51854 /* erooja.xcdatamodel */;
+			path = erooja.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B0462AC3242B8E5F00B51854 /* Project object */;
+}
