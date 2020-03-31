@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B03D4A5B24339923009180E9 /* EPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A5A24339923009180E9 /* EPageControl.swift */; };
+		B03D4A5D24339A2D009180E9 /* UIColor+EroojaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A5C24339A2D009180E9 /* UIColor+EroojaColor.swift */; };
+		B03D4A6024339C9C009180E9 /* UIFont+EroojaFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A5F24339C9C009180E9 /* UIFont+EroojaFont.swift */; };
+		B03D4A6224339DE9009180E9 /* Roboto-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6124339DB5009180E9 /* Roboto-Regular.otf */; };
+		B03D4A722433AC9E009180E9 /* UILabel+LineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A712433AC9E009180E9 /* UILabel+LineSpacing.swift */; };
 		B08AD9B5242F5FFD001CE297 /* EroojaUI.h in Headers */ = {isa = PBXBuildFile; fileRef = B08AD9B3242F5FFD001CE297 /* EroojaUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08AD9C5242F602C001CE297 /* UIView+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9C4242F602C001CE297 /* UIView+Resize.swift */; };
 		B08AD9CC242F604D001CE297 /* UIImage+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9C6242F604C001CE297 /* UIImage+Initialize.swift */; };
@@ -18,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B03D4A5A24339923009180E9 /* EPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPageControl.swift; sourceTree = "<group>"; };
+		B03D4A5C24339A2D009180E9 /* UIColor+EroojaColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+EroojaColor.swift"; sourceTree = "<group>"; };
+		B03D4A5F24339C9C009180E9 /* UIFont+EroojaFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+EroojaFont.swift"; sourceTree = "<group>"; };
+		B03D4A6124339DB5009180E9 /* Roboto-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.otf"; path = "../../erooja/ViewHierarchy/Resources/Roboto-Regular.otf"; sourceTree = "<group>"; };
+		B03D4A712433AC9E009180E9 /* UILabel+LineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+LineSpacing.swift"; sourceTree = "<group>"; };
 		B08AD9B0242F5FFD001CE297 /* EroojaUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EroojaUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08AD9B3242F5FFD001CE297 /* EroojaUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EroojaUI.h; sourceTree = "<group>"; };
 		B08AD9B4242F5FFD001CE297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B03D4A5E24339C88009180E9 /* EroojaConfig */ = {
+			isa = PBXGroup;
+			children = (
+				B03D4A5F24339C9C009180E9 /* UIFont+EroojaFont.swift */,
+			);
+			path = EroojaConfig;
+			sourceTree = "<group>";
+		};
 		B08AD9A6242F5FFD001CE297 = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +78,15 @@
 		B08AD9B2242F5FFD001CE297 /* EroojaUI */ = {
 			isa = PBXGroup;
 			children = (
+				B03D4A6124339DB5009180E9 /* Roboto-Regular.otf */,
+				B03D4A5E24339C88009180E9 /* EroojaConfig */,
 				B08AD9D4242F606D001CE297 /* UIView */,
 				B08AD9D3242F6066001CE297 /* UIImage */,
 				B08AD9D2242F605A001CE297 /* UIColor */,
 				B08AD9B3242F5FFD001CE297 /* EroojaUI.h */,
 				B08AD9B4242F5FFD001CE297 /* Info.plist */,
+				B03D4A5A24339923009180E9 /* EPageControl.swift */,
+				B03D4A712433AC9E009180E9 /* UILabel+LineSpacing.swift */,
 			);
 			path = EroojaUI;
 			sourceTree = "<group>";
@@ -73,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				B08AD9C9242F604D001CE297 /* UIColor+ContrastingColor.swift */,
+				B03D4A5C24339A2D009180E9 /* UIColor+EroojaColor.swift */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -167,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03D4A6224339DE9009180E9 /* Roboto-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,11 +201,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03D4A5B24339923009180E9 /* EPageControl.swift in Sources */,
 				B08AD9CF242F604D001CE297 /* UIColor+ContrastingColor.swift in Sources */,
 				B08AD9C5242F602C001CE297 /* UIView+Resize.swift in Sources */,
 				B08AD9D0242F604D001CE297 /* UIImage+Crop.swift in Sources */,
 				B08AD9D1242F604D001CE297 /* UIView+Frame.swift in Sources */,
 				B08AD9CC242F604D001CE297 /* UIImage+Initialize.swift in Sources */,
+				B03D4A5D24339A2D009180E9 /* UIColor+EroojaColor.swift in Sources */,
+				B03D4A6024339C9C009180E9 /* UIFont+EroojaFont.swift in Sources */,
+				B03D4A722433AC9E009180E9 /* UILabel+LineSpacing.swift in Sources */,
 				B08AD9CE242F604D001CE297 /* UIImage+Resize.swift in Sources */,
 				B08AD9CD242F604D001CE297 /* UIImage+Average.swift in Sources */,
 			);
@@ -330,9 +358,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaUI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -356,8 +385,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaUI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,0 +1,6 @@
+module Pods_EroojaDev {
+  umbrella header "Pods-EroojaDev-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -9,17 +9,18 @@ target 'erooja' do
 
   # Pods for erooja
   pod 'Alamofire'
-  pod 'RxCocoa'
-  pod 'RxSwift'
   pod 'SwiftLint'
   pod 'Kingfisher'
+end
+
+target 'EroojaDev' do
+  pod 'Alamofire'
+  pod 'SwiftLint'
 end
 
 target 'EroojaNetwork' do
   project  'EroojaNetwork/EroojaNetwork'
   
   pod 'Alamofire'
-  pod 'RxSwift'
-  pod 'RxCocoa'
   pod 'SwiftLint'
 end

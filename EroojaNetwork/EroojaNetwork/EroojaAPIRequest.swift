@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import RxSwift
 
 public enum EroojaAPIError: Error {
     case basicAPIError(BasicAPIError)

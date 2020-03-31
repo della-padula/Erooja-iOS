@@ -2,12 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>KAKAO_APP_KEY</key>
-	<string>6ea8a065636ad3e8efc9277345d6266d</string>
-	<key>ENDPOINT_URL</key>
-	<string>$(ENDPOINT_URL)</string>
-	<key>TargetName</key>
-	<string>$(TARGET_NAME)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Regular.otf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -35,10 +33,24 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>ENDPOINT_URL</key>
+	<string>$(ENDPOINT_URL)</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>6ea8a065636ad3e8efc9277345d6266d</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakao6ea8a065636ad3e8efc9277345d6266d</string>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>TargetName</key>
+	<string>$(TARGET_NAME)</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Start</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -56,14 +68,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <!-- 공통 -->
-        <string>kakao6ea8a065636ad3e8efc9277345d6266d</string>
-
-        <!-- 간편로그인 -->
-        <string>kakaokompassauth</string>
-        <string>storykompassauth</string>
-    </array>
 </dict>
 </plist>

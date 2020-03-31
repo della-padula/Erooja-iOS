@@ -12,21 +12,8 @@ import UIKit
 public extension UIStoryboard {
     @objc
     class func onboardViewController() -> OnboardViewController? {
-        let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+        let storyboard = UIStoryboard(name: "Start", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: "OnboardViewController") as? OnboardViewController
-    }
-    
-    @objc
-    class func onboardingStageTwoViewController(firstAppeared: Bool) -> OnboardingStageTwoViewController? {
-        let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingStageTwoViewController") as? OnboardingStageTwoViewController
-        return vc
-    }
-
-    @objc
-    class func onboardingStageThreeViewController() -> OnboardingStageThreeViewController? {
-        let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: "OnboardingStageThreeViewController") as? OnboardingStageThreeViewController
     }
     
 }
