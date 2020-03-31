@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K0f-fX-baR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="yE8-SV-srA">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="K0f-fX-baR" customClass="LoginViewController" customModule="EroojaDev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o0i-n6-YO9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SjK-uv-pj2">
+                                <rect key="frame" x="60" y="413" width="294" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="wqn-Lz-Gax"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SjK-uv-pj2" firstAttribute="leading" secondItem="xwt-Lp-yEw" secondAttribute="leading" constant="60" id="IgS-ig-NBJ"/>
+                            <constraint firstItem="SjK-uv-pj2" firstAttribute="centerY" secondItem="xwt-Lp-yEw" secondAttribute="centerY" id="dSU-xp-X6D"/>
+                            <constraint firstItem="SjK-uv-pj2" firstAttribute="centerX" secondItem="xwt-Lp-yEw" secondAttribute="centerX" id="vZc-Ej-rao"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xwt-Lp-yEw"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginProviderStackView" destination="SjK-uv-pj2" id="2Oc-bS-7tH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i0A-3n-iTQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="318" y="247"/>
+        </scene>
+    </scenes>
+</document>

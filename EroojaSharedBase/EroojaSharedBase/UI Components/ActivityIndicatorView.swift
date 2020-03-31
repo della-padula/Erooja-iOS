@@ -29,8 +29,10 @@ public enum ActivityIndicatorState: Int {
         switch self {
         case .finished:
 //            return UIImage(named: "progress_bar_ok", in: TalkSharedBase.bundle, compatibleWith: nil)
+            return nil
         case .failed:
 //            return UIImage(named: "progress_bar_fail", in: TalkSharedBase.bundle, compatibleWith: nil)
+            return nil
         default:
             return nil
         }

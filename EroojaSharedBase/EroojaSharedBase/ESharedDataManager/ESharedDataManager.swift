@@ -10,11 +10,11 @@ import Foundation
 import EroojaCommon
 
 public class ESharedDataManager {
-    public static shared = EroojaSharedBase()
+    public static let shared = ESharedDataManager()
     private let userDefault = UserDefaults.init(suiteName: "EroojaSharedBase")
     private init() { }
     
-    public func setSharedData(value: String, key: String, completion: @escaping ((Bool) -> Void) {
+    public func setSharedData(value: String, key: String, completion: @escaping (Bool) -> Void) {
         let encryptedData = ECrypto.encryptEData(value)
         completion(true)
     }

@@ -11,6 +11,12 @@ import UIKit
 
 public extension UIStoryboard {
     @objc
+    class func loginViewController() -> LoginViewController? {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+    }
+    
+    @objc
     class func onboardViewController() -> OnboardViewController? {
         let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: "OnboardViewController") as? OnboardViewController

@@ -15,6 +15,7 @@ class EroojaDevViewController: UIViewController {
     enum EroojaType: String, CaseIterable {
         case onboard      = "온보딩"
         case kakaoLogin   = "카카오 로그인 API"
+        case appleLogin   = "Apple 로그인"
         case login        = "서비스 로그인"
         case mypage       = "마이페이지"
         case nowGoal      = "진행중 목표"
@@ -54,6 +55,9 @@ extension EroojaDevViewController: UITableViewDelegate, UITableViewDataSource {
         switch type {
         case .onboard:
             let vc = UIStoryboard.onboardViewController()!
+            present(vc, animated: true, completion: nil)
+        case .appleLogin:
+            let vc = UIStoryboard.loginViewController()!
             present(vc, animated: true, completion: nil)
         default:
             break

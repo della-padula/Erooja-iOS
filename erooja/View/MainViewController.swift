@@ -8,6 +8,7 @@
 
 import UIKit
 import EroojaNetwork
+import EroojaSharedBase
 import EroojaCommon
 
 class MainViewController: UIViewController {
