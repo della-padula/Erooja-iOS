@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B02B71172432B9A700045F93 /* ESharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B71162432B9A700045F93 /* ESharedDataManager.swift */; };
+		B02B71432432BFA800045F93 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B71422432BFA800045F93 /* ActivityIndicatorView.swift */; };
 		B0FE8F0A2432B8B800103A54 /* EroojaSharedBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FE8F082432B8B800103A54 /* EroojaSharedBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B02B71162432B9A700045F93 /* ESharedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESharedDataManager.swift; sourceTree = "<group>"; };
+		B02B71422432BFA800045F93 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		B0FE8F052432B8B800103A54 /* EroojaSharedBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EroojaSharedBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE8F082432B8B800103A54 /* EroojaSharedBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EroojaSharedBase.h; sourceTree = "<group>"; };
 		B0FE8F092432B8B800103A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -27,6 +31,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B02B71402432BF2100045F93 /* ESharedDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B02B71162432B9A700045F93 /* ESharedDataManager.swift */,
+			);
+			path = ESharedDataManager;
+			sourceTree = "<group>";
+		};
+		B02B71412432BF9800045F93 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				B02B71422432BFA800045F93 /* ActivityIndicatorView.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
 		B0FE8EFB2432B8B800103A54 = {
 			isa = PBXGroup;
 			children = (
@@ -46,6 +66,8 @@
 		B0FE8F072432B8B800103A54 /* EroojaSharedBase */ = {
 			isa = PBXGroup;
 			children = (
+				B02B71412432BF9800045F93 /* UI Components */,
+				B02B71402432BF2100045F93 /* ESharedDataManager */,
 				B0FE8F082432B8B800103A54 /* EroojaSharedBase.h */,
 				B0FE8F092432B8B800103A54 /* Info.plist */,
 			);
@@ -95,6 +117,7 @@
 				TargetAttributes = {
 					B0FE8F042432B8B800103A54 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -131,6 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02B71172432B9A700045F93 /* ESharedDataManager.swift in Sources */,
+				B02B71432432BFA800045F93 /* ActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +285,7 @@
 		B0FE8F0E2432B8B800103A54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M79H9K226Y;
@@ -278,6 +304,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -286,6 +313,7 @@
 		B0FE8F0F2432B8B800103A54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M79H9K226Y;

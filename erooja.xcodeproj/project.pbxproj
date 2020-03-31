@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		46A805F72F56F5C060778B16 /* Pods_erooja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */; };
+		B02B71192432BA5200045F93 /* EroojaSharedBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */; };
+		B02B711A2432BA5200045F93 /* EroojaSharedBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B02DFA22242F611E00B6DF89 /* EroojaUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD9E0242F60F1001CE297 /* EroojaUI.framework */; };
 		B02DFA23242F611E00B6DF89 /* EroojaUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD9E0242F60F1001CE297 /* EroojaUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462ACE242B8E5F00B51854 /* AppDelegate.swift */; };
@@ -104,6 +106,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B02B711A2432BA5200045F93 /* EroojaSharedBase.framework in Embed Frameworks */,
 				B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */,
 				B02DFA23242F611E00B6DF89 /* EroojaUI.framework in Embed Frameworks */,
 				B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */,
@@ -164,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02B71192432BA5200045F93 /* EroojaSharedBase.framework in Frameworks */,
 				B02DFA22242F611E00B6DF89 /* EroojaUI.framework in Frameworks */,
 				B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */,
 				B04FB43E242F757100003A8D /* KakaoOpenSDK.framework in Frameworks */,
