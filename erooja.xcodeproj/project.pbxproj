@@ -89,6 +89,13 @@
 			remoteGlobalIDString = B08AD9B0242F5FFD001CE297;
 			remoteInfo = EroojaUI;
 		};
+		B0C7855424332FAA004E88DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0C7855024332FAA004E88DF /* EroojaOnboading.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B0C7854524332FA2004E88DF;
+			remoteInfo = EroojaOnboading;
+		};
 		B0FE8EE42432B77600103A54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0462AC3242B8E5F00B51854 /* Project object */;
@@ -175,6 +182,7 @@
 		B0C7850524331371004E88DF /* erooja.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = erooja.entitlements; sourceTree = "<group>"; };
 		B0C785062433137C004E88DF /* EroojaDev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EroojaDev.entitlements; sourceTree = "<group>"; };
 		B0C78538243317F6004E88DF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		B0C7855024332FAA004E88DF /* EroojaOnboading.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaOnboading.xcodeproj; path = EroojaOnboading/EroojaOnboading.xcodeproj; sourceTree = "<group>"; };
 		B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevViewController.swift; sourceTree = "<group>"; };
 		B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevTableViewCell.swift; sourceTree = "<group>"; };
 		B0FE8E82243232A100103A54 /* EroojaDev.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EroojaDev.storyboard; sourceTree = "<group>"; };
@@ -265,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				B04FB43F242F769700003A8D /* KakaoOpenSDK-Bridging-Header.h */,
+				B0C7855024332FAA004E88DF /* EroojaOnboading.xcodeproj */,
 				B0FE8F102432B8D700103A54 /* EroojaSharedBase.xcodeproj */,
 				B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */,
 				B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */,
@@ -379,6 +388,14 @@
 				B0C785032433135B004E88DF /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		B0C7855124332FAA004E88DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0C7855524332FAA004E88DF /* EroojaOnboading.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B0FE8E7D2432326D00103A54 /* Dev */ = {
@@ -580,6 +597,10 @@
 					ProjectRef = B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */;
 				},
 				{
+					ProductGroup = B0C7855124332FAA004E88DF /* Products */;
+					ProjectRef = B0C7855024332FAA004E88DF /* EroojaOnboading.xcodeproj */;
+				},
+				{
 					ProductGroup = B0FE8F112432B8D700103A54 /* Products */;
 					ProjectRef = B0FE8F102432B8D700103A54 /* EroojaSharedBase.xcodeproj */;
 				},
@@ -618,6 +639,13 @@
 			fileType = wrapper.framework;
 			path = EroojaUI.framework;
 			remoteRef = B08AD9DF242F60F1001CE297 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0C7855524332FAA004E88DF /* EroojaOnboading.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EroojaOnboading.framework;
+			remoteRef = B0C7855424332FAA004E88DF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */ = {
