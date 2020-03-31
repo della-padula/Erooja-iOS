@@ -18,6 +18,12 @@ public class LoginViewController: UIViewController {
         super.viewDidLoad()
         if #available(iOS 13.0, *) {
             setupProviderLoginView()
+        } else {
+            let label = UILabel(frame: CGRect(x: self.loginProviderStackView.frame.minX, y: self.loginProviderStackView.frame.minY, width: self.loginProviderStackView.frame.width, height: self.loginProviderStackView.frame.height ))
+            label.numberOfLines = 2
+            label.textAlignment = .center
+            label.text = "iOS 13.0 이상부터 Apple 로그인 지원"
+            self.loginProviderStackView.addArrangedSubview(label)
         }
     }
     
