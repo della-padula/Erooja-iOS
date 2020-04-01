@@ -6,7 +6,8 @@
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
-import UIKit
+import EroojaUI
+import EroojaCommon
 
 public struct OnboardItem {
     let mainText: String
@@ -52,10 +53,11 @@ public class OnboardCollectionViewCell: UICollectionViewCell {
     private func setupLayout() {
         let cellHeight = UIScreen.main.bounds.height - bottomViewHeight
         let viewHeight = self.imageView.frame.height + self.lblMainText.frame.height + self.lblSubText.frame.height
-        print("collectionView Cell Height : \(cellHeight)")
-        print("cellHeight - viewHeight : \(cellHeight - viewHeight)")
-        print("topAnchor : \((cellHeight - viewHeight) * 114 / 192)")
-        print("bottomAnchor : \((cellHeight - viewHeight) * 78 / 192)")
+        
+        ELog.debug(message: "collectionView Cell Height : \(cellHeight)")
+        ELog.debug(message: "cellHeight - viewHeight : \(cellHeight - viewHeight)")
+        ELog.debug(message: "topAnchor : \((cellHeight - viewHeight) * 114 / 192)")
+        ELog.debug(message: "bottomAnchor : \((cellHeight - viewHeight) * 78 / 192)")
         
         let topAnchor = (cellHeight - viewHeight) * 114 / 192
         viewTopAnchor.constant = topAnchor

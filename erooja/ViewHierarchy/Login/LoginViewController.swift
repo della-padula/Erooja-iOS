@@ -7,9 +7,10 @@
 //
 
 import EroojaUI
+import EroojaCommon
 
 public class LoginViewController: UIViewController {
-
+    
     private var logoView = UIImageView(image: .mainLogo)
     private var loginButtons = [LoginButton]()
     
@@ -45,36 +46,37 @@ public class LoginViewController: UIViewController {
         guestButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
         guestButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
-//        loginButtons.append(naverButton)
-//        view.addSubview(naverButton)
-//        naverButton.socialType = .naver
-//        naverButton.setImage(.login_naver, for: .normal)
-//
-//        naverButton.translatesAutoresizingMaskIntoConstraints = false
-//        naverButton.heightAnchor.constraint(equalToConstant: loginButtonHeightConstraint).isActive = true
-//        naverButton.bottomAnchor.constraint(equalTo: self.guestButton.topAnchor).isActive = true
-//        naverButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
-//        naverButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//
-//        naverButton.imageView?.contentMode = .scaleAspectFit
-//        naverButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
-//        naverButton.imageView?.trailingAnchor.constraint(equalTo: naverButton.titleLabel!.leadingAnchor, constant: -10).isActive = true
-//        naverButton.imageView?.widthAnchor.constraint(equalTo: naverButton.imageView!.heightAnchor, multiplier: 1).isActive = true
-//        naverButton.imageView?.centerYAnchor.constraint(equalTo: naverButton.centerYAnchor).isActive = true
-//        naverButton.imageView?.heightAnchor.constraint(equalTo: naverButton.heightAnchor, multiplier: 0.4).isActive = true
-
+        //        loginButtons.append(naverButton)
+        //        view.addSubview(naverButton)
+        //        naverButton.socialType = .naver
+        //        naverButton.setImage(.login_naver, for: .normal)
+        //
+        //        naverButton.translatesAutoresizingMaskIntoConstraints = false
+        //        naverButton.heightAnchor.constraint(equalToConstant: loginButtonHeightConstraint).isActive = true
+        //        naverButton.bottomAnchor.constraint(equalTo: self.guestButton.topAnchor).isActive = true
+        //        naverButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+        //        naverButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        //
+        //        naverButton.imageView?.contentMode = .scaleAspectFit
+        //        naverButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        //        naverButton.imageView?.trailingAnchor.constraint(equalTo: naverButton.titleLabel!.leadingAnchor, constant: -10).isActive = true
+        //        naverButton.imageView?.widthAnchor.constraint(equalTo: naverButton.imageView!.heightAnchor, multiplier: 1).isActive = true
+        //        naverButton.imageView?.centerYAnchor.constraint(equalTo: naverButton.centerYAnchor).isActive = true
+        //        naverButton.imageView?.heightAnchor.constraint(equalTo: naverButton.heightAnchor, multiplier: 0.4).isActive = true
+        
         // KAKAO BUTTON
         
         loginButtons.append(kakaoButton)
         view.addSubview(kakaoButton)
         kakaoButton.socialType = .kakao
         kakaoButton.setImage(.login_kakao, for: .normal)
-
+        kakaoButton.addTarget(self, action: #selector(onClickKakaoLogin), for: .touchUpInside)
+        
         kakaoButton.translatesAutoresizingMaskIntoConstraints = false
         kakaoButton.heightAnchor.constraint(equalToConstant: loginButtonHeightConstraint).isActive = true
         
         // Naver Button 있을 때
-//        kakaoButton.bottomAnchor.constraint(equalTo: self.naverButton.topAnchor, constant: -1 * loginButtonVerticalSpacingContraint).isActive = true
+        //        kakaoButton.bottomAnchor.constraint(equalTo: self.naverButton.topAnchor, constant: -1 * loginButtonVerticalSpacingContraint).isActive = true
         
         // Naver Button 없을 때
         kakaoButton.bottomAnchor.constraint(equalTo: self.guestButton.topAnchor).isActive = true
@@ -121,5 +123,38 @@ public class LoginViewController: UIViewController {
         print(hasGuest)
         return (loginButtonHeightConstraint * CGFloat(loginButtons.count)) + loginButtonBottomAnchorConstraint + loginButtonVerticalSpacingContraint * CGFloat(loginButtons.count - 1) - (hasGuest ? loginButtonVerticalSpacingContraint : 0)
     }
-
+    
+    @objc
+    private func onClickKakaoLogin() {
+        guard let session = KOSession.shared() else {
+            return
+        }
+        
+        if session.isOpen() {
+            session.close()
+        }
+        
+        session.open { (error) in
+            if error != nil || !session.isOpen() { return }
+            KOSessionTask.accessTokenInfoTask(completionHandler: { (token, error) in
+                ELog.debug(message: "token        : \(String(describing: token.unsafelyUnwrapped))")
+                ELog.debug(message: "token(id)    : \(String(describing: token?.id))")
+                ELog.debug(message: "token(expire): \(String(describing: token?.expiresInMillis))")
+            })
+            
+            KOSessionTask.userMeTask(completion: { (error, user) in
+                ELog.debug(message: "email       : \(String(describing: user?.account?.email))")
+                ELog.debug(message: "birthday    : \(String(describing: user?.account?.birthday))")
+                ELog.debug(message: "birthYear   : \(String(describing: user?.account?.birthyear))")
+                ELog.debug(message: "phoneNumber : \(String(describing: user?.account?.phoneNumber))")
+                ELog.debug(message: "gender      : \(String(describing: user?.account?.gender.rawValue))")
+                ELog.debug(message: "nickname    : \(String(describing: user?.account?.profile?.nickname))")
+                
+                guard let user = user,
+                    let email = user.account?.email,
+                    let nickname = user.account?.profile?.nickname else { return }
+            })
+        }
+    }
+    
 }
