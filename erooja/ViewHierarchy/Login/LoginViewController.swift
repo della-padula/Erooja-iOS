@@ -27,6 +27,8 @@ public class LoginViewController: UIViewController {
     private let loginButtonHeightConstraint: CGFloat = 52
     private let logoViewHeightConstraint: CGFloat = 48
     
+    private var isInitialLoaded = false
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -34,7 +36,11 @@ public class LoginViewController: UIViewController {
     
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.setViewLayout()
+        
+        if !self.isInitialLoaded {
+            self.isInitialLoaded = true
+            self.setViewLayout()
+        }
     }
     
     private func setViewLayout() {
@@ -102,12 +108,13 @@ public class LoginViewController: UIViewController {
         
         print(view.frame.height)
         print(logoView.frame.height)
+        print(logoViewHeightConstraint)
         print(calcButtonHeight())
         print(logoViewAreaHeight)
         
         logoView.translatesAutoresizingMaskIntoConstraints = false
         logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        logoView.topAnchor.constraint(equalTo: view.topAnchor, constant: logoViewAreaHeight * 187 / 336).isActive = true
+        logoView.topAnchor.constraint(equalTo: view.topAnchor, constant: logoViewAreaHeight * (187 / 336)).isActive = true
         logoView.heightAnchor.constraint(equalToConstant: logoViewHeightConstraint).isActive = true
         logoView.widthAnchor.constraint(equalTo: logoView.heightAnchor, multiplier: 55/19).isActive = true
     }
@@ -120,8 +127,7 @@ public class LoginViewController: UIViewController {
                 break
             }
         }
-        print(loginButtons.count)
-        print(hasGuest)
+        
         return (loginButtonHeightConstraint * CGFloat(loginButtons.count)) + loginButtonBottomAnchorConstraint + loginButtonVerticalSpacingContraint * CGFloat(loginButtons.count - 1) - (hasGuest ? loginButtonVerticalSpacingContraint : 0)
     }
     

@@ -137,7 +137,7 @@ public class OnboardViewController: UIViewController {
     
     @objc
     private func onClickSkipButton() {
-        
+        LoginSwitcher.updateRootVC(type: .login)
     }
 }
 
