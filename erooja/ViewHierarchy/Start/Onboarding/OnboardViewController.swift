@@ -79,7 +79,7 @@ public class OnboardViewController: UIViewController {
         self.nextButton.setTitle("Next", for: .normal)
         self.nextButton.addTarget(self, action: #selector(onClickNextButton), for: .touchUpInside)
         self.nextButton.titleLabel?.font = .RobotoRegular15P
-        self.nextButton.setTitleColor(.EROOJAMAIN100, for: .normal)
+        self.nextButton.setTitleColor(EroojaColorSet.shared.orgDefault400s, for: .normal)
         
         self.nextButton.translatesAutoresizingMaskIntoConstraints = false
         self.bottomView.addSubview(nextButton)
@@ -92,7 +92,7 @@ public class OnboardViewController: UIViewController {
         self.skipButton.setTitle("Skip", for: .normal)
         self.skipButton.addTarget(self, action: #selector(onClickSkipButton), for: .touchUpInside)
         self.skipButton.titleLabel?.font = .RobotoRegular15P
-        self.skipButton.setTitleColor(.EROOJAGRAY75, for: .normal)
+        self.skipButton.setTitleColor(EroojaColorSet.shared.gray300s, for: .normal)
         
         self.skipButton.translatesAutoresizingMaskIntoConstraints = false
         self.bottomView.addSubview(skipButton)
@@ -102,14 +102,13 @@ public class OnboardViewController: UIViewController {
         self.skipButton.widthAnchor.constraint(equalTo: skipButton.heightAnchor, multiplier: 73/48).isActive = true
         
         // UIPageControl
-        //        self.pageControl.backgroundColor = .green
         self.pageControl.numberOfPages = 3
         self.pageControl.currentPage = currentPage
         self.pageControl.indicatorDiameter = 9
         self.pageControl.currentIndicatorDiameter = 9
         self.pageControl.spacing = 20
         self.pageControl.indicatorTintColor = UIColor(rgb: 0xD8D8D8)
-        self.pageControl.currentIndicatorTintColor = UIColor(rgb: 0xF3590F)
+        self.pageControl.currentIndicatorTintColor = EroojaColorSet.shared.orgDefault400s
         
         self.pageControl.translatesAutoresizingMaskIntoConstraints = false
         self.bottomView.addSubview(pageControl)
@@ -149,7 +148,6 @@ extension OnboardViewController: UICollectionViewDelegate, UICollectionViewDataS
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnboardCell", for: indexPath) as! OnboardCollectionViewCell
         cell.item = onboardItems[indexPath.row]
-        
         return cell
     }
     

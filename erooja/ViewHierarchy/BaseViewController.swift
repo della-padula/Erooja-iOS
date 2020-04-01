@@ -10,6 +10,7 @@ import Foundation
 import EroojaUI
 
 public class BaseViewController: UIViewController {
+    
     public func showAlertWithNoAction(title: String?, message: String?, completion: @escaping ((UIAlertAction) -> Void)) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "확인", style: .default, handler: { action in

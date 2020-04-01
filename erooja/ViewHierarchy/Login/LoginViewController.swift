@@ -136,13 +136,19 @@ public class LoginViewController: UIViewController {
         
         session.open { (error) in
             if error != nil || !session.isOpen() { return }
+            
+            ELog.debug(message: "Session.token.accessToken : \(session.token?.accessToken)")
+            ELog.debug(message: "Session.token.accessTokenExpiresAt : \(session.token?.accessTokenExpiresAt)")
+            
             KOSessionTask.accessTokenInfoTask(completionHandler: { (token, error) in
                 ELog.debug(message: "token        : \(String(describing: token.unsafelyUnwrapped))")
                 ELog.debug(message: "token(id)    : \(String(describing: token?.id))")
+                
                 ELog.debug(message: "token(expire): \(String(describing: token?.expiresInMillis))")
             })
             
             KOSessionTask.userMeTask(completion: { (error, user) in
+                ELog.debug(message: "id          : \(String(describing: user?.id))")
                 ELog.debug(message: "email       : \(String(describing: user?.account?.email))")
                 ELog.debug(message: "birthday    : \(String(describing: user?.account?.birthday))")
                 ELog.debug(message: "birthYear   : \(String(describing: user?.account?.birthyear))")

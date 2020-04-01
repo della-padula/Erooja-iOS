@@ -27,7 +27,6 @@
 		B03D4A702433A87F009180E9 /* OnboardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6C2433A2DC009180E9 /* OnboardCollectionViewCell.xib */; };
 		B03D4A9E24342167009180E9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A9D24342167009180E9 /* LoginViewController.swift */; };
 		B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462ACE242B8E5F00B51854 /* AppDelegate.swift */; };
-		B0462AD3242B8E5F00B51854 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD2242B8E5F00B51854 /* MainViewController.swift */; };
 		B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD7242B8E5F00B51854 /* erooja.xcdatamodeld */; };
 		B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0462ADA242B8E6100B51854 /* Assets.xcassets */; };
 		B0462ADE242B8E6100B51854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462ADC242B8E6100B51854 /* LaunchScreen.storyboard */; };
@@ -150,7 +149,6 @@
 		B03D4A9D24342167009180E9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B0462ACB242B8E5F00B51854 /* erooja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = erooja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0462ACE242B8E5F00B51854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0462AD2242B8E5F00B51854 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B0462AD8242B8E5F00B51854 /* erooja.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = erooja.xcdatamodel; sourceTree = "<group>"; };
 		B0462ADA242B8E6100B51854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0462ADD242B8E6100B51854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 				B0A8C55F243338FF002B2C83 /* Resources */,
 				B0A8C5542433340E002B2C83 /* Start */,
 				B0462B21242BA98D00B51854 /* EUINavigation */,
-				B0462AD2242B8E5F00B51854 /* MainViewController.swift */,
 				B03D4A3124333C9D009180E9 /* BaseViewController.swift */,
 			);
 			path = ViewHierarchy;
@@ -762,7 +759,6 @@
 				B0462B25242BA9CF00B51854 /* EUINavigationBar+Style.swift in Sources */,
 				B0A8C5562433341D002B2C83 /* StartViewController.swift in Sources */,
 				B03D4A3224333C9D009180E9 /* BaseViewController.swift in Sources */,
-				B0462AD3242B8E5F00B51854 /* MainViewController.swift in Sources */,
 				B03D4A4024339001009180E9 /* EroojaProperty.swift in Sources */,
 				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,
 				B0FE8ECE2432407E00103A54 /* OnboardViewController.swift in Sources */,
