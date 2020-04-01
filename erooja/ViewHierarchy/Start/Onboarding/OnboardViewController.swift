@@ -65,14 +65,14 @@ public class OnboardViewController: UIViewController {
     }
     
     private func setBottomToolSet() {
+       self.bottomView.backgroundColor = .clear
         self.bottomView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.bottomView)
-        
-        self.bottomView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10).isActive = true
+        self.bottomView.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        self.bottomView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         self.bottomView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         self.bottomView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         self.bottomView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        self.bottomView.heightAnchor.constraint(equalToConstant: 56).isActive = true
         
         // Next Button
         self.nextButton.setTitle("Next", for: .normal)

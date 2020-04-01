@@ -13,7 +13,7 @@ public extension UIColor {
     }
     
     class var EROOJAGRAY33: UIColor {
-        return UIColor(rgb: 0xD8D8D8)
+        return UIColor(rgb: 0x333333)
     }
     
     class var EROOJAGRAYD8: UIColor {

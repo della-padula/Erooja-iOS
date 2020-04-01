@@ -21,7 +21,9 @@ public class OnboardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblSubText: UILabel!
     
     @IBOutlet var lblMainTextHeight: NSLayoutConstraint!
-    @IBOutlet var lblSubTextHeight: NSLayoutConstraint!
+    @IBOutlet weak var viewTopAnchor: NSLayoutConstraint!
+    
+    public var bottomViewHeight: CGFloat = 56
     
     public var item: OnboardItem? {
         didSet {
@@ -40,6 +42,25 @@ public class OnboardCollectionViewCell: UICollectionViewCell {
         
         self.lblMainText.font = .AppleSDBold20P
         self.lblSubText.font = .AppleSDSemiBold15P
+        
+        self.lblMainText.textColor = .EROOJAGRAY33
+        self.lblSubText.textColor = .EROOJAGRAY75
+        
+        self.setupLayout()
+    }
+    
+    private func setupLayout() {
+        let cellHeight = UIScreen.main.bounds.height - bottomViewHeight
+        let viewHeight = self.imageView.frame.height + self.lblMainText.frame.height + self.lblSubText.frame.height
+        print("collectionView Cell Height : \(cellHeight)")
+        print("cellHeight - viewHeight : \(cellHeight - viewHeight)")
+        print("topAnchor : \((cellHeight - viewHeight) * 114 / 192)")
+        print("bottomAnchor : \((cellHeight - viewHeight) * 78 / 192)")
+        
+        let topAnchor = (cellHeight - viewHeight) * 114 / 192
+        viewTopAnchor.constant = topAnchor
+        
+        // 114 : 78
     }
 
 }
