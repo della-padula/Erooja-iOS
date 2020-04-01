@@ -8,6 +8,7 @@
 
 import Foundation
 import EroojaUI
+import UIKit
 
 public class OnboardViewController: UIViewController {
     private var onboardItems = [
@@ -107,7 +108,7 @@ public class OnboardViewController: UIViewController {
         self.pageControl.indicatorDiameter = 9
         self.pageControl.currentIndicatorDiameter = 9
         self.pageControl.spacing = 20
-        self.pageControl.indicatorTintColor = UIColor(rgb: 0xD8D8D8)
+        self.pageControl.indicatorTintColor = EroojaColorSet.shared.gray400s
         self.pageControl.currentIndicatorTintColor = EroojaColorSet.shared.orgDefault400s
         
         self.pageControl.translatesAutoresizingMaskIntoConstraints = false

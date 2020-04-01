@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import EroojaUI
+import EroojaCommon
+import EroojaNetwork
+import EroojaSharedBase
 
 class EroojaDevViewController: UIViewController {
     
@@ -16,6 +20,7 @@ class EroojaDevViewController: UIViewController {
         case onboard      = "온보딩"
         case kakaoLogin   = "카카오 로그인 API"
         case login        = "서비스 로그인"
+        case signup       = "회원가입"
         case mypage       = "마이페이지"
         case nowGoal      = "진행중 목표"
         case modifyToDO   = "진행중 목표 - 할 일 수정학기"
@@ -52,6 +57,9 @@ extension EroojaDevViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let type = types[indexPath.row]
         switch type {
+        case .signup:
+            let vc = SignUpViewController()
+            present(vc, animated: true, completion: nil)
         case .onboard:
             let vc = UIStoryboard.onboardViewController()!
             present(vc, animated: true, completion: nil)

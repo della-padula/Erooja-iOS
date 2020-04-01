@@ -6,6 +6,7 @@
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
+import UIKit
 import EroojaUI
 import EroojaCommon
 
@@ -160,6 +161,10 @@ public class LoginViewController: UIViewController {
                     let email = user.account?.email,
                     let nickname = user.account?.profile?.nickname else { return }
             })
+            
+            let signUpVC = SignUpViewController()
+            signUpVC.modalPresentationStyle = .fullScreen
+            self.present(signUpVC, animated: true, completion: nil)
         }
     }
     
