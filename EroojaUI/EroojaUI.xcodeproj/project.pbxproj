@@ -21,6 +21,7 @@
 		B08AD9CF242F604D001CE297 /* UIColor+ContrastingColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9C9242F604D001CE297 /* UIColor+ContrastingColor.swift */; };
 		B08AD9D0242F604D001CE297 /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9CA242F604D001CE297 /* UIImage+Crop.swift */; };
 		B08AD9D1242F604D001CE297 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9CB242F604D001CE297 /* UIView+Frame.swift */; };
+		B0C030232434FE26008771BB /* UIView+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C030222434FE26008771BB /* UIView+CALayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B08AD9C9242F604D001CE297 /* UIColor+ContrastingColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ContrastingColor.swift"; sourceTree = "<group>"; };
 		B08AD9CA242F604D001CE297 /* UIImage+Crop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Crop.swift"; sourceTree = "<group>"; };
 		B08AD9CB242F604D001CE297 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
+		B0C030222434FE26008771BB /* UIView+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CALayer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				B08AD9CB242F604D001CE297 /* UIView+Frame.swift */,
 				B08AD9C4242F602C001CE297 /* UIView+Resize.swift */,
+				B0C030222434FE26008771BB /* UIView+CALayer.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				B08AD9CC242F604D001CE297 /* UIImage+Initialize.swift in Sources */,
 				B03D4A6024339C9C009180E9 /* UIFont+EroojaFont.swift in Sources */,
 				B03D4A722433AC9E009180E9 /* UILabel+LineSpacing.swift in Sources */,
+				B0C030232434FE26008771BB /* UIView+CALayer.swift in Sources */,
 				B08AD9CE242F604D001CE297 /* UIImage+Resize.swift in Sources */,
 				B03D4AA1243421B0009180E9 /* LoginButton.swift in Sources */,
 				B08AD9CD242F604D001CE297 /* UIImage+Average.swift in Sources */,
