@@ -12,6 +12,18 @@ public extension UIColor {
         return UIColor(rgb: 0xF3590F)
     }
     
+    class var EROOJANAVER100: UIColor {
+        return UIColor(rgb: 0x1EC800)
+    }
+    
+    class var EROOJAKAKAO100: UIColor {
+        return UIColor(rgb: 0x3C1E1E)
+    }
+    
+    class var EROOJAKAKAOYELLOW100: UIColor {
+        return UIColor(rgb: 0xF7E317)
+    }
+    
     class var EROOJAGRAY33: UIColor {
         return UIColor(rgb: 0x333333)
     }

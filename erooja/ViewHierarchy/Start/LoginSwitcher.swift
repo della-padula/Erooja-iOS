@@ -24,9 +24,10 @@ public class LoginSwitcher {
         case .main:
             break
         case .login:
-            break
+            rootVC = LoginViewController()
+            appDelegate.window?.rootViewController = rootVC
         case .onboarding:
-            rootVC = UIStoryboard(name: "Start", bundle: nil).instantiateViewController(withIdentifier: "OnboardViewController") as! OnboardViewController
+            rootVC = OnboardViewController()
             appDelegate.window?.rootViewController = rootVC
         }
         
