@@ -52,7 +52,7 @@ public class SignUpViewCell: UICollectionViewCell {
         
         self.lblTitle.translatesAutoresizingMaskIntoConstraints = false
         self.lblTitle.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        self.lblTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 44).isActive = true
+        self.lblTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 88).isActive = true
         self.lblTitle.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
         self.lblTitle.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
     }

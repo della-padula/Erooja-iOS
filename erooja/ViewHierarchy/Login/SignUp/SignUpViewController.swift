@@ -39,7 +39,7 @@ public class SignUpViewController: BaseViewController {
         layout.itemSize = CGSize(width: view.frame.width, height: view.frame.height - 44 - 44)
         
         self.collectionPageView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
-//        self.collectionPageView?.backgroundColor = .lightGray
+        self.collectionPageView?.backgroundColor = .clear
         self.collectionPageView?.isPagingEnabled = true
         self.collectionPageView?.isScrollEnabled = false
         self.collectionPageView?.register(SignUpViewCell.self, forCellWithReuseIdentifier: "SignUpViewCell")
