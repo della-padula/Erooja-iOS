@@ -22,6 +22,7 @@
 		B08AD9D0242F604D001CE297 /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9CA242F604D001CE297 /* UIImage+Crop.swift */; };
 		B08AD9D1242F604D001CE297 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9CB242F604D001CE297 /* UIView+Frame.swift */; };
 		B0C030232434FE26008771BB /* UIView+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C030222434FE26008771BB /* UIView+CALayer.swift */; };
+		B0C03025243556EF008771BB /* EroojaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C03024243556EF008771BB /* EroojaTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		B08AD9CA242F604D001CE297 /* UIImage+Crop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Crop.swift"; sourceTree = "<group>"; };
 		B08AD9CB242F604D001CE297 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		B0C030222434FE26008771BB /* UIView+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CALayer.swift"; sourceTree = "<group>"; };
+		B0C03024243556EF008771BB /* EroojaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				B08AD9B4242F5FFD001CE297 /* Info.plist */,
 				B03D4A5A24339923009180E9 /* EPageControl.swift */,
 				B03D4A712433AC9E009180E9 /* UILabel+LineSpacing.swift */,
+				B0C03024243556EF008771BB /* EroojaTextField.swift */,
 			);
 			path = EroojaUI;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				B08AD9D1242F604D001CE297 /* UIView+Frame.swift in Sources */,
 				B08AD9CC242F604D001CE297 /* UIImage+Initialize.swift in Sources */,
 				B03D4A6024339C9C009180E9 /* UIFont+EroojaFont.swift in Sources */,
+				B0C03025243556EF008771BB /* EroojaTextField.swift in Sources */,
 				B03D4A722433AC9E009180E9 /* UILabel+LineSpacing.swift in Sources */,
 				B0C030232434FE26008771BB /* UIView+CALayer.swift in Sources */,
 				B08AD9CE242F604D001CE297 /* UIImage+Resize.swift in Sources */,

@@ -63,16 +63,21 @@ public class SignUpViewCell: UICollectionViewCell {
         if viewType == .nickname {
             let fieldView = UIView()
             let bottomBorderView = UIView()
-            let textFieldView = UITextField()
+            let textFieldView = EroojaTextField()
             let checkBadgeView = UIImageView()
             
             checkBadgeView.image = UIImage(named: "signup_check")
+            checkBadgeView.isHidden = true
             
             fieldView.backgroundColor = .clear
             
             textFieldView.backgroundColor = .clear
             textFieldView.textAlignment = .center
             textFieldView.placeholder = "5자 이내 입력"
+            textFieldView.debounce(delay: 0.3) { (text) in
+                ELog.debug(message: "Debounce Text : \(text ?? "nil"), Length : \(text?.count ?? 0)")
+                checkBadgeView.isHidden = (text ?? "").isEmpty
+            }
             textFieldView.font = .AppleSDBold15P
             textFieldView.textColor = EroojaColorSet.shared.gray100s
             

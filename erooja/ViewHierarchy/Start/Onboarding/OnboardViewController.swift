@@ -8,6 +8,7 @@
 
 import Foundation
 import EroojaUI
+import EroojaCommon
 import UIKit
 
 public class OnboardViewController: UIViewController {
@@ -25,6 +26,7 @@ public class OnboardViewController: UIViewController {
     private var nextButton  = UIButton()
     
     private var currentPage = 0
+    private var prevPage = 0
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,7 @@ public class OnboardViewController: UIViewController {
         
         self.collectionView!.register(UINib(nibName: "OnboardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "OnboardCell")
         self.collectionView!.isScrollEnabled = false
+//        self.collectionView?.isPagingEnabled = true
         
         self.collectionView!.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView!)
@@ -126,7 +129,7 @@ public class OnboardViewController: UIViewController {
         if self.currentPage > 2 {
             LoginSwitcher.updateRootVC(type: .login)
         } else {
-            self.pageControl.currentPage = self.currentPage
+//            self.pageControl.currentPage = self.currentPage
             
             self.collectionView!.collectionViewLayout.invalidateLayout()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -141,7 +144,7 @@ public class OnboardViewController: UIViewController {
     }
 }
 
-extension OnboardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension OnboardViewController: UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return onboardItems.count
     }
@@ -152,5 +155,23 @@ extension OnboardViewController: UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
     
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        ELog.debug(message: "(Will Display) Current Page : \(indexPath.row)")
+    }
     
+    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        ELog.debug(message: "(Did End Display) Current Page : \(self.currentPage)")
+        self.pageControl.currentPage = self.currentPage
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let x = scrollView.contentOffset.x
+        let w = scrollView.bounds.size.width
+        let currentPage = Int(ceil(x / w))
+        
+        self.currentPage = currentPage
+        ELog.debug(message: "Current END page : \(currentPage)")
+        
+        self.pageControl.currentPage = self.currentPage
+    }
 }
