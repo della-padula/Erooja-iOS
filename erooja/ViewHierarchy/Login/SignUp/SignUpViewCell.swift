@@ -19,6 +19,8 @@ public class SignUpViewCell: UICollectionViewCell {
     
     private let lblTitle = UILabel()
     
+    public var delegate: SignUpCellDelegate?
+    
     public var viewModel: SignUpViewModel? {
         didSet {
             self.title = viewModel?.title
@@ -64,6 +66,8 @@ public class SignUpViewCell: UICollectionViewCell {
             let textFieldView = UITextField()
             let checkBadgeView = UIImageView()
             
+            checkBadgeView.image = UIImage(named: "signup_check")
+            
             fieldView.backgroundColor = .clear
             
             textFieldView.backgroundColor = .clear
@@ -89,6 +93,11 @@ public class SignUpViewCell: UICollectionViewCell {
             textFieldView.bottomAnchor.constraint(equalTo: fieldView.bottomAnchor).isActive = true
             textFieldView.leadingAnchor.constraint(equalTo: fieldView.leadingAnchor).isActive = true
             textFieldView.trailingAnchor.constraint(equalTo: fieldView.trailingAnchor).isActive = true
+            
+            checkBadgeView.topAnchor.constraint(equalTo: fieldView.topAnchor).isActive = true
+            checkBadgeView.bottomAnchor.constraint(equalTo: fieldView.bottomAnchor).isActive = true
+            checkBadgeView.widthAnchor.constraint(equalTo: checkBadgeView.heightAnchor).isActive = true
+            checkBadgeView.trailingAnchor.constraint(equalTo: fieldView.trailingAnchor).isActive = true
             
             bottomBorderView.backgroundColor = EroojaColorSet.shared.orgDefault400s
             self.addSubview(bottomBorderView)

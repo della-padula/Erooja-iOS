@@ -11,6 +11,10 @@ import EroojaCommon
 import EroojaUI
 import UIKit
 
+public protocol SignUpCellDelegate {
+    func nicknameValidation(isButtonActive: Bool, nickname: String?)
+}
+
 public class SignUpViewController: BaseViewController {
     private var collectionPageView: UICollectionView?
     private var navigationView = UIView()
@@ -77,9 +81,12 @@ public class SignUpViewController: BaseViewController {
     }
     
     private func setViewLayout() {
-        bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
+        //gray500s
+        //gray300s
         bottomButton.setTitle("다음", for: .normal)
-        bottomButton.titleLabel?.font = .AppleSDRegular14P
+        bottomButton.titleLabel?.font = .AppleSDSemiBold15P
+        
+        bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
         bottomButton.setTitleColor(EroojaColorSet.shared.whiteBg000s, for: .normal)
         
         view.addSubview(bottomButton)
@@ -99,7 +106,20 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SignUpViewCell", for: indexPath) as! SignUpViewCell
         cell.viewModel = viewModels[indexPath.row]
+        cell.delegate = self
         return cell
     }
     
+}
+
+extension SignUpViewController: SignUpCellDelegate {
+    public func nicknameValidation(isButtonActive: Bool, nickname: String?) {
+        if isButtonActive {
+            bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
+            bottomButton.setTitleColor(EroojaColorSet.shared.whiteBg000s, for: .normal)
+        } else {
+            bottomButton.backgroundColor = EroojaColorSet.shared.gray500s
+            bottomButton.setTitleColor(EroojaColorSet.shared.gray300s, for: .normal)
+        }
+    }
 }
