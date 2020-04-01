@@ -9,20 +9,28 @@
 import Foundation
 import UIKit
 
-extension UIImage {
-    public class var mainLogo: UIImage {
+public extension UIImage {
+    class var mainLogo: UIImage {
         return UIImage(named: "main_logo")!
     }
     
-    public class var onboard_1: UIImage {
+    class var onboard_1: UIImage {
         return UIImage(named: "onboard_1")!
     }
     
-    public class var onboard_2: UIImage {
+    class var onboard_2: UIImage {
         return UIImage(named: "onboard_2")!
     }
     
-    public class var onboard_3: UIImage {
+    class var onboard_3: UIImage {
         return UIImage(named: "onboard_3")!
+    }
+    
+    class var login_naver: UIImage {
+        return UIImage(named: "login_naver")!
+    }
+    
+    class var login_kakao: UIImage {
+        return UIImage(named: "login_kakao")!
     }
 }

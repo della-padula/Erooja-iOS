@@ -27,6 +27,7 @@ public class OnboardViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
     }
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -123,7 +124,7 @@ public class OnboardViewController: UIViewController {
     private func onClickNextButton() {
         self.currentPage += 1
         if self.currentPage > 2 {
-            print("Login")
+            LoginSwitcher.updateRootVC(type: .login)
         } else {
             self.pageControl.currentPage = self.currentPage
             

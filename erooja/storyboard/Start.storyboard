@@ -23,20 +23,5 @@
             </objects>
             <point key="canvasLocation" x="-842" y="134"/>
         </scene>
-        <!--Onboard View Controller-->
-        <scene sceneID="CLz-M3-pk7">
-            <objects>
-                <viewController storyboardIdentifier="OnboardViewController" id="fFD-lR-GAc" customClass="OnboardViewController" customModule="EroojaDev" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ab1-jb-tBT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Dzy-YM-McY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4xU-gm-1hR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="56.521739130434788" y="133.92857142857142"/>
-        </scene>
     </scenes>
 </document>
