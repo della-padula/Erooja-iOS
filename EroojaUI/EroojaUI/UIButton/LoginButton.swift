@@ -8,6 +8,12 @@
 
 import UIKit
 
+public enum ButtonState {
+    case active
+    case inActive
+}
+
+
 public class LoginButton: UIButton {
     public enum SocialType {
         case apple

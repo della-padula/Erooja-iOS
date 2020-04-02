@@ -12,7 +12,7 @@ import EroojaUI
 import UIKit
 
 public protocol SignUpCellDelegate {
-    func nicknameValidation(isButtonActive: Bool, nickname: String?)
+    func nicknameValidation(isValid: Bool)
 }
 
 public class SignUpViewController: BaseViewController {
@@ -20,6 +20,8 @@ public class SignUpViewController: BaseViewController {
     private var navigationView = UIView()
     private var backButton = UIButton()
     private var bottomButton = UIButton()
+    
+    private var currentPage : Int = 0
     
     private let viewModels: [SignUpViewModel] = [SignUpViewModel(title: "닉네임을 입력하세요.", type: .nickname), SignUpViewModel(title: "관심있는 직군을 골라주세요.", type: .field), SignUpViewModel(title: "직무도 함께 골라주세요.", type: .field)]
     
@@ -71,6 +73,8 @@ public class SignUpViewController: BaseViewController {
         
         self.backButton.setImage(UIImage(named: "back_button"), for: .normal)
         self.backButton.backgroundColor = .white
+        self.backButton.isHidden = true
+        self.backButton.addTarget(self, action: #selector(onClickPrev), for: .touchUpInside)
         self.navigationView.addSubview(self.backButton)
         
         self.backButton.translatesAutoresizingMaskIntoConstraints = false
@@ -81,13 +85,12 @@ public class SignUpViewController: BaseViewController {
     }
     
     private func setViewLayout() {
-        //gray500s
-        //gray300s
         bottomButton.setTitle("다음", for: .normal)
         bottomButton.titleLabel?.font = .AppleSDSemiBold15P
         
         bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
         bottomButton.setTitleColor(EroojaColorSet.shared.whiteBg000s, for: .normal)
+        bottomButton.addTarget(self, action: #selector(onClickNext), for: .touchUpInside)
         
         view.addSubview(bottomButton)
         bottomButton.translatesAutoresizingMaskIntoConstraints = false
@@ -95,6 +98,34 @@ public class SignUpViewController: BaseViewController {
         bottomButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         bottomButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         bottomButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+    }
+    
+    @objc
+    public func onClickNext() {
+        currentPage += 1
+        backButton.isHidden = false
+        
+        if currentPage > (viewModels.count - 1) {
+            currentPage -= 1
+            ELog.debug(message: "화면 전환이 이루어집니다.")
+        } else {
+            self.collectionPageView?.scrollToItem(at: IndexPath(row: currentPage, section: 0), at: .centeredHorizontally, animated: false)
+        }
+    }
+    
+    @objc
+    public func onClickPrev() {
+        currentPage -= 1
+        if currentPage < 0 {
+            currentPage += 1
+        } else {
+            backButton.isHidden = (currentPage == 0)
+            self.collectionPageView?.scrollToItem(at: IndexPath(row: currentPage, section: 0), at: .centeredHorizontally, animated: false)
+        }
+    }
+    
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
@@ -113,13 +144,20 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
 }
 
 extension SignUpViewController: SignUpCellDelegate {
-    public func nicknameValidation(isButtonActive: Bool, nickname: String?) {
-        if isButtonActive {
+    public func nicknameValidation(isValid: Bool) {
+        self.setButtonStyle(forState: isValid ? .active : .inActive)
+    }
+    
+    private func setButtonStyle(forState: ButtonState) {
+        switch forState {
+        case .active:
             bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
             bottomButton.setTitleColor(EroojaColorSet.shared.whiteBg000s, for: .normal)
-        } else {
+            bottomButton.isEnabled = true
+        case .inActive:
             bottomButton.backgroundColor = EroojaColorSet.shared.gray500s
             bottomButton.setTitleColor(EroojaColorSet.shared.gray300s, for: .normal)
+            bottomButton.isEnabled = false
         }
     }
 }

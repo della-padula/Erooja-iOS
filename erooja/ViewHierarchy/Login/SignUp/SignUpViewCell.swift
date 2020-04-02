@@ -76,7 +76,9 @@ public class SignUpViewCell: UICollectionViewCell {
             textFieldView.placeholder = "5자 이내 입력"
             textFieldView.debounce(delay: 0.3) { (text) in
                 ELog.debug(message: "Debounce Text : \(text ?? "nil"), Length : \(text?.count ?? 0)")
-                checkBadgeView.isHidden = (text ?? "").isEmpty
+                let isValid = !(text ?? "").isEmpty
+                checkBadgeView.isHidden = !isValid
+                self.delegate?.nicknameValidation(isValid: isValid)
             }
             textFieldView.font = .AppleSDBold15P
             textFieldView.textColor = EroojaColorSet.shared.gray100s
@@ -117,5 +119,9 @@ public class SignUpViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
     }
 }

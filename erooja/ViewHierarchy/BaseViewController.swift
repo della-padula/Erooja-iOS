@@ -11,11 +11,6 @@ import EroojaUI
 import UIKit
 
 public class BaseViewController: UIViewController {
-    
-    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
     public func showAlertWithNoAction(title: String?, message: String?, completion: @escaping ((UIAlertAction) -> Void)) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "확인", style: .default, handler: { action in

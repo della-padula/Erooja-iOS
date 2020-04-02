@@ -26,7 +26,6 @@ public class OnboardViewController: UIViewController {
     private var nextButton  = UIButton()
     
     private var currentPage = 0
-    private var prevPage = 0
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -155,10 +154,6 @@ extension OnboardViewController: UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
     
-    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        ELog.debug(message: "(Will Display) Current Page : \(indexPath.row)")
-    }
-    
     public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         ELog.debug(message: "(Did End Display) Current Page : \(self.currentPage)")
         self.pageControl.currentPage = self.currentPage
@@ -170,8 +165,6 @@ extension OnboardViewController: UICollectionViewDelegate, UICollectionViewDataS
         let currentPage = Int(ceil(x / w))
         
         self.currentPage = currentPage
-        ELog.debug(message: "Current END page : \(currentPage)")
-        
         self.pageControl.currentPage = self.currentPage
     }
 }
