@@ -33,4 +33,20 @@ public extension UIImage {
     class var login_kakao: UIImage {
         return UIImage(named: "login_kakao")!
     }
+    
+    class var signup_field_dev_off: UIImage {
+        return UIImage(named: "signup_field_dev_off")!
+    }
+    
+    class var signup_field_dev_on: UIImage {
+        return UIImage(named: "signup_field_dev_on")!
+    }
+    
+    class var signup_field_design_off: UIImage {
+        return UIImage(named: "signup_field_design_off")!
+    }
+    
+    class var signup_field_design_on: UIImage {
+        return UIImage(named: "signup_field_design_on")!
+    }
 }

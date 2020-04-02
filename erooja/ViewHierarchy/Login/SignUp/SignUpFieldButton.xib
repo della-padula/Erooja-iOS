@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpFieldButton" customModule="EroojaDev" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="bum-Ao-hf4" id="raB-vw-AkJ"/>
+                <outlet property="nameLabel" destination="JI3-rJ-jV5" id="e8c-wi-LRv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="264" height="536"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISA-LF-GlS">
+                    <rect key="frame" x="0.0" y="134" width="264" height="312"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발 직군" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JI3-rJ-jV5">
+                            <rect key="frame" x="0.0" y="288" width="264" height="24"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signup_field_design_off" translatesAutoresizingMaskIntoConstraints="NO" id="bum-Ao-hf4">
+                            <rect key="frame" x="0.0" y="0.0" width="264" height="264"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="bum-Ao-hf4" secondAttribute="height" multiplier="1:1" id="uxh-JX-aBr"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMs-Df-Ftw">
+                            <rect key="frame" x="0.0" y="0.0" width="264" height="312"/>
+                            <connections>
+                                <action selector="onClickField:" destination="-1" eventType="touchUpInside" id="DMc-yk-D9i"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="dMs-Df-Ftw" secondAttribute="trailing" id="Hx0-xK-chg"/>
+                        <constraint firstItem="JI3-rJ-jV5" firstAttribute="top" secondItem="bum-Ao-hf4" secondAttribute="bottom" constant="24" id="Jff-FS-GCB"/>
+                        <constraint firstItem="bum-Ao-hf4" firstAttribute="width" secondItem="ISA-LF-GlS" secondAttribute="width" id="Jie-SJ-u8M"/>
+                        <constraint firstItem="bum-Ao-hf4" firstAttribute="top" secondItem="ISA-LF-GlS" secondAttribute="top" id="RUE-WL-4oD"/>
+                        <constraint firstItem="JI3-rJ-jV5" firstAttribute="centerX" secondItem="ISA-LF-GlS" secondAttribute="centerX" id="S8p-Yo-FFd"/>
+                        <constraint firstItem="dMs-Df-Ftw" firstAttribute="leading" secondItem="ISA-LF-GlS" secondAttribute="leading" id="SD5-n2-LdS"/>
+                        <constraint firstAttribute="bottom" secondItem="JI3-rJ-jV5" secondAttribute="bottom" id="V32-xJ-Bhr"/>
+                        <constraint firstItem="JI3-rJ-jV5" firstAttribute="leading" secondItem="ISA-LF-GlS" secondAttribute="leading" id="etI-87-ALA"/>
+                        <constraint firstItem="bum-Ao-hf4" firstAttribute="centerX" secondItem="ISA-LF-GlS" secondAttribute="centerX" id="sre-aH-aN4"/>
+                        <constraint firstAttribute="bottom" secondItem="dMs-Df-Ftw" secondAttribute="bottom" id="w8F-jM-Q6m"/>
+                        <constraint firstItem="dMs-Df-Ftw" firstAttribute="top" secondItem="ISA-LF-GlS" secondAttribute="top" id="x9s-tD-Kd6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ISA-LF-GlS" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="4D2-Eo-T86"/>
+                <constraint firstItem="ISA-LF-GlS" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="PSB-fB-qGg"/>
+                <constraint firstItem="ISA-LF-GlS" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="STJ-hS-sZ2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="517.39130434782612" y="1.3392857142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="signup_field_design_off" width="210" height="210"/>
+    </resources>
+</document>

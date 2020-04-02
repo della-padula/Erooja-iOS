@@ -64,6 +64,10 @@
 		B0C030182434F266008771BB /* SignUpViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C030162434F266008771BB /* SignUpViewCell.swift */; };
 		B0C030202434F7EB008771BB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0301F2434F7EB008771BB /* SignUpViewModel.swift */; };
 		B0C030212434F7EB008771BB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0301F2434F7EB008771BB /* SignUpViewModel.swift */; };
+		B0C0302724356AC1008771BB /* SignUpFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0302624356AC1008771BB /* SignUpFieldButton.swift */; };
+		B0C0302824356AC1008771BB /* SignUpFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0302624356AC1008771BB /* SignUpFieldButton.swift */; };
+		B0C0302A24356AD2008771BB /* SignUpFieldButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C0302924356AD2008771BB /* SignUpFieldButton.xib */; };
+		B0C0302B24356AD2008771BB /* SignUpFieldButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C0302924356AD2008771BB /* SignUpFieldButton.xib */; };
 		B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; };
 		B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0FE8E7F2432328400103A54 /* EroojaDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */; };
@@ -209,6 +213,8 @@
 		B0C030012434E247008771BB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B0C030162434F266008771BB /* SignUpViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewCell.swift; sourceTree = "<group>"; };
 		B0C0301F2434F7EB008771BB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		B0C0302624356AC1008771BB /* SignUpFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFieldButton.swift; sourceTree = "<group>"; };
+		B0C0302924356AD2008771BB /* SignUpFieldButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpFieldButton.xib; sourceTree = "<group>"; };
 		B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevViewController.swift; sourceTree = "<group>"; };
 		B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevTableViewCell.swift; sourceTree = "<group>"; };
 		B0FE8E82243232A100103A54 /* EroojaDev.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EroojaDev.storyboard; sourceTree = "<group>"; };
@@ -441,6 +447,8 @@
 				B0C030162434F266008771BB /* SignUpViewCell.swift */,
 				B0C030012434E247008771BB /* SignUpViewController.swift */,
 				B0C0301F2434F7EB008771BB /* SignUpViewModel.swift */,
+				B0C0302624356AC1008771BB /* SignUpFieldButton.swift */,
+				B0C0302924356AD2008771BB /* SignUpFieldButton.xib */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -705,6 +713,7 @@
 				B03D4A6A24339ECF009180E9 /* Roboto-Regular.otf in Resources */,
 				B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */,
 				B0FE8ECC2432404F00103A54 /* Start.storyboard in Resources */,
+				B0C0302A24356AD2008771BB /* SignUpFieldButton.xib in Resources */,
 				B0FE8EC124323DEE00103A54 /* EroojaDev.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,6 +722,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C0302B24356AD2008771BB /* SignUpFieldButton.xib in Resources */,
 				B0FE8EC024323DE900103A54 /* EroojaDev.storyboard in Resources */,
 				B0A8C5672433395F002B2C83 /* Image.xcassets in Resources */,
 				B03D4A702433A87F009180E9 /* OnboardCollectionViewCell.xib in Resources */,
@@ -810,6 +820,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C0302724356AC1008771BB /* SignUpFieldButton.swift in Sources */,
 				B03D4A9E24342167009180E9 /* LoginViewController.swift in Sources */,
 				B0FE8E7F2432328400103A54 /* EroojaDevViewController.swift in Sources */,
 				B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */,
@@ -848,6 +859,7 @@
 				B0FE8EC224323DEE00103A54 /* EroojaDevViewController.swift in Sources */,
 				B0C030032434E247008771BB /* SignUpViewController.swift in Sources */,
 				B0C030212434F7EB008771BB /* SignUpViewModel.swift in Sources */,
+				B0C0302824356AC1008771BB /* SignUpFieldButton.swift in Sources */,
 				B03D4A3A24338DE3009180E9 /* LoginSwitcher.swift in Sources */,
 				B03D4A4124339001009180E9 /* EroojaProperty.swift in Sources */,
 				B03D4A3324333C9D009180E9 /* BaseViewController.swift in Sources */,
