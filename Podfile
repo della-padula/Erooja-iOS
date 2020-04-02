@@ -14,6 +14,8 @@ target 'erooja' do
 end
 
 target 'EroojaDev' do
+  use_frameworks!
+
   pod 'Alamofire'
   pod 'SwiftLint'
 end

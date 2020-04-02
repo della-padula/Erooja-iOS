@@ -23,7 +23,7 @@ public class SignUpViewController: BaseViewController {
     
     private var currentPage : Int = 0
     
-    private let viewModels: [SignUpViewModel] = [SignUpViewModel(title: "닉네임을 입력하세요.", type: .nickname), SignUpViewModel(title: "관심있는 직군을 골라주세요.", type: .field), SignUpViewModel(title: "직무도 함께 골라주세요.", type: .field)]
+    private let viewModels: [SignUpViewModel] = [SignUpViewModel(title: "닉네임을 입력하세요.", type: .nickname), SignUpViewModel(title: "관심있는 직군을 골라주세요.", type: .field), SignUpViewModel(title: "직무도 함께 골라주세요.", subTitle: "직무는 추후에 변경 가능합니다.", type: .detail)]
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +53,6 @@ public class SignUpViewController: BaseViewController {
         view.addSubview(self.collectionPageView!)
         self.collectionPageView!.translatesAutoresizingMaskIntoConstraints = false
         self.collectionPageView!.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 88).isActive = true
-//        if #available(iOS 13.0, *) {
-//            self.collectionPageView!.topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.navigationView.height).isActive = true
-//        } else {
-//            self.collectionPageView!.topAnchor.constraint(equalTo: self.navigationView.bottomAnchor).isActive = true
-//        }
         self.collectionPageView!.bottomAnchor.constraint(equalTo: self.bottomButton.topAnchor).isActive = true
         self.collectionPageView!.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         self.collectionPageView!.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true

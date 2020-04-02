@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import EroojaUI
 import EroojaCommon
 
@@ -23,6 +24,7 @@ public class SignUpViewCell: UICollectionViewCell {
     }
     
     private let lblTitle = UILabel()
+    private let lblSubTitle = UILabel()
     
     private let fieldView = UIView()
     private let fieldDevelopmentView   = SignUpFieldButton()
@@ -47,6 +49,7 @@ public class SignUpViewCell: UICollectionViewCell {
     public var viewModel: SignUpViewModel? {
         didSet {
             self.title = viewModel?.title
+            self.subTitle = viewModel?.subTitle
             self.viewType = viewModel?.type
         }
     }
@@ -54,6 +57,12 @@ public class SignUpViewCell: UICollectionViewCell {
     public var title: String? {
         didSet {
             self.lblTitle.text = title
+        }
+    }
+    
+    public var subTitle: String? {
+        didSet {
+            self.lblSubTitle.text = subTitle
         }
     }
     
@@ -95,6 +104,10 @@ public class SignUpViewCell: UICollectionViewCell {
         }
     }
     
+    private func setupDetailView() {
+        
+    }
+    
     private func setupFieldView() {
 //        fieldView.backgroundColor = .green
         fieldDevelopmentView.delegate = self
@@ -132,10 +145,6 @@ public class SignUpViewCell: UICollectionViewCell {
 //        fieldDesignView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         fieldDesignView.bottomAnchor.constraint(equalTo: fieldView.bottomAnchor).isActive = true
         fieldDesignView.heightAnchor.constraint(equalTo: fieldView.heightAnchor, multiplier: 0.5).isActive = true
-        
-    }
-    
-    private func setupDetailView() {
         
     }
     
