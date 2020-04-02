@@ -42,7 +42,7 @@ public class SignUpViewController: BaseViewController {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: view.frame.width, height: view.frame.height - 44 - 44)
+        layout.itemSize = CGSize(width: view.frame.width, height: view.frame.height - 132)
         
         self.collectionPageView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         self.collectionPageView?.backgroundColor = .clear
@@ -52,7 +52,12 @@ public class SignUpViewController: BaseViewController {
         
         view.addSubview(self.collectionPageView!)
         self.collectionPageView!.translatesAutoresizingMaskIntoConstraints = false
-        self.collectionPageView!.topAnchor.constraint(equalTo: self.navigationView.bottomAnchor).isActive = true
+        self.collectionPageView!.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 88).isActive = true
+//        if #available(iOS 13.0, *) {
+//            self.collectionPageView!.topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.navigationView.height).isActive = true
+//        } else {
+//            self.collectionPageView!.topAnchor.constraint(equalTo: self.navigationView.bottomAnchor).isActive = true
+//        }
         self.collectionPageView!.bottomAnchor.constraint(equalTo: self.bottomButton.topAnchor).isActive = true
         self.collectionPageView!.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         self.collectionPageView!.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true

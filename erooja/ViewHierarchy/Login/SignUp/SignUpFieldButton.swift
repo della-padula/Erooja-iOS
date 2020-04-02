@@ -36,7 +36,11 @@ public class SignUpFieldButton: UIView {
     public var index: Int?
     public var isActive: Bool = false {
         didSet {
-            setViewStyle()
+            if isActive {
+                self.imageView.image = field?.imageOn
+            } else {
+                self.imageView.image = field?.imageOff
+            }
         }
     }
     
@@ -48,6 +52,7 @@ public class SignUpFieldButton: UIView {
     }
     
     private func setViewStyle() {
+        self.nameLabel.font = .AppleSDBold15P
         self.nameLabel.text = field?.title
         self.nameLabel.textColor = EroojaColorSet.shared.gray300s
         
