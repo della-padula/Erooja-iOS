@@ -23,6 +23,10 @@ public class SignUpViewCell: UICollectionViewCell {
         case design
     }
     
+    private var isNicknameValid: Bool = false
+    private var isFieldValid: Bool = false
+    private var isDetailValid: Bool = false
+    
     private let lblTitle = UILabel()
     private let lblSubTitle = UILabel()
     
@@ -37,9 +41,13 @@ public class SignUpViewCell: UICollectionViewCell {
             if fieldType == .development {
                 fieldDevelopmentView.isActive = true
                 fieldDesignView.isActive = false
-            } else {
+                self.delegate?.setButtonStyle(forState: .active)
+            } else if  fieldType == .design {
                 fieldDevelopmentView.isActive = false
                 fieldDesignView.isActive = true
+                self.delegate?.setButtonStyle(forState: .active)
+            } else {
+                self.delegate?.setButtonStyle(forState: .inActive)
             }
         }
     }
@@ -77,6 +85,20 @@ public class SignUpViewCell: UICollectionViewCell {
         self.setupCell()
     }
     
+    // PUBLIC
+    public func checkButtonState() {
+        switch viewType {
+        case .nickname:
+            delegate?.setButtonStyle(forState: isNicknameValid ? .active : .inActive)
+        case .field:
+            delegate?.setButtonStyle(forState: isFieldValid ? .active : .inActive)
+        case .detail:
+            delegate?.setButtonStyle(forState: isDetailValid ? .active : .inActive)
+        default:
+            break
+        }
+    }
+    
     private func setupCell() {
         self.lblTitle.text = self.title ?? "NO TITLE"
         self.lblTitle.font = .AppleSDBold20P
@@ -105,11 +127,21 @@ public class SignUpViewCell: UICollectionViewCell {
     }
     
     private func setupDetailView() {
+        self.lblSubTitle.text = self.subTitle ?? "NO TITLE"
+        self.lblSubTitle.font = .AppleSDSemiBold15P
+        self.lblSubTitle.textAlignment = .center
+        self.lblSubTitle.textColor = EroojaColorSet.shared.gray300s
+        self.addSubview(lblSubTitle)
         
+        self.lblSubTitle.translatesAutoresizingMaskIntoConstraints = false
+        self.lblSubTitle.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        self.lblSubTitle.topAnchor.constraint(equalTo: lblTitle.bottomAnchor, constant: 10).isActive = true
+        self.lblSubTitle.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
+        self.lblSubTitle.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
     
     private func setupFieldView() {
-//        fieldView.backgroundColor = .green
+        //        fieldView.backgroundColor = .green
         fieldDevelopmentView.delegate = self
         fieldDesignView.delegate = self
         
@@ -123,7 +155,7 @@ public class SignUpViewCell: UICollectionViewCell {
         fieldDesignView.translatesAutoresizingMaskIntoConstraints = false
         
         fieldView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-//        fieldView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 128).isActive = true
+        //        fieldView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 128).isActive = true
         fieldView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         fieldView.topAnchor.constraint(equalTo: lblTitle.bottomAnchor, constant: 20).isActive = true
         fieldView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -40).isActive = true
@@ -136,13 +168,13 @@ public class SignUpViewCell: UICollectionViewCell {
         fieldDevelopmentView.topAnchor.constraint(equalTo: fieldView.topAnchor).isActive = true
         fieldDevelopmentView.leadingAnchor.constraint(equalTo: fieldView.leadingAnchor).isActive = true
         fieldDevelopmentView.trailingAnchor.constraint(equalTo: fieldView.trailingAnchor).isActive = true
-//        fieldDevelopmentView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        //        fieldDevelopmentView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         fieldDevelopmentView.heightAnchor.constraint(equalTo: fieldView.heightAnchor, multiplier: 0.5).isActive = true
         
         fieldDesignView.topAnchor.constraint(equalTo: fieldDevelopmentView.bottomAnchor).isActive = true
         fieldDesignView.leadingAnchor.constraint(equalTo: fieldView.leadingAnchor).isActive = true
         fieldDesignView.trailingAnchor.constraint(equalTo: fieldView.trailingAnchor).isActive = true
-//        fieldDesignView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        //        fieldDesignView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         fieldDesignView.bottomAnchor.constraint(equalTo: fieldView.bottomAnchor).isActive = true
         fieldDesignView.heightAnchor.constraint(equalTo: fieldView.heightAnchor, multiplier: 0.5).isActive = true
         
@@ -165,8 +197,10 @@ public class SignUpViewCell: UICollectionViewCell {
         textFieldView.debounce(delay: 0.3) { (text) in
             ELog.debug(message: "Debounce Text : \(text ?? "nil"), Length : \(text?.count ?? 0)")
             let isValid = !(text ?? "").isEmpty
+            self.isNicknameValid = isValid
+            
             checkBadgeView.isHidden = !isValid
-            self.delegate?.nicknameValidation(isValid: isValid)
+            self.delegate?.setButtonStyle(forState: isValid ? .active : .inActive)
         }
         textFieldView.font = .AppleSDBold15P
         textFieldView.textColor = EroojaColorSet.shared.gray100s
@@ -220,5 +254,6 @@ extension SignUpViewCell: SignUpFieldButtonDelegate {
     public func fieldButton(selectedFieldType: SignUpViewCell.FieldType) {
         ELog.debug(message: "Selected : \(selectedFieldType)")
         self.fieldType = selectedFieldType
+        self.isFieldValid = true
     }
 }

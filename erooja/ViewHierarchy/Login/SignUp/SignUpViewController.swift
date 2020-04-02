@@ -12,7 +12,7 @@ import EroojaUI
 import UIKit
 
 public protocol SignUpCellDelegate {
-    func nicknameValidation(isValid: Bool)
+    func setButtonStyle(forState: ButtonState)
 }
 
 public class SignUpViewController: BaseViewController {
@@ -134,21 +134,27 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return 3
     }
     
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let _cell = cell as! SignUpViewCell
+        _cell.checkButtonState()
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SignUpViewCell", for: indexPath) as! SignUpViewCell
         cell.viewModel = viewModels[indexPath.row]
         cell.delegate = self
+        cell.checkButtonState()
         return cell
     }
     
 }
 
 extension SignUpViewController: SignUpCellDelegate {
-    public func nicknameValidation(isValid: Bool) {
-        self.setButtonStyle(forState: isValid ? .active : .inActive)
-    }
+//    public func nicknameValidation(isValid: Bool) {
+//        self.setButtonStyle(forState: isValid ? .active : .inActive)
+//    }
     
-    private func setButtonStyle(forState: ButtonState) {
+    public func setButtonStyle(forState: ButtonState) {
         switch forState {
         case .active:
             bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
