@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpDetailView" customModule="EroojaDev" customModuleProvider="target">
+            <connections>
+                <outlet property="button1" destination="DcU-m1-07d" id="hQU-v5-SkB"/>
+                <outlet property="button10" destination="l2h-9n-tcX" id="Psd-dq-1S3"/>
+                <outlet property="button2" destination="xkt-Xx-dx4" id="TTq-km-29C"/>
+                <outlet property="button3" destination="ere-7v-Uqc" id="hxH-Ab-0zw"/>
+                <outlet property="button4" destination="BC3-qF-a5Y" id="o9Z-nd-HvQ"/>
+                <outlet property="button5" destination="0MR-lu-2gG" id="4n5-La-agc"/>
+                <outlet property="button6" destination="Qqg-Rd-br1" id="w61-ZS-lr9"/>
+                <outlet property="button7" destination="vTa-vn-AOk" id="AdU-uV-4uO"/>
+                <outlet property="button8" destination="14g-zD-jL1" id="Y6d-Ya-t0a"/>
+                <outlet property="button9" destination="vQm-cr-Omy" id="ndW-1V-nmn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="461" height="698"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbj-8U-thT">
+                    <rect key="frame" x="0.0" y="44" width="461" height="620"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjj-qy-YJc">
+                            <rect key="frame" x="0.0" y="0.0" width="230.5" height="620"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="94Z-42-zFh">
+                                    <rect key="frame" x="0.0" y="0.0" width="230.5" height="620"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ob-7l-XYs">
+                                            <rect key="frame" x="0.0" y="0.0" width="230.5" height="124"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcU-m1-07d">
+                                                    <rect key="frame" x="4" y="4" width="222.5" height="116"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onClickItem:" destination="-1" eventType="touchUpInside" id="KgG-vA-fbo"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="DcU-m1-07d" firstAttribute="top" secondItem="2Ob-7l-XYs" secondAttribute="top" constant="4" id="Qav-RY-08P"/>
+                                                <constraint firstAttribute="bottom" secondItem="DcU-m1-07d" secondAttribute="bottom" constant="4" id="coS-39-wLk"/>
+                                                <constraint firstAttribute="trailing" secondItem="DcU-m1-07d" secondAttribute="trailing" constant="4" id="iGg-NK-ahR"/>
+                                                <constraint firstItem="DcU-m1-07d" firstAttribute="leading" secondItem="2Ob-7l-XYs" secondAttribute="leading" constant="4" id="raM-EL-qqA"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXB-LU-Wr2">
+                                            <rect key="frame" x="0.0" y="124" width="230.5" height="124"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ere-7v-Uqc">
+                                                    <rect key="frame" x="4" y="4" width="222.5" height="116"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onClickItem:" destination="-1" eventType="touchUpInside" id="t6k-gF-HDs"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ere-7v-Uqc" secondAttribute="bottom" constant="4" id="7pv-gM-4dN"/>
+                                                <constraint firstAttribute="trailing" secondItem="ere-7v-Uqc" secondAttribute="trailing" constant="4" id="VDH-rB-oWC"/>
+                                                <constraint firstItem="ere-7v-Uqc" firstAttribute="leading" secondItem="lXB-LU-Wr2" secondAttribute="leading" constant="4" id="c4t-Hu-mRv"/>
+                                                <constraint firstItem="ere-7v-Uqc" firstAttribute="top" secondItem="lXB-LU-Wr2" secondAttribute="top" constant="4" id="i21-yl-Ky0"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHL-L8-k9v">
+                                            <rect key="frame" x="0.0" y="248" width="230.5" height="124"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MR-lu-2gG">
+                                                    <rect key="frame" x="4" y="4" width="222.5" height="116"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onClickItem:" destination="-1" eventType="touchUpInside" id="naf-Df-RFz"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="0MR-lu-2gG" firstAttribute="leading" secondItem="gHL-L8-k9v" secondAttribute="leading" constant="4" id="SZ3-Xe-5jR"/>
+                                                <constraint firstAttribute="trailing" secondItem="0MR-lu-2gG" secondAttribute="trailing" constant="4" id="XNW-sF-sXF"/>
+                                                <constraint firstAttribute="bottom" secondItem="0MR-lu-2gG" secondAttribute="bottom" constant="4" id="ZCT-e8-WUC"/>
+                                                <constraint firstItem="0MR-lu-2gG" firstAttribute="top" secondItem="gHL-L8-k9v" secondAttribute="top" constant="4" id="tGm-ye-q6t"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZ3-7L-yo2">
+                                            <rect key="frame" x="0.0" y="372" width="230.5" height="124"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTa-vn-AOk">
+                                                    <rect key="frame" x="4" y="4" width="222.5" height="116"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onClickItem:" destination="-1" eventType="touchUpInside" id="eaL-bT-lo8"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="vTa-vn-AOk" secondAttribute="bottom" constant="4" id="CKy-Ty-ir7"/>
+                                                <constraint firstItem="vTa-vn-AOk" firstAttribute="top" secondItem="eZ3-7L-yo2" secondAttribute="top" constant="4" id="FAu-iM-vn9"/>
+                                                <constraint firstItem="vTa-vn-AOk" firstAttribute="leading" secondItem="eZ3-7L-yo2" secondAttribute="leading" constant="4" id="IMI-iQ-Tfz"/>
+                                                <constraint firstAttribute="trailing" secondItem="vTa-vn-AOk" secondAttribute="trailing" constant="4" id="cmO-8j-h0F"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQ7-Wl-sij">
+                                            <rect key="frame" x="0.0" y="496" width="230.5" height="124"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQm-cr-Omy">
+                                                    <rect key="frame" x="4" y="4" width="222.5" height="116"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onClickItem:" destination="-1" eventType="touchUpInside" id="0eY-ea-4zm"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="vQm-cr-Omy" secondAttribute="trailing" constant="4" id="0xK-HK-eLG"/>
+                                                <constraint firstItem="vQm-cr-Omy" firstAttribute="leading" secondItem="AQ7-Wl-sij" secondAttribute="leading" constant="4" id="HT3-Op-GTh"/>
+                                                <constraint firstAttribute="bottom" secondItem="vQm-cr-Omy" secondAttribute="bottom" constant="4" id="bAY-CO-qzf"/>
+                                                <constraint firstItem="vQm-cr-Omy" firstAttribute="top" secondItem="AQ7-Wl-sij" secondAttribute="top" constant="4" id="fvo-pb-Iv2"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="94Z-42-zFh" secondAttribute="bottom" id="66P-NU-pLJ"/>
+                                <constraint firstItem="94Z-42-zFh" firstAttribute="leading" secondItem="tjj-qy-YJc" secondAttribute="leading" id="J6N-ZN-51T"/>
+                                <constraint firstItem="94Z-42-zFh" firstAttribute="top" secondItem="tjj-qy-YJc" secondAttribute="top" id="s5Q-2C-h95"/>
+                                <constraint firstAttribute="trailing" secondItem="94Z-42-zFh" secondAttribute="trailing" id="wAm-GS-HAe"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMq-nW-Kew">
+                            <rect key="frame" x="230.5" y="0.0" width="230.5" height="620"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oWc-ht-82B">
+                                    <rect key="frame" x="0.0" y="0.0" width="230.5" height="620"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3y-oA-JVZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="230.5" height="124"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkt-Xx-dx4">
+                                                    <rect key="frame" x="4" y="4" width="222.5" height="116"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onClickItem:" destination="-1" eventType="touchUpInside" id="vno-y0-hC7"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="xkt-Xx-dx4" firstAttribute="top" secondItem="X3y-oA-JVZ" secondAttribute="top" constant="4" id="8ov-rx-J0m"/>
+                                                <constraint firstAttribute="bottom" secondItem="xkt-Xx-dx4" secondAttribute="bottom" constant="4" id="QHB-sA-bfh"/>
+                                                <constraint firstAttribute="trailing" secondItem="xkt-Xx-dx4" secondAttribute="trailing" constant="4" id="RB2-sj-tUb"/>
+                                                <constraint firstItem="xkt-Xx-dx4" firstAttribute="leading" secondItem="X3y-oA-JVZ" secondAttribute="leading" constant="4" id="gra-4w-6Q8"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGv-mm-ov1">
+                                            <rect key="frame" x="0.0" y="124" width="230.5" height="124"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BC3-qF-a5Y">
+                                                    <rect key="frame" x="4" y="4" width="222.5" height="116"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onClickItem:" destination="-1" eventType="touchUpInside" id="9zg-1D-9YK"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="BC3-qF-a5Y" firstAttribute="top" secondItem="eGv-mm-ov1" secondAttribute="top" constant="4" id="OCi-8F-Ojr"/>
+                                                <constraint firstAttribute="bottom" secondItem="BC3-qF-a5Y" secondAttribute="bottom" constant="4" id="P1R-Sm-SMo"/>
+                                                <constraint firstAttribute="trailing" secondItem="BC3-qF-a5Y" secondAttribute="trailing" constant="4" id="fxx-Wg-191"/>
+                                                <constraint firstItem="BC3-qF-a5Y" firstAttribute="leading" secondItem="eGv-mm-ov1" secondAttribute="leading" constant="4" id="smk-gZ-pKx"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSM-wF-JTB">
+                                            <rect key="frame" x="0.0" y="248" width="230.5" height="124"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqg-Rd-br1">
+                                                    <rect key="frame" x="4" y="4" width="222.5" height="116"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onClickItem:" destination="-1" eventType="touchUpInside" id="VoE-PA-zdA"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Qqg-Rd-br1" secondAttribute="trailing" constant="4" id="5CB-QW-01e"/>
+                                                <constraint firstItem="Qqg-Rd-br1" firstAttribute="leading" secondItem="MSM-wF-JTB" secondAttribute="leading" constant="4" id="i1N-T3-Hnz"/>
+                                                <constraint firstAttribute="bottom" secondItem="Qqg-Rd-br1" secondAttribute="bottom" constant="4" id="ug0-LC-jYx"/>
+                                                <constraint firstItem="Qqg-Rd-br1" firstAttribute="top" secondItem="MSM-wF-JTB" secondAttribute="top" constant="4" id="wve-Cq-DuN"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1Y-Xs-YfD">
+                                            <rect key="frame" x="0.0" y="372" width="230.5" height="124"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14g-zD-jL1">
+                                                    <rect key="frame" x="4" y="4" width="222.5" height="116"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onClickItem:" destination="-1" eventType="touchUpInside" id="dO9-65-WsR"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="14g-zD-jL1" firstAttribute="top" secondItem="Y1Y-Xs-YfD" secondAttribute="top" constant="4" id="Fcb-D1-PAV"/>
+                                                <constraint firstAttribute="trailing" secondItem="14g-zD-jL1" secondAttribute="trailing" constant="4" id="JaY-K7-90L"/>
+                                                <constraint firstItem="14g-zD-jL1" firstAttribute="leading" secondItem="Y1Y-Xs-YfD" secondAttribute="leading" constant="4" id="KwF-uH-yDN"/>
+                                                <constraint firstAttribute="bottom" secondItem="14g-zD-jL1" secondAttribute="bottom" constant="4" id="iRc-Hj-PVG"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0WB-R5-k3z">
+                                            <rect key="frame" x="0.0" y="496" width="230.5" height="124"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2h-9n-tcX">
+                                                    <rect key="frame" x="4" y="4" width="222.5" height="116"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="onClickItem:" destination="-1" eventType="touchUpInside" id="IVP-pj-GHU"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="l2h-9n-tcX" secondAttribute="trailing" constant="4" id="PdG-Sl-qN1"/>
+                                                <constraint firstItem="l2h-9n-tcX" firstAttribute="top" secondItem="0WB-R5-k3z" secondAttribute="top" constant="4" id="XVG-ud-QrM"/>
+                                                <constraint firstAttribute="bottom" secondItem="l2h-9n-tcX" secondAttribute="bottom" constant="4" id="bKe-rz-Hpx"/>
+                                                <constraint firstItem="l2h-9n-tcX" firstAttribute="leading" secondItem="0WB-R5-k3z" secondAttribute="leading" constant="4" id="ntx-OL-eNB"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="oWc-ht-82B" secondAttribute="bottom" id="CCH-EM-yBL"/>
+                                <constraint firstItem="oWc-ht-82B" firstAttribute="top" secondItem="pMq-nW-Kew" secondAttribute="top" id="IrG-I1-UbL"/>
+                                <constraint firstAttribute="trailing" secondItem="oWc-ht-82B" secondAttribute="trailing" id="ccW-8N-miu"/>
+                                <constraint firstItem="oWc-ht-82B" firstAttribute="leading" secondItem="pMq-nW-Kew" secondAttribute="leading" id="x5h-KL-9gf"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="pMq-nW-Kew" firstAttribute="top" secondItem="Tbj-8U-thT" secondAttribute="top" id="Qcq-mS-B4B"/>
+                        <constraint firstAttribute="bottom" secondItem="tjj-qy-YJc" secondAttribute="bottom" id="T81-Db-Buo"/>
+                        <constraint firstAttribute="bottom" secondItem="pMq-nW-Kew" secondAttribute="bottom" id="g8q-2k-aLx"/>
+                        <constraint firstItem="pMq-nW-Kew" firstAttribute="width" secondItem="Tbj-8U-thT" secondAttribute="width" multiplier="0.5" id="i0s-TX-HZB"/>
+                        <constraint firstItem="tjj-qy-YJc" firstAttribute="leading" secondItem="Tbj-8U-thT" secondAttribute="leading" id="lfE-Ws-iAR"/>
+                        <constraint firstAttribute="trailing" secondItem="pMq-nW-Kew" secondAttribute="trailing" id="pVk-9F-zSI"/>
+                        <constraint firstItem="tjj-qy-YJc" firstAttribute="width" secondItem="Tbj-8U-thT" secondAttribute="width" multiplier="0.5" id="sRs-AR-0J2"/>
+                        <constraint firstItem="tjj-qy-YJc" firstAttribute="top" secondItem="Tbj-8U-thT" secondAttribute="top" id="t7h-sg-mCL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Tbj-8U-thT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="IMX-bS-jfU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Tbj-8U-thT" secondAttribute="bottom" id="MwU-Ku-cER"/>
+                <constraint firstItem="Tbj-8U-thT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OGQ-eN-47f"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Tbj-8U-thT" secondAttribute="trailing" id="e7Y-FM-enh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="171.73913043478262" y="55.580357142857139"/>
+        </view>
+    </objects>
+</document>

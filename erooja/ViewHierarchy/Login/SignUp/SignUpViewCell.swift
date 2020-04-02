@@ -138,6 +138,16 @@ public class SignUpViewCell: UICollectionViewCell {
         self.lblSubTitle.topAnchor.constraint(equalTo: lblTitle.bottomAnchor, constant: 10).isActive = true
         self.lblSubTitle.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
         self.lblSubTitle.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
+        
+        let containerView = SignUpDetailView()
+        containerView.backgroundColor = .green
+        self.addSubview(containerView)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.topAnchor.constraint(equalTo: self.lblSubTitle.bottomAnchor, constant: 10).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 10).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        
     }
     
     private func setupFieldView() {
