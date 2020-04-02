@@ -11,18 +11,18 @@ import UIKit
 import EroojaUI
 import EroojaCommon
 
+public enum SignUpType {
+    case nickname
+    case field
+    case detail
+}
+
+public enum FieldType {
+    case development
+    case design
+}
+
 public class SignUpViewCell: UICollectionViewCell {
-    public enum SignUpType {
-        case nickname
-        case field
-        case detail
-    }
-    
-    public enum FieldType {
-        case development
-        case design
-    }
-    
     private var isNicknameValid: Bool = false
     private var isFieldValid: Bool = false
     private var isDetailValid: Bool = false
@@ -107,6 +107,7 @@ public class SignUpViewCell: UICollectionViewCell {
         self.addSubview(lblTitle)
         
         self.lblTitle.translatesAutoresizingMaskIntoConstraints = false
+        self.lblTitle.heightAnchor.constraint(equalToConstant: 24).isActive = true
         self.lblTitle.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         self.lblTitle.topAnchor.constraint(equalTo: topAnchor, constant: 44).isActive = true
         self.lblTitle.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -138,15 +139,27 @@ public class SignUpViewCell: UICollectionViewCell {
         self.lblSubTitle.topAnchor.constraint(equalTo: lblTitle.bottomAnchor, constant: 10).isActive = true
         self.lblSubTitle.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
         self.lblSubTitle.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
+        self.lblSubTitle.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
-        let containerView = SignUpDetailView()
-        containerView.backgroundColor = .green
+        let containerView = UIView()
         self.addSubview(containerView)
+        
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.topAnchor.constraint(equalTo: self.lblSubTitle.bottomAnchor, constant: 10).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 10).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 44 * 5).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
         containerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        containerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        
+        let detailView = SignUpDetailView()
+        detailView.fieldType = self.fieldType
+        
+        containerView.addSubview(detailView)
+        detailView.translatesAutoresizingMaskIntoConstraints = false
+        detailView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        detailView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        detailView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        detailView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 80).isActive = true
         
     }
     
@@ -261,7 +274,7 @@ public class SignUpViewCell: UICollectionViewCell {
 }
 
 extension SignUpViewCell: SignUpFieldButtonDelegate {
-    public func fieldButton(selectedFieldType: SignUpViewCell.FieldType) {
+    public func fieldButton(selectedFieldType: FieldType) {
         ELog.debug(message: "Selected : \(selectedFieldType)")
         self.fieldType = selectedFieldType
         self.isFieldValid = true

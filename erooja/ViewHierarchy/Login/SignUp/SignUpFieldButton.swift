@@ -10,7 +10,7 @@ import UIKit
 import EroojaUI
 
 public struct Field {
-    public var type: SignUpViewCell.FieldType
+    public var type: FieldType
     public var title: String
     public var isActive: Bool
     public var imageOn: UIImage
@@ -18,7 +18,7 @@ public struct Field {
 }
 
 public protocol SignUpFieldButtonDelegate {
-    func fieldButton(selectedFieldType: SignUpViewCell.FieldType)
+    func fieldButton(selectedFieldType: FieldType)
 }
 
 public class SignUpFieldButton: UIView {

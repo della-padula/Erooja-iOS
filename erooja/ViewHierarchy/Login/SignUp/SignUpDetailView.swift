@@ -28,9 +28,18 @@ public class SignUpDetailView: UIView {
     @IBOutlet weak var button10: UIButton!
     
     private var buttons: [UIButton]?
+    private var selectedIndex = -1
     
     @IBAction func onClickItem(_ sender: UIButton) {
-        ELog.debug(message: "Selected Button : \(buttons?[sender.tag - 1])")
+//        ELog.debug(message: "Selected Button : \(buttons?[sender.tag - 1])")
+        self.selectedIndex = sender.tag - 1
+        self.setButtonStyle()
+    }
+    
+    public var fieldType: FieldType? {
+        didSet {
+            setButtonStyle()
+        }
     }
     
     override init(frame: CGRect) {
@@ -48,5 +57,45 @@ public class SignUpDetailView: UIView {
         self.addSubview(view)
         
         self.buttons = [self.button1, self.button2, self.button3, self.button4, self.button5, self.button6, self.button7, self.button8, self.button9, self.button10]
+        
+        setButtonStyle()
+    }
+    
+    private func setButtonStyle() {
+        for button in buttons! {
+            button.isHidden = true
+        }
+        
+        if fieldType == .development {
+            for (index, _) in JobType.Develop.allCases.enumerated() {
+                setButtonState(index: index, isActive: false)
+            }
+        } else {
+            for (index, _) in JobType.Design.allCases.enumerated() {
+                setButtonState(index: index, isActive: false)
+            }
+        }
+        
+        if selectedIndex > -1 {
+            setButtonState(index: selectedIndex, isActive: true)
+        }
+    }
+    
+    private func setButtonState(index: Int, isActive: Bool) {
+        if isActive {
+            buttons![index].layer.cornerRadius = 8
+            buttons![index].layer.borderColor = EroojaColorSet.shared.orgDefault400s.cgColor
+            buttons![index].layer.borderWidth = 1
+            buttons![index].titleLabel?.font = .AppleSDSemiBold15P
+            buttons![index].setTitleColor(EroojaColorSet.shared.orgDefault400s, for: .normal)
+            buttons![index].isHidden = false
+        } else {
+            buttons![index].layer.cornerRadius = 8
+            buttons![index].layer.borderColor = EroojaColorSet.shared.gray500s.cgColor
+            buttons![index].layer.borderWidth = 1
+            buttons![index].titleLabel?.font = .AppleSDSemiBold15P
+            buttons![index].setTitleColor(EroojaColorSet.shared.gray300s, for: .normal)
+            buttons![index].isHidden = false
+        }
     }
 }

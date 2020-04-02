@@ -11,5 +11,5 @@ import Foundation
 public struct SignUpViewModel {
     public let title: String
     public var subTitle: String?
-    public var type: SignUpViewCell.SignUpType
+    public var type: SignUpType
 }
