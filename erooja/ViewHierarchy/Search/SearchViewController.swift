@@ -14,6 +14,7 @@ import EroojaSharedBase
 
 public class SearchViewController: BaseViewController {
     
+    private var searchButton = EImageButton()
     public var viewModel: SearchViewModel?
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -22,7 +23,16 @@ public class SearchViewController: BaseViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
         self.bindViewModel()
+        self.setViewLayout()
+    }
+    
+    
+    @objc
+    private func onClickSearch(keyword: String) {
+        
+        
     }
     
     private func bindViewModel() {
@@ -33,5 +43,9 @@ public class SearchViewController: BaseViewController {
                 }
             })
         }
+    }
+    
+    private func setViewLayout() {
+        
     }
 }

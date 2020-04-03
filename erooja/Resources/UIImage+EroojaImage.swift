@@ -34,6 +34,10 @@ public extension UIImage {
         return UIImage(named: "login_kakao")!
     }
     
+    class var back_button: UIImage {
+        return UIImage(named: "back_button")!
+    }
+    
     class var signup_field_dev_off: UIImage {
         return UIImage(named: "signup_field_dev_off")!
     }

@@ -14,6 +14,7 @@
 		B02DFA23242F611E00B6DF89 /* EroojaUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD9E0242F60F1001CE297 /* EroojaUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B031CFA02436F79900BDD599 /* DataBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031CF9F2436F79900BDD599 /* DataBinding.swift */; };
 		B031CFA62436F88500BDD599 /* PortfolioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031CFA52436F88500BDD599 /* PortfolioModel.swift */; };
+		B031CFBE243702DC00BDD599 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031CFBD243702DC00BDD599 /* ModalViewController.swift */; };
 		B03D4A3224333C9D009180E9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3124333C9D009180E9 /* BaseViewController.swift */; };
 		B03D4A3924338DE3009180E9 /* LoginSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3824338DE3009180E9 /* LoginSwitcher.swift */; };
 		B03D4A4024339001009180E9 /* EroojaProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3F24339001009180E9 /* EroojaProperty.swift */; };
@@ -29,9 +30,6 @@
 		B0462AEE242B920000B51854 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AED242B920000B51854 /* Schedule.swift */; };
 		B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AEF242B921000B51854 /* APIResponseCode.swift */; };
 		B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1C242B95CF00B51854 /* AlertController.swift */; };
-		B0462B20242BA97800B51854 /* EUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B1F242BA97800B51854 /* EUINavigationController.swift */; };
-		B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B22242BA99F00B51854 /* EUINavigationBar.swift */; };
-		B0462B25242BA9CF00B51854 /* EUINavigationBar+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */; };
 		B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462B28242BAA9200B51854 /* Notification+Common.swift */; };
 		B04B4EDE2436F07D00EA438B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B4EDD2436F07D00EA438B /* SearchViewController.swift */; };
 		B04B4EE12436F23900EA438B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B4EE02436F23900EA438B /* MainViewController.swift */; };
@@ -138,6 +136,7 @@
 		B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaNetwork.xcodeproj; path = EroojaNetwork/EroojaNetwork.xcodeproj; sourceTree = "<group>"; };
 		B031CF9F2436F79900BDD599 /* DataBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinding.swift; sourceTree = "<group>"; };
 		B031CFA52436F88500BDD599 /* PortfolioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioModel.swift; sourceTree = "<group>"; };
+		B031CFBD243702DC00BDD599 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		B03D4A3124333C9D009180E9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B03D4A3824338DE3009180E9 /* LoginSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwitcher.swift; sourceTree = "<group>"; };
 		B03D4A3F24339001009180E9 /* EroojaProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaProperty.swift; sourceTree = "<group>"; };
@@ -155,9 +154,6 @@
 		B0462AED242B920000B51854 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		B0462AEF242B921000B51854 /* APIResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseCode.swift; sourceTree = "<group>"; };
 		B0462B1C242B95CF00B51854 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
-		B0462B1F242BA97800B51854 /* EUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationController.swift; sourceTree = "<group>"; };
-		B0462B22242BA99F00B51854 /* EUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationBar.swift; sourceTree = "<group>"; };
-		B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EUINavigationBar+Style.swift"; sourceTree = "<group>"; };
 		B0462B28242BAA9200B51854 /* Notification+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Common.swift"; sourceTree = "<group>"; };
 		B04B4EDD2436F07D00EA438B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B04B4EE02436F23900EA438B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +251,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B031CFBC243702D000BDD599 /* ModalView */ = {
+			isa = PBXGroup;
+			children = (
+				B031CFBD243702DC00BDD599 /* ModalViewController.swift */,
+			);
+			path = ModalView;
+			sourceTree = "<group>";
+		};
 		B03D4A98243420B3009180E9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,25 +339,15 @@
 		B0462B1E242BA93C00B51854 /* ViewHierarchy */ = {
 			isa = PBXGroup;
 			children = (
+				B031CFBC243702D000BDD599 /* ModalView */,
 				B04B4EDF2436F22C00EA438B /* Main */,
 				B04B4EDC2436F06200EA438B /* Search */,
 				B04B4ECF2436D64D00EA438B /* UITest */,
 				B03D4A98243420B3009180E9 /* Login */,
 				B0A8C5542433340E002B2C83 /* Start */,
-				B0462B21242BA98D00B51854 /* EUINavigation */,
 				B03D4A3124333C9D009180E9 /* BaseViewController.swift */,
 			);
 			path = ViewHierarchy;
-			sourceTree = "<group>";
-		};
-		B0462B21242BA98D00B51854 /* EUINavigation */ = {
-			isa = PBXGroup;
-			children = (
-				B0462B1F242BA97800B51854 /* EUINavigationController.swift */,
-				B0462B22242BA99F00B51854 /* EUINavigationBar.swift */,
-				B0462B24242BA9CF00B51854 /* EUINavigationBar+Style.swift */,
-			);
-			path = EUINavigation;
 			sourceTree = "<group>";
 		};
 		B0462B2A242BAAA400B51854 /* Extensions */ = {
@@ -772,6 +766,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B031CFBE243702DC00BDD599 /* ModalViewController.swift in Sources */,
 				B04B4EE32436F2F800EA438B /* SearchViewModel.swift in Sources */,
 				B0C0302724356AC1008771BB /* SignUpFieldButton.swift in Sources */,
 				B03D4A9E24342167009180E9 /* LoginViewController.swift in Sources */,
@@ -779,17 +774,14 @@
 				B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */,
 				B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */,
 				B0A8C5632433392B002B2C83 /* UIImage+EroojaImage.swift in Sources */,
-				B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */,
 				B04B4EDE2436F07D00EA438B /* SearchViewController.swift in Sources */,
 				B0C0311524364AE8008771BB /* SignUpDetailView.swift in Sources */,
-				B0462B25242BA9CF00B51854 /* EUINavigationBar+Style.swift in Sources */,
 				B0A8C5562433341D002B2C83 /* StartViewController.swift in Sources */,
 				B03D4A3224333C9D009180E9 /* BaseViewController.swift in Sources */,
 				B03D4A4024339001009180E9 /* EroojaProperty.swift in Sources */,
 				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,
 				B031CFA02436F79900BDD599 /* DataBinding.swift in Sources */,
 				B0FE8ECE2432407E00103A54 /* OnboardViewController.swift in Sources */,
-				B0462B20242BA97800B51854 /* EUINavigationController.swift in Sources */,
 				B0C030202434F7EB008771BB /* SignUpViewModel.swift in Sources */,
 				B0C030172434F266008771BB /* SignUpNicknameViewCell.swift in Sources */,
 				B09CD5D22436C1210073733D /* SignUpDetailViewCell.swift in Sources */,

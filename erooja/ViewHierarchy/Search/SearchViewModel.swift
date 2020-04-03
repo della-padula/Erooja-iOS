@@ -9,10 +9,13 @@
 import Foundation
 import EroojaCommon
 
-
-
-public class SearchViewModel {
+public struct SearchViewModel {
     var searchKeyword = DataBinding("")
     var resultList = DataBinding([PortfolioModel]())
-    
+}
+
+extension SearchViewModel {
+    func fetchDataForSearch(keyword: String) {
+        
+    }
 }

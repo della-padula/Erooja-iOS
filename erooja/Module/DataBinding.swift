@@ -9,25 +9,25 @@
 import Foundation
 
 public class DataBinding<T> {
-    typealias Listener = (T) -> Void
-    var listener: Listener?
+//    typealias Listener = (T) -> Void
+    var listener: ((T) -> Void)?
     
-    func bind(_ listener: Listener?) {
+    func bind(_ listener: ((T) -> Void)?) {
         self.listener = listener
     }
     
-    func bindAndFire(_ listener: Listener?) {
+    func bindAndFire(_ listener: ((T) -> Void)?) {
         self.listener = listener
-        listener?(value)
+        listener?(valueForBind)
     }
     
-    var value: T {
+    var valueForBind: T {
         didSet {
-            listener?(value)
+            listener?(valueForBind)
         }
     }
     
-    init(_ v: T) {
-        value = v
+    init(_ value: T) {
+        valueForBind = value
     }
 }

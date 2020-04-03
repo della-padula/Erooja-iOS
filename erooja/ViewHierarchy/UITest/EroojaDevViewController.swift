@@ -21,11 +21,12 @@ class UITestViewController: BaseViewController {
         case mypage        = "마이페이지"
         case main          = "메인"
         case nowGoal       = "진행중인 목표"
-        case search        = "탐색"
+        case search        = "검색"
         case addGoal       = "목표 추가"
         case peopleProfile = "타 계정페이지"
         case guest         = "게스트 로직"
         case apiTest       = "Dev - API Test"
+        case modalViewTest = "Dev - Modal View"
     }
     
     private let types = EroojaType.allCases
@@ -55,15 +56,23 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let type = types[indexPath.row]
+        ELog.debug(message: "Selected : \(type.rawValue)")
         switch type {
         case .signup:
             let vc = SignUpViewController()
+            vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
         case .onboard:
             let vc = OnboardViewController()
+            vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
         case .search:
             let vc = SearchViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        case .modalViewTest:
+            let vc = ModalViewController()
+            vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
         default:
             break
