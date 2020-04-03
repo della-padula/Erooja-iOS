@@ -21,6 +21,7 @@ public class ModalViewController: BaseViewController {
     
     private func setViewLayout() {
         imageButton.image = .back_button
+        imageButton.backgroundColor = .green
         self.view.addSubview(imageButton)
         imageButton.translatesAutoresizingMaskIntoConstraints = false
         imageButton.heightAnchor.constraint(equalToConstant: 44).isActive = false

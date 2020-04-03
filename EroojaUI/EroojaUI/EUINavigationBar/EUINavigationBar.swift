@@ -11,7 +11,7 @@ import UIKit
 
 public enum EBarOption {
     case backButton
-    case searchButton
+    case textField
     case rightSecondButton
     case rightFirstButton
     case progressBar
@@ -27,39 +27,70 @@ public enum ERightButtonType {
     case text
 }
 
-public class EUINavigationBar: UIView {
+public protocol EUINavigationBarDelegate {
+    func onClickBackButton()
     
+    func onClickRightSectionButton(at index: Int)
+    
+}
+
+
+public class EUINavigationBar: UIView {
     public var barOptions: [EBarOption]? {
         didSet {
             self.setNavigationBarOption()
         }
     }
-    
+    public var delegate: EUINavigationBarDelegate?
     private var backButton = EImageButton()
     
     public init() {
         super.init(frame: .zero)
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setNavigationBarOption() {
-        translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 44).isActive = true
-        topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-        leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
-        trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
+    // Progress Value Setting
+    public func setProgressValue(value: CGFloat) {
         
     }
     
-    private func addBackButton(action: Selector) {
+    // Get Text Field Data
+    public func getTextFieldData() -> String? {
+        return nil
+    }
+    
+    private func setNavigationBarOption() {
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: 44).isActive = true
+        topAnchor.constraint(equalTo: topAnchor).isActive = true
+        leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
+        trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
+        
+        if let options = barOptions {
+            for option in options {
+                switch option {
+                case .backButton:
+                    self.addBackButton()
+                    break
+                case .progressBar:
+                    break
+                case .rightFirstButton:
+                    break
+                case .rightSecondButton:
+                    break
+                case .textField:
+                    break
+                }
+            }
+        }
+    }
+    
+    private func addBackButton() {
         self.backButton.image = UIImage(named: "back_button")!
-        self.backButton.backgroundColor = .white
-        self.backButton.isHidden = true
-        self.backButton.addTarget(target: self, action: action, forEvent: .touchUpInside)
+        self.backButton.addTarget(target: self, action: #selector(onClickBackButton), forEvent: .touchUpInside)
         
         addSubview(self.backButton)
         
@@ -78,4 +109,8 @@ public class EUINavigationBar: UIView {
         
     }
     
+    @objc
+    private func onClickBackButton() {
+        self.delegate?.onClickBackButton()
+    }
 }
