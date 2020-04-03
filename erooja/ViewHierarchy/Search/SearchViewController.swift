@@ -46,7 +46,7 @@ public class SearchViewController: BaseViewController {
     }
     
     private func setViewLayout() {
-        self.navigationBar?.barOptions = [.backButton, .textField, .rightFirstButton]
+        self.navigationBar?.barOptions = [.backButton, .textField, .rightFirstButton, .rightSecondButton]
         self.view.addSubview(self.navigationBar!)
         
         self.navigationBar?.delegate = self
@@ -65,7 +65,7 @@ public class SearchViewController: BaseViewController {
 
 extension SearchViewController: EUINavigationBarDelegate {
     public func onClickRightSectionButton(at position: ERightButton.Position) {
-        
+        ELog.debug(message: "Right Button Click : position - \(position)")
     }
     
     public func onClickBackButton() {

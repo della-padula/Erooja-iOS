@@ -160,6 +160,9 @@ public class EUINavigationBar: UIView {
         rightFirstButton.backgroundColor = .red
         rightSecondButton.backgroundColor = .blue
         
+        rightFirstButton.addTarget(target: self, action: #selector(onClickRightFirstButton), forEvent: .touchUpInside)
+        rightSecondButton.addTarget(target: self, action: #selector(onClickRightSecondButton), forEvent: .touchUpInside)
+        
         rightFirstButton.translatesAutoresizingMaskIntoConstraints = false
         rightSecondButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -188,6 +191,7 @@ public class EUINavigationBar: UIView {
         } else {
             rightSecondButton.isHidden = false
         }
+        
     }
     
     private func addBackButton() {
@@ -214,5 +218,15 @@ public class EUINavigationBar: UIView {
     @objc
     private func onClickBackButton() {
         self.delegate?.onClickBackButton()
+    }
+    
+    @objc
+    private func onClickRightFirstButton() {
+        delegate?.onClickRightSectionButton(at: .first)
+    }
+    
+    @objc
+    private func onClickRightSecondButton() {
+        delegate?.onClickRightSectionButton(at: .second)
     }
 }
