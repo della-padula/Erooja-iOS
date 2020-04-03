@@ -65,7 +65,6 @@
 		3DB8228CD92632ECF30CE3D1B9F317B8 /* Alamofire-framework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CF8E4004FCFEDF942E0DD3DA6B8040 /* Alamofire-framework-dummy.m */; };
 		40198E103BD0E67AEDE455FA04CA0915 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9DC7A4717774C761AF6D3924FA86BE /* Alamofire.swift */; };
 		4443ADD3C3E270E75441AFFB5507AE10 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E5CED15AB1F943676A0B3666BB4CC /* ImageProcessor.swift */; };
-		455D13DA36A9F3251E365739E006D3EB /* Pods-EroojaDev-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0ED5E87832FCA994F9E7054AF2DA354 /* Pods-EroojaDev-dummy.m */; };
 		4A64F4D355DBC4263CDD00AA219EED2C /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E9E7371915C2ED7269B1F52BE670AC /* ParameterEncoding.swift */; };
 		4CABFDCE47A3B2A8601E15B999771074 /* RequestModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615CF880B54182178AB146725D4410D /* RequestModifier.swift */; };
 		4DB56636F0D51ECD213C5795676943D9 /* ImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33469190E50B487982A3103AD3B81871 /* ImageView+Kingfisher.swift */; };
@@ -82,11 +81,10 @@
 		64184CFFB214F36FD62C3ED88627815D /* FormatIndicatedCacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D76FF427DB55DC6488FE358E72742F3 /* FormatIndicatedCacheSerializer.swift */; };
 		64F933F37C7C01044A6E01838E8C78A2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B322CE01AA8838983DF848CB63F8D /* HTTPMethod.swift */; };
 		68CDED0F6372D00F1D2FB73B60D24D93 /* KingfisherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADA641BD8A48117FAC709A53869082 /* KingfisherError.swift */; };
-		68DC59BF8E7D178FE4BD3771B9BBCA09 /* Pods-EroojaNetwork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F623EAFA728C4A84279C4EACDD5537D /* Pods-EroojaNetwork-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		69B893AC4029DBCC8799293CF2C6CD5D /* Pods-erooja-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CB040622A9A48E8383E763B8198105AF /* Pods-erooja-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68DC59BF8E7D178FE4BD3771B9BBCA09 /* Pods-EroojaNetwork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EE53E8954E44F728F47A0CCE97B0C551 /* Pods-EroojaNetwork-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		69B893AC4029DBCC8799293CF2C6CD5D /* Pods-erooja-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02B2674A042B69E7B38C757C0A1F7683 /* Pods-erooja-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6CBFD4B7F10976618705831BEC620DF8 /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FA6866BA17D8646381F405A4B6224 /* Kingfisher.swift */; };
 		6EA74B30744312E6EC9A6E6E2003FF10 /* Alamofire-library-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB951C548E98AF92BEE374C9B5D2345F /* Alamofire-library-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7165DD4336BDC983A33DA392819A2B19 /* Pods-EroojaDev-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EEFD1C98EB28D6D31222811379EB0E6 /* Pods-EroojaDev-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71F304547CC0094F6AF1C862B0A31387 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BA9D6763C9E95CE9D586105B6EA0AA /* Placeholder.swift */; };
 		792A9766D6427A65DC64C1F7E1F1A715 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C7C0CC6045FFBDD4D18053885D067 /* HTTPHeaders.swift */; };
 		79C60B46DADAFED6B9F89C805C9E61E2 /* Alamofire-framework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B8B59C14A9926A72D954A1FB237EEC5 /* Alamofire-framework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -96,7 +94,6 @@
 		814D193D6F70362D6DD4C4ED67E70A67 /* ImageDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81C341C780A9B49AC39727F02974EBA /* ImageDataProvider.swift */; };
 		821C5436CF545CABF285E28082C56BA7 /* AuthenticationChallengeResponsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914EF22C0F662265F0E71F7E6A9A3751 /* AuthenticationChallengeResponsable.swift */; };
 		821E5F35BEFFFCB8FCC6C00A202A7C49 /* CacheSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1702A539F1BDB6CE4EBF9FD068E101E /* CacheSerializer.swift */; };
-		8232E9DD4A25315BF4FA5F6BA0BA4688 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3BF06BD92238CB43628415C234BF25 /* Foundation.framework */; };
 		82779D868FB3025DD9CDF745E67DFD34 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0C1EE5C5BBEA80D06020295532E4F /* Storage.swift */; };
 		8324D82A305CB7BC9C6BDF6816B2AE36 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B24F668A1F57FFA1FA092D223F2A3A /* SessionDelegate.swift */; };
 		84F8F9646566C7AB0D71A6E9E4A3C30A /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751076933D33E816B29306CA202AF737 /* NetworkReachabilityManager.swift */; };
@@ -126,12 +123,12 @@
 		AC4A132D52246980BAF55C3642A92A95 /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588AC434B67FC4AE6CD3547BF751DD35 /* Result+Alamofire.swift */; };
 		AD6B4F59FA45EDE1B1553F43F325F416 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0960CBA33E64102A463195A8F9BF1B /* DispatchQueue+Alamofire.swift */; };
 		B457399DD816F81310B830BC0EF4BA05 /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54031B8A0999B2E8774DC5EC61AC8CA /* URLSessionConfiguration+Alamofire.swift */; };
-		B7156A8860537D668021DC61F81F2831 /* Pods-erooja-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAE2B2F8E46EB3FD3D35990812BDFFE /* Pods-erooja-dummy.m */; };
+		B7156A8860537D668021DC61F81F2831 /* Pods-erooja-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95206EA63AC4F62C52D4EB0CBC2A7B10 /* Pods-erooja-dummy.m */; };
 		B81A688A5690B6A62181A28A28342A0B /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CC11F43C37BF649AF7BBA048FCDA5 /* ExtensionHelpers.swift */; };
 		BCCFD839D991B8238AAE192E5EAE5491 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B322CE01AA8838983DF848CB63F8D /* HTTPMethod.swift */; };
 		BD527EB9D37B2860119C6D3D8379A6EE /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70D2BA661A4797E55396C792C0EBCFA /* RetryPolicy.swift */; };
 		C20612A11214DED237D1706DC802E67D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4439BCA8312E4998EABBB5B2F5D9C8D4 /* CFNetwork.framework */; };
-		C20CC6E4126F03DA060847D872CEFB48 /* Pods-EroojaNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C8DFB07E03A7837159085E8F91DF56 /* Pods-EroojaNetwork-dummy.m */; };
+		C20CC6E4126F03DA060847D872CEFB48 /* Pods-EroojaNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8236D60E227C79E2873149242E5C09E /* Pods-EroojaNetwork-dummy.m */; };
 		C2E3A11A80EB6DC507F7704A2150A409 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A09D23BE59467882D4A9AD5C733A8B0 /* SessionDelegate.swift */; };
 		C3007CE165625C830F395D966FE5CADC /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A06E1CF65F9BE9D894478D799F7DD /* RequestTaskMap.swift */; };
 		C610A26F947F816B2FEB84AD2A9B29B2 /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01B690A99BA2EDCBF631A40F7880EB /* CachedResponseHandler.swift */; };
@@ -183,20 +180,6 @@
 			remoteGlobalIDString = 844E4FE60F85EB07889EC26B33D15EFB;
 			remoteInfo = "SwiftLint-library";
 		};
-		7545A3CC7AC46B1A49AAD6400705637D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3E064FCAB631C681990F7B25DB76F0D5;
-			remoteInfo = "SwiftLint-framework";
-		};
-		B4EF12531E30D61A786F9E33356C7EE4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3949679AB5CF3F2C77C15A0E67E8AF64;
-			remoteInfo = "Alamofire-framework";
-		};
 		D55BCB57ADB6E10BDB0A6DF42B78DEE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -215,16 +198,15 @@
 
 /* Begin PBXFileReference section */
 		009A06E1CF65F9BE9D894478D799F7DD /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
+		02B2674A042B69E7B38C757C0A1F7683 /* Pods-erooja-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-erooja-umbrella.h"; sourceTree = "<group>"; };
+		078800272545E689D0A6C39323377BF4 /* Pods-EroojaNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EroojaNetwork.release.xcconfig"; sourceTree = "<group>"; };
 		086E18504766FFD0AB10F60D3B4571F9 /* Alamofire-library-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Alamofire-library-dummy.m"; path = "../Alamofire-library/Alamofire-library-dummy.m"; sourceTree = "<group>"; };
 		0918F6C5C6D91D73CCA4831BB0CEC35A /* SwiftLint-library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftLint-library.release.xcconfig"; path = "../SwiftLint-library/SwiftLint-library.release.xcconfig"; sourceTree = "<group>"; };
 		0A46E2BE1D248DCBC3535E8B31537364 /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
 		0ACC566A31BAB7D6CF2590FF1D4806DB /* Alamofire-framework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Alamofire-framework.modulemap"; sourceTree = "<group>"; };
 		0D81239E7C3EB650A8EF98B61E984F39 /* GIFAnimatedImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GIFAnimatedImage.swift; path = Sources/Image/GIFAnimatedImage.swift; sourceTree = "<group>"; };
-		0EEFD1C98EB28D6D31222811379EB0E6 /* Pods-EroojaDev-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EroojaDev-umbrella.h"; sourceTree = "<group>"; };
-		10BF4D15A36B1A653F28B5C6AD376123 /* Pods-EroojaNetwork-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EroojaNetwork-acknowledgements.plist"; sourceTree = "<group>"; };
 		116C7C0CC6045FFBDD4D18053885D067 /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
 		132D15828EFE8106D16C7554F9D38CC5 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Image/Filter.swift; sourceTree = "<group>"; };
-		175C31B455C8949C5723C37EF5F6B605 /* Pods-EroojaNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EroojaNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 		1908D2CC14D7EF5516B93073B0EBFE16 /* Kingfisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kingfisher.h; path = Sources/Kingfisher.h; sourceTree = "<group>"; };
 		190E28A36BD1DA946FAAE2A9F637B743 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		1A09D23BE59467882D4A9AD5C733A8B0 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
@@ -233,10 +215,9 @@
 		1EEE09729FAEB01FE584F30EE741E3CF /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		20EBF8D9B627A40589952FBAE4732D00 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
 		210BF913325554FDCB1C38287A6E6900 /* Kingfisher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.debug.xcconfig; sourceTree = "<group>"; };
-		214F1D6184DE65F5F60CB86A00475C6D /* Pods_EroojaDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EroojaDev.framework; path = "Pods-EroojaDev.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2542086B9160B57BE39AE26B9FC1BAC2 /* Pods-EroojaDev-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EroojaDev-acknowledgements.plist"; sourceTree = "<group>"; };
+		21F8D765DE34006196A7D1DD96B4E439 /* Pods-erooja.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-erooja.modulemap"; sourceTree = "<group>"; };
+		22B9F56B4AFEE8DBECDFDB15106957A3 /* Pods-erooja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-erooja.release.xcconfig"; sourceTree = "<group>"; };
 		26C18BD2FFE28D8D96D15E567AB05FC0 /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/General/ImageSource/Resource.swift; sourceTree = "<group>"; };
-		26C8DFB07E03A7837159085E8F91DF56 /* Pods-EroojaNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EroojaNetwork-dummy.m"; sourceTree = "<group>"; };
 		2A1ADB169066E139E001C2E8E80F158F /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
 		2B9FA6866BA17D8646381F405A4B6224 /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/General/Kingfisher.swift; sourceTree = "<group>"; };
 		2D76FF427DB55DC6488FE358E72742F3 /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/Cache/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
@@ -245,10 +226,12 @@
 		3146DD1B6632E1FF3B546471908FEDCC /* MemoryStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MemoryStorage.swift; path = Sources/Cache/MemoryStorage.swift; sourceTree = "<group>"; };
 		33469190E50B487982A3103AD3B81871 /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/Extensions/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		343CE98738FF456D1F5E2995AC819CEE /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "Alamofire-framework.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34EA0B6A82D2C5516A82A62D246F7948 /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
 		35ADA641BD8A48117FAC709A53869082 /* KingfisherError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherError.swift; path = Sources/General/KingfisherError.swift; sourceTree = "<group>"; };
 		3B62698496DE1F9B6B5B01C2411B4528 /* Kingfisher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.release.xcconfig; sourceTree = "<group>"; };
 		3DA59C2B7F67EDCE68A27ECF567E24D5 /* libPods-EroojaNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-EroojaNetwork.a"; path = "libPods-EroojaNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DAA06A378390D0C4B87DF8E4B6002B3 /* Alamofire-library-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Alamofire-library-prefix.pch"; path = "../Alamofire-library/Alamofire-library-prefix.pch"; sourceTree = "<group>"; };
+		3DF6477613116DE307DFEBF0423A977E /* Pods-EroojaNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EroojaNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 		3E5CF9D2B2DFD33195DCCBDDDEE24AB0 /* ImageFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFormat.swift; path = Sources/Image/ImageFormat.swift; sourceTree = "<group>"; };
 		3E6EF1006D2D63433906F3667282A95F /* NSButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSButton+Kingfisher.swift"; path = "Sources/Extensions/NSButton+Kingfisher.swift"; sourceTree = "<group>"; };
 		3F81F0F5A2EA0CA55196D34B0CE0A2D4 /* CallbackQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CallbackQueue.swift; path = Sources/Utility/CallbackQueue.swift; sourceTree = "<group>"; };
@@ -256,10 +239,9 @@
 		41B2457EB36F22A4C0DF3F8F5AD2B2FD /* Alamofire-framework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-framework-prefix.pch"; sourceTree = "<group>"; };
 		41B24F668A1F57FFA1FA092D223F2A3A /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Sources/Networking/SessionDelegate.swift; sourceTree = "<group>"; };
 		41CAFB1ADC415DFB0C0381BC22A8275D /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
+		436ACF8011742C3A45DFC7259A3381D5 /* Pods-erooja.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-erooja.inhouse.xcconfig"; sourceTree = "<group>"; };
 		4439BCA8312E4998EABBB5B2F5D9C8D4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		4440238A1B3C3D04C29201A930D0405E /* Protector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protector.swift; path = Source/Protector.swift; sourceTree = "<group>"; };
-		4496725E23BC479066FBDC67C3473B63 /* Pods-EroojaNetwork.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EroojaNetwork.modulemap"; sourceTree = "<group>"; };
-		458E20CC790D08EB215BA619D4368663 /* Pods-EroojaDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EroojaDev.release.xcconfig"; sourceTree = "<group>"; };
 		476088C5F2F30793A697923F2B460CDE /* Alamofire-framework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-framework-Info.plist"; sourceTree = "<group>"; };
 		48C9CC46C04B908FF8708A6DE7FF5419 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		48F4F710F260813B4AEEF57A98E10244 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
@@ -269,21 +251,19 @@
 		4E01B690A99BA2EDCBF631A40F7880EB /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
 		4ED34C905668E35D2DF7F83F033F75C4 /* Alamofire-framework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Alamofire-framework.debug.xcconfig"; sourceTree = "<group>"; };
 		4EF97111E69796FCEB63FA68E5EC92FD /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/Utility/String+MD5.swift"; sourceTree = "<group>"; };
+		4F48CAB8DDBF86FCDCE46156BDE2FBD2 /* Pods-EroojaNetwork.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EroojaNetwork.modulemap"; sourceTree = "<group>"; };
 		55CF94DA27A6F331036562F475BC41F6 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
+		55D011151FAADB2368EE991BEF1003EB /* Pods-erooja.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-erooja.uitest.xcconfig"; sourceTree = "<group>"; };
 		588AC434B67FC4AE6CD3547BF751DD35 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
 		5DED8F0FFF5EF6FE76872EDDC59AECC6 /* ImageModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageModifier.swift; path = Sources/Networking/ImageModifier.swift; sourceTree = "<group>"; };
 		5E4DAECF5CA3AC5D060C10D3F410E8E1 /* ImageDataProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDataProcessor.swift; path = Sources/Networking/ImageDataProcessor.swift; sourceTree = "<group>"; };
-		6494AAB05091342B3CF6E0EDEB79E078 /* Pods-EroojaDev.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EroojaDev.inhouse.xcconfig"; sourceTree = "<group>"; };
 		64F3A74B4125CF3319360447E0E61C8C /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Kingfisher.modulemap; sourceTree = "<group>"; };
 		6A860B4C82314169656307C7771F5E6C /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		6C065A3FA747D5D7D0585E4487EF680E /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		6E212D183D889D2DE940B5757E58B4A5 /* ImageDrawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDrawing.swift; path = Sources/Image/ImageDrawing.swift; sourceTree = "<group>"; };
-		6F623EAFA728C4A84279C4EACDD5537D /* Pods-EroojaNetwork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EroojaNetwork-umbrella.h"; sourceTree = "<group>"; };
-		6FE318AF9D7D491CBAA226DEE24C1F47 /* Pods-EroojaDev.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EroojaDev.modulemap"; sourceTree = "<group>"; };
 		728BDF50C8B820B02F585431E2C085A2 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
 		751076933D33E816B29306CA202AF737 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		7554BDF7AAF78F7B33CA5EA0BF529CCA /* Pods_erooja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_erooja.framework; path = "Pods-erooja.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		77FB772A269C867712C426708797E9A5 /* Pods-EroojaDev-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EroojaDev-acknowledgements.markdown"; sourceTree = "<group>"; };
 		784D01A688CA59BB41069B3C363BC4D1 /* SwiftLint-framework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftLint-framework.debug.xcconfig"; sourceTree = "<group>"; };
 		79365C8C8C63D2F88B20E8CD601D13C6 /* WKInterfaceImage+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WKInterfaceImage+Kingfisher.swift"; path = "Sources/Extensions/WKInterfaceImage+Kingfisher.swift"; sourceTree = "<group>"; };
 		7B5B322CE01AA8838983DF848CB63F8D /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
@@ -291,10 +271,7 @@
 		7DD385AC1AB141E5FF24192D917DE717 /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/General/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
 		7E382E75B3D1F19B5399E922AD34BFA2 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		80E1686C8953AEE35133C4AE13435831 /* Runtime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Runtime.swift; path = Sources/Utility/Runtime.swift; sourceTree = "<group>"; };
-		8429074126D8280D7470F8FC2D48B615 /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
 		84C2E1D869F2143DE35991B63FD8074D /* SwiftLint-framework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftLint-framework.release.xcconfig"; sourceTree = "<group>"; };
-		86241BD6D1EC6B78C949407DB4C42AED /* Pods-erooja-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-erooja-Info.plist"; sourceTree = "<group>"; };
-		872478C2E8CE815E85D303BD1C8FCE72 /* Pods-erooja-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-erooja-acknowledgements.markdown"; sourceTree = "<group>"; };
 		89D0C1EE5C5BBEA80D06020295532E4F /* Storage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Sources/Cache/Storage.swift; sourceTree = "<group>"; };
 		8B8B59C14A9926A72D954A1FB237EEC5 /* Alamofire-framework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-framework-umbrella.h"; sourceTree = "<group>"; };
 		8BA98328B6D9860462E520357CD6C091 /* Alamofire-library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Alamofire-library.release.xcconfig"; path = "../Alamofire-library/Alamofire-library.release.xcconfig"; sourceTree = "<group>"; };
@@ -304,70 +281,56 @@
 		914EF22C0F662265F0E71F7E6A9A3751 /* AuthenticationChallengeResponsable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationChallengeResponsable.swift; path = Sources/Networking/AuthenticationChallengeResponsable.swift; sourceTree = "<group>"; };
 		91C475F1789E5004DB0179D957AA96C2 /* ImageProgressive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProgressive.swift; path = Sources/Image/ImageProgressive.swift; sourceTree = "<group>"; };
 		92CCB3D7E47366BD087B2BF3EFE99578 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Sources/Networking/RedirectHandler.swift; sourceTree = "<group>"; };
-		95D0024A91BCB5701FEEA823C1554B87 /* Pods-erooja.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-erooja.uitest.xcconfig"; sourceTree = "<group>"; };
+		95206EA63AC4F62C52D4EB0CBC2A7B10 /* Pods-erooja-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-erooja-dummy.m"; sourceTree = "<group>"; };
 		95E8F2C08A2707F6A4C95E812776DA4B /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/General/KingfisherManager.swift; sourceTree = "<group>"; };
-		961E7D8F506441D24930E329F8027A47 /* Pods-EroojaDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EroojaDev.debug.xcconfig"; sourceTree = "<group>"; };
 		97BA9D6763C9E95CE9D586105B6EA0AA /* Placeholder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Placeholder.swift; path = Sources/Image/Placeholder.swift; sourceTree = "<group>"; };
-		9913675C1A3DDDA67571AE6C4C51FBE2 /* Pods-EroojaDev.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EroojaDev.uitest.xcconfig"; sourceTree = "<group>"; };
 		9AACAE4442DEE1618EB23202C788EF01 /* SwiftLint-library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftLint-library.debug.xcconfig"; path = "../SwiftLint-library/SwiftLint-library.debug.xcconfig"; sourceTree = "<group>"; };
 		9B1B9A384FA8FEA21B621003BAA21338 /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = Sources/General/Deprecated.swift; sourceTree = "<group>"; };
-		9B489F422E22758F2EECD8B85D53ABC2 /* Pods-EroojaNetwork-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EroojaNetwork-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9BAD58FAC00607AC1FB61B877C3165D0 /* Alamofire-framework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Alamofire-framework.release.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A502C7D7E407B99E3792A32B5F273631 /* Pods-EroojaDev-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EroojaDev-Info.plist"; sourceTree = "<group>"; };
 		A6071A161F102C22E38613440BC7ECCA /* Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Delegate.swift; path = Sources/Utility/Delegate.swift; sourceTree = "<group>"; };
 		A766365B613B3A2738EBFC7A4D507B15 /* Kingfisher-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Kingfisher-Info.plist"; sourceTree = "<group>"; };
+		A7FC1C3855672E2D8398F8953E7E1181 /* Pods-EroojaNetwork-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EroojaNetwork-acknowledgements.plist"; sourceTree = "<group>"; };
 		A8163F7C8D24942D5F0B4AD2795D9880 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Sources/Cache/ImageCache.swift; sourceTree = "<group>"; };
-		A87275EB99EF8124ADAAF96207C01521 /* Pods-erooja.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-erooja.modulemap"; sourceTree = "<group>"; };
 		AA01C101423CE5BF16EF9CAE2783A92C /* ImageDownloaderDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloaderDelegate.swift; path = Sources/Networking/ImageDownloaderDelegate.swift; sourceTree = "<group>"; };
 		AD1ECAA0D477E5EEE9B89E6695CF2F53 /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
-		AEE7C47EBB452C6B8CBEB6BE0328A6F3 /* Pods-erooja.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-erooja.inhouse.xcconfig"; sourceTree = "<group>"; };
 		AEEEFA5FB2FEE97466774D33A6088E05 /* AnimatedImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedImageView.swift; path = Sources/Views/AnimatedImageView.swift; sourceTree = "<group>"; };
 		B0F53C8AE344F1066323F55C4CBF49FD /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Views/Indicator.swift; sourceTree = "<group>"; };
 		B64EE4FAE678E10E4AAACF911A2674A5 /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/Networking/ImageDownloader.swift; sourceTree = "<group>"; };
 		B81C341C780A9B49AC39727F02974EBA /* ImageDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDataProvider.swift; path = Sources/General/ImageSource/ImageDataProvider.swift; sourceTree = "<group>"; };
+		C0951338F2B109E4966094E338276F71 /* Pods-erooja-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-erooja-frameworks.sh"; sourceTree = "<group>"; };
 		C0CF8E4004FCFEDF942E0DD3DA6B8040 /* Alamofire-framework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-framework-dummy.m"; sourceTree = "<group>"; };
 		C204A3209D605921980FE2B02117C536 /* DiskStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskStorage.swift; path = Sources/Cache/DiskStorage.swift; sourceTree = "<group>"; };
 		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70D2BA661A4797E55396C792C0EBCFA /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
-		CB040622A9A48E8383E763B8198105AF /* Pods-erooja-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-erooja-umbrella.h"; sourceTree = "<group>"; };
-		CE997B704FCA48DAE9F3F049B9FD3D5A /* Pods-EroojaNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EroojaNetwork.release.xcconfig"; sourceTree = "<group>"; };
-		D0ED5E87832FCA994F9E7054AF2DA354 /* Pods-EroojaDev-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EroojaDev-dummy.m"; sourceTree = "<group>"; };
+		C8236D60E227C79E2873149242E5C09E /* Pods-EroojaNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EroojaNetwork-dummy.m"; sourceTree = "<group>"; };
 		D1702A539F1BDB6CE4EBF9FD068E101E /* CacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheSerializer.swift; path = Sources/Cache/CacheSerializer.swift; sourceTree = "<group>"; };
 		D3F95A9FF2B2DCD9765235918259298F /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 		D4FCC43651D93FE724E55D1E1BFEF30A /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Utility/Box.swift; sourceTree = "<group>"; };
 		D54031B8A0999B2E8774DC5EC61AC8CA /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
 		D5C4EC4791E88BE8EFE17F7B29A1CAF2 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		D615CF880B54182178AB146725D4410D /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/Networking/RequestModifier.swift; sourceTree = "<group>"; };
+		D7018A212CC195B1619AA132C6F56C0E /* Pods-EroojaNetwork-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EroojaNetwork-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DB69C305C185E2E85BAD76119B24F295 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image/Image.swift; sourceTree = "<group>"; };
 		DB951C548E98AF92BEE374C9B5D2345F /* Alamofire-library-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Alamofire-library-umbrella.h"; path = "../Alamofire-library/Alamofire-library-umbrella.h"; sourceTree = "<group>"; };
 		DB9DC7A4717774C761AF6D3924FA86BE /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		DCAE2B2F8E46EB3FD3D35990812BDFFE /* Pods-erooja-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-erooja-dummy.m"; sourceTree = "<group>"; };
 		E0E9E7371915C2ED7269B1F52BE670AC /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		E2DDF44768CADF85A9A178F5F786D590 /* Pods-EroojaDev-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EroojaDev-frameworks.sh"; sourceTree = "<group>"; };
+		E2C6E2C2B1F6779078679787F32F62CE /* Pods-erooja-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-erooja-acknowledgements.plist"; sourceTree = "<group>"; };
+		E5BC1DC4DD7DAA2B09FAFE1FD1F2EE69 /* Pods-erooja-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-erooja-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E7ABCE9E77CB2453766DF06DADED73A1 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
 		ECA1528B8B52CDF3FD18183FBD92F164 /* Alamofire-library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Alamofire-library.debug.xcconfig"; path = "../Alamofire-library/Alamofire-library.debug.xcconfig"; sourceTree = "<group>"; };
-		ECC3CC2675D47C865AEB0750AF327AC0 /* Pods-erooja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-erooja.release.xcconfig"; sourceTree = "<group>"; };
+		EDE322AE5271F3C37D904F93919F9C8D /* Pods-erooja-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-erooja-Info.plist"; sourceTree = "<group>"; };
+		EE53E8954E44F728F47A0CCE97B0C551 /* Pods-EroojaNetwork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EroojaNetwork-umbrella.h"; sourceTree = "<group>"; };
 		F12EE8476509D0A00554FCAA8BC9A6BC /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
 		F25C9B11A021009C44382691F6C2D63E /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
-		F68C9A4EBDA48BD6788267D8EE4E837D /* Pods-erooja-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-erooja-frameworks.sh"; sourceTree = "<group>"; };
 		F7C6E27C3A06F97A36A0CF588CBE033B /* SizeExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeExtensions.swift; path = Sources/Utility/SizeExtensions.swift; sourceTree = "<group>"; };
 		F8961B32752E219BF7E28317BA9E580D /* Source.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Source.swift; path = Sources/General/ImageSource/Source.swift; sourceTree = "<group>"; };
-		F9F0DCB9D8E2805B18BBA8E6BE8442B8 /* Pods-erooja-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-erooja-acknowledgements.plist"; sourceTree = "<group>"; };
 		FAFE8169C3E28A43430E3B1509D06A6D /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Utility/Result.swift; sourceTree = "<group>"; };
 		FC921AADCFB049858CF19E1F2648A001 /* Alamofire-library.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "Alamofire-library.modulemap"; path = "../Alamofire-library/Alamofire-library.modulemap"; sourceTree = "<group>"; };
 		FEA24D05CABFA93034DA43EE486D8C97 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1C3622508765D742B135D3A4D81C1880 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8232E9DD4A25315BF4FA5F6BA0BA4688 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1F098AE8FC3FDF31D3B5CA1E5F05EE5A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,12 +403,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		2D11F2F73A65EE8997B234106A650E59 /* Targets Support Files */ = {
+		4A699177DD3F7F27A37643B978B3ECEF /* Pods-EroojaNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				FF997D205C1FB10FD97A1C066ACB30BE /* Pods-erooja */,
-				A2A186D5AFD451B20758C5A1BB98B4F4 /* Pods-EroojaDev */,
-				C6785204F735E564B87B25724B97B5A5 /* Pods-EroojaNetwork */,
+				4F48CAB8DDBF86FCDCE46156BDE2FBD2 /* Pods-EroojaNetwork.modulemap */,
+				D7018A212CC195B1619AA132C6F56C0E /* Pods-EroojaNetwork-acknowledgements.markdown */,
+				A7FC1C3855672E2D8398F8953E7E1181 /* Pods-EroojaNetwork-acknowledgements.plist */,
+				C8236D60E227C79E2873149242E5C09E /* Pods-EroojaNetwork-dummy.m */,
+				EE53E8954E44F728F47A0CCE97B0C551 /* Pods-EroojaNetwork-umbrella.h */,
+				3DF6477613116DE307DFEBF0423A977E /* Pods-EroojaNetwork.debug.xcconfig */,
+				078800272545E689D0A6C39323377BF4 /* Pods-EroojaNetwork.release.xcconfig */,
+			);
+			name = "Pods-EroojaNetwork";
+			path = "Target Support Files/Pods-EroojaNetwork";
+			sourceTree = "<group>";
+		};
+		6631405B3443D0FBAD207128591091F0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDECC27142721C4EAD32E0D0459685CD /* Pods-erooja */,
+				4A699177DD3F7F27A37643B978B3ECEF /* Pods-EroojaNetwork */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
@@ -541,23 +518,16 @@
 			path = "../Target Support Files/Alamofire-framework";
 			sourceTree = "<group>";
 		};
-		A2A186D5AFD451B20758C5A1BB98B4F4 /* Pods-EroojaDev */ = {
+		9D46409F9286A511B575C96534DE3115 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6FE318AF9D7D491CBAA226DEE24C1F47 /* Pods-EroojaDev.modulemap */,
-				77FB772A269C867712C426708797E9A5 /* Pods-EroojaDev-acknowledgements.markdown */,
-				2542086B9160B57BE39AE26B9FC1BAC2 /* Pods-EroojaDev-acknowledgements.plist */,
-				D0ED5E87832FCA994F9E7054AF2DA354 /* Pods-EroojaDev-dummy.m */,
-				E2DDF44768CADF85A9A178F5F786D590 /* Pods-EroojaDev-frameworks.sh */,
-				A502C7D7E407B99E3792A32B5F273631 /* Pods-EroojaDev-Info.plist */,
-				0EEFD1C98EB28D6D31222811379EB0E6 /* Pods-EroojaDev-umbrella.h */,
-				961E7D8F506441D24930E329F8027A47 /* Pods-EroojaDev.debug.xcconfig */,
-				6494AAB05091342B3CF6E0EDEB79E078 /* Pods-EroojaDev.inhouse.xcconfig */,
-				458E20CC790D08EB215BA619D4368663 /* Pods-EroojaDev.release.xcconfig */,
-				9913675C1A3DDDA67571AE6C4C51FBE2 /* Pods-EroojaDev.uitest.xcconfig */,
+				343CE98738FF456D1F5E2995AC819CEE /* Alamofire.framework */,
+				C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */,
+				3076B2AB289B08CBBB59B00A77261823 /* libAlamofire-library.a */,
+				3DA59C2B7F67EDCE68A27ECF567E24D5 /* libPods-EroojaNetwork.a */,
+				7554BDF7AAF78F7B33CA5EA0BF529CCA /* Pods_erooja.framework */,
 			);
-			name = "Pods-EroojaDev";
-			path = "Target Support Files/Pods-EroojaDev";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B626FB676E3BBF08DCC5FB9151582A93 /* Support Files */ = {
@@ -622,43 +592,34 @@
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
-		C6785204F735E564B87B25724B97B5A5 /* Pods-EroojaNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				4496725E23BC479066FBDC67C3473B63 /* Pods-EroojaNetwork.modulemap */,
-				9B489F422E22758F2EECD8B85D53ABC2 /* Pods-EroojaNetwork-acknowledgements.markdown */,
-				10BF4D15A36B1A653F28B5C6AD376123 /* Pods-EroojaNetwork-acknowledgements.plist */,
-				26C8DFB07E03A7837159085E8F91DF56 /* Pods-EroojaNetwork-dummy.m */,
-				6F623EAFA728C4A84279C4EACDD5537D /* Pods-EroojaNetwork-umbrella.h */,
-				175C31B455C8949C5723C37EF5F6B605 /* Pods-EroojaNetwork.debug.xcconfig */,
-				CE997B704FCA48DAE9F3F049B9FD3D5A /* Pods-EroojaNetwork.release.xcconfig */,
-			);
-			name = "Pods-EroojaNetwork";
-			path = "Target Support Files/Pods-EroojaNetwork";
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
 				28285F7C330DE4B601EE9E6777075BDB /* Pods */,
-				D331579910EE8333C663672116C3B197 /* Products */,
-				2D11F2F73A65EE8997B234106A650E59 /* Targets Support Files */,
+				9D46409F9286A511B575C96534DE3115 /* Products */,
+				6631405B3443D0FBAD207128591091F0 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D331579910EE8333C663672116C3B197 /* Products */ = {
+		EDECC27142721C4EAD32E0D0459685CD /* Pods-erooja */ = {
 			isa = PBXGroup;
 			children = (
-				343CE98738FF456D1F5E2995AC819CEE /* Alamofire.framework */,
-				C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */,
-				3076B2AB289B08CBBB59B00A77261823 /* libAlamofire-library.a */,
-				3DA59C2B7F67EDCE68A27ECF567E24D5 /* libPods-EroojaNetwork.a */,
-				7554BDF7AAF78F7B33CA5EA0BF529CCA /* Pods_erooja.framework */,
-				214F1D6184DE65F5F60CB86A00475C6D /* Pods_EroojaDev.framework */,
+				21F8D765DE34006196A7D1DD96B4E439 /* Pods-erooja.modulemap */,
+				E5BC1DC4DD7DAA2B09FAFE1FD1F2EE69 /* Pods-erooja-acknowledgements.markdown */,
+				E2C6E2C2B1F6779078679787F32F62CE /* Pods-erooja-acknowledgements.plist */,
+				95206EA63AC4F62C52D4EB0CBC2A7B10 /* Pods-erooja-dummy.m */,
+				C0951338F2B109E4966094E338276F71 /* Pods-erooja-frameworks.sh */,
+				EDE322AE5271F3C37D904F93919F9C8D /* Pods-erooja-Info.plist */,
+				02B2674A042B69E7B38C757C0A1F7683 /* Pods-erooja-umbrella.h */,
+				34EA0B6A82D2C5516A82A62D246F7948 /* Pods-erooja.debug.xcconfig */,
+				436ACF8011742C3A45DFC7259A3381D5 /* Pods-erooja.inhouse.xcconfig */,
+				22B9F56B4AFEE8DBECDFDB15106957A3 /* Pods-erooja.release.xcconfig */,
+				55D011151FAADB2368EE991BEF1003EB /* Pods-erooja.uitest.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-erooja";
+			path = "Target Support Files/Pods-erooja";
 			sourceTree = "<group>";
 		};
 		F4EDCEE8FA60C58BE6C758D9C25D78AE /* iOS */ = {
@@ -669,25 +630,6 @@
 				8D3BF06BD92238CB43628415C234BF25 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		FF997D205C1FB10FD97A1C066ACB30BE /* Pods-erooja */ = {
-			isa = PBXGroup;
-			children = (
-				A87275EB99EF8124ADAAF96207C01521 /* Pods-erooja.modulemap */,
-				872478C2E8CE815E85D303BD1C8FCE72 /* Pods-erooja-acknowledgements.markdown */,
-				F9F0DCB9D8E2805B18BBA8E6BE8442B8 /* Pods-erooja-acknowledgements.plist */,
-				DCAE2B2F8E46EB3FD3D35990812BDFFE /* Pods-erooja-dummy.m */,
-				F68C9A4EBDA48BD6788267D8EE4E837D /* Pods-erooja-frameworks.sh */,
-				86241BD6D1EC6B78C949407DB4C42AED /* Pods-erooja-Info.plist */,
-				CB040622A9A48E8383E763B8198105AF /* Pods-erooja-umbrella.h */,
-				8429074126D8280D7470F8FC2D48B615 /* Pods-erooja.debug.xcconfig */,
-				AEE7C47EBB452C6B8CBEB6BE0328A6F3 /* Pods-erooja.inhouse.xcconfig */,
-				ECC3CC2675D47C865AEB0750AF327AC0 /* Pods-erooja.release.xcconfig */,
-				95D0024A91BCB5701FEEA823C1554B87 /* Pods-erooja.uitest.xcconfig */,
-			);
-			name = "Pods-erooja";
-			path = "Target Support Files/Pods-erooja";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -725,14 +667,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3553CCD2C736168177087B829B25DD0 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7165DD4336BDC983A33DA392819A2B19 /* Pods-EroojaDev-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DDAAC0B087C38D0B8812368036CF840B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -745,26 +679,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		31EEA103780C86CD468D49E3E3EA5581 /* Pods-EroojaDev */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 265355B5A620CFA0591820EE784F210F /* Build configuration list for PBXNativeTarget "Pods-EroojaDev" */;
-			buildPhases = (
-				B3553CCD2C736168177087B829B25DD0 /* Headers */,
-				0DC81CC9B09AED7E4145E2882E7F7B94 /* Sources */,
-				1C3622508765D742B135D3A4D81C1880 /* Frameworks */,
-				AB569AAFA16A7439A2D778739A4EF26F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				77D0089E0E573C8E3B708CBD13993B9F /* PBXTargetDependency */,
-				E5FC3CFA10DD102F593DD90BDB0D4839 /* PBXTargetDependency */,
-			);
-			name = "Pods-EroojaDev";
-			productName = "Pods-EroojaDev";
-			productReference = 214F1D6184DE65F5F60CB86A00475C6D /* Pods_EroojaDev.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		3949679AB5CF3F2C77C15A0E67E8AF64 /* Alamofire-framework */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDE6161EDBF5E1B56B744AB1BD598E4C /* Build configuration list for PBXNativeTarget "Alamofire-framework" */;
@@ -877,7 +791,7 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = D331579910EE8333C663672116C3B197 /* Products */;
+			productRefGroup = 9D46409F9286A511B575C96534DE3115 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -885,7 +799,6 @@
 				47497BE8AA365DA8AAEFDEEEC086ABF6 /* Alamofire-library */,
 				E8022D22FAA6690B5E1C379C1BCE1491 /* Kingfisher */,
 				9FDC7A5A5744BC1757CC5C2EFD2BC4A7 /* Pods-erooja */,
-				31EEA103780C86CD468D49E3E3EA5581 /* Pods-EroojaDev */,
 				B2C22EB093C47ED8933D92FD3DD33C0B /* Pods-EroojaNetwork */,
 				3E064FCAB631C681990F7B25DB76F0D5 /* SwiftLint-framework */,
 				844E4FE60F85EB07889EC26B33D15EFB /* SwiftLint-library */,
@@ -902,13 +815,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2A8C134DC997FC07878191340CD28BB9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB569AAFA16A7439A2D778739A4EF26F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -952,14 +858,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0DC81CC9B09AED7E4145E2882E7F7B94 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				455D13DA36A9F3251E365739E006D3EB /* Pods-EroojaDev-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		19959BD4B29E0A629AAE56DD33DAC179 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1138,23 +1036,11 @@
 			target = 47497BE8AA365DA8AAEFDEEEC086ABF6 /* Alamofire-library */;
 			targetProxy = F69B517EA0BF910A7D02574FD45EDD9E /* PBXContainerItemProxy */;
 		};
-		77D0089E0E573C8E3B708CBD13993B9F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Alamofire-framework";
-			target = 3949679AB5CF3F2C77C15A0E67E8AF64 /* Alamofire-framework */;
-			targetProxy = B4EF12531E30D61A786F9E33356C7EE4 /* PBXContainerItemProxy */;
-		};
 		B4C595AE94853E045D1E61DD63D70FE3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "SwiftLint-library";
 			target = 844E4FE60F85EB07889EC26B33D15EFB /* SwiftLint-library */;
 			targetProxy = 65A41BA600692F577CD7CDBB1B7B9D51 /* PBXContainerItemProxy */;
-		};
-		E5FC3CFA10DD102F593DD90BDB0D4839 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SwiftLint-framework";
-			target = 3E064FCAB631C681990F7B25DB76F0D5 /* SwiftLint-framework */;
-			targetProxy = 7545A3CC7AC46B1A49AAD6400705637D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1178,7 +1064,7 @@
 		};
 		08FACFE60B96100615249F65805EE1BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE997B704FCA48DAE9F3F049B9FD3D5A /* Pods-EroojaNetwork.release.xcconfig */;
+			baseConfigurationReference = 078800272545E689D0A6C39323377BF4 /* Pods-EroojaNetwork.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1202,7 +1088,7 @@
 		};
 		096E6331D152D2C1F7227AC65C7B727D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECC3CC2675D47C865AEB0750AF327AC0 /* Pods-erooja.release.xcconfig */;
+			baseConfigurationReference = 22B9F56B4AFEE8DBECDFDB15106957A3 /* Pods-erooja.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1347,44 +1233,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Inhouse;
-		};
-		1BE4824A9FAEB6170552453A6BB6812E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 961E7D8F506441D24930E329F8027A47 /* Pods-EroojaDev.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		257497152829C177993B5EC99C1D227A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1618,84 +1466,6 @@
 			};
 			name = Debug;
 		};
-		498054D3B2B938837A8A95C1024DFF42 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 458E20CC790D08EB215BA619D4368663 /* Pods-EroojaDev.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		58802038D109F39574F5881C544492C0 /* Inhouse */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6494AAB05091342B3CF6E0EDEB79E078 /* Pods-EroojaDev.inhouse.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Inhouse;
-		};
 		5A8F3815C3917C8E9791F564E25B476B /* UITest */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B62698496DE1F9B6B5B01C2411B4528 /* Kingfisher.release.xcconfig */;
@@ -1767,45 +1537,6 @@
 			};
 			name = Inhouse;
 		};
-		725D2259AE1E3D15A6CCE355FDF141D7 /* UITest */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9913675C1A3DDDA67571AE6C4C51FBE2 /* Pods-EroojaDev.uitest.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = UITest;
-		};
 		817CD53A48D1568A8FB069EB5A0A5455 /* Inhouse */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1868,7 +1599,7 @@
 		};
 		828E65E94FB642C52E25B193E2A7A64D /* UITest */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95D0024A91BCB5701FEEA823C1554B87 /* Pods-erooja.uitest.xcconfig */;
+			baseConfigurationReference = 55D011151FAADB2368EE991BEF1003EB /* Pods-erooja.uitest.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1924,7 +1655,7 @@
 		};
 		A3C48CAAD57247D4B2C36C99275D1A2A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 175C31B455C8949C5723C37EF5F6B605 /* Pods-EroojaNetwork.debug.xcconfig */;
+			baseConfigurationReference = 3DF6477613116DE307DFEBF0423A977E /* Pods-EroojaNetwork.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2028,7 +1759,7 @@
 		};
 		BD3046A251F1DEA7A0427FBF7ADD7C1C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8429074126D8280D7470F8FC2D48B615 /* Pods-erooja.debug.xcconfig */;
+			baseConfigurationReference = 34EA0B6A82D2C5516A82A62D246F7948 /* Pods-erooja.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2227,7 +1958,7 @@
 		};
 		EDC6B21651FA6F07A24265C84BB07DA7 /* Inhouse */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEE7C47EBB452C6B8CBEB6BE0328A6F3 /* Pods-erooja.inhouse.xcconfig */;
+			baseConfigurationReference = 436ACF8011742C3A45DFC7259A3381D5 /* Pods-erooja.inhouse.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2351,17 +2082,6 @@
 				B739BE5C862F3ECC7489A73AEAF0E64F /* Inhouse */,
 				0D0D1FEFDCC1F1229D435D891E991655 /* Release */,
 				5A8F3815C3917C8E9791F564E25B476B /* UITest */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		265355B5A620CFA0591820EE784F210F /* Build configuration list for PBXNativeTarget "Pods-EroojaDev" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1BE4824A9FAEB6170552453A6BB6812E /* Debug */,
-				58802038D109F39574F5881C544492C0 /* Inhouse */,
-				498054D3B2B938837A8A95C1024DFF42 /* Release */,
-				725D2259AE1E3D15A6CCE355FDF141D7 /* UITest */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

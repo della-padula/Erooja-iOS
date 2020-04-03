@@ -13,13 +13,6 @@ target 'erooja' do
   pod 'Kingfisher'
 end
 
-target 'EroojaDev' do
-  use_frameworks!
-
-  pod 'Alamofire'
-  pod 'SwiftLint'
-end
-
 target 'EroojaNetwork' do
   project  'EroojaNetwork/EroojaNetwork'
   

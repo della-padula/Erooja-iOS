@@ -126,10 +126,8 @@ public class OnboardViewController: UIViewController {
     private func onClickNextButton() {
         self.currentPage += 1
         if self.currentPage > 2 {
-            LoginSwitcher.updateRootVC(type: .login)
+            self.goToLoginView()
         } else {
-//            self.pageControl.currentPage = self.currentPage
-            
             self.collectionView!.collectionViewLayout.invalidateLayout()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.collectionView!.scrollToItem(at: IndexPath(row: self.currentPage, section: 0), at: .centeredHorizontally, animated: true)
@@ -139,7 +137,15 @@ public class OnboardViewController: UIViewController {
     
     @objc
     private func onClickSkipButton() {
+        self.goToLoginView()
+    }
+    
+    private func goToLoginView() {
+        #if DEBUG
+        LoginSwitcher.updateRootVC(type: .uitest)
+        #else
         LoginSwitcher.updateRootVC(type: .login)
+        #endif
     }
 }
 

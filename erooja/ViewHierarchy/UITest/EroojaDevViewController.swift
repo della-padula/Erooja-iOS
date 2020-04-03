@@ -6,13 +6,12 @@
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
-import UIKit
 import EroojaUI
 import EroojaCommon
 import EroojaNetwork
 import EroojaSharedBase
 
-class EroojaDevViewController: UIViewController {
+class UITestViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,13 +41,13 @@ class EroojaDevViewController: UIViewController {
 
 }
 
-extension EroojaDevViewController: UITableViewDelegate, UITableViewDataSource {
+extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return types.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EroojaDevCell", for: indexPath) as! EroojaDevTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EroojaDevCell", for: indexPath) as! UITestTableViewCell
         cell.lblTitle.text = types[indexPath.row].rawValue
         cell.selectionStyle = .none
         return cell
@@ -61,7 +60,7 @@ extension EroojaDevViewController: UITableViewDelegate, UITableViewDataSource {
             let vc = SignUpViewController()
             present(vc, animated: true, completion: nil)
         case .onboard:
-            let vc = UIStoryboard.onboardViewController()!
+            let vc = OnboardViewController()
             present(vc, animated: true, completion: nil)
         default:
             break
@@ -69,3 +68,4 @@ extension EroojaDevViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
