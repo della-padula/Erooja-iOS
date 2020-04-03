@@ -27,6 +27,21 @@ public class SignUpDetailView: UIView {
     @IBOutlet weak var button8: UIButton!
     @IBOutlet weak var button10: UIButton!
     
+    // LEFT
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    @IBOutlet weak var label5: UILabel!
+    
+    // RIGHT
+    @IBOutlet weak var label6: UILabel!
+    @IBOutlet weak var label7: UILabel!
+    @IBOutlet weak var label8: UILabel!
+    @IBOutlet weak var label9: UILabel!
+    @IBOutlet weak var label10: UILabel!
+    
+    private var labels: [UILabel]?
     private var buttons: [UIButton]?
     private var selectedIndex = -1
     
@@ -58,20 +73,30 @@ public class SignUpDetailView: UIView {
         
         self.buttons = [self.button1, self.button2, self.button3, self.button4, self.button5, self.button6, self.button7, self.button8, self.button9, self.button10]
         
+        self.labels = [self.label1, self.label2, self.label3, self.label4, self.label5, self.label6, self.label7, self.label8, self.label9, self.label10]
+        
         setButtonStyle()
     }
     
-    private func setButtonStyle() {
+    public func setButtonStyle() {
+        ELog.debug(message: "setButtonStyle, \(SignUpBaseProperty.fieldType)")
         for button in buttons! {
             button.isHidden = true
         }
         
-        if fieldType == .development {
-            for (index, _) in JobType.Develop.allCases.enumerated() {
+        for label in labels! {
+            label.isHidden = true
+            label.text = ""
+        }
+        
+        if SignUpBaseProperty.fieldType == .development {
+            for (index, value) in JobType.Develop.allCases.enumerated() {
+                setButtonTitle(index: index, title: value.rawValue)
                 setButtonState(index: index, isActive: false)
             }
         } else {
-            for (index, _) in JobType.Design.allCases.enumerated() {
+            for (index, value) in JobType.Design.allCases.enumerated() {
+                setButtonTitle(index: index, title: value.rawValue)
                 setButtonState(index: index, isActive: false)
             }
         }
@@ -81,21 +106,28 @@ public class SignUpDetailView: UIView {
         }
     }
     
+    private func setButtonTitle(index: Int, title: String) {
+        labels![index].text = title
+    }
+    
     private func setButtonState(index: Int, isActive: Bool) {
         if isActive {
             buttons![index].layer.cornerRadius = 8
             buttons![index].layer.borderColor = EroojaColorSet.shared.orgDefault400s.cgColor
             buttons![index].layer.borderWidth = 1
-            buttons![index].titleLabel?.font = .AppleSDSemiBold15P
-            buttons![index].setTitleColor(EroojaColorSet.shared.orgDefault400s, for: .normal)
+            labels![index].font = .AppleSDSemiBold15P
+            labels![index].textColor = EroojaColorSet.shared.orgDefault400s
             buttons![index].isHidden = false
+            labels![index].isHidden = false
         } else {
             buttons![index].layer.cornerRadius = 8
             buttons![index].layer.borderColor = EroojaColorSet.shared.gray500s.cgColor
             buttons![index].layer.borderWidth = 1
-            buttons![index].titleLabel?.font = .AppleSDSemiBold15P
-            buttons![index].setTitleColor(EroojaColorSet.shared.gray300s, for: .normal)
+            labels![index].font = .AppleSDSemiBold15P
+            labels![index].textColor = EroojaColorSet.shared.gray300s
             buttons![index].isHidden = false
+            labels![index].isHidden = false
         }
     }
 }
+

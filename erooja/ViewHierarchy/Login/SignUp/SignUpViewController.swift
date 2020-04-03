@@ -48,7 +48,9 @@ public class SignUpViewController: BaseViewController {
         self.collectionPageView?.backgroundColor = .clear
         self.collectionPageView?.isPagingEnabled = true
         self.collectionPageView?.isScrollEnabled = false
-        self.collectionPageView?.register(SignUpViewCell.self, forCellWithReuseIdentifier: "SignUpViewCell")
+        self.collectionPageView?.register(SignUpNicknameViewCell.self, forCellWithReuseIdentifier: "SignUpNicknameViewCell")
+        self.collectionPageView?.register(SignUpFieldViewCell.self, forCellWithReuseIdentifier: "SignUpFieldViewCell")
+        self.collectionPageView?.register(SignUpDetailViewCell.self, forCellWithReuseIdentifier: "SignUpDetailViewCell")
         
         view.addSubview(self.collectionPageView!)
         self.collectionPageView!.translatesAutoresizingMaskIntoConstraints = false
@@ -135,16 +137,30 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let _cell = cell as! SignUpViewCell
-        _cell.checkButtonState()
+        
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SignUpViewCell", for: indexPath) as! SignUpViewCell
-        cell.viewModel = viewModels[indexPath.row]
-        cell.delegate = self
-        cell.checkButtonState()
-        return cell
+        switch viewModels[indexPath.row].type {
+        case .nickname:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SignUpNicknameViewCell", for: indexPath) as! SignUpNicknameViewCell
+            cell.viewModel = viewModels[indexPath.row]
+            cell.delegate = self
+            cell.checkButtonState()
+            return cell
+        case .field:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SignUpFieldViewCell", for: indexPath) as! SignUpFieldViewCell
+            cell.viewModel = viewModels[indexPath.row]
+            return cell
+        case .detail:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SignUpDetailViewCell", for: indexPath) as! SignUpDetailViewCell
+            cell.viewModel = viewModels[indexPath.row]
+            return cell
+        }
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        ELog.debug(message: "setButton Current Page : \(self.currentPage)")
     }
     
 }
