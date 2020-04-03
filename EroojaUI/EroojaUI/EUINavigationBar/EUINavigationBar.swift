@@ -44,6 +44,17 @@ public protocol EUINavigationBarDelegate {
 }
 
 public class EUINavigationBar: UIView {
+    private var backButton = EButton()
+    private var rightFirstButton = EButton()
+    private var rightSecondButton = EButton()
+    
+    private var rightButtons: [EButton]?
+    
+    private var isHiddenRightFirstButton = false
+    private var isHiddenRightSecondButton = false
+    
+    // USER Property
+    public var delegate: EUINavigationBarDelegate?
     public var barOptions: [EBarOption]? {
         didSet {
             self.setNavigationBarOption()
@@ -58,33 +69,33 @@ public class EUINavigationBar: UIView {
     
     public var rightFirstButtonType: ERightButton.ButtonType? {
         didSet {
-            if rightFirstButtonType == .image {
-                // ImageButton
-                
-            } else {
-                // TextButton
-                rightFirstButton = EButton()
-            }
+            self.rightButtons?[0].setButtonType(buttonType: rightFirstButtonType!)
         }
     }
     
     public var rightSecondButtonType: ERightButton.ButtonType? {
         didSet {
-            
+            self.rightButtons?[1].setButtonType(buttonType: rightSecondButtonType!)
         }
     }
     
-    public var delegate: EUINavigationBarDelegate?
-    private var backButton = EButton()
-    private var rightFirstButton = EButton()
-    private var rightSecondButton = EButton()
+    // MARK: USER Method
     
-    public init() {
-        super.init(frame: .zero)
+    // Set Right Button Content
+    public func setRightButtonImage(position: ERightButton.Position, image: UIImage) {
+        if position == .first {
+            self.rightFirstButton.image = image
+        } else {
+            self.rightSecondButton.image = image
+        }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    public func setRightButtonTitle(position: ERightButton.Position, title: String) {
+        if position == .first {
+            self.rightFirstButton.title = title
+        } else {
+            self.rightSecondButton.title = title
+        }
     }
     
     // Progress Value Setting
@@ -97,12 +108,28 @@ public class EUINavigationBar: UIView {
         return nil
     }
     
+    public init() {
+        super.init(frame: .zero)
+        self.addSubview(rightFirstButton)
+        self.addSubview(rightSecondButton)
+        
+        self.rightButtons = [self.rightFirstButton, self.rightSecondButton]
+        
+        self.setNavigationBarOption()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setNavigationBarOption() {
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: 44).isActive = true
         topAnchor.constraint(equalTo: topAnchor).isActive = true
         leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
         trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
+        
+        self.setRightButtonLayout()
         
         if let options = barOptions {
             for option in options {
@@ -113,8 +140,10 @@ public class EUINavigationBar: UIView {
                 case .progressBar:
                     break
                 case .rightFirstButton:
+                    isHiddenRightFirstButton = true
                     addRightButton(position: .first)
                 case .rightSecondButton:
+                    isHiddenRightSecondButton = true
                     addRightButton(position: .second)
                 case .textField:
                     break
@@ -123,8 +152,42 @@ public class EUINavigationBar: UIView {
         }
     }
     
-    private func addRightButton(position: ERightButton.Position) {
+    private func setRightButtonStyle(type: ERightButton.ButtonType, position: Int) {
+        rightButtons?[position].setButtonType(buttonType: type)
+    }
+    
+    private func setRightButtonLayout() {
+        rightFirstButton.backgroundColor = .red
+        rightSecondButton.backgroundColor = .blue
         
+        rightFirstButton.translatesAutoresizingMaskIntoConstraints = false
+        rightSecondButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        rightSecondButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        rightSecondButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        rightFirstButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        rightSecondButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        
+        rightFirstButton.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        rightSecondButton.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+        rightFirstButton.trailingAnchor.constraint(equalTo: rightSecondButton.leadingAnchor).isActive = true
+        rightFirstButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        rightFirstButton.widthAnchor.constraint(equalTo: rightFirstButton.heightAnchor, multiplier: 1.0).isActive = true
+        rightSecondButton.widthAnchor.constraint(equalTo: rightSecondButton.heightAnchor, multiplier: 1.0).isActive = true
+        
+        rightFirstButton.isHidden = true
+        rightSecondButton.isHidden = true
+    }
+    
+    private func addRightButton(position: ERightButton.Position) {
+        if position == .first {
+            rightFirstButton.isHidden = false
+        } else {
+            rightSecondButton.isHidden = false
+        }
     }
     
     private func addBackButton() {
