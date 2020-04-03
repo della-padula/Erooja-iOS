@@ -19,6 +19,7 @@ class UITestViewController: BaseViewController {
         case onboard       = "온보딩"
         case signup        = "회원가입"
         case mypage        = "마이페이지"
+        case main          = "메인"
         case nowGoal       = "진행중인 목표"
         case search        = "탐색"
         case addGoal       = "목표 추가"
@@ -60,6 +61,9 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
             present(vc, animated: true, completion: nil)
         case .onboard:
             let vc = OnboardViewController()
+            present(vc, animated: true, completion: nil)
+        case .search:
+            let vc = SearchViewController()
             present(vc, animated: true, completion: nil)
         default:
             break
