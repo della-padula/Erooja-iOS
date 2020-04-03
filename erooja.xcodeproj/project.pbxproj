@@ -8,25 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		46A805F72F56F5C060778B16 /* Pods_erooja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */; };
-		559951987FDE28CB97331449 /* libPods-EroojaDev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98AA8764ABF85FD2E9495BE1 /* libPods-EroojaDev.a */; };
 		B02B71192432BA5200045F93 /* EroojaSharedBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */; };
 		B02B711A2432BA5200045F93 /* EroojaSharedBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B02DFA22242F611E00B6DF89 /* EroojaUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD9E0242F60F1001CE297 /* EroojaUI.framework */; };
 		B02DFA23242F611E00B6DF89 /* EroojaUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD9E0242F60F1001CE297 /* EroojaUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B03D4A3224333C9D009180E9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3124333C9D009180E9 /* BaseViewController.swift */; };
-		B03D4A3324333C9D009180E9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3124333C9D009180E9 /* BaseViewController.swift */; };
 		B03D4A3924338DE3009180E9 /* LoginSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3824338DE3009180E9 /* LoginSwitcher.swift */; };
-		B03D4A3A24338DE3009180E9 /* LoginSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3824338DE3009180E9 /* LoginSwitcher.swift */; };
 		B03D4A4024339001009180E9 /* EroojaProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3F24339001009180E9 /* EroojaProperty.swift */; };
-		B03D4A4124339001009180E9 /* EroojaProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3F24339001009180E9 /* EroojaProperty.swift */; };
-		B03D4A6924339ECF009180E9 /* Roboto-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6424339ECB009180E9 /* Roboto-Regular.otf */; };
 		B03D4A6A24339ECF009180E9 /* Roboto-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6424339ECB009180E9 /* Roboto-Regular.otf */; };
 		B03D4A6D2433A2DC009180E9 /* OnboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A6B2433A2DC009180E9 /* OnboardCollectionViewCell.swift */; };
 		B03D4A6E2433A2DC009180E9 /* OnboardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6C2433A2DC009180E9 /* OnboardCollectionViewCell.xib */; };
-		B03D4A6F2433A874009180E9 /* OnboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A6B2433A2DC009180E9 /* OnboardCollectionViewCell.swift */; };
-		B03D4A702433A87F009180E9 /* OnboardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6C2433A2DC009180E9 /* OnboardCollectionViewCell.xib */; };
+		B03D4A9E24342167009180E9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A9D24342167009180E9 /* LoginViewController.swift */; };
 		B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462ACE242B8E5F00B51854 /* AppDelegate.swift */; };
-		B0462AD3242B8E5F00B51854 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD2242B8E5F00B51854 /* MainViewController.swift */; };
 		B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0462AD7242B8E5F00B51854 /* erooja.xcdatamodeld */; };
 		B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0462ADA242B8E6100B51854 /* Assets.xcassets */; };
 		B0462ADE242B8E6100B51854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462ADC242B8E6100B51854 /* LaunchScreen.storyboard */; };
@@ -41,30 +34,29 @@
 		B04FB43E242F757100003A8D /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */; };
 		B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; };
 		B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B09CD5D22436C1210073733D /* SignUpDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09CD5D12436C1200073733D /* SignUpDetailViewCell.swift */; };
 		B0A8C5562433341D002B2C83 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5552433341D002B2C83 /* StartViewController.swift */; };
-		B0A8C55724333426002B2C83 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5552433341D002B2C83 /* StartViewController.swift */; };
 		B0A8C5632433392B002B2C83 /* UIImage+EroojaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5622433392B002B2C83 /* UIImage+EroojaImage.swift */; };
-		B0A8C5642433394B002B2C83 /* UIImage+EroojaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5622433392B002B2C83 /* UIImage+EroojaImage.swift */; };
 		B0A8C5662433395B002B2C83 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A8C5652433395B002B2C83 /* Image.xcassets */; };
-		B0A8C5672433395F002B2C83 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A8C5652433395B002B2C83 /* Image.xcassets */; };
+		B0C030022434E247008771BB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C030012434E247008771BB /* SignUpViewController.swift */; };
+		B0C030172434F266008771BB /* SignUpNicknameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C030162434F266008771BB /* SignUpNicknameViewCell.swift */; };
+		B0C030202434F7EB008771BB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0301F2434F7EB008771BB /* SignUpViewModel.swift */; };
+		B0C0302724356AC1008771BB /* SignUpFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0302624356AC1008771BB /* SignUpFieldButton.swift */; };
+		B0C0302A24356AD2008771BB /* SignUpFieldButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C0302924356AD2008771BB /* SignUpFieldButton.xib */; };
+		B0C0310F243639C0008771BB /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0310E243639C0008771BB /* JobModel.swift */; };
+		B0C0311224364870008771BB /* JobItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0311124364870008771BB /* JobItemButton.swift */; };
+		B0C0311524364AE8008771BB /* SignUpDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0311424364AE8008771BB /* SignUpDetailView.swift */; };
+		B0C0311824364AFC008771BB /* SignUpDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C0311724364AFC008771BB /* SignUpDetailView.xib */; };
+		B0C0311B24366241008771BB /* SignUpBaseProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0311A24366241008771BB /* SignUpBaseProperty.swift */; };
 		B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; };
 		B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B0F1BB322436BC5800D04DD5 /* SignUpFieldViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1BB312436BC5800D04DD5 /* SignUpFieldViewCell.swift */; };
 		B0FE8E7F2432328400103A54 /* EroojaDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */; };
 		B0FE8E812432329600103A54 /* EroojaDevTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */; };
-		B0FE8EAD24323CCB00103A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EAC24323CCB00103A54 /* AppDelegate.swift */; };
-		B0FE8EB624323CCB00103A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8EB524323CCB00103A54 /* Assets.xcassets */; };
-		B0FE8EB924323CCB00103A54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8EB724323CCB00103A54 /* LaunchScreen.storyboard */; };
-		B0FE8EC024323DE900103A54 /* EroojaDev.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8E82243232A100103A54 /* EroojaDev.storyboard */; };
 		B0FE8EC124323DEE00103A54 /* EroojaDev.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8E82243232A100103A54 /* EroojaDev.storyboard */; };
-		B0FE8EC224323DEE00103A54 /* EroojaDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */; };
-		B0FE8EC324323DEE00103A54 /* EroojaDevTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */; };
 		B0FE8ECC2432404F00103A54 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8ECB2432404F00103A54 /* Start.storyboard */; };
 		B0FE8ECE2432407E00103A54 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ECD2432407E00103A54 /* OnboardViewController.swift */; };
 		B0FE8ED42432491300103A54 /* UIStoryboard+Onboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ED32432491300103A54 /* UIStoryboard+Onboard.swift */; };
-		B0FE8ED5243249C600103A54 /* UIStoryboard+Onboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ED32432491300103A54 /* UIStoryboard+Onboard.swift */; };
-		B0FE8ED6243249C900103A54 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ECD2432407E00103A54 /* OnboardViewController.swift */; };
-		B0FE8ED9243249D000103A54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0462AEA242B8FE800B51854 /* Home.storyboard */; };
-		B0FE8EDA243249D000103A54 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8ECB2432404F00103A54 /* Start.storyboard */; };
 		B0FE8EE22432B77600103A54 /* eroojaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EE12432B77600103A54 /* eroojaUITests.swift */; };
 		B0FE8EF22432B85C00103A54 /* eroojaUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EF12432B85C00103A54 /* eroojaUnitTests.swift */; };
 /* End PBXBuildFile section */
@@ -136,7 +128,6 @@
 		3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_erooja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4200223CE7B85D57036384AF /* Pods-erooja.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.inhouse.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.inhouse.xcconfig"; sourceTree = "<group>"; };
 		8A23D11EE96F66578868B5A2 /* Pods-erooja.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.uitest.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.uitest.xcconfig"; sourceTree = "<group>"; };
-		98AA8764ABF85FD2E9495BE1 /* libPods-EroojaDev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EroojaDev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAC2CCFB91AEFC6FE7A332D /* Pods-erooja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.release.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.release.xcconfig"; sourceTree = "<group>"; };
 		AE2CA5D8F5338CEE1C20830F /* Pods-EroojaDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.release.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.release.xcconfig"; sourceTree = "<group>"; };
 		B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaNetwork.xcodeproj; path = EroojaNetwork/EroojaNetwork.xcodeproj; sourceTree = "<group>"; };
@@ -146,9 +137,9 @@
 		B03D4A6424339ECB009180E9 /* Roboto-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.otf"; sourceTree = "<group>"; };
 		B03D4A6B2433A2DC009180E9 /* OnboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardCollectionViewCell.swift; sourceTree = "<group>"; };
 		B03D4A6C2433A2DC009180E9 /* OnboardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardCollectionViewCell.xib; sourceTree = "<group>"; };
+		B03D4A9D24342167009180E9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B0462ACB242B8E5F00B51854 /* erooja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = erooja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0462ACE242B8E5F00B51854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0462AD2242B8E5F00B51854 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B0462AD8242B8E5F00B51854 /* erooja.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = erooja.xcdatamodel; sourceTree = "<group>"; };
 		B0462ADA242B8E6100B51854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0462ADD242B8E6100B51854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -165,13 +156,25 @@
 		B04FB43F242F769700003A8D /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaCommon.xcodeproj; path = EroojaCommon/EroojaCommon.xcodeproj; sourceTree = "<group>"; };
 		B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaUI.xcodeproj; path = EroojaUI/EroojaUI.xcodeproj; sourceTree = "<group>"; };
+		B09CD5D12436C1200073733D /* SignUpDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailViewCell.swift; sourceTree = "<group>"; };
 		B0A8C5552433341D002B2C83 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		B0A8C5622433392B002B2C83 /* UIImage+EroojaImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+EroojaImage.swift"; sourceTree = "<group>"; };
 		B0A8C5652433395B002B2C83 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		B0C030012434E247008771BB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B0C030162434F266008771BB /* SignUpNicknameViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameViewCell.swift; sourceTree = "<group>"; };
+		B0C0301F2434F7EB008771BB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		B0C0302624356AC1008771BB /* SignUpFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFieldButton.swift; sourceTree = "<group>"; };
+		B0C0302924356AD2008771BB /* SignUpFieldButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpFieldButton.xib; sourceTree = "<group>"; };
+		B0C0307C2435A8E1008771BB /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		B0C0310E243639C0008771BB /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
+		B0C0311124364870008771BB /* JobItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobItemButton.swift; sourceTree = "<group>"; };
+		B0C0311424364AE8008771BB /* SignUpDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailView.swift; sourceTree = "<group>"; };
+		B0C0311724364AFC008771BB /* SignUpDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpDetailView.xib; sourceTree = "<group>"; };
+		B0C0311A24366241008771BB /* SignUpBaseProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBaseProperty.swift; sourceTree = "<group>"; };
+		B0F1BB312436BC5800D04DD5 /* SignUpFieldViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFieldViewCell.swift; sourceTree = "<group>"; };
 		B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevViewController.swift; sourceTree = "<group>"; };
 		B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevTableViewCell.swift; sourceTree = "<group>"; };
 		B0FE8E82243232A100103A54 /* EroojaDev.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EroojaDev.storyboard; sourceTree = "<group>"; };
-		B0FE8EAA24323CCB00103A54 /* EroojaDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EroojaDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE8EAC24323CCB00103A54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0FE8EB524323CCB00103A54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0FE8EB824323CCB00103A54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -189,6 +192,7 @@
 		B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.debug.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
 		F839532DC0F68802565B88E6 /* Pods-EroojaDev.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.inhouse.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.inhouse.xcconfig"; sourceTree = "<group>"; };
 		F87B7FEA3CF76898E1A4522D /* Pods-EroojaDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.debug.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.debug.xcconfig"; sourceTree = "<group>"; };
+		FBD0A481CFCF149DD39F0F7F /* Pods_EroojaDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EroojaDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,14 +206,6 @@
 				B04FB43E242F757100003A8D /* KakaoOpenSDK.framework in Frameworks */,
 				46A805F72F56F5C060778B16 /* Pods_erooja.framework in Frameworks */,
 				B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0FE8EA724323CCB00103A54 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				559951987FDE28CB97331449 /* libPods-EroojaDev.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,8 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */,
+				B0C0307C2435A8E1008771BB /* KakaoOpenSDK.framework */,
 				3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */,
-				98AA8764ABF85FD2E9495BE1 /* libPods-EroojaDev.a */,
+				FBD0A481CFCF149DD39F0F7F /* Pods_EroojaDev.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -246,6 +243,15 @@
 				B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B03D4A98243420B3009180E9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B0C030002434E1FE008771BB /* SignUp */,
+				B03D4A9D24342167009180E9 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		B0462AC2242B8E5F00B51854 = {
@@ -270,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				B0462ACB242B8E5F00B51854 /* erooja.app */,
-				B0FE8EAA24323CCB00103A54 /* EroojaDev.app */,
 				B0FE8EDF2432B77600103A54 /* eroojaUITests.xctest */,
 				B0FE8EEF2432B85C00103A54 /* eroojaUnitTests.xctest */,
 			);
@@ -281,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				B0462B2A242BAAA400B51854 /* Extensions */,
+				B0C0310D2436399C008771BB /* Models */,
 				B0462B1E242BA93C00B51854 /* ViewHierarchy */,
 				B0462AEC242B91CE00B51854 /* Module */,
 				B0462AE5242B8F9400B51854 /* storyboard */,
@@ -298,6 +304,7 @@
 		B0462AE5242B8F9400B51854 /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				B0FE8E82243232A100103A54 /* EroojaDev.storyboard */,
 				B0462AEA242B8FE800B51854 /* Home.storyboard */,
 				B0FE8ECB2432404F00103A54 /* Start.storyboard */,
 			);
@@ -316,10 +323,11 @@
 		B0462B1E242BA93C00B51854 /* ViewHierarchy */ = {
 			isa = PBXGroup;
 			children = (
+				B04B4ECF2436D64D00EA438B /* UITest */,
+				B03D4A98243420B3009180E9 /* Login */,
 				B0A8C55F243338FF002B2C83 /* Resources */,
 				B0A8C5542433340E002B2C83 /* Start */,
 				B0462B21242BA98D00B51854 /* EUINavigation */,
-				B0462AD2242B8E5F00B51854 /* MainViewController.swift */,
 				B03D4A3124333C9D009180E9 /* BaseViewController.swift */,
 			);
 			path = ViewHierarchy;
@@ -344,6 +352,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B04B4ECF2436D64D00EA438B /* UITest */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */,
+				B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */,
+			);
+			path = UITest;
+			sourceTree = "<group>";
+		};
 		B08AD994242F41D8001CE297 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +375,18 @@
 				B08AD9E0242F60F1001CE297 /* EroojaUI.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B09CD5D82436C3310073733D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0C0302624356AC1008771BB /* SignUpFieldButton.swift */,
+				B0C0302924356AD2008771BB /* SignUpFieldButton.xib */,
+				B0C0311124364870008771BB /* JobItemButton.swift */,
+				B0C0311424364AE8008771BB /* SignUpDetailView.swift */,
+				B0C0311724364AFC008771BB /* SignUpDetailView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B0A8C5542433340E002B2C83 /* Start */ = {
@@ -380,12 +409,39 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B0C030002434E1FE008771BB /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				B09CD5D82436C3310073733D /* Views */,
+				B0F1BB382436BC5B00D04DD5 /* CellHierarchy */,
+				B0C030012434E247008771BB /* SignUpViewController.swift */,
+				B0C0301F2434F7EB008771BB /* SignUpViewModel.swift */,
+				B0C0311A24366241008771BB /* SignUpBaseProperty.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		B0C0310D2436399C008771BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0C0310E243639C0008771BB /* JobModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B0F1BB382436BC5B00D04DD5 /* CellHierarchy */ = {
+			isa = PBXGroup;
+			children = (
+				B0C030162434F266008771BB /* SignUpNicknameViewCell.swift */,
+				B0F1BB312436BC5800D04DD5 /* SignUpFieldViewCell.swift */,
+				B09CD5D12436C1200073733D /* SignUpDetailViewCell.swift */,
+			);
+			path = CellHierarchy;
+			sourceTree = "<group>";
+		};
 		B0FE8E7D2432326D00103A54 /* Dev */ = {
 			isa = PBXGroup;
 			children = (
-				B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */,
-				B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */,
-				B0FE8E82243232A100103A54 /* EroojaDev.storyboard */,
 			);
 			path = Dev;
 			sourceTree = "<group>";
@@ -476,24 +532,6 @@
 			productReference = B0462ACB242B8E5F00B51854 /* erooja.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B0FE8EA924323CCB00103A54 /* EroojaDev */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B0FE8EBB24323CCB00103A54 /* Build configuration list for PBXNativeTarget "EroojaDev" */;
-			buildPhases = (
-				18E69E4590CDBADD6E3AED47 /* [CP] Check Pods Manifest.lock */,
-				B0FE8EA624323CCB00103A54 /* Sources */,
-				B0FE8EA724323CCB00103A54 /* Frameworks */,
-				B0FE8EA824323CCB00103A54 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = EroojaDev;
-			productName = EroojaUITest;
-			productReference = B0FE8EAA24323CCB00103A54 /* EroojaDev.app */;
-			productType = "com.apple.product-type.application";
-		};
 		B0FE8EDE2432B77600103A54 /* eroojaUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0FE8EE62432B77600103A54 /* Build configuration list for PBXNativeTarget "eroojaUITests" */;
@@ -543,9 +581,6 @@
 					B0462ACA242B8E5F00B51854 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
-					B0FE8EA924323CCB00103A54 = {
-						CreatedOnToolsVersion = 11.3.1;
-					};
 					B0FE8EDE2432B77600103A54 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = B0462ACA242B8E5F00B51854;
@@ -588,7 +623,6 @@
 			projectRoot = "";
 			targets = (
 				B0462ACA242B8E5F00B51854 /* erooja */,
-				B0FE8EA924323CCB00103A54 /* EroojaDev */,
 				B0FE8EDE2432B77600103A54 /* eroojaUITests */,
 				B0FE8EEE2432B85C00103A54 /* eroojaUnitTests */,
 			);
@@ -636,24 +670,11 @@
 				B03D4A6E2433A2DC009180E9 /* OnboardCollectionViewCell.xib in Resources */,
 				B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */,
 				B03D4A6A24339ECF009180E9 /* Roboto-Regular.otf in Resources */,
+				B0C0311824364AFC008771BB /* SignUpDetailView.xib in Resources */,
 				B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */,
 				B0FE8ECC2432404F00103A54 /* Start.storyboard in Resources */,
+				B0C0302A24356AD2008771BB /* SignUpFieldButton.xib in Resources */,
 				B0FE8EC124323DEE00103A54 /* EroojaDev.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0FE8EA824323CCB00103A54 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0FE8EC024323DE900103A54 /* EroojaDev.storyboard in Resources */,
-				B0A8C5672433395F002B2C83 /* Image.xcassets in Resources */,
-				B03D4A702433A87F009180E9 /* OnboardCollectionViewCell.xib in Resources */,
-				B0FE8EB924323CCB00103A54 /* LaunchScreen.storyboard in Resources */,
-				B03D4A6924339ECF009180E9 /* Roboto-Regular.otf in Resources */,
-				B0FE8EB624323CCB00103A54 /* Assets.xcassets in Resources */,
-				B0FE8EDA243249D000103A54 /* Start.storyboard in Resources */,
-				B0FE8ED9243249D000103A54 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,28 +695,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18E69E4590CDBADD6E3AED47 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EroojaDev-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5925D18F5E03B2F29739C437 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -742,44 +741,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C0302724356AC1008771BB /* SignUpFieldButton.swift in Sources */,
+				B03D4A9E24342167009180E9 /* LoginViewController.swift in Sources */,
 				B0FE8E7F2432328400103A54 /* EroojaDevViewController.swift in Sources */,
 				B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */,
 				B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */,
 				B0A8C5632433392B002B2C83 /* UIImage+EroojaImage.swift in Sources */,
 				B0462B23242BA99F00B51854 /* EUINavigationBar.swift in Sources */,
+				B0C0311524364AE8008771BB /* SignUpDetailView.swift in Sources */,
 				B0462B25242BA9CF00B51854 /* EUINavigationBar+Style.swift in Sources */,
 				B0A8C5562433341D002B2C83 /* StartViewController.swift in Sources */,
 				B03D4A3224333C9D009180E9 /* BaseViewController.swift in Sources */,
-				B0462AD3242B8E5F00B51854 /* MainViewController.swift in Sources */,
 				B03D4A4024339001009180E9 /* EroojaProperty.swift in Sources */,
 				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,
 				B0FE8ECE2432407E00103A54 /* OnboardViewController.swift in Sources */,
 				B0462B20242BA97800B51854 /* EUINavigationController.swift in Sources */,
+				B0C030202434F7EB008771BB /* SignUpViewModel.swift in Sources */,
+				B0C030172434F266008771BB /* SignUpNicknameViewCell.swift in Sources */,
+				B09CD5D22436C1210073733D /* SignUpDetailViewCell.swift in Sources */,
+				B0C0310F243639C0008771BB /* JobModel.swift in Sources */,
 				B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */,
 				B0FE8ED42432491300103A54 /* UIStoryboard+Onboard.swift in Sources */,
+				B0C030022434E247008771BB /* SignUpViewController.swift in Sources */,
+				B0F1BB322436BC5800D04DD5 /* SignUpFieldViewCell.swift in Sources */,
+				B0C0311B24366241008771BB /* SignUpBaseProperty.swift in Sources */,
 				B03D4A3924338DE3009180E9 /* LoginSwitcher.swift in Sources */,
 				B0FE8E812432329600103A54 /* EroojaDevTableViewCell.swift in Sources */,
 				B0462AEE242B920000B51854 /* Schedule.swift in Sources */,
+				B0C0311224364870008771BB /* JobItemButton.swift in Sources */,
 				B03D4A6D2433A2DC009180E9 /* OnboardCollectionViewCell.swift in Sources */,
 				B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0FE8EA624323CCB00103A54 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B03D4A6F2433A874009180E9 /* OnboardCollectionViewCell.swift in Sources */,
-				B0FE8ED6243249C900103A54 /* OnboardViewController.swift in Sources */,
-				B0FE8ED5243249C600103A54 /* UIStoryboard+Onboard.swift in Sources */,
-				B0FE8EC324323DEE00103A54 /* EroojaDevTableViewCell.swift in Sources */,
-				B0A8C5642433394B002B2C83 /* UIImage+EroojaImage.swift in Sources */,
-				B0FE8EC224323DEE00103A54 /* EroojaDevViewController.swift in Sources */,
-				B03D4A3A24338DE3009180E9 /* LoginSwitcher.swift in Sources */,
-				B03D4A4124339001009180E9 /* EroojaProperty.swift in Sources */,
-				B03D4A3324333C9D009180E9 /* BaseViewController.swift in Sources */,
-				B0FE8EAD24323CCB00103A54 /* AppDelegate.swift in Sources */,
-				B0A8C55724333426002B2C83 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -954,7 +945,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				DEVELOPMENT_TEAM = M79H9K226Y;
 				ENDPOINT_URL = erooja.debug;
 				Erooja_Bundle_Identifier = com.eroom.erooja.debug;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -982,7 +973,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				DEVELOPMENT_TEAM = M79H9K226Y;
 				ENDPOINT_URL = erooja.release;
 				Erooja_Bundle_Identifier = com.eroom.erooja;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1070,7 +1061,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				DEVELOPMENT_TEAM = M79H9K226Y;
 				ENDPOINT_URL = erooja.uitest;
 				Erooja_Bundle_Identifier = com.eroom.erooja.uitest;
 				INFOPLIST_FILE = erooja/Info.plist;
@@ -1152,7 +1143,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				DEVELOPMENT_TEAM = M79H9K226Y;
 				ENDPOINT_URL = erooja.inhouse;
 				Erooja_Bundle_Identifier = com.eroom.erooja.inhouse;
 				INFOPLIST_FILE = erooja/Info.plist;
@@ -1167,86 +1158,6 @@
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Inhouse;
-		};
-		B0FE8EBC24323CCB00103A54 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F87B7FEA3CF76898E1A4522D /* Pods-EroojaDev.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M79H9K226Y;
-				INFOPLIST_FILE = EroojaDev/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaDev;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		B0FE8EBD24323CCB00103A54 /* Inhouse */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F839532DC0F68802565B88E6 /* Pods-EroojaDev.inhouse.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M79H9K226Y;
-				INFOPLIST_FILE = EroojaDev/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaDev;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Inhouse;
-		};
-		B0FE8EBE24323CCB00103A54 /* UITest */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D69FCA9AAE9F8DAA5076410 /* Pods-EroojaDev.uitest.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M79H9K226Y;
-				INFOPLIST_FILE = EroojaDev/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaDev;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = UITest;
-		};
-		B0FE8EBF24323CCB00103A54 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE2CA5D8F5338CEE1C20830F /* Pods-EroojaDev.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M79H9K226Y;
-				INFOPLIST_FILE = EroojaDev/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.denny.EroojaDev;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
 		};
 		B0FE8EE72432B77600103A54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1425,17 +1336,6 @@
 				B0FE8E7C2432316900103A54 /* Inhouse */,
 				B0FE8E772432316700103A54 /* UITest */,
 				B0462AE4242B8E6100B51854 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B0FE8EBB24323CCB00103A54 /* Build configuration list for PBXNativeTarget "EroojaDev" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B0FE8EBC24323CCB00103A54 /* Debug */,
-				B0FE8EBD24323CCB00103A54 /* Inhouse */,
-				B0FE8EBE24323CCB00103A54 /* UITest */,
-				B0FE8EBF24323CCB00103A54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

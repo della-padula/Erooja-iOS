@@ -9,9 +9,27 @@
 import UIKit
 
 public extension UIFont {
+    class var AppleSDRegular17P: UIFont {
+        get {
+            return UIFont(name: "AppleSDGothicNeo-Regular", size: 17.0)!
+        }
+    }
+    
+    class var AppleSDRegular14P: UIFont {
+        get {
+            return UIFont(name: "AppleSDGothicNeo-Regular", size: 14.0)!
+        }
+    }
+    
     class var AppleSDRegular10P: UIFont {
         get {
             return UIFont(name: "AppleSDGothicNeo-Regular", size: 10.0)!
+        }
+    }
+    
+    class var AppleSDSemiBold17P: UIFont {
+        get {
+            return UIFont(name: "AppleSDGothicNeo-SemiBold", size: 17.0)!
         }
     }
     

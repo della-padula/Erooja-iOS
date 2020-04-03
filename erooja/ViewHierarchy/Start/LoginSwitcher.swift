@@ -14,6 +14,7 @@ public class LoginSwitcher {
         case login
         case onboarding
         case main
+        case uitest
     }
     
     static func updateRootVC(type: StartViewType) {
@@ -24,10 +25,15 @@ public class LoginSwitcher {
         case .main:
             break
         case .login:
-            break
-        case .onboarding:
-            rootVC = UIStoryboard(name: "Start", bundle: nil).instantiateViewController(withIdentifier: "OnboardViewController") as! OnboardViewController
+            rootVC = LoginViewController()
             appDelegate.window?.rootViewController = rootVC
+        case .onboarding:
+            rootVC = OnboardViewController()
+            appDelegate.window?.rootViewController = rootVC
+        case .uitest:
+            rootVC = UIStoryboard(name: "EroojaDev", bundle: nil).instantiateViewController(withIdentifier: "UITestHomeVC") as! UITestViewController
+            appDelegate.window?.rootViewController = rootVC
+            break
         }
         
 //        let status = UserDefaults.standard.bool(forKey: UserDefaultKey.loginStatus)
