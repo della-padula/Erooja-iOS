@@ -5,7 +5,7 @@
 //  Created by 김태인 on 2020/04/01.
 //  Copyright © 2020 김태인. All rights reserved.
 //
-
+import UIKit
 import EroojaUI
 import EroojaCommon
 
@@ -44,8 +44,8 @@ public class OnboardCollectionViewCell: UICollectionViewCell {
         self.lblMainText.font = .AppleSDBold20P
         self.lblSubText.font = .AppleSDSemiBold15P
         
-        self.lblMainText.textColor = .EROOJAGRAY33
-        self.lblSubText.textColor = .EROOJAGRAY75
+        self.lblMainText.textColor = EroojaColorSet.shared.gray100s
+        self.lblSubText.textColor = EroojaColorSet.shared.gray300s
         
         self.setupLayout()
     }

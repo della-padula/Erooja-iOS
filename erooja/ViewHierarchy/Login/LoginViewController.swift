@@ -6,6 +6,7 @@
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
+import UIKit
 import EroojaUI
 import EroojaCommon
 
@@ -26,6 +27,8 @@ public class LoginViewController: UIViewController {
     private let loginButtonHeightConstraint: CGFloat = 52
     private let logoViewHeightConstraint: CGFloat = 48
     
+    private var isInitialLoaded = false
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -33,7 +36,11 @@ public class LoginViewController: UIViewController {
     
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.setViewLayout()
+        
+        if !self.isInitialLoaded {
+            self.isInitialLoaded = true
+            self.setViewLayout()
+        }
     }
     
     private func setViewLayout() {
@@ -101,12 +108,13 @@ public class LoginViewController: UIViewController {
         
         print(view.frame.height)
         print(logoView.frame.height)
+        print(logoViewHeightConstraint)
         print(calcButtonHeight())
         print(logoViewAreaHeight)
         
         logoView.translatesAutoresizingMaskIntoConstraints = false
         logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        logoView.topAnchor.constraint(equalTo: view.topAnchor, constant: logoViewAreaHeight * 187 / 336).isActive = true
+        logoView.topAnchor.constraint(equalTo: view.topAnchor, constant: logoViewAreaHeight * (187 / 336)).isActive = true
         logoView.heightAnchor.constraint(equalToConstant: logoViewHeightConstraint).isActive = true
         logoView.widthAnchor.constraint(equalTo: logoView.heightAnchor, multiplier: 55/19).isActive = true
     }
@@ -119,8 +127,7 @@ public class LoginViewController: UIViewController {
                 break
             }
         }
-        print(loginButtons.count)
-        print(hasGuest)
+        
         return (loginButtonHeightConstraint * CGFloat(loginButtons.count)) + loginButtonBottomAnchorConstraint + loginButtonVerticalSpacingContraint * CGFloat(loginButtons.count - 1) - (hasGuest ? loginButtonVerticalSpacingContraint : 0)
     }
     
@@ -136,13 +143,19 @@ public class LoginViewController: UIViewController {
         
         session.open { (error) in
             if error != nil || !session.isOpen() { return }
+            
+            ELog.debug(message: "Session.token.accessToken : \(session.token?.accessToken)")
+            ELog.debug(message: "Session.token.accessTokenExpiresAt : \(session.token?.accessTokenExpiresAt)")
+            
             KOSessionTask.accessTokenInfoTask(completionHandler: { (token, error) in
                 ELog.debug(message: "token        : \(String(describing: token.unsafelyUnwrapped))")
                 ELog.debug(message: "token(id)    : \(String(describing: token?.id))")
+                
                 ELog.debug(message: "token(expire): \(String(describing: token?.expiresInMillis))")
             })
             
             KOSessionTask.userMeTask(completion: { (error, user) in
+                ELog.debug(message: "id          : \(String(describing: user?.id))")
                 ELog.debug(message: "email       : \(String(describing: user?.account?.email))")
                 ELog.debug(message: "birthday    : \(String(describing: user?.account?.birthday))")
                 ELog.debug(message: "birthYear   : \(String(describing: user?.account?.birthyear))")
@@ -154,6 +167,10 @@ public class LoginViewController: UIViewController {
                     let email = user.account?.email,
                     let nickname = user.account?.profile?.nickname else { return }
             })
+            
+            let signUpVC = SignUpViewController()
+            signUpVC.modalPresentationStyle = .fullScreen
+            self.present(signUpVC, animated: true, completion: nil)
         }
     }
     

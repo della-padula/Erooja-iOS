@@ -8,6 +8,8 @@
 
 import Foundation
 import EroojaUI
+import EroojaCommon
+import UIKit
 
 public class OnboardViewController: UIViewController {
     private var onboardItems = [
@@ -53,6 +55,7 @@ public class OnboardViewController: UIViewController {
         
         self.collectionView!.register(UINib(nibName: "OnboardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "OnboardCell")
         self.collectionView!.isScrollEnabled = false
+//        self.collectionView?.isPagingEnabled = true
         
         self.collectionView!.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView!)
@@ -79,7 +82,7 @@ public class OnboardViewController: UIViewController {
         self.nextButton.setTitle("Next", for: .normal)
         self.nextButton.addTarget(self, action: #selector(onClickNextButton), for: .touchUpInside)
         self.nextButton.titleLabel?.font = .RobotoRegular15P
-        self.nextButton.setTitleColor(.EROOJAMAIN100, for: .normal)
+        self.nextButton.setTitleColor(EroojaColorSet.shared.orgDefault400s, for: .normal)
         
         self.nextButton.translatesAutoresizingMaskIntoConstraints = false
         self.bottomView.addSubview(nextButton)
@@ -92,7 +95,7 @@ public class OnboardViewController: UIViewController {
         self.skipButton.setTitle("Skip", for: .normal)
         self.skipButton.addTarget(self, action: #selector(onClickSkipButton), for: .touchUpInside)
         self.skipButton.titleLabel?.font = .RobotoRegular15P
-        self.skipButton.setTitleColor(.EROOJAGRAY75, for: .normal)
+        self.skipButton.setTitleColor(EroojaColorSet.shared.gray300s, for: .normal)
         
         self.skipButton.translatesAutoresizingMaskIntoConstraints = false
         self.bottomView.addSubview(skipButton)
@@ -102,14 +105,13 @@ public class OnboardViewController: UIViewController {
         self.skipButton.widthAnchor.constraint(equalTo: skipButton.heightAnchor, multiplier: 73/48).isActive = true
         
         // UIPageControl
-        //        self.pageControl.backgroundColor = .green
         self.pageControl.numberOfPages = 3
         self.pageControl.currentPage = currentPage
         self.pageControl.indicatorDiameter = 9
         self.pageControl.currentIndicatorDiameter = 9
         self.pageControl.spacing = 20
-        self.pageControl.indicatorTintColor = UIColor(rgb: 0xD8D8D8)
-        self.pageControl.currentIndicatorTintColor = UIColor(rgb: 0xF3590F)
+        self.pageControl.indicatorTintColor = EroojaColorSet.shared.gray400s
+        self.pageControl.currentIndicatorTintColor = EroojaColorSet.shared.orgDefault400s
         
         self.pageControl.translatesAutoresizingMaskIntoConstraints = false
         self.bottomView.addSubview(pageControl)
@@ -124,10 +126,8 @@ public class OnboardViewController: UIViewController {
     private func onClickNextButton() {
         self.currentPage += 1
         if self.currentPage > 2 {
-            LoginSwitcher.updateRootVC(type: .login)
+            self.goToLoginView()
         } else {
-            self.pageControl.currentPage = self.currentPage
-            
             self.collectionView!.collectionViewLayout.invalidateLayout()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.collectionView!.scrollToItem(at: IndexPath(row: self.currentPage, section: 0), at: .centeredHorizontally, animated: true)
@@ -137,11 +137,19 @@ public class OnboardViewController: UIViewController {
     
     @objc
     private func onClickSkipButton() {
-        
+        self.goToLoginView()
+    }
+    
+    private func goToLoginView() {
+        #if DEBUG
+        LoginSwitcher.updateRootVC(type: .uitest)
+        #else
+        LoginSwitcher.updateRootVC(type: .login)
+        #endif
     }
 }
 
-extension OnboardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension OnboardViewController: UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return onboardItems.count
     }
@@ -149,9 +157,20 @@ extension OnboardViewController: UICollectionViewDelegate, UICollectionViewDataS
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnboardCell", for: indexPath) as! OnboardCollectionViewCell
         cell.item = onboardItems[indexPath.row]
-        
         return cell
     }
     
+    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        ELog.debug(message: "(Did End Display) Current Page : \(self.currentPage)")
+        self.pageControl.currentPage = self.currentPage
+    }
     
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let x = scrollView.contentOffset.x
+        let w = scrollView.bounds.size.width
+        let currentPage = Int(ceil(x / w))
+        
+        self.currentPage = currentPage
+        self.pageControl.currentPage = self.currentPage
+    }
 }

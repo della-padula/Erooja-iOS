@@ -8,6 +8,7 @@
 
 import Foundation
 import EroojaUI
+import UIKit
 
 public class BaseViewController: UIViewController {
     public func showAlertWithNoAction(title: String?, message: String?, completion: @escaping ((UIAlertAction) -> Void)) {

@@ -45,6 +45,9 @@ public class StartViewController: BaseViewController {
     }
     
     private func routeViewController(status: AppStatus) {
+        #if DEBUG
+        LoginSwitcher.updateRootVC(type: .uitest)
+        #else
         switch(status) {
         case .success:
             // Have Config, Have Account
@@ -61,6 +64,7 @@ public class StartViewController: BaseViewController {
                 exit(0)
             })
         }
+        #endif
     }
     
     private func loadLogoView(completion: @escaping (Bool) -> Void) {

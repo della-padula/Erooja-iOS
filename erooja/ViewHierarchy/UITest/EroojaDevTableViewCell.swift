@@ -6,9 +6,9 @@
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
-import UIKit
+import EroojaUI
 
-class EroojaDevTableViewCell: UITableViewCell {
+class UITestTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
     
