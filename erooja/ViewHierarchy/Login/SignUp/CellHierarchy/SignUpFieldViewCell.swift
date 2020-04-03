@@ -57,6 +57,7 @@ public class SignUpFieldViewCell: UICollectionViewCell {
         super.init(frame: frame)
         self.setupCell()
         self.setupFieldView()
+        self.checkButtonState()
     }
     
     required init?(coder: NSCoder) {
@@ -122,13 +123,26 @@ public class SignUpFieldViewCell: UICollectionViewCell {
 extension SignUpFieldViewCell: SignUpFieldButtonDelegate {
     public func fieldButton(selectedFieldType: FieldType) {
         ELog.debug(message: "Selected : \(selectedFieldType)")
+        
+        self.setButtonState(fieldType: selectedFieldType)
+        self.isFieldValid = true
+        self.checkButtonState()
     }
     
     private func setButtonState(fieldType: FieldType) {
+        if SignUpBaseProperty.fieldType != fieldType {
+            SignUpBaseProperty.isReloadDetailCell = true
+            SignUpBaseProperty.detailSelectedIndex = -1
+        } else {
+            SignUpBaseProperty.isReloadDetailCell = false
+        }
+        
         if fieldType == .development {
+            SignUpBaseProperty.fieldType = .development
             fieldDevelopmentView.isActive = true
             fieldDesignView.isActive = false
         } else {
+            SignUpBaseProperty.fieldType = .design
             fieldDevelopmentView.isActive = false
             fieldDesignView.isActive = true
         }

@@ -10,6 +10,10 @@ import Foundation
 import EroojaUI
 import EroojaCommon
 
+public protocol SignUpDetailViewDelegate {
+    func detailView(selectedIndex: Int)
+}
+
 public class SignUpDetailView: UIView {
     private let xibName = "SignUpDetailView"
     
@@ -41,13 +45,14 @@ public class SignUpDetailView: UIView {
     @IBOutlet weak var label9: UILabel!
     @IBOutlet weak var label10: UILabel!
     
+    public var delegate: SignUpDetailViewDelegate?
+    
     private var labels: [UILabel]?
     private var buttons: [UIButton]?
-    private var selectedIndex = -1
     
     @IBAction func onClickItem(_ sender: UIButton) {
 //        ELog.debug(message: "Selected Button : \(buttons?[sender.tag - 1])")
-        self.selectedIndex = sender.tag - 1
+        SignUpBaseProperty.detailSelectedIndex = sender.tag - 1
         self.setButtonStyle()
     }
     
@@ -79,7 +84,7 @@ public class SignUpDetailView: UIView {
     }
     
     public func setButtonStyle() {
-        ELog.debug(message: "setButtonStyle, \(SignUpBaseProperty.fieldType)")
+        ELog.debug(message: "setButtonStyle, \(String(describing: SignUpBaseProperty.fieldType))")
         for button in buttons! {
             button.isHidden = true
         }
@@ -101,8 +106,9 @@ public class SignUpDetailView: UIView {
             }
         }
         
-        if selectedIndex > -1 {
-            setButtonState(index: selectedIndex, isActive: true)
+        if SignUpBaseProperty.detailSelectedIndex > -1 {
+            setButtonState(index: SignUpBaseProperty.detailSelectedIndex, isActive: true)
+            delegate?.detailView(selectedIndex: SignUpBaseProperty.detailSelectedIndex)
         }
     }
     

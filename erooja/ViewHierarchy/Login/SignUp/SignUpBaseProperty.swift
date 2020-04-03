@@ -9,5 +9,8 @@
 import Foundation
 
 public struct SignUpBaseProperty {
+    public static var nickname: String?
     public static var fieldType: FieldType?
+    public static var detailSelectedIndex: Int = -1
+    public static var isReloadDetailCell: Bool = false
 }

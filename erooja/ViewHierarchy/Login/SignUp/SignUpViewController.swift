@@ -110,8 +110,23 @@ public class SignUpViewController: BaseViewController {
         if currentPage > (viewModels.count - 1) {
             currentPage -= 1
             ELog.debug(message: "화면 전환이 이루어집니다.")
+            ELog.debug(message: SignUpBaseProperty.nickname)
+            ELog.debug(message: SignUpBaseProperty.fieldType?.rawValue)
+            
+            if SignUpBaseProperty.fieldType == .development {
+                ELog.debug(message: "\(JobType.Develop.allCases[SignUpBaseProperty.detailSelectedIndex].rawValue)")
+            } else {
+                ELog.debug(message: "\(JobType.Design.allCases[SignUpBaseProperty.detailSelectedIndex].rawValue)")
+            }
+            
         } else {
             self.collectionPageView?.scrollToItem(at: IndexPath(row: currentPage, section: 0), at: .centeredHorizontally, animated: false)
+            if currentPage == 2 && SignUpBaseProperty.isReloadDetailCell {
+                ELog.debug(message: "Update Detail")
+                SignUpBaseProperty.isReloadDetailCell = false
+                self.collectionPageView?.reloadItems(at: [IndexPath(row: 2, section: 0)])
+                self.setButtonStyle(forState: .inActive)
+            }
         }
     }
     
@@ -137,7 +152,20 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
+        ELog.debug(message: "SIBAL willDisplay CurrentPage : \(self.currentPage)")
+        switch self.currentPage {
+        case 0:
+            let _cell = cell as! SignUpNicknameViewCell
+            _cell.checkButtonState()
+        case 1:
+            let _cell = cell as! SignUpFieldViewCell
+            _cell.checkButtonState()
+        case 2:
+            let _cell = cell as! SignUpDetailViewCell
+            _cell.checkButtonState()
+        default:
+            break
+        }
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -151,10 +179,13 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
         case .field:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SignUpFieldViewCell", for: indexPath) as! SignUpFieldViewCell
             cell.viewModel = viewModels[indexPath.row]
+            cell.delegate = self
             return cell
         case .detail:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SignUpDetailViewCell", for: indexPath) as! SignUpDetailViewCell
             cell.viewModel = viewModels[indexPath.row]
+            cell.fieldType = SignUpBaseProperty.fieldType
+            cell.delegate = self
             return cell
         }
     }

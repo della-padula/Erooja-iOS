@@ -17,9 +17,9 @@ public enum SignUpType {
     case detail
 }
 
-public enum FieldType {
-    case development
-    case design
+public enum FieldType: String {
+    case development = "Development"
+    case design = "Design"
 }
 
 public class SignUpNicknameViewCell: UICollectionViewCell {
@@ -115,6 +115,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
             self.isNicknameValid = isValid
             
             checkBadgeView.isHidden = !isValid
+            SignUpBaseProperty.nickname = text
             self.delegate?.setButtonStyle(forState: isValid ? .active : .inActive)
         }
         textFieldView.font = .AppleSDBold15P

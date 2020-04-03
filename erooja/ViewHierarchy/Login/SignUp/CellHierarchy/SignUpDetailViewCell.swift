@@ -24,6 +24,14 @@ public class SignUpDetailViewCell: UICollectionViewCell {
         }
     }
     
+    public var fieldType: FieldType? {
+        didSet {
+            setupDetailView()
+        }
+    }
+    
+    public var delegate: SignUpCellDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupCell()
@@ -74,12 +82,24 @@ public class SignUpDetailViewCell: UICollectionViewCell {
         containerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
         detailView.fieldType = SignUpBaseProperty.fieldType
+        detailView.delegate = self
         
         containerView.addSubview(detailView)
         detailView.translatesAutoresizingMaskIntoConstraints = false
         detailView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
         detailView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         detailView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        detailView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 80).isActive = true
+        detailView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 60).isActive = true
+    }
+    
+    public func checkButtonState() {
+        delegate?.setButtonStyle(forState: isDetailValid ? .active : .inActive)
+    }
+}
+
+extension SignUpDetailViewCell: SignUpDetailViewDelegate {
+    public func detailView(selectedIndex: Int) {
+        self.isDetailValid = true
+        self.checkButtonState()
     }
 }
