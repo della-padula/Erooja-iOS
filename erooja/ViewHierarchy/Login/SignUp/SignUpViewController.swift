@@ -119,6 +119,11 @@ public class SignUpViewController: BaseViewController {
                 ELog.debug(message: "\(JobType.Design.allCases[SignUpBaseProperty.detailSelectedIndex].rawValue)")
             }
             
+            #if DEBUG
+            LoginSwitcher.updateRootVC(type: .uitest)
+            #else
+            
+            #endif
         } else {
             self.collectionPageView?.scrollToItem(at: IndexPath(row: currentPage, section: 0), at: .centeredHorizontally, animated: false)
             if currentPage == 2 && SignUpBaseProperty.isReloadDetailCell {

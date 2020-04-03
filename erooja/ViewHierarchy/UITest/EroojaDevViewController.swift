@@ -17,8 +17,6 @@ class UITestViewController: BaseViewController {
     
     enum EroojaType: String, CaseIterable {
         case onboard      = "온보딩"
-        case kakaoLogin   = "카카오 로그인 API"
-        case login        = "서비스 로그인"
         case signup       = "회원가입"
         case mypage       = "마이페이지"
         case nowGoal      = "진행중 목표"
