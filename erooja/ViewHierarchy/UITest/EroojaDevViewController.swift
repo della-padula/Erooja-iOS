@@ -16,14 +16,15 @@ class UITestViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     enum EroojaType: String, CaseIterable {
-        case onboard      = "온보딩"
-        case signup       = "회원가입"
-        case mypage       = "마이페이지"
-        case nowGoal      = "진행중 목표"
-        case modifyToDO   = "진행중 목표 - 할 일 수정학기"
-        case togetherList = "진행중 목표 - 함께 참여중인 사용자 리스트"
-        case peopleGoal   = "다른 사람 목표"
-        case addNewGoal   = "새 목표 추가"
+        case onboard       = "온보딩"
+        case signup        = "회원가입"
+        case mypage        = "마이페이지"
+        case nowGoal       = "진행중인 목표"
+        case search        = "탐색"
+        case addGoal       = "목표 추가"
+        case peopleProfile = "타 계정페이지"
+        case guest         = "게스트 로직"
+        case apiTest       = "Dev - API Test"
     }
     
     private let types = EroojaType.allCases
