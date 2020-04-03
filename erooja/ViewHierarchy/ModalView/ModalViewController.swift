@@ -11,7 +11,7 @@ import EroojaUI
 import EroojaCommon
 
 public class ModalViewController: BaseViewController {
-    private var imageButton = EImageButton()
+    private var imageButton = EButton()
     
     override public func viewDidLoad() {
         super.viewDidLoad()

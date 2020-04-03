@@ -58,13 +58,11 @@ public class SearchViewController: BaseViewController {
 }
 
 extension SearchViewController: EUINavigationBarDelegate {
-    public func onClickBackButton() {
-        ELog.debug(message: "Back Button Click")
-    }
-    
-    public func onClickRightSectionButton(at index: Int) {
+    public func onClickRightSectionButton(at position: ERightButton.Position) {
         
     }
     
-    
+    public func onClickBackButton() {
+        ELog.debug(message: "Back Button Click")
+    }
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B031CFB42436FC0500BDD599 /* EImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031CFB32436FC0500BDD599 /* EImageButton.swift */; };
 		B031CFB62436FE7700BDD599 /* EUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031CFB52436FE7700BDD599 /* EUINavigationBar.swift */; };
 		B031CFE12437057000BDD599 /* EButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031CFE02437057000BDD599 /* EButton.swift */; };
 		B03D4A5B24339923009180E9 /* EPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A5A24339923009180E9 /* EPageControl.swift */; };
@@ -29,7 +28,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B031CFB32436FC0500BDD599 /* EImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EImageButton.swift; sourceTree = "<group>"; };
 		B031CFB52436FE7700BDD599 /* EUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationBar.swift; sourceTree = "<group>"; };
 		B031CFE02437057000BDD599 /* EButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EButton.swift; sourceTree = "<group>"; };
 		B03D4A5A24339923009180E9 /* EPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPageControl.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				B03D4AA0243421B0009180E9 /* LoginButton.swift */,
-				B031CFB32436FC0500BDD599 /* EImageButton.swift */,
 				B031CFE02437057000BDD599 /* EButton.swift */,
 			);
 			path = UIButton;
@@ -248,7 +245,6 @@
 				B031CFB62436FE7700BDD599 /* EUINavigationBar.swift in Sources */,
 				B0C030232434FE26008771BB /* UIView+CALayer.swift in Sources */,
 				B08AD9CE242F604D001CE297 /* UIImage+Resize.swift in Sources */,
-				B031CFB42436FC0500BDD599 /* EImageButton.swift in Sources */,
 				B03D4AA1243421B0009180E9 /* LoginButton.swift in Sources */,
 				B08AD9CD242F604D001CE297 /* UIImage+Average.swift in Sources */,
 				B03D4ACD24346605009180E9 /* EroojaColorSet.swift in Sources */,

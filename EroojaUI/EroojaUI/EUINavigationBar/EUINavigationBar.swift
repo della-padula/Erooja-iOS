@@ -17,23 +17,31 @@ public enum EBarOption {
     case progressBar
 }
 
-public enum EBackButtonType {
-    case back
-    case close
+public enum ERightButton {
+    public enum Position {
+        case first
+        case second
+    }
+    
+    public enum ButtonType {
+        case image
+        case text
+    }
 }
 
-public enum ERightButtonType {
-    case image
-    case text
+public enum EBackButton {
+    public enum ButtonType {
+        case back
+        case close
+    }
 }
 
 public protocol EUINavigationBarDelegate {
     func onClickBackButton()
     
-    func onClickRightSectionButton(at index: Int)
+    func onClickRightSectionButton(at position: ERightButton.Position)
     
 }
-
 
 public class EUINavigationBar: UIView {
     public var barOptions: [EBarOption]? {
@@ -41,8 +49,35 @@ public class EUINavigationBar: UIView {
             self.setNavigationBarOption()
         }
     }
+    
+    public var backButtonType: EBackButton.ButtonType? {
+        didSet {
+            
+        }
+    }
+    
+    public var rightFirstButtonType: ERightButton.ButtonType? {
+        didSet {
+            if rightFirstButtonType == .image {
+                // ImageButton
+                
+            } else {
+                // TextButton
+                rightFirstButton = EButton()
+            }
+        }
+    }
+    
+    public var rightSecondButtonType: ERightButton.ButtonType? {
+        didSet {
+            
+        }
+    }
+    
     public var delegate: EUINavigationBarDelegate?
-    private var backButton = EImageButton()
+    private var backButton = EButton()
+    private var rightFirstButton = EButton()
+    private var rightSecondButton = EButton()
     
     public init() {
         super.init(frame: .zero)
@@ -78,14 +113,18 @@ public class EUINavigationBar: UIView {
                 case .progressBar:
                     break
                 case .rightFirstButton:
-                    break
+                    addRightButton(position: .first)
                 case .rightSecondButton:
-                    break
+                    addRightButton(position: .second)
                 case .textField:
                     break
                 }
             }
         }
+    }
+    
+    private func addRightButton(position: ERightButton.Position) {
+        
     }
     
     private func addBackButton() {
