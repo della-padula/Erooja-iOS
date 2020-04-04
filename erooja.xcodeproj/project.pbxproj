@@ -35,6 +35,7 @@
 		B04B4EE12436F23900EA438B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B4EE02436F23900EA438B /* MainViewController.swift */; };
 		B04B4EE32436F2F800EA438B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B4EE22436F2F800EA438B /* SearchViewModel.swift */; };
 		B04FB43E242F757100003A8D /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */; };
+		B05DC3A22438FCD500626501 /* EroojaDevViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DC3A12438FCD500626501 /* EroojaDevViewModel.swift */; };
 		B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; };
 		B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B09CD5D22436C1210073733D /* SignUpDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09CD5D12436C1200073733D /* SignUpDetailViewCell.swift */; };
@@ -160,6 +161,7 @@
 		B04B4EE22436F2F800EA438B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = "../../Downloads/kakao-ios-sdk-1.22.0/KakaoOpenSDK.framework"; sourceTree = "<group>"; };
 		B04FB43F242F769700003A8D /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		B05DC3A12438FCD500626501 /* EroojaDevViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevViewModel.swift; sourceTree = "<group>"; };
 		B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaCommon.xcodeproj; path = EroojaCommon/EroojaCommon.xcodeproj; sourceTree = "<group>"; };
 		B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaUI.xcodeproj; path = EroojaUI/EroojaUI.xcodeproj; sourceTree = "<group>"; };
 		B09CD5D12436C1200073733D /* SignUpDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailViewCell.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			children = (
 				B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */,
 				B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */,
+				B05DC3A12438FCD500626501 /* EroojaDevViewModel.swift */,
 			);
 			path = UITest;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				B0FE8E812432329600103A54 /* EroojaDevTableViewCell.swift in Sources */,
 				B0462AEE242B920000B51854 /* Schedule.swift in Sources */,
 				B0C0311224364870008771BB /* JobItemButton.swift in Sources */,
+				B05DC3A22438FCD500626501 /* EroojaDevViewModel.swift in Sources */,
 				B03D4A6D2433A2DC009180E9 /* OnboardCollectionViewCell.swift in Sources */,
 				B031CFA62436F88500BDD599 /* PortfolioModel.swift in Sources */,
 				B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */,

@@ -31,8 +31,11 @@ public class LoginSwitcher {
             rootVC = OnboardViewController()
             appDelegate.window?.rootViewController = rootVC
         case .uitest:
-            rootVC = UIStoryboard(name: "EroojaDev", bundle: nil).instantiateViewController(withIdentifier: "UITestHomeVC") as! UITestViewController
-            appDelegate.window?.rootViewController = rootVC
+            if let vc = UIStoryboard(name: "EroojaDev", bundle: nil).instantiateViewController(withIdentifier: "UITestHomeVC") as? UITestViewController {
+                let viewModel = UITestViewModel()
+                vc.viewModel = viewModel
+                appDelegate.window?.rootViewController = vc
+            }
             break
         }
         

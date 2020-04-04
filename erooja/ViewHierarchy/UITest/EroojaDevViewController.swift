@@ -15,29 +15,37 @@ class UITestViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    enum EroojaType: String, CaseIterable {
-        case onboard       = "온보딩"
-        case signup        = "회원가입"
-        case mypage        = "마이페이지"
-        case main          = "메인"
-        case nowGoal       = "진행중인 목표"
-        case search        = "검색"
-        case addGoal       = "목표 추가"
-        case peopleProfile = "타 계정페이지"
-        case guest         = "게스트 로직"
-        case apiTest       = "Dev - API Test"
-        case modalViewTest = "Dev - Modal View"
-    }
+    public var viewModel: UITestViewModel?
     
-    private let types = EroojaType.allCases
+    private var types = [EroojaType]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bindViewModel()
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
         self.tableView.tableFooterView = UIView()
+        
+        loadMenuItems()
+    }
+    
+    func bindViewModel() {
+        if let viewModel = viewModel {
+            viewModel.menuItems.bind({ (menuItems) in
+                DispatchQueue.main.async {
+                    ELog.debug(message: "Menu Items : \(menuItems)")
+                    self.types = menuItems
+                    self.tableView.reloadData()
+                }
+            })
+        }
+    }
+    
+    func loadMenuItems() {
+        ELog.debug(message: "loadMenuItems")
+        viewModel?.setDevMenuItemsToView()
     }
 
 }

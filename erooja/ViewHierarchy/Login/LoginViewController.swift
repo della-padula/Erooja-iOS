@@ -53,24 +53,6 @@ public class LoginViewController: UIViewController {
         guestButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
         guestButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
-        //        loginButtons.append(naverButton)
-        //        view.addSubview(naverButton)
-        //        naverButton.socialType = .naver
-        //        naverButton.setImage(.login_naver, for: .normal)
-        //
-        //        naverButton.translatesAutoresizingMaskIntoConstraints = false
-        //        naverButton.heightAnchor.constraint(equalToConstant: loginButtonHeightConstraint).isActive = true
-        //        naverButton.bottomAnchor.constraint(equalTo: self.guestButton.topAnchor).isActive = true
-        //        naverButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
-        //        naverButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        //
-        //        naverButton.imageView?.contentMode = .scaleAspectFit
-        //        naverButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
-        //        naverButton.imageView?.trailingAnchor.constraint(equalTo: naverButton.titleLabel!.leadingAnchor, constant: -10).isActive = true
-        //        naverButton.imageView?.widthAnchor.constraint(equalTo: naverButton.imageView!.heightAnchor, multiplier: 1).isActive = true
-        //        naverButton.imageView?.centerYAnchor.constraint(equalTo: naverButton.centerYAnchor).isActive = true
-        //        naverButton.imageView?.heightAnchor.constraint(equalTo: naverButton.heightAnchor, multiplier: 0.4).isActive = true
-        
         // KAKAO BUTTON
         
         loginButtons.append(kakaoButton)
@@ -81,9 +63,6 @@ public class LoginViewController: UIViewController {
         
         kakaoButton.translatesAutoresizingMaskIntoConstraints = false
         kakaoButton.heightAnchor.constraint(equalToConstant: loginButtonHeightConstraint).isActive = true
-        
-        // Naver Button 있을 때
-        //        kakaoButton.bottomAnchor.constraint(equalTo: self.naverButton.topAnchor, constant: -1 * loginButtonVerticalSpacingContraint).isActive = true
         
         // Naver Button 없을 때
         kakaoButton.bottomAnchor.constraint(equalTo: self.guestButton.topAnchor).isActive = true
