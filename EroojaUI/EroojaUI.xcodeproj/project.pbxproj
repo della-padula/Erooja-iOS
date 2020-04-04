@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B031CFB62436FE7700BDD599 /* EUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031CFB52436FE7700BDD599 /* EUINavigationBar.swift */; };
+		B031CFB62436FE7700BDD599 /* EUIHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031CFB52436FE7700BDD599 /* EUIHeaderView.swift */; };
 		B031CFE12437057000BDD599 /* EButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031CFE02437057000BDD599 /* EButton.swift */; };
 		B03D4A5B24339923009180E9 /* EPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A5A24339923009180E9 /* EPageControl.swift */; };
 		B03D4A6024339C9C009180E9 /* UIFont+EroojaFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A5F24339C9C009180E9 /* UIFont+EroojaFont.swift */; };
@@ -15,6 +15,8 @@
 		B03D4AA1243421B0009180E9 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4AA0243421B0009180E9 /* LoginButton.swift */; };
 		B03D4ACD24346605009180E9 /* EroojaColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4ACC24346605009180E9 /* EroojaColorSet.swift */; };
 		B04B4EE52436F3E200EA438B /* Roboto-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B04B4EE42436F3E200EA438B /* Roboto-Regular.otf */; };
+		B05DC3A824394C8200626501 /* EUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DC3A724394C8200626501 /* EUINavigationController.swift */; };
+		B05DC3CB24394EE200626501 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DC3CA24394EE200626501 /* CustomNavigationBar.swift */; };
 		B08AD9B5242F5FFD001CE297 /* EroojaUI.h in Headers */ = {isa = PBXBuildFile; fileRef = B08AD9B3242F5FFD001CE297 /* EroojaUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08AD9C5242F602C001CE297 /* UIView+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9C4242F602C001CE297 /* UIView+Resize.swift */; };
 		B08AD9CC242F604D001CE297 /* UIImage+Initialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9C6242F604C001CE297 /* UIImage+Initialize.swift */; };
@@ -28,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B031CFB52436FE7700BDD599 /* EUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationBar.swift; sourceTree = "<group>"; };
+		B031CFB52436FE7700BDD599 /* EUIHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUIHeaderView.swift; sourceTree = "<group>"; };
 		B031CFE02437057000BDD599 /* EButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EButton.swift; sourceTree = "<group>"; };
 		B03D4A5A24339923009180E9 /* EPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPageControl.swift; sourceTree = "<group>"; };
 		B03D4A5F24339C9C009180E9 /* UIFont+EroojaFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+EroojaFont.swift"; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		B03D4AA0243421B0009180E9 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		B03D4ACC24346605009180E9 /* EroojaColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaColorSet.swift; sourceTree = "<group>"; };
 		B04B4EE42436F3E200EA438B /* Roboto-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.otf"; path = "../erooja/Resources/Roboto-Regular.otf"; sourceTree = "<group>"; };
+		B05DC3A724394C8200626501 /* EUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationController.swift; sourceTree = "<group>"; };
+		B05DC3CA24394EE200626501 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		B08AD9B0242F5FFD001CE297 /* EroojaUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EroojaUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08AD9B3242F5FFD001CE297 /* EroojaUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EroojaUI.h; sourceTree = "<group>"; };
 		B08AD9B4242F5FFD001CE297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,7 +68,9 @@
 		B031CFBB2436FF9E00BDD599 /* EUINavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				B031CFB52436FE7700BDD599 /* EUINavigationBar.swift */,
+				B031CFB52436FE7700BDD599 /* EUIHeaderView.swift */,
+				B05DC3A724394C8200626501 /* EUINavigationController.swift */,
+				B05DC3CA24394EE200626501 /* CustomNavigationBar.swift */,
 			);
 			path = EUINavigationBar;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B03D4A5B24339923009180E9 /* EPageControl.swift in Sources */,
+				B05DC3A824394C8200626501 /* EUINavigationController.swift in Sources */,
 				B08AD9CF242F604D001CE297 /* UIColor+ContrastingColor.swift in Sources */,
 				B08AD9C5242F602C001CE297 /* UIView+Resize.swift in Sources */,
 				B08AD9D0242F604D001CE297 /* UIImage+Crop.swift in Sources */,
@@ -242,7 +249,8 @@
 				B0C03025243556EF008771BB /* EroojaTextField.swift in Sources */,
 				B03D4A722433AC9E009180E9 /* UILabel+LineSpacing.swift in Sources */,
 				B031CFE12437057000BDD599 /* EButton.swift in Sources */,
-				B031CFB62436FE7700BDD599 /* EUINavigationBar.swift in Sources */,
+				B031CFB62436FE7700BDD599 /* EUIHeaderView.swift in Sources */,
+				B05DC3CB24394EE200626501 /* CustomNavigationBar.swift in Sources */,
 				B0C030232434FE26008771BB /* UIView+CALayer.swift in Sources */,
 				B08AD9CE242F604D001CE297 /* UIImage+Resize.swift in Sources */,
 				B03D4AA1243421B0009180E9 /* LoginButton.swift in Sources */,

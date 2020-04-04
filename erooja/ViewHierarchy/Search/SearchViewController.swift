@@ -14,7 +14,7 @@ import EroojaSharedBase
 
 public class SearchViewController: BaseViewController {
     
-    private var navigationBar: EUINavigationBar?
+    private var navigationBar: EUIHeaderView?
     public var viewModel: SearchViewModel?
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -24,7 +24,7 @@ public class SearchViewController: BaseViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        self.navigationBar = EUINavigationBar()
+        self.navigationBar = EUIHeaderView()
         
         self.bindViewModel()
         self.setViewLayout()

@@ -43,7 +43,7 @@ public protocol EUINavigationBarDelegate {
     
 }
 
-public class EUINavigationBar: UIView {
+public class EUIHeaderView: UIView {
     private var backButton = EButton()
     private var rightFirstButton = EButton()
     private var rightSecondButton = EButton()
