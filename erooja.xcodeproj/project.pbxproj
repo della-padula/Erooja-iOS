@@ -41,6 +41,8 @@
 		B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; };
 		B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B09CD5D22436C1210073733D /* SignUpDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09CD5D12436C1200073733D /* SignUpDetailViewCell.swift */; };
+		B0A37AB4243A12980054933D /* DraggableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A37AB3243A12980054933D /* DraggableTableViewController.swift */; };
+		B0A37AB6243A13840054933D /* DraggableTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A37AB5243A13840054933D /* DraggableTableViewModel.swift */; };
 		B0A8C5562433341D002B2C83 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5552433341D002B2C83 /* StartViewController.swift */; };
 		B0A8C5632433392B002B2C83 /* UIImage+EroojaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A8C5622433392B002B2C83 /* UIImage+EroojaImage.swift */; };
 		B0A8C5662433395B002B2C83 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A8C5652433395B002B2C83 /* Image.xcassets */; };
@@ -169,6 +171,8 @@
 		B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaCommon.xcodeproj; path = EroojaCommon/EroojaCommon.xcodeproj; sourceTree = "<group>"; };
 		B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaUI.xcodeproj; path = EroojaUI/EroojaUI.xcodeproj; sourceTree = "<group>"; };
 		B09CD5D12436C1200073733D /* SignUpDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailViewCell.swift; sourceTree = "<group>"; };
+		B0A37AB3243A12980054933D /* DraggableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableTableViewController.swift; sourceTree = "<group>"; };
+		B0A37AB5243A13840054933D /* DraggableTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableTableViewModel.swift; sourceTree = "<group>"; };
 		B0A8C5552433341D002B2C83 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		B0A8C5622433392B002B2C83 /* UIImage+EroojaImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+EroojaImage.swift"; sourceTree = "<group>"; };
 		B0A8C5652433395B002B2C83 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
@@ -345,6 +349,7 @@
 		B0462B1E242BA93C00B51854 /* ViewHierarchy */ = {
 			isa = PBXGroup;
 			children = (
+				B0A37AB2243A12850054933D /* DraggableTableView */,
 				B031CFBC243702D000BDD599 /* ModalView */,
 				B04B4EDF2436F22C00EA438B /* Main */,
 				B04B4EDC2436F06200EA438B /* Search */,
@@ -434,6 +439,15 @@
 				B0C0311724364AFC008771BB /* SignUpDetailView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B0A37AB2243A12850054933D /* DraggableTableView */ = {
+			isa = PBXGroup;
+			children = (
+				B0A37AB3243A12980054933D /* DraggableTableViewController.swift */,
+				B0A37AB5243A13840054933D /* DraggableTableViewModel.swift */,
+			);
+			path = DraggableTableView;
 			sourceTree = "<group>";
 		};
 		B0A8C5542433340E002B2C83 /* Start */ = {
@@ -799,6 +813,7 @@
 				B0FE8E7F2432328400103A54 /* EroojaDevViewController.swift in Sources */,
 				B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */,
 				B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */,
+				B0A37AB6243A13840054933D /* DraggableTableViewModel.swift in Sources */,
 				B0A8C5632433392B002B2C83 /* UIImage+EroojaImage.swift in Sources */,
 				B04B4EDE2436F07D00EA438B /* SearchViewController.swift in Sources */,
 				B0C0311524364AE8008771BB /* SignUpDetailView.swift in Sources */,
@@ -819,6 +834,7 @@
 				B0F1BB322436BC5800D04DD5 /* SignUpFieldViewCell.swift in Sources */,
 				B0C0311B24366241008771BB /* SignUpBaseProperty.swift in Sources */,
 				B05DC3E92439AB9500626501 /* SignUpDetailViewModel.swift in Sources */,
+				B0A37AB4243A12980054933D /* DraggableTableViewController.swift in Sources */,
 				B03D4A3924338DE3009180E9 /* LoginSwitcher.swift in Sources */,
 				B0FE8E812432329600103A54 /* EroojaDevTableViewCell.swift in Sources */,
 				B0462AEE242B920000B51854 /* Schedule.swift in Sources */,

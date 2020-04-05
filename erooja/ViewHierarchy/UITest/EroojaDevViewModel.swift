@@ -21,6 +21,7 @@ public enum EroojaType: String, CaseIterable {
     case guest         = "게스트 로직"
     case apiTest       = "Dev - API Test"
     case modalViewTest = "Dev - Modal View"
+    case dragTable     = "Dev - Draggable"
 }
 
 public class UITestViewModel {
