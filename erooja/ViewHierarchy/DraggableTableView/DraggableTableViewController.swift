@@ -37,6 +37,8 @@ public class DraggableTableViewController: BaseViewController {
     }
     
     private func setViewLayout() {
+        tableView.allowsSelectionDuringEditing = true
+        tableView.setEditing(true, animated: true)
         self.view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -54,7 +56,40 @@ extension DraggableTableViewController: UITableViewDelegate, UITableViewDataSour
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = viewModel?.tableListItem.valueForBind[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row == 0 {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        ELog.debug(message: "Selected : \(indexPath.row) / \(viewModel?.tableListItem.valueForBind[indexPath.row])")
+    }
+    
+    public func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let stringSource = viewModel?.tableListItem.valueForBind[sourceIndexPath.row] ?? ""
+        let stringDest   = viewModel?.tableListItem.valueForBind[destinationIndexPath.row] ?? ""
+        viewModel?.tableListItem.valueForBind[destinationIndexPath.row] = stringSource
+        viewModel?.tableListItem.valueForBind[sourceIndexPath.row] = stringDest
+        
+        ELog.debug(message: "source : \(sourceIndexPath.row) dest : \(destinationIndexPath.row)")
+    }
+    
+    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    public func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        return proposedDestinationIndexPath
+    }
 }

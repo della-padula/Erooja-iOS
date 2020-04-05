@@ -13,7 +13,8 @@ public class DraggableTableViewModel {
     
     func getTableViewData() {
         var tempList = [String]()
-        for index in 0..<100 {
+        tempList.append("이 셀은 이동 불가")
+        for index in 1..<100 {
             tempList.append("Table Item - \(index)")
         }
         tableListItem.valueForBind = tempList
