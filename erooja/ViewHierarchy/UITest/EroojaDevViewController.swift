@@ -15,28 +15,36 @@ class UITestViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    enum EroojaType: String, CaseIterable {
-        case onboard       = "온보딩"
-        case signup        = "회원가입"
-        case mypage        = "마이페이지"
-        case main          = "메인"
-        case nowGoal       = "진행중인 목표"
-        case search        = "탐색"
-        case addGoal       = "목표 추가"
-        case peopleProfile = "타 계정페이지"
-        case guest         = "게스트 로직"
-        case apiTest       = "Dev - API Test"
-    }
+    public var viewModel: UITestViewModel?
     
-    private let types = EroojaType.allCases
+    private var types = [EroojaType]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bindViewModel()
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
         self.tableView.tableFooterView = UIView()
+        
+        loadMenuItems()
+    }
+    
+    func bindViewModel() {
+        if let viewModel = viewModel {
+            viewModel.menuItems.bind({ (menuItems) in
+                DispatchQueue.main.async {
+                    self.types = menuItems
+                    self.tableView.reloadData()
+                }
+            })
+        }
+    }
+    
+    func loadMenuItems() {
+        ELog.debug(message: "loadMenuItems")
+        viewModel?.setDevMenuItemsToView()
     }
 
 }
@@ -55,18 +63,25 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let type = types[indexPath.row]
+        ELog.debug(message: "Selected : \(type.rawValue)")
+        
+        var vc: UIViewController?
+        
         switch type {
         case .signup:
-            let vc = SignUpViewController()
-            present(vc, animated: true, completion: nil)
+            vc = SignUpViewController()
         case .onboard:
-            let vc = OnboardViewController()
-            present(vc, animated: true, completion: nil)
+            vc = OnboardViewController()
         case .search:
-            let vc = SearchViewController()
-            present(vc, animated: true, completion: nil)
+            vc = SearchViewController()
+        case .modalViewTest:
+            vc = EUIModalViewController()
         default:
             break
+        }
+        if let nextVC = vc {
+            nextVC.modalPresentationStyle = .fullScreen
+            present(nextVC, animated: true, completion: nil)
         }
     }
     

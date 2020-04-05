@@ -11,7 +11,7 @@ import EroojaUI
 import EroojaCommon
 
 public protocol SignUpDetailViewDelegate {
-    func detailView(selectedIndex: Int)
+    func detailView(isValid: Bool)
 }
 
 public class SignUpDetailView: UIView {
@@ -46,13 +46,16 @@ public class SignUpDetailView: UIView {
     @IBOutlet weak var label10: UILabel!
     
     public var delegate: SignUpDetailViewDelegate?
+    public var viewModel: SignUpDetailViewModel?
     
     private var labels: [UILabel]?
     private var buttons: [UIButton]?
     
     @IBAction func onClickItem(_ sender: UIButton) {
 //        ELog.debug(message: "Selected Button : \(buttons?[sender.tag - 1])")
-        SignUpBaseProperty.detailSelectedIndex = sender.tag - 1
+//        SignUpBaseProperty.detailSelectedIndex = sender.tag - 1
+//        self.viewModel?.userTriggeredDatailItem(index: sender.tag - 1)
+        SignUpBaseProperty.detailSelectedIndexList[sender.tag - 1] = !SignUpBaseProperty.detailSelectedIndexList[sender.tag - 1]
         self.setButtonStyle()
     }
     
@@ -64,11 +67,23 @@ public class SignUpDetailView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+//        self.bindView()
         self.commonInit()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    private func bindView() {
+        viewModel?.selectedList.bind({ (selectStateList) in
+            ELog.debug(message: "Bind Triggered")
+            for (index, isActive) in selectStateList.enumerated() {
+                ELog.debug(message: "Bind Event Triggered index : \(index), isActive : \(isActive)")
+                self.setButtonState(index: index, isActive: isActive)
+            }
+        })
     }
 
     private func commonInit(){
@@ -85,7 +100,7 @@ public class SignUpDetailView: UIView {
     
     public func setButtonStyle() {
         ELog.debug(message: "setButtonStyle, \(String(describing: SignUpBaseProperty.fieldType))")
-        for button in buttons! {
+        for (index, button) in buttons!.enumerated() {
             button.isHidden = true
         }
         
@@ -97,19 +112,20 @@ public class SignUpDetailView: UIView {
         if SignUpBaseProperty.fieldType == .development {
             for (index, value) in JobType.Develop.allCases.enumerated() {
                 setButtonTitle(index: index, title: value.rawValue)
-                setButtonState(index: index, isActive: false)
             }
         } else {
             for (index, value) in JobType.Design.allCases.enumerated() {
                 setButtonTitle(index: index, title: value.rawValue)
-                setButtonState(index: index, isActive: false)
             }
         }
         
-        if SignUpBaseProperty.detailSelectedIndex > -1 {
-            setButtonState(index: SignUpBaseProperty.detailSelectedIndex, isActive: true)
-            delegate?.detailView(selectedIndex: SignUpBaseProperty.detailSelectedIndex)
+        var checkCount = 0
+        for (index, isActive) in SignUpBaseProperty.detailSelectedIndexList.enumerated() {
+            setButtonState(index: index, isActive: isActive)
+            buttons?.last?.isHidden = true
+            if isActive { checkCount += 1 }
         }
+        delegate?.detailView(isValid: (checkCount > 0))
     }
     
     private func setButtonTitle(index: Int, title: String) {

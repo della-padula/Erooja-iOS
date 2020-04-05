@@ -82,6 +82,7 @@ public class SignUpDetailViewCell: UICollectionViewCell {
         containerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
         detailView.fieldType = SignUpBaseProperty.fieldType
+        detailView.viewModel = SignUpDetailViewModel()
         detailView.delegate = self
         
         containerView.addSubview(detailView)
@@ -98,8 +99,8 @@ public class SignUpDetailViewCell: UICollectionViewCell {
 }
 
 extension SignUpDetailViewCell: SignUpDetailViewDelegate {
-    public func detailView(selectedIndex: Int) {
-        self.isDetailValid = true
+    public func detailView(isValid: Bool) {
+        self.isDetailValid = isValid
         self.checkButtonState()
     }
 }
