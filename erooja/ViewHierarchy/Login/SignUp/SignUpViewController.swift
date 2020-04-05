@@ -113,11 +113,17 @@ public class SignUpViewController: BaseViewController {
             ELog.debug(message: SignUpBaseProperty.nickname)
             ELog.debug(message: SignUpBaseProperty.fieldType?.rawValue)
             
-            if SignUpBaseProperty.fieldType == .development {
-                ELog.debug(message: "\(JobType.Develop.allCases[SignUpBaseProperty.detailSelectedIndex].rawValue)")
-            } else {
-                ELog.debug(message: "\(JobType.Design.allCases[SignUpBaseProperty.detailSelectedIndex].rawValue)")
+            for (index, isSelected) in SignUpBaseProperty.detailSelectedIndexList.enumerated() {
+                if isSelected {
+                    if SignUpBaseProperty.fieldType == .development {
+                        ELog.debug(message: "\(JobType.Develop.allCases[index].rawValue)")
+                    } else {
+                        ELog.debug(message: "\(JobType.Design.allCases[index].rawValue)")
+                    }
+                }
             }
+            
+            SignUpBaseProperty.detailSelectedIndexList = SignUpBaseProperty.detailSelectedIndexList.map { $0 && false }
             
             #if DEBUG
             LoginSwitcher.updateRootVC(type: .uitest)
@@ -157,7 +163,6 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        ELog.debug(message: "SIBAL willDisplay CurrentPage : \(self.currentPage)")
         switch self.currentPage {
         case 0:
             let _cell = cell as! SignUpNicknameViewCell

@@ -132,7 +132,7 @@ extension SignUpFieldViewCell: SignUpFieldButtonDelegate {
     private func setButtonState(fieldType: FieldType) {
         if SignUpBaseProperty.fieldType != fieldType {
             SignUpBaseProperty.isReloadDetailCell = true
-            SignUpBaseProperty.detailSelectedIndex = -1
+//            SignUpBaseProperty.detailSelectedIndex = -1
         } else {
             SignUpBaseProperty.isReloadDetailCell = false
         }

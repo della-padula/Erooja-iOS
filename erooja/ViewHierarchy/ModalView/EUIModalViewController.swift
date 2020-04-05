@@ -10,7 +10,7 @@ import Foundation
 import EroojaUI
 import EroojaCommon
 
-public class ModalViewController: BaseViewController {
+public class EUIModalViewController: BaseViewController {
     private var imageButton = EButton()
     
     override public func viewDidLoad() {

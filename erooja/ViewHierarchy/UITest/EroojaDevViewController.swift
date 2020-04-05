@@ -35,7 +35,6 @@ class UITestViewController: BaseViewController {
         if let viewModel = viewModel {
             viewModel.menuItems.bind({ (menuItems) in
                 DispatchQueue.main.async {
-                    ELog.debug(message: "Menu Items : \(menuItems)")
                     self.types = menuItems
                     self.tableView.reloadData()
                 }
@@ -65,25 +64,24 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let type = types[indexPath.row]
         ELog.debug(message: "Selected : \(type.rawValue)")
+        
+        var vc: UIViewController?
+        
         switch type {
         case .signup:
-            let vc = SignUpViewController()
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true, completion: nil)
+            vc = SignUpViewController()
         case .onboard:
-            let vc = OnboardViewController()
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true, completion: nil)
+            vc = OnboardViewController()
         case .search:
-            let vc = SearchViewController()
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true, completion: nil)
+            vc = SearchViewController()
         case .modalViewTest:
-            let vc = ModalViewController()
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true, completion: nil)
+            vc = EUIModalViewController()
         default:
             break
+        }
+        if let nextVC = vc {
+            nextVC.modalPresentationStyle = .fullScreen
+            present(nextVC, animated: true, completion: nil)
         }
     }
     
