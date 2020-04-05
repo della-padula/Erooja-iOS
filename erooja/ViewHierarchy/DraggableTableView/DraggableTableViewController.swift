@@ -14,6 +14,7 @@ public class DraggableTableViewController: BaseViewController {
     private var imageButton = EButton()
     
     private let tableView = UITableView()
+    private let editSwitch = UISwitch()
     public var viewModel: DraggableTableViewModel?
     
     override public func viewDidLoad() {
@@ -51,14 +52,25 @@ public class DraggableTableViewController: BaseViewController {
         imageButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
         imageButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         
-        tableView.allowsSelectionDuringEditing = true
-        tableView.setEditing(true, animated: true)
+        editSwitch.addTarget(self, action: #selector(didChangeSwitchValue), for: .valueChanged)
+        self.view.addSubview(editSwitch)
+        editSwitch.translatesAutoresizingMaskIntoConstraints = false
+        editSwitch.centerYAnchor.constraint(equalTo: imageButton.centerYAnchor).isActive = true
+        editSwitch.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        
         self.view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: self.imageButton.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    @objc
+    public func didChangeSwitchValue() {
+        ELog.debug(message: "Switch : \(editSwitch.isOn)")
+        tableView.allowsSelectionDuringEditing = editSwitch.isOn
+        tableView.setEditing(editSwitch.isOn, animated: true)
     }
     
     @objc
@@ -95,6 +107,30 @@ extension DraggableTableViewController: UITableViewDelegate, UITableViewDataSour
         ELog.debug(message: "Selected : \(indexPath.row) / \(viewModel?.tableListItem.valueForBind[indexPath.row])")
     }
     
+    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+//    public func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { action, index in
+//            //하고싶은 작업
+//            self.viewModel?.tableListItem.valueForBind.remove(at: indexPath.row)
+//        }
+//        return [deleteAction]
+//    }
+//
+    public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let deleteAction = UIContextualAction(style: .destructive, title:  "삭제", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            // Reset state
+            self.tableView.isEditing = false
+            self.viewModel?.tableListItem.valueForBind.remove(at: indexPath.row)
+            success(true)
+        })
+        return UISwipeActionsConfiguration(actions:[deleteAction])
+    }
+    
     public func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let stringSource = viewModel?.tableListItem.valueForBind[sourceIndexPath.row] ?? ""
         let stringDest   = viewModel?.tableListItem.valueForBind[destinationIndexPath.row] ?? ""
@@ -106,6 +142,12 @@ extension DraggableTableViewController: UITableViewDelegate, UITableViewDataSour
     
     public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .none
+    }
+    
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.viewModel?.tableListItem.valueForBind.remove(at: indexPath.row)
+        }
     }
     
     public func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
