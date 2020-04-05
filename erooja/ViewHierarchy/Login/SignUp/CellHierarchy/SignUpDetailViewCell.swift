@@ -99,8 +99,8 @@ public class SignUpDetailViewCell: UICollectionViewCell {
 }
 
 extension SignUpDetailViewCell: SignUpDetailViewDelegate {
-    public func detailView(selectedIndexList: [Bool]) {
-        self.isDetailValid = true
+    public func detailView(isValid: Bool) {
+        self.isDetailValid = isValid
         self.checkButtonState()
     }
 }

@@ -122,7 +122,6 @@ public class SignUpViewController: BaseViewController {
                     }
                 }
             }
-            
             SignUpBaseProperty.detailSelectedIndexList = SignUpBaseProperty.detailSelectedIndexList.map { $0 && false }
             
             #if DEBUG
@@ -134,6 +133,7 @@ public class SignUpViewController: BaseViewController {
             self.collectionPageView?.scrollToItem(at: IndexPath(row: currentPage, section: 0), at: .centeredHorizontally, animated: false)
             if currentPage == 2 && SignUpBaseProperty.isReloadDetailCell {
                 ELog.debug(message: "Update Detail")
+                SignUpBaseProperty.detailSelectedIndexList = SignUpBaseProperty.detailSelectedIndexList.map { $0 && false }
                 SignUpBaseProperty.isReloadDetailCell = false
                 self.collectionPageView?.reloadItems(at: [IndexPath(row: 2, section: 0)])
                 self.setButtonStyle(forState: .inActive)

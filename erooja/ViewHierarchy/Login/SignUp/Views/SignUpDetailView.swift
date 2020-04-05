@@ -11,7 +11,7 @@ import EroojaUI
 import EroojaCommon
 
 public protocol SignUpDetailViewDelegate {
-    func detailView(selectedIndexList: [Bool])
+    func detailView(isValid: Bool)
 }
 
 public class SignUpDetailView: UIView {
@@ -55,9 +55,7 @@ public class SignUpDetailView: UIView {
 //        ELog.debug(message: "Selected Button : \(buttons?[sender.tag - 1])")
 //        SignUpBaseProperty.detailSelectedIndex = sender.tag - 1
 //        self.viewModel?.userTriggeredDatailItem(index: sender.tag - 1)
-        ELog.debug(message: "Index: \(sender.tag - 1), Old Value : \(SignUpBaseProperty.detailSelectedIndexList[sender.tag - 1])")
         SignUpBaseProperty.detailSelectedIndexList[sender.tag - 1] = !SignUpBaseProperty.detailSelectedIndexList[sender.tag - 1]
-        ELog.debug(message: "Index: \(sender.tag - 1), New Value : \(SignUpBaseProperty.detailSelectedIndexList[sender.tag - 1])")
         self.setButtonStyle()
     }
     
@@ -104,7 +102,6 @@ public class SignUpDetailView: UIView {
         ELog.debug(message: "setButtonStyle, \(String(describing: SignUpBaseProperty.fieldType))")
         for (index, button) in buttons!.enumerated() {
             button.isHidden = true
-            setButtonState(index: index, isActive: false)
         }
         
         for label in labels! {
@@ -115,27 +112,20 @@ public class SignUpDetailView: UIView {
         if SignUpBaseProperty.fieldType == .development {
             for (index, value) in JobType.Develop.allCases.enumerated() {
                 setButtonTitle(index: index, title: value.rawValue)
-//                setButtonState(index: index, isActive: false)
             }
         } else {
             for (index, value) in JobType.Design.allCases.enumerated() {
                 setButtonTitle(index: index, title: value.rawValue)
-//                setButtonState(index: index, isActive: false)
             }
         }
         
         var checkCount = 0
         for (index, isActive) in SignUpBaseProperty.detailSelectedIndexList.enumerated() {
             setButtonState(index: index, isActive: isActive)
-            if isActive {
-                checkCount += 1
-            }
-            
+            buttons?.last?.isHidden = true
+            if isActive { checkCount += 1 }
         }
-        
-        if checkCount > 0 {
-            delegate?.detailView(selectedIndexList: SignUpBaseProperty.detailSelectedIndexList)
-        }
+        delegate?.detailView(isValid: (checkCount > 0))
     }
     
     private func setButtonTitle(index: Int, title: String) {
