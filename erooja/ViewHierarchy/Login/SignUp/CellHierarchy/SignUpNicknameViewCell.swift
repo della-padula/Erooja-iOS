@@ -35,6 +35,10 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
     private let lblTitle = UILabel()
     private let lblSubTitle = UILabel()
     private let bottomHintLabel = UILabel()
+    private let fieldView = UIView()
+    private let bottomBorderView = UIView()
+    private let textFieldView = EroojaTextField()
+    private let checkBadgeView = UIImageView()
     
     public var delegate: SignUpCellDelegate?
     
@@ -72,6 +76,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
     // PUBLIC
     public func checkButtonState() {
         isInitialShown = true
+        ELog.debug(message: "isNicknameValid : \(isNicknameValid)")
         delegate?.setButtonStyle(forState: isNicknameValid ? .active : .inActive)
     }
     
@@ -95,17 +100,10 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
     }
     
     private func setupNicknameView() {
-        let fieldView = UIView()
-        let bottomBorderView = UIView()
-        let textFieldView = EroojaTextField()
-        let checkBadgeView = UIImageView()
-        
-        checkBadgeView.image = UIImage(named: "signup_error")
-//        checkBadgeView.image = UIImage(named: "signup_check")
-        checkBadgeView.isHidden = true
-        
         if isInitialShown {
             ELog.debug(message: "isInitialShown : \(isInitialShown)")
+            checkBadgeView.image = UIImage(named: "signup_error")
+            checkBadgeView.isHidden = true
             bottomHintLabel.isHidden = true
         }
         
@@ -119,8 +117,8 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
             let inputText = text ?? ""
             
             if inputText.isEmpty {
-                bottomBorderView.backgroundColor = EroojaColorSet.shared.gray400s
-                checkBadgeView.isHidden = true
+                self.bottomBorderView.backgroundColor = EroojaColorSet.shared.gray400s
+                self.checkBadgeView.isHidden = true
                 
                 if !self.isInitialShown {
                     self.bottomHintLabel.isHidden = false
@@ -136,18 +134,18 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
                     self.bottomHintLabel.isHidden = false
                     self.bottomHintLabel.text = errorType?.rawValue
                     self.isNicknameValid = false
-                    checkBadgeView.isHidden = false
-                    checkBadgeView.image = UIImage(named: "signup_error")
+                    self.checkBadgeView.isHidden = false
+                    self.checkBadgeView.image = UIImage(named: "signup_error")
                 } else {
                     // request nickname check
                     self.isNicknameValid = true
                     self.bottomHintLabel.isHidden = true
-                    checkBadgeView.isHidden = false
-                    checkBadgeView.image = UIImage(named: "signup_check")
+                    self.checkBadgeView.isHidden = false
+                    self.checkBadgeView.image = UIImage(named: "signup_check")
                     SignUpBaseProperty.nickname = text
                     isValid = true
                 }
-                bottomBorderView.backgroundColor = EroojaColorSet.shared.orgDefault400s
+                self.bottomBorderView.backgroundColor = EroojaColorSet.shared.orgDefault400s
                 self.delegate?.setButtonStyle(forState: isValid ? .active : .inActive)
             }
         }
