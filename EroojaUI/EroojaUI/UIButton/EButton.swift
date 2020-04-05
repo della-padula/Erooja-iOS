@@ -52,6 +52,8 @@ public class EButton: UIView {
         }
     }
     
+    private var constraintList = [NSLayoutConstraint]()
+    
     public func setButtonType(buttonType: ERightButton.ButtonType) {
         if buttonType == .image {
             imageView.isHidden = false
@@ -70,21 +72,38 @@ public class EButton: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
+    
+        // Disable Constraint
+        for constraint in constraintList {
+            constraint.isActive = false
+        }
         
-        imageView.topAnchor.constraint(equalTo: topAnchor, constant: padding).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: padding).isActive = true
-        imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: padding).isActive = true
+        constraintList.removeAll()
         
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: padding).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: padding).isActive = true
+        constraintList.append(imageView.centerXAnchor.constraint(equalTo: centerXAnchor))
+        constraintList.append(imageView.centerYAnchor.constraint(equalTo: centerYAnchor))
+        constraintList.append(imageView.widthAnchor.constraint(equalTo: widthAnchor, constant: -(padding * 2)))
+        constraintList.append(imageView.heightAnchor.constraint(equalTo: heightAnchor, constant: -(padding * 2)))
         
-        button.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        button.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        button.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+//        constraintList.append(imageView.topAnchor.constraint(equalTo: topAnchor, constant: padding))
+//        constraintList.append(imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: padding))
+//        constraintList.append(imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding))
+//        constraintList.append(imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: padding))
+        
+        constraintList.append(titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding))
+        constraintList.append(titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: padding))
+        constraintList.append(titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding))
+        constraintList.append(titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: padding))
+        
+        constraintList.append(button.topAnchor.constraint(equalTo: topAnchor))
+        constraintList.append(button.bottomAnchor.constraint(equalTo: bottomAnchor))
+        constraintList.append(button.leadingAnchor.constraint(equalTo: leadingAnchor))
+        constraintList.append(button.trailingAnchor.constraint(equalTo: trailingAnchor))
+        
+        // Enable Constraint
+        for constraint in constraintList {
+            constraint.isActive = true
+        }
     }
     
     private func setButtonStyle() {

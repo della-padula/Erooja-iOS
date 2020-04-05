@@ -36,6 +36,7 @@
 		B04B4EE32436F2F800EA438B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B4EE22436F2F800EA438B /* SearchViewModel.swift */; };
 		B04FB43E242F757100003A8D /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */; };
 		B05DC3A22438FCD500626501 /* EroojaDevViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DC3A12438FCD500626501 /* EroojaDevViewModel.swift */; };
+		B05DC3E72439A2D100626501 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B05DC3E62439A2D100626501 /* Common.xcassets */; };
 		B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; };
 		B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B09CD5D22436C1210073733D /* SignUpDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09CD5D12436C1200073733D /* SignUpDetailViewCell.swift */; };
@@ -162,6 +163,7 @@
 		B04FB43D242F757100003A8D /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = "../../Downloads/kakao-ios-sdk-1.22.0/KakaoOpenSDK.framework"; sourceTree = "<group>"; };
 		B04FB43F242F769700003A8D /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		B05DC3A12438FCD500626501 /* EroojaDevViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevViewModel.swift; sourceTree = "<group>"; };
+		B05DC3E62439A2D100626501 /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
 		B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaCommon.xcodeproj; path = EroojaCommon/EroojaCommon.xcodeproj; sourceTree = "<group>"; };
 		B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaUI.xcodeproj; path = EroojaUI/EroojaUI.xcodeproj; sourceTree = "<group>"; };
 		B09CD5D12436C1200073733D /* SignUpDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailViewCell.swift; sourceTree = "<group>"; };
@@ -388,6 +390,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		B05DC3E12439A2BA00626501 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B05DC3E62439A2D100626501 /* Common.xcassets */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		B08AD994242F41D8001CE297 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +439,7 @@
 		B0A8C55F243338FF002B2C83 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B05DC3E12439A2BA00626501 /* Common */,
 				B03D4A6424339ECB009180E9 /* Roboto-Regular.otf */,
 				B0A8C5622433392B002B2C83 /* UIImage+EroojaImage.swift */,
 				B0A8C5652433395B002B2C83 /* Image.xcassets */,
@@ -699,6 +710,7 @@
 				B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */,
 				B03D4A6A24339ECF009180E9 /* Roboto-Regular.otf in Resources */,
 				B0C0311824364AFC008771BB /* SignUpDetailView.xib in Resources */,
+				B05DC3E72439A2D100626501 /* Common.xcassets in Resources */,
 				B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */,
 				B0FE8ECC2432404F00103A54 /* Start.storyboard in Resources */,
 				B0C0302A24356AD2008771BB /* SignUpFieldButton.xib in Resources */,

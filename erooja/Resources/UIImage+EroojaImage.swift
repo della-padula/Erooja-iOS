@@ -38,6 +38,14 @@ public extension UIImage {
         return UIImage(named: "back_button")!
     }
     
+    class var commonIcoBack: UIImage {
+        return UIImage(named: "commonIcoBack")!
+    }
+    
+    class var commonIcoClose: UIImage {
+        return UIImage(named: "commonIcoClose")!
+    }
+    
     class var signup_field_dev_off: UIImage {
         return UIImage(named: "signup_field_dev_off")!
     }
