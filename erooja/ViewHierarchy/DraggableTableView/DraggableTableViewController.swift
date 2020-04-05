@@ -11,6 +11,8 @@ import EroojaCommon
 import EroojaUI
 
 public class DraggableTableViewController: BaseViewController {
+    private var imageButton = EButton()
+    
     private let tableView = UITableView()
     public var viewModel: DraggableTableViewModel?
     
@@ -37,14 +39,31 @@ public class DraggableTableViewController: BaseViewController {
     }
     
     private func setViewLayout() {
+        imageButton.image = .commonIcoClose
+        imageButton.padding = 10
+        imageButton.backgroundColor = .white
+        imageButton.addTarget(target: self, action: #selector(onClickCloseButton), forEvent: .touchUpInside)
+        
+        self.view.addSubview(imageButton)
+        imageButton.translatesAutoresizingMaskIntoConstraints = false
+        imageButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        imageButton.widthAnchor.constraint(equalTo: imageButton.heightAnchor, multiplier: 1.0).isActive = true
+        imageButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        imageButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        
         tableView.allowsSelectionDuringEditing = true
         tableView.setEditing(true, animated: true)
         self.view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.imageButton.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    @objc
+    public func onClickCloseButton() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
