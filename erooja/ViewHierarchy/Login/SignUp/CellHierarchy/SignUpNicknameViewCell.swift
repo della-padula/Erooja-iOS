@@ -22,11 +22,19 @@ public enum FieldType: String {
     case design = "Design"
 }
 
+public enum TextFieldErrorType: String, CaseIterable {
+    case empty = "닉네임을 2자 이상 입력해주세요."
+    case exceed = "2자 이상 5자 이하로 입력해주세요."
+    case duplicate = "중복된 닉네임입니다."
+    case success = "사용할 수 있는 닉네임입니다."
+}
+
 public class SignUpNicknameViewCell: UICollectionViewCell {
     private var isNicknameValid: Bool = false
-    
+    private var isInitialShown: Bool = true
     private let lblTitle = UILabel()
     private let lblSubTitle = UILabel()
+    private let bottomHintLabel = UILabel()
     
     public var delegate: SignUpCellDelegate?
     
@@ -63,6 +71,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
     
     // PUBLIC
     public func checkButtonState() {
+        isInitialShown = true
         delegate?.setButtonStyle(forState: isNicknameValid ? .active : .inActive)
     }
     
@@ -83,16 +92,6 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
     
     private func setupDetailViewLayout() {
         setupNicknameView()
-//        switch viewType {
-//        case .nickname:
-//            setupNicknameView()
-//        case .field:
-//            setupFieldView()
-//        case .detail:
-//            setupDetailView()
-//        default:
-//            break
-//        }
     }
     
     private func setupNicknameView() {
@@ -101,22 +100,56 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
         let textFieldView = EroojaTextField()
         let checkBadgeView = UIImageView()
         
-        checkBadgeView.image = UIImage(named: "signup_check")
+        checkBadgeView.image = UIImage(named: "signup_error")
+//        checkBadgeView.image = UIImage(named: "signup_check")
         checkBadgeView.isHidden = true
+        
+        if isInitialShown {
+            ELog.debug(message: "isInitialShown : \(isInitialShown)")
+            bottomHintLabel.isHidden = true
+        }
         
         fieldView.backgroundColor = .clear
         
         textFieldView.backgroundColor = .clear
         textFieldView.textAlignment = .center
-        textFieldView.placeholder = "5자 이내 입력"
+        textFieldView.placeholder = "한글 2자 이상 ~ 5자 이내"
         textFieldView.debounce(delay: 0.3) { (text) in
             ELog.debug(message: "Debounce Text : \(text ?? "nil"), Length : \(text?.count ?? 0)")
-            let isValid = !(text ?? "").isEmpty
-            self.isNicknameValid = isValid
+            let inputText = text ?? ""
             
-            checkBadgeView.isHidden = !isValid
-            SignUpBaseProperty.nickname = text
-            self.delegate?.setButtonStyle(forState: isValid ? .active : .inActive)
+            if inputText.isEmpty {
+                bottomBorderView.backgroundColor = EroojaColorSet.shared.gray400s
+                checkBadgeView.isHidden = true
+                
+                if !self.isInitialShown {
+                    self.bottomHintLabel.isHidden = false
+                    self.bottomHintLabel.text = TextFieldErrorType.empty.rawValue
+                }
+            } else {
+                var errorType: TextFieldErrorType?
+                var isValid = false
+                self.isInitialShown = false
+                
+                if (text ?? "").count > 5 || (text ?? "").count < 2 {
+                    errorType = .exceed
+                    self.bottomHintLabel.isHidden = false
+                    self.bottomHintLabel.text = errorType?.rawValue
+                    self.isNicknameValid = false
+                    checkBadgeView.isHidden = false
+                    checkBadgeView.image = UIImage(named: "signup_error")
+                } else {
+                    // request nickname check
+                    self.isNicknameValid = true
+                    self.bottomHintLabel.isHidden = true
+                    checkBadgeView.isHidden = false
+                    checkBadgeView.image = UIImage(named: "signup_check")
+                    SignUpBaseProperty.nickname = text
+                    isValid = true
+                }
+                bottomBorderView.backgroundColor = EroojaColorSet.shared.orgDefault400s
+                self.delegate?.setButtonStyle(forState: isValid ? .active : .inActive)
+            }
         }
         textFieldView.font = .AppleSDBold15P
         textFieldView.textColor = EroojaColorSet.shared.gray100s
@@ -144,13 +177,23 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
         checkBadgeView.widthAnchor.constraint(equalTo: checkBadgeView.heightAnchor).isActive = true
         checkBadgeView.trailingAnchor.constraint(equalTo: fieldView.trailingAnchor).isActive = true
         
-        bottomBorderView.backgroundColor = EroojaColorSet.shared.orgDefault400s
+        bottomBorderView.backgroundColor = EroojaColorSet.shared.gray400s
         self.addSubview(bottomBorderView)
         bottomBorderView.translatesAutoresizingMaskIntoConstraints = false
         bottomBorderView.topAnchor.constraint(equalTo: fieldView.bottomAnchor).isActive = true
         bottomBorderView.heightAnchor.constraint(equalToConstant: 2).isActive = true
         bottomBorderView.leadingAnchor.constraint(equalTo: fieldView.leadingAnchor).isActive = true
         bottomBorderView.trailingAnchor.constraint(equalTo: fieldView.trailingAnchor).isActive = true
+        
+        bottomHintLabel.font = .AppleSDSemiBold12P
+        bottomHintLabel.textAlignment = .center
+        bottomHintLabel.textColor = EroojaColorSet.shared.orgDefault400s
+        
+        self.addSubview(bottomHintLabel)
+        bottomHintLabel.translatesAutoresizingMaskIntoConstraints = false
+        bottomHintLabel.topAnchor.constraint(equalTo: bottomBorderView.bottomAnchor, constant: 12).isActive = true
+        bottomHintLabel.leadingAnchor.constraint(equalTo: bottomBorderView.leadingAnchor).isActive = true
+        bottomHintLabel.trailingAnchor.constraint(equalTo: bottomBorderView.trailingAnchor).isActive = true
     }
     
     private func setFieldButtonState() {
