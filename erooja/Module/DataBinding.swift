@@ -16,7 +16,6 @@ public class DataBinding<T> {
         self.listener = listener
     }
     
-    // Bind 하고 초기 값을 바로 바인딩하여 적용하고 싶을 경우
     func bindAndFire(_ listener: ((T) -> Void)?) {
         self.listener = listener
         listener?(valueForBind)

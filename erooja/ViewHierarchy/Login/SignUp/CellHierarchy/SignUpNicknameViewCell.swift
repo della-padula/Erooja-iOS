@@ -83,16 +83,6 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
     
     private func setupDetailViewLayout() {
         setupNicknameView()
-//        switch viewType {
-//        case .nickname:
-//            setupNicknameView()
-//        case .field:
-//            setupFieldView()
-//        case .detail:
-//            setupDetailView()
-//        default:
-//            break
-//        }
     }
     
     private func setupNicknameView() {
@@ -101,20 +91,25 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
         let textFieldView = EroojaTextField()
         let checkBadgeView = UIImageView()
         
-        checkBadgeView.image = UIImage(named: "signup_check")
+        checkBadgeView.image = UIImage(named: "signup_error")
+//        checkBadgeView.image = UIImage(named: "signup_check")
         checkBadgeView.isHidden = true
         
         fieldView.backgroundColor = .clear
         
         textFieldView.backgroundColor = .clear
         textFieldView.textAlignment = .center
-        textFieldView.placeholder = "5자 이내 입력"
+        textFieldView.placeholder = "한글 2자 이상 ~ 5자 이내"
         textFieldView.debounce(delay: 0.3) { (text) in
             ELog.debug(message: "Debounce Text : \(text ?? "nil"), Length : \(text?.count ?? 0)")
             let isValid = !(text ?? "").isEmpty
             self.isNicknameValid = isValid
             
-            checkBadgeView.isHidden = !isValid
+            checkBadgeView.image = isValid ? UIImage(named: "signup_check") : UIImage(named: "signup_error")
+//            checkBadgeView.isHidden = !isValid
+            
+            checkBadgeView.isHidden = (text ?? "").isEmpty ? true : false
+            
             SignUpBaseProperty.nickname = text
             self.delegate?.setButtonStyle(forState: isValid ? .active : .inActive)
         }
