@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46A805F72F56F5C060778B16 /* Pods_erooja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0B152DDCD2B25F745259E2 /* Pods_erooja.framework */; };
+		B0168186243CC34B008497E2 /* DynamicTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0168185243CC34B008497E2 /* DynamicTextView.swift */; };
 		B02B71192432BA5200045F93 /* EroojaSharedBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */; };
 		B02B711A2432BA5200045F93 /* EroojaSharedBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B02DFA22242F611E00B6DF89 /* EroojaUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD9E0242F60F1001CE297 /* EroojaUI.framework */; };
@@ -138,6 +139,7 @@
 		8A23D11EE96F66578868B5A2 /* Pods-erooja.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.uitest.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.uitest.xcconfig"; sourceTree = "<group>"; };
 		9CAC2CCFB91AEFC6FE7A332D /* Pods-erooja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.release.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.release.xcconfig"; sourceTree = "<group>"; };
 		AE2CA5D8F5338CEE1C20830F /* Pods-EroojaDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.release.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.release.xcconfig"; sourceTree = "<group>"; };
+		B0168185243CC34B008497E2 /* DynamicTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextView.swift; sourceTree = "<group>"; };
 		B02DFA86242F64E000B6DF89 /* EroojaNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaNetwork.xcodeproj; path = EroojaNetwork/EroojaNetwork.xcodeproj; sourceTree = "<group>"; };
 		B031CF9F2436F79900BDD599 /* DataBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinding.swift; sourceTree = "<group>"; };
 		B031CFA52436F88500BDD599 /* PortfolioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioModel.swift; sourceTree = "<group>"; };
@@ -253,6 +255,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B0168184243CC339008497E2 /* DynamicTextField */ = {
+			isa = PBXGroup;
+			children = (
+				B0168185243CC34B008497E2 /* DynamicTextView.swift */,
+			);
+			path = DynamicTextField;
+			sourceTree = "<group>";
+		};
 		B02DFA87242F64E000B6DF89 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +359,7 @@
 		B0462B1E242BA93C00B51854 /* ViewHierarchy */ = {
 			isa = PBXGroup;
 			children = (
+				B0168184243CC339008497E2 /* DynamicTextField */,
 				B0A37AB2243A12850054933D /* DraggableTableView */,
 				B031CFBC243702D000BDD599 /* ModalView */,
 				B04B4EDF2436F22C00EA438B /* Main */,
@@ -825,6 +836,7 @@
 				B0FE8ECE2432407E00103A54 /* OnboardViewController.swift in Sources */,
 				B0C030202434F7EB008771BB /* SignUpViewModel.swift in Sources */,
 				B0C030172434F266008771BB /* SignUpNicknameViewCell.swift in Sources */,
+				B0168186243CC34B008497E2 /* DynamicTextView.swift in Sources */,
 				B09CD5D22436C1210073733D /* SignUpDetailViewCell.swift in Sources */,
 				B0C0310F243639C0008771BB /* JobModel.swift in Sources */,
 				B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */,

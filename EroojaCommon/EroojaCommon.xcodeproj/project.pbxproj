@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0168181243CC216008497E2 /* NSObject+Observation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0168180243CC216008497E2 /* NSObject+Observation.swift */; };
+		B0168183243CC27B008497E2 /* AnyObject+AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0168182243CC27B008497E2 /* AnyObject+AssociatedObject.swift */; };
+		B016818C243CC9E0008497E2 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016818B243CC9E0008497E2 /* Optional+Extensions.swift */; };
 		B08AD98D242F41CF001CE297 /* EroojaCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = B08AD98B242F41CF001CE297 /* EroojaCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08AD99A242F41E8001CE297 /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD999242F41E8001CE297 /* AES256CBC.swift */; };
 		B08AD99C242F4220001CE297 /* ECrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD99B242F4220001CE297 /* ECrypto.swift */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0168180243CC216008497E2 /* NSObject+Observation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Observation.swift"; sourceTree = "<group>"; };
+		B0168182243CC27B008497E2 /* AnyObject+AssociatedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyObject+AssociatedObject.swift"; sourceTree = "<group>"; };
+		B016818B243CC9E0008497E2 /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		B08AD988242F41CF001CE297 /* EroojaCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EroojaCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08AD98B242F41CF001CE297 /* EroojaCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EroojaCommon.h; sourceTree = "<group>"; };
 		B08AD98C242F41CF001CE297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +63,9 @@
 				B08AD999242F41E8001CE297 /* AES256CBC.swift */,
 				B08AD99B242F4220001CE297 /* ECrypto.swift */,
 				B08AD9A2242F453C001CE297 /* ELog.swift */,
+				B0168180243CC216008497E2 /* NSObject+Observation.swift */,
+				B0168182243CC27B008497E2 /* AnyObject+AssociatedObject.swift */,
+				B016818B243CC9E0008497E2 /* Optional+Extensions.swift */,
 			);
 			path = EroojaCommon;
 			sourceTree = "<group>";
@@ -141,6 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0168181243CC216008497E2 /* NSObject+Observation.swift in Sources */,
+				B016818C243CC9E0008497E2 /* Optional+Extensions.swift in Sources */,
+				B0168183243CC27B008497E2 /* AnyObject+AssociatedObject.swift in Sources */,
 				B08AD99C242F4220001CE297 /* ECrypto.swift in Sources */,
 				B08AD9A3242F453C001CE297 /* ELog.swift in Sources */,
 				B08AD99A242F41E8001CE297 /* AES256CBC.swift in Sources */,
