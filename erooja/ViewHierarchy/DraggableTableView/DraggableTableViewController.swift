@@ -111,14 +111,6 @@ extension DraggableTableViewController: UITableViewDelegate, UITableViewDataSour
         return true
     }
     
-//    public func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        let deleteAction = UITableViewRowAction(style: .destructive, title: "삭제") { action, index in
-//            //하고싶은 작업
-//            self.viewModel?.tableListItem.valueForBind.remove(at: indexPath.row)
-//        }
-//        return [deleteAction]
-//    }
-//
     public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
         let deleteAction = UIContextualAction(style: .destructive, title:  "삭제", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
