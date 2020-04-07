@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B016818A243CC4EE008497E2 /* UIColor+EUIDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0168189243CC4EE008497E2 /* UIColor+EUIDefine.swift */; };
 		B031CFB62436FE7700BDD599 /* EUIHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031CFB52436FE7700BDD599 /* EUIHeaderView.swift */; };
 		B031CFE12437057000BDD599 /* EButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031CFE02437057000BDD599 /* EButton.swift */; };
 		B03D4A5B24339923009180E9 /* EPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A5A24339923009180E9 /* EPageControl.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0168189243CC4EE008497E2 /* UIColor+EUIDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+EUIDefine.swift"; sourceTree = "<group>"; };
 		B031CFB52436FE7700BDD599 /* EUIHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUIHeaderView.swift; sourceTree = "<group>"; };
 		B031CFE02437057000BDD599 /* EButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EButton.swift; sourceTree = "<group>"; };
 		B03D4A5A24339923009180E9 /* EPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPageControl.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				B03D4A5A24339923009180E9 /* EPageControl.swift */,
 				B03D4A712433AC9E009180E9 /* UILabel+LineSpacing.swift */,
 				B0C03024243556EF008771BB /* EroojaTextField.swift */,
+				B0168189243CC4EE008497E2 /* UIColor+EUIDefine.swift */,
 			);
 			path = EroojaUI;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				B08AD9D1242F604D001CE297 /* UIView+Frame.swift in Sources */,
 				B08AD9CC242F604D001CE297 /* UIImage+Initialize.swift in Sources */,
 				B03D4A6024339C9C009180E9 /* UIFont+EroojaFont.swift in Sources */,
+				B016818A243CC4EE008497E2 /* UIColor+EUIDefine.swift in Sources */,
 				B0C03025243556EF008771BB /* EroojaTextField.swift in Sources */,
 				B03D4A722433AC9E009180E9 /* UILabel+LineSpacing.swift in Sources */,
 				B031CFE12437057000BDD599 /* EButton.swift in Sources */,
