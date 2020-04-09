@@ -9,6 +9,11 @@
 import Foundation
 import Alamofire
 
+public enum KakaoTokenReqType {
+    case id
+    case token
+}
+
 public enum EroojaAPIError: Error {
     case basicAPIError(BasicAPIError)
     case unknown
