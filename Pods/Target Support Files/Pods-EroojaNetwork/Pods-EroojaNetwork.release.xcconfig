@@ -1,11 +1,11 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC" "${PODS_CONFIGURATION_BUILD_DIR}/PromisesSwift"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-library"
-OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-library/Alamofire.modulemap"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Alamofire-library" -framework "CFNetwork"
-OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-library/Alamofire.modulemap"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/PromisesSwift/Promises.framework/Headers" "${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks' '@executable_path/../../Frameworks'
+OTHER_LDFLAGS = $(inherited) -framework "Alamofire" -framework "CFNetwork" -framework "FBLPromises" -framework "Promises"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/..
 PODS_ROOT = ${SRCROOT}/../Pods
-SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-library"
 USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES

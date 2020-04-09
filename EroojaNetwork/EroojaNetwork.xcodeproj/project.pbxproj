@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88FE99D331AA928EC4E242C5 /* libPods-EroojaNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D02986B9A185916AAB435B59 /* libPods-EroojaNetwork.a */; };
 		B02DFA80242F643700B6DF89 /* EroojaNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = B02DFA7E242F643700B6DF89 /* EroojaNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0C5F37D242F668900582AE5 /* EURLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5F37C242F668900582AE5 /* EURLConstant.swift */; };
 		B0C5F37F242F669900582AE5 /* BasicAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5F37E242F669900582AE5 /* BasicAPIError.swift */; };
 		B0C5F384242F66B600582AE5 /* HomeAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5F383242F66B600582AE5 /* HomeAPIRequest.swift */; };
 		B0C5F386242F66D100582AE5 /* EroojaAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5F385242F66D100582AE5 /* EroojaAPIRequest.swift */; };
+		B4C4C3FAD7476AF5068787E5 /* Pods_EroojaNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9A9166449BD1FBB29FFFD0 /* Pods_EroojaNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA9A9166449BD1FBB29FFFD0 /* Pods_EroojaNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EroojaNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02DFA7B242F643700B6DF89 /* EroojaNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EroojaNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02DFA7E242F643700B6DF89 /* EroojaNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EroojaNetwork.h; sourceTree = "<group>"; };
 		B02DFA7F242F643700B6DF89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		B0C5F385242F66D100582AE5 /* EroojaAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaAPIRequest.swift; sourceTree = "<group>"; };
 		B9534C4457AE202128B49E5A /* Pods-EroojaNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaNetwork.release.xcconfig"; path = "Target Support Files/Pods-EroojaNetwork/Pods-EroojaNetwork.release.xcconfig"; sourceTree = "<group>"; };
 		CC94472065709F1E09C51405 /* Pods-EroojaNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaNetwork.debug.xcconfig"; path = "Target Support Files/Pods-EroojaNetwork/Pods-EroojaNetwork.debug.xcconfig"; sourceTree = "<group>"; };
-		D02986B9A185916AAB435B59 /* libPods-EroojaNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EroojaNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88FE99D331AA928EC4E242C5 /* libPods-EroojaNetwork.a in Frameworks */,
+				B4C4C3FAD7476AF5068787E5 /* Pods_EroojaNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +53,7 @@
 		90B074D06203F5A258BBF493 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D02986B9A185916AAB435B59 /* libPods-EroojaNetwork.a */,
+				AA9A9166449BD1FBB29FFFD0 /* Pods_EroojaNetwork.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
