@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import EroojaCommon
 
 public enum KakaoTokenReqType {
     case id
@@ -99,5 +100,16 @@ public enum EroojaAPIError: Error {
 }
 
 public class EroojaAPIRequest {
-    
+    func requestWithJSON(jsonData: [String: String], completion: @escaping (Result<[String : String], EroojaAPIError>) -> Void) {
+        AF.request(AuthAPIRequest.RequestType.kakaoToken(.id, jsonData["kakaoId"]!).requestURL, method: .post, parameters: jsonData, encoder: JSONParameterEncoder.default).response(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                completion(.success(["token":"sample"]))
+                break
+            case .failure(let error):
+                ELog.error(message: error.localizedDescription)
+                completion(.failure(.urlRequestError)) // TEMP Error
+            }
+        })
+    }
 }
