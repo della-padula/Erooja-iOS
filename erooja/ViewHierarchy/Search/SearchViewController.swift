@@ -14,7 +14,7 @@ import EroojaSharedBase
 
 public class SearchViewController: BaseViewController {
     
-    private var navigationBar: EUIHeaderView?
+    private var navigationBar = EUIHeaderView()
     public var viewModel: SearchViewModel?
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -25,8 +25,6 @@ public class SearchViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
-        
-        self.navigationBar = EUIHeaderView()
         
         self.bindViewModel()
         self.setViewLayout()
@@ -48,19 +46,46 @@ public class SearchViewController: BaseViewController {
     }
     
     private func setViewLayout() {
-        self.navigationBar?.barOptions = [.backButton, .textField, .rightSecondButton]
-        self.view.addSubview(self.navigationBar!)
+        self.navigationBar.barOptions = [.backButton, .textField, .rightSecondButton]
+        self.view.addSubview(self.navigationBar)
         
-        self.navigationBar?.delegate = self
-        self.navigationBar?.rightSecondButtonType = .image
-        self.navigationBar?.setRightButtonImage(position: .second, image: UIImage.search_button)
+        self.navigationBar.delegate = self
+        self.navigationBar.rightSecondButtonType = .image
+        self.navigationBar.setRightButtonImage(position: .second, image: UIImage.search_button)
         
-        self.navigationBar?.backgroundColor = .white
-        self.navigationBar?.textFieldPlaceholder = "검색어를 입력해주세요."
-        self.navigationBar?.translatesAutoresizingMaskIntoConstraints = false
-        self.navigationBar?.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
-        self.navigationBar?.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        self.navigationBar?.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        self.navigationBar.backgroundColor = .white
+        self.navigationBar.textFieldPlaceholder = "검색어를 입력해주세요."
+        self.navigationBar.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        self.navigationBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        self.navigationBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        
+        self.setToggleButtonLayout()
+    }
+    
+    private func setToggleButtonLayout() {
+        let buttonStackView = UIStackView()
+        let jobButton = UIButton()
+        let goalButton = UIButton()
+        
+        jobButton.setTitle("직무", for: .normal)
+        jobButton.backgroundColor = .green
+        
+        goalButton.setTitle("목표", for: .normal)
+        goalButton.backgroundColor = .cyan
+        
+        buttonStackView.axis = .horizontal
+        buttonStackView.distribution = .fillEqually
+        buttonStackView.addArrangedSubview(jobButton)
+        buttonStackView.addArrangedSubview(goalButton)
+        
+        self.view.addSubview(buttonStackView)
+        buttonStackView.translatesAutoresizingMaskIntoConstraints = false
+        buttonStackView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
+        buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        buttonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        buttonStackView.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
     }
 }
 
