@@ -38,6 +38,10 @@ public extension UIImage {
         return UIImage(named: "back_button")!
     }
     
+    class var search_button: UIImage {
+        return UIImage(named: "search_btn_search")!
+    }
+    
     class var commonIcoBack: UIImage {
         return UIImage(named: "commonIcoBack")!
     }

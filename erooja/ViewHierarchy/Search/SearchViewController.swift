@@ -48,14 +48,12 @@ public class SearchViewController: BaseViewController {
     }
     
     private func setViewLayout() {
-        self.navigationBar?.barOptions = [.backButton, .textField, .rightFirstButton, .rightSecondButton]
+        self.navigationBar?.barOptions = [.backButton, .textField, .rightSecondButton]
         self.view.addSubview(self.navigationBar!)
         
         self.navigationBar?.delegate = self
         self.navigationBar?.rightSecondButtonType = .image
-        self.navigationBar?.rightSecondButtonType = .image
-        self.navigationBar?.setRightButtonImage(position: .first, image: UIImage.back_button)
-        self.navigationBar?.setRightButtonImage(position: .second, image: UIImage.back_button)
+        self.navigationBar?.setRightButtonImage(position: .second, image: UIImage.search_button)
         
         self.navigationBar?.backgroundColor = .green
         self.navigationBar?.translatesAutoresizingMaskIntoConstraints = false
