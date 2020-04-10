@@ -1,4 +1,4 @@
-module Pods_EroojaNetwork {
+framework module Pods_EroojaNetwork {
   umbrella header "Pods-EroojaNetwork-umbrella.h"
 
   export *

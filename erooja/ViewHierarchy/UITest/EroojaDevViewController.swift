@@ -21,6 +21,7 @@ class UITestViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         
         bindViewModel()
         
@@ -73,7 +74,21 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
         case .onboard:
             vc = OnboardViewController()
         case .search:
-            vc = SearchViewController()
+            let dst = SearchViewController()
+            
+//            self.view.superview?.insertSubview(dst.view, aboveSubview: self.view)
+//            dst.view.transform = CGAffineTransform(translationX: self.view.frame.size.width, y: 0)
+            
+            self.modalPresentationStyle = .fullScreen
+            
+            self.navigationController?.pushViewController(dst, animated: true)
+            
+//            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
+//                dst.view.transform = CGAffineTransform(translationX: 0, y: 0)
+//            }, completion: { finished in
+//                self.present(dst, animated: false
+//                    , completion: nil)
+//            })
         case .modalViewTest:
             vc = EUIModalViewController()
         case .dragTable:

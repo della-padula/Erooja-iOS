@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Promises
 import EroojaCommon
 
 public enum EroojaType: String, CaseIterable {
@@ -25,10 +26,28 @@ public enum EroojaType: String, CaseIterable {
 }
 
 public class UITestViewModel {
+    
+    enum FetchError: LocalizedError {
+        case noData
+    }
+    
     var menuItems = DataBinding([EroojaType]())
     
     func setDevMenuItemsToView() {
         ELog.debug(message: "ViewModel : setDevMenuItemsToView")
-        menuItems.valueForBind = EroojaType.allCases
+        fetchMenuItems().then { list in
+            self.menuItems.valueForBind = list
+        }
+    }
+    
+    private func fetchMenuItems() -> Promise<[EroojaType]> {
+        return Promise<[EroojaType]> { fulfill, reject in
+            let list = EroojaType.allCases
+            if list.count > 0 {
+                fulfill(list)
+            } else {
+                reject(FetchError.noData)
+            }
+        }
     }
 }

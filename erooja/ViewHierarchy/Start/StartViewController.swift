@@ -51,7 +51,7 @@ public class StartViewController: BaseViewController {
         switch(status) {
         case .success:
             // Have Config, Have Account
-            break
+            LoginSwitcher.updateRootVC(type: .main)
         case .noConfig:
             LoginSwitcher.updateRootVC(type: .onboarding)
             break

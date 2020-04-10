@@ -44,6 +44,7 @@ public protocol EUINavigationBarDelegate {
 }
 
 public class EUIHeaderView: UIView {
+    private var textField = UITextField()
     private var backButton = EButton()
     private var rightFirstButton = EButton()
     private var rightSecondButton = EButton()
@@ -58,6 +59,12 @@ public class EUIHeaderView: UIView {
     public var barOptions: [EBarOption]? {
         didSet {
             self.setNavigationBarOption()
+        }
+    }
+    
+    public var textFieldPlaceholder: String? {
+        didSet {
+            self.textField.placeholder = textFieldPlaceholder
         }
     }
     
@@ -146,7 +153,7 @@ public class EUIHeaderView: UIView {
                     isHiddenRightSecondButton = true
                     addRightButton(position: .second)
                 case .textField:
-                    break
+                    setTextFieldLayout()
                 }
             }
         }
@@ -156,9 +163,21 @@ public class EUIHeaderView: UIView {
         rightButtons?[position].setButtonType(buttonType: type)
     }
     
+    private func setTextFieldLayout() {
+        addSubview(textField)
+        textField.font = .AppleSDRegular14P
+        textField.tintColor = EroojaColorSet.shared.orgDefault400s
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([textField.leadingAnchor.constraint(equalTo: backButton.trailingAnchor)])
+        NSLayoutConstraint.activate([textField.trailingAnchor.constraint(equalTo: rightFirstButton.leadingAnchor)])
+        NSLayoutConstraint.activate([textField.heightAnchor.constraint(equalTo: heightAnchor)])
+        NSLayoutConstraint.activate([textField.centerYAnchor.constraint(equalTo: centerYAnchor)])
+    }
+    
     private func setRightButtonLayout() {
-        rightFirstButton.backgroundColor = .red
-        rightSecondButton.backgroundColor = .blue
+//        rightFirstButton.backgroundColor = .red
+//        rightSecondButton.backgroundColor = .blue
         
         rightFirstButton.addTarget(target: self, action: #selector(onClickRightFirstButton), forEvent: .touchUpInside)
         rightSecondButton.addTarget(target: self, action: #selector(onClickRightSecondButton), forEvent: .touchUpInside)

@@ -3,24 +3,32 @@ PODS:
   - Kingfisher (5.13.2):
     - Kingfisher/Core (= 5.13.2)
   - Kingfisher/Core (5.13.2)
+  - PromisesObjC (1.2.8)
+  - PromisesSwift (1.2.8):
+    - PromisesObjC (= 1.2.8)
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
+  - PromisesSwift
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - PromisesObjC
+    - PromisesSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: ee55dfa99d979d52d47eacf3fdbffac1466f6c51
+PODFILE CHECKSUM: 9eaa47df05fa73ec2d9170984cd1f9439ba15630
 
 COCOAPODS: 1.9.1

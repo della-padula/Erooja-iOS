@@ -11,11 +11,15 @@ target 'erooja' do
   pod 'Alamofire'
   pod 'SwiftLint'
   pod 'Kingfisher'
+  pod 'PromisesSwift'
 end
 
 target 'EroojaNetwork' do
   project  'EroojaNetwork/EroojaNetwork'
   
+  use_frameworks!
+  
   pod 'Alamofire'
   pod 'SwiftLint'
+  pod 'PromisesSwift'
 end

@@ -39,6 +39,12 @@ public extension UIFont {
         }
     }
     
+    class var AppleSDSemiBold14P: UIFont {
+        get {
+            return UIFont(name: "AppleSDGothicNeo-SemiBold", size: 14.0)!
+        }
+    }
+    
     class var AppleSDSemiBold15P: UIFont {
         get {
             return UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15.0)!
