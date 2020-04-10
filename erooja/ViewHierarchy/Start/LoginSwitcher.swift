@@ -34,7 +34,11 @@ public class LoginSwitcher {
             if let vc = UIStoryboard(name: "EroojaDev", bundle: nil).instantiateViewController(withIdentifier: "UITestHomeVC") as? UITestViewController {
                 let viewModel = UITestViewModel()
                 vc.viewModel = viewModel
-                appDelegate.window?.rootViewController = vc
+//                appDelegate.window?.rootViewController = vc
+                
+                let nav = UINavigationController()
+                nav.viewControllers = [vc]
+                appDelegate.window?.rootViewController = nav
             }
             break
         }

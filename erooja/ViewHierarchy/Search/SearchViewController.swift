@@ -24,6 +24,8 @@ public class SearchViewController: BaseViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        self.navigationController?.isNavigationBarHidden = true
+        
         self.navigationBar = EUIHeaderView()
         
         self.bindViewModel()
@@ -71,7 +73,8 @@ extension SearchViewController: EUINavigationBarDelegate {
     public func onClickBackButton() {
         ELog.debug(message: "Back Button Click")
         #if DEBUG
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
         #else
         self.navigationController?.popViewController(animated: true)
         #endif
