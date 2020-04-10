@@ -55,7 +55,8 @@ public class SearchViewController: BaseViewController {
         self.navigationBar?.rightSecondButtonType = .image
         self.navigationBar?.setRightButtonImage(position: .second, image: UIImage.search_button)
         
-        self.navigationBar?.backgroundColor = .green
+        self.navigationBar?.backgroundColor = .white
+        self.navigationBar?.textFieldPlaceholder = "검색어를 입력해주세요."
         self.navigationBar?.translatesAutoresizingMaskIntoConstraints = false
         self.navigationBar?.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
         self.navigationBar?.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true

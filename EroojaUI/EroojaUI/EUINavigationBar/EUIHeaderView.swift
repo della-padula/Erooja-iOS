@@ -62,6 +62,12 @@ public class EUIHeaderView: UIView {
         }
     }
     
+    public var textFieldPlaceholder: String? {
+        didSet {
+            self.textField.placeholder = textFieldPlaceholder
+        }
+    }
+    
     public var backButtonType: EBackButton.ButtonType? {
         didSet {
             
@@ -159,6 +165,8 @@ public class EUIHeaderView: UIView {
     
     private func setTextFieldLayout() {
         addSubview(textField)
+        textField.font = .AppleSDRegular14P
+        textField.tintColor = EroojaColorSet.shared.orgDefault400s
         textField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([textField.leadingAnchor.constraint(equalTo: backButton.trailingAnchor)])
@@ -168,8 +176,8 @@ public class EUIHeaderView: UIView {
     }
     
     private func setRightButtonLayout() {
-        rightFirstButton.backgroundColor = .red
-        rightSecondButton.backgroundColor = .blue
+//        rightFirstButton.backgroundColor = .red
+//        rightSecondButton.backgroundColor = .blue
         
         rightFirstButton.addTarget(target: self, action: #selector(onClickRightFirstButton), forEvent: .touchUpInside)
         rightSecondButton.addTarget(target: self, action: #selector(onClickRightSecondButton), forEvent: .touchUpInside)
