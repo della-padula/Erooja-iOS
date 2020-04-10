@@ -44,6 +44,7 @@ public protocol EUINavigationBarDelegate {
 }
 
 public class EUIHeaderView: UIView {
+    private var textField = UITextField()
     private var backButton = EButton()
     private var rightFirstButton = EButton()
     private var rightSecondButton = EButton()
@@ -146,7 +147,7 @@ public class EUIHeaderView: UIView {
                     isHiddenRightSecondButton = true
                     addRightButton(position: .second)
                 case .textField:
-                    break
+                    setTextFieldLayout()
                 }
             }
         }
@@ -154,6 +155,16 @@ public class EUIHeaderView: UIView {
     
     private func setRightButtonStyle(type: ERightButton.ButtonType, position: Int) {
         rightButtons?[position].setButtonType(buttonType: type)
+    }
+    
+    private func setTextFieldLayout() {
+        addSubview(textField)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([textField.leadingAnchor.constraint(equalTo: backButton.trailingAnchor)])
+        NSLayoutConstraint.activate([textField.trailingAnchor.constraint(equalTo: rightFirstButton.leadingAnchor)])
+        NSLayoutConstraint.activate([textField.heightAnchor.constraint(equalTo: heightAnchor)])
+        NSLayoutConstraint.activate([textField.centerYAnchor.constraint(equalTo: centerYAnchor)])
     }
     
     private func setRightButtonLayout() {
