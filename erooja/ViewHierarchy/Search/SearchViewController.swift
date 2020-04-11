@@ -13,13 +13,17 @@ import EroojaNetwork
 import EroojaSharedBase
 
 public class SearchViewController: BaseViewController {
-    
     private var navigationBar = EUIHeaderView()
     public var viewModel: SearchViewModel?
+    private var selectedIndex: Int = 0
     
     private let buttonStackView = UIStackView()
     private let jobButton = ETabButton(tag: 0)
     private let goalButton = ETabButton(tag: 1)
+    
+    private let resultPlaceholderView = EPlaceholderView()
+    private let resultView = UIView()
+    private let resultTableView = UITableView()
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -65,6 +69,30 @@ public class SearchViewController: BaseViewController {
         self.navigationBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         
         self.setToggleButtonLayout()
+        
+        self.view.addSubview(self.resultView)
+        self.resultView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.resultView.topAnchor.constraint(equalTo: self.buttonStackView.bottomAnchor).isActive = true
+        self.resultView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        self.resultView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        self.resultView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        self.resultView.addSubview(self.resultTableView)
+        self.resultTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.resultTableView.topAnchor.constraint(equalTo: self.resultView.topAnchor).isActive = true
+        self.resultTableView.leadingAnchor.constraint(equalTo: self.resultView.leadingAnchor).isActive = true
+        self.resultTableView.trailingAnchor.constraint(equalTo: self.resultView.trailingAnchor).isActive = true
+        self.resultTableView.bottomAnchor.constraint(equalTo: self.resultView.bottomAnchor).isActive = true
+        
+        self.resultView.addSubview(resultPlaceholderView)
+        self.resultPlaceholderView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.resultPlaceholderView.topAnchor.constraint(equalTo: self.resultView.topAnchor).isActive = true
+        self.resultPlaceholderView.leadingAnchor.constraint(equalTo: self.resultView.leadingAnchor).isActive = true
+        self.resultPlaceholderView.trailingAnchor.constraint(equalTo: self.resultView.trailingAnchor).isActive = true
+        self.resultPlaceholderView.bottomAnchor.constraint(equalTo: self.resultView.bottomAnchor).isActive = true
     }
     
     private func setToggleButtonLayout() {
@@ -122,7 +150,6 @@ extension SearchViewController: ETabButtonDelegate {
     }
     
     fileprivate func setButtonState(tag: Int) {
-        
         for button in buttonStackView.subviews.enumerated() {
             if let button = button.element as? ETabButton {
                 if button.tag != tag {
@@ -131,8 +158,19 @@ extension SearchViewController: ETabButtonDelegate {
                 } else {
                     ELog.debug(message: "setTrue : \(button.tag)")
                     button.isActive = true
+                    selectedIndex = tag
                 }
             }
         }
+    }
+}
+
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
