@@ -156,6 +156,10 @@ extension SearchViewController: ETabButtonDelegate {
     public func onClickButton(_ button: ETabButton, tag: Int) {
         ELog.debug(message: "Clicked : \(tag)")
         setButtonState(tag: tag)
+        
+        // MARK: TEST
+        resultPlaceholderView.isHidden = tag > 0 ? true : false
+        resultTableView.isHidden = tag > 0 ? false : true
     }
     
     fileprivate func setButtonState(tag: Int) {
