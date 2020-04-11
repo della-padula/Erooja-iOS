@@ -122,15 +122,17 @@ extension SearchViewController: ETabButtonDelegate {
     }
     
     fileprivate func setButtonState(tag: Int) {
+        
         for button in buttonStackView.subviews.enumerated() {
             if let button = button.element as? ETabButton {
-                
+                if button.tag != tag {
+                    ELog.debug(message: "setFalse : \(button.tag)")
+                    button.isActive = false
+                } else {
+                    ELog.debug(message: "setTrue : \(button.tag)")
+                    button.isActive = true
+                }
             }
-        }
-        
-        if let selectedButton = buttonStackView.viewWithTag(tag) as? ETabButton {
-            ELog.debug(message: "setTrue : \(tag)")
-            selectedButton.isActive = true
         }
     }
 }
