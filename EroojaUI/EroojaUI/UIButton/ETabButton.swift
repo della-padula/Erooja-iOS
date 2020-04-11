@@ -15,9 +15,22 @@ public class ETabButton: UIView {
     private var titleLabel = UILabel()
     private var bottomLine = UIView()
     
+    public var isActive: Bool = false {
+        didSet {
+            self.bottomLine.isHidden = !isActive
+            self.titleLabel.textColor = isActive ? .black : EroojaColorSet.shared.gray300s
+        }
+    }
+    
     public var title: String? {
         didSet {
             self.setTitle()
+        }
+    }
+    
+    public var barTintColor: UIColor? {
+        didSet {
+            bottomLine.backgroundColor = barTintColor
         }
     }
     
@@ -33,6 +46,7 @@ public class ETabButton: UIView {
     
     fileprivate func setTitle() {
         self.titleLabel.text = self.title
+        self.titleLabel.font = .AppleSDSemiBold14P
     }
     
     fileprivate func setViewLayout() {
@@ -49,7 +63,7 @@ public class ETabButton: UIView {
         NSLayoutConstraint.activate([bottomLine.bottomAnchor.constraint(equalTo: button.bottomAnchor)])
         NSLayoutConstraint.activate([bottomLine.leadingAnchor.constraint(equalTo: leadingAnchor)])
         NSLayoutConstraint.activate([bottomLine.trailingAnchor.constraint(equalTo: trailingAnchor)])
-        NSLayoutConstraint.activate([bottomLine.heightAnchor.constraint(equalToConstant: 4)])
+        NSLayoutConstraint.activate([bottomLine.heightAnchor.constraint(equalToConstant: 2)])
         
         addSubview(titleLabel)
         titleLabel.textAlignment = .center

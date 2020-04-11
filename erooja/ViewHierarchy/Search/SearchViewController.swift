@@ -65,14 +65,20 @@ public class SearchViewController: BaseViewController {
     
     private func setToggleButtonLayout() {
         let buttonStackView = UIStackView()
-        let jobButton = UIButton()
-        let goalButton = UIButton()
+        let jobButton = ETabButton()
+        let goalButton = ETabButton()
         
-        jobButton.setTitle("직무", for: .normal)
-        jobButton.backgroundColor = .green
+//        jobButton.setTitle("직무", for: .normal)
+//        jobButton.backgroundColor = .green
+        jobButton.title = "직무"
+        jobButton.isActive = true
+        jobButton.barTintColor = .black
         
-        goalButton.setTitle("목표", for: .normal)
-        goalButton.backgroundColor = .cyan
+//        goalButton.setTitle("목표", for: .normal)
+//        goalButton.backgroundColor = .cyan
+        goalButton.title = "목표"
+        goalButton.isActive = false
+        goalButton.barTintColor = .black
         
         buttonStackView.axis = .horizontal
         buttonStackView.distribution = .fillEqually
