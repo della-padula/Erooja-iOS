@@ -31,6 +31,18 @@ public class EPlaceholderView: UIView {
         }
     }
     
+    public var font: UIFont? {
+        didSet {
+            textView.font = font
+        }
+    }
+    
+    public var textColor: UIColor? {
+        didSet {
+            textView.textColor = textColor
+        }
+    }
+    
     public var text: String? {
         didSet {
             textView.text = text
@@ -58,10 +70,12 @@ public class EPlaceholderView: UIView {
         imageHeightAnchor?.isActive = true
         
         addSubview(textView)
+        textView.textAlignment = .center
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
         textView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         textView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         textView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        textView.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
 }

@@ -87,12 +87,21 @@ public class SearchViewController: BaseViewController {
         self.resultTableView.bottomAnchor.constraint(equalTo: self.resultView.bottomAnchor).isActive = true
         
         self.resultView.addSubview(resultPlaceholderView)
+        resultPlaceholderView.imageHeight = 150
+        resultPlaceholderView.image = .mainLogo
+        resultPlaceholderView.text = "Test Placeholder"
+        resultPlaceholderView.textColor = EroojaColorSet.shared.gray000s
+        resultPlaceholderView.font = .AppleSDSemiBold14P
         self.resultPlaceholderView.translatesAutoresizingMaskIntoConstraints = false
         
-        self.resultPlaceholderView.topAnchor.constraint(equalTo: self.resultView.topAnchor).isActive = true
-        self.resultPlaceholderView.leadingAnchor.constraint(equalTo: self.resultView.leadingAnchor).isActive = true
-        self.resultPlaceholderView.trailingAnchor.constraint(equalTo: self.resultView.trailingAnchor).isActive = true
-        self.resultPlaceholderView.bottomAnchor.constraint(equalTo: self.resultView.bottomAnchor).isActive = true
+        self.resultPlaceholderView.backgroundColor = .green
+//        self.resultPlaceholderView.topAnchor.constraint(equalTo: self.resultView.topAnchor, constant: 60).isActive = true
+        self.resultPlaceholderView.leadingAnchor.constraint(equalTo: self.resultView.leadingAnchor, constant: 30).isActive = true
+        self.resultPlaceholderView.trailingAnchor.constraint(equalTo: self.resultView.trailingAnchor, constant: -30).isActive = true
+//        self.resultPlaceholderView.bottomAnchor.constraint(equalTo: self.resultView.bottomAnchor, constant: 60).isActive = true
+        
+        self.resultPlaceholderView.centerXAnchor.constraint(equalTo: self.resultView.centerXAnchor).isActive = true
+        self.resultPlaceholderView.centerYAnchor.constraint(equalTo: self.resultView.centerYAnchor).isActive = true
     }
     
     private func setToggleButtonLayout() {
