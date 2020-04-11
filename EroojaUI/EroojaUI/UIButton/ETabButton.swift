@@ -9,11 +9,17 @@
 import Foundation
 import UIKit
 
+public protocol ETabButtonDelegate {
+    func onClickButton(_ button: ETabButton, tag: Int)
+}
+
 public class ETabButton: UIView {
     
     private var button = UIButton()
     private var titleLabel = UILabel()
     private var bottomLine = UIView()
+    
+    public var delegate: ETabButtonDelegate?
     
     public var isActive: Bool = false {
         didSet {
@@ -34,9 +40,9 @@ public class ETabButton: UIView {
         }
     }
     
-    public init() {
+    public init(tag: Int) {
         super.init(frame: .zero)
-        
+        self.tag = tag
         setViewLayout()
     }
     
@@ -51,6 +57,7 @@ public class ETabButton: UIView {
     
     fileprivate func setViewLayout() {
         addSubview(button)
+        button.addTarget(self, action: #selector(onClickButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([button.leadingAnchor.constraint(equalTo: leadingAnchor)])
@@ -73,5 +80,10 @@ public class ETabButton: UIView {
         NSLayoutConstraint.activate([titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)])
         NSLayoutConstraint.activate([titleLabel.topAnchor.constraint(equalTo: topAnchor)])
         NSLayoutConstraint.activate([titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)])
+    }
+    
+    @objc
+    private func onClickButton() {
+        delegate?.onClickButton(self, tag: self.tag)
     }
 }

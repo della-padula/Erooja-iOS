@@ -17,6 +17,10 @@ public class SearchViewController: BaseViewController {
     private var navigationBar = EUIHeaderView()
     public var viewModel: SearchViewModel?
     
+    private let buttonStackView = UIStackView()
+    private let jobButton = ETabButton(tag: 0)
+    private let goalButton = ETabButton(tag: 1)
+    
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -64,9 +68,9 @@ public class SearchViewController: BaseViewController {
     }
     
     private func setToggleButtonLayout() {
-        let buttonStackView = UIStackView()
-        let jobButton = ETabButton()
-        let goalButton = ETabButton()
+        
+        jobButton.delegate = self
+        goalButton.delegate = self
         
 //        jobButton.setTitle("직무", for: .normal)
 //        jobButton.backgroundColor = .green
@@ -108,5 +112,25 @@ extension SearchViewController: EUINavigationBarDelegate {
         #else
         self.navigationController?.popViewController(animated: true)
         #endif
+    }
+}
+
+extension SearchViewController: ETabButtonDelegate {
+    public func onClickButton(_ button: ETabButton, tag: Int) {
+        ELog.debug(message: "Clicked : \(tag)")
+        setButtonState(tag: tag)
+    }
+    
+    fileprivate func setButtonState(tag: Int) {
+        for button in buttonStackView.subviews.enumerated() {
+            if let button = button.element as? ETabButton {
+                
+            }
+        }
+        
+        if let selectedButton = buttonStackView.viewWithTag(tag) as? ETabButton {
+            ELog.debug(message: "setTrue : \(tag)")
+            selectedButton.isActive = true
+        }
     }
 }
