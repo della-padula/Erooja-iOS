@@ -62,6 +62,9 @@ public class SearchViewController: BaseViewController {
             viewModel.stringList.bind({ list in
                 ELog.debug(message: "String List Changed")
                 DispatchQueue.main.async {
+                    self.resultPlaceholderView.isHidden = list.count > 0 ? true : false
+                    self.resultTableView.isHidden = list.count > 0 ? false : true
+                    
                     self.resultTableView.reloadData()
                 }
             })
@@ -179,10 +182,8 @@ extension SearchViewController: ETabButtonDelegate {
     public func onClickButton(_ button: ETabButton, tag: Int) {
         ELog.debug(message: "Clicked : \(tag)")
         setButtonState(tag: tag)
-        
-        // MARK: TEST
-        resultPlaceholderView.isHidden = tag > 0 ? true : false
-        resultTableView.isHidden = tag > 0 ? false : true
+        navigationBar.setTextFieldText(text: "")
+        viewModel?.removeAllStringList()
     }
     
     fileprivate func setButtonState(tag: Int) {

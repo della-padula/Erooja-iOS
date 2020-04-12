@@ -91,6 +91,9 @@ public class EUIHeaderView: UIView {
     }
     
     // MARK: USER Method
+    public func setTextFieldText(text: String) {
+        self.textField.text = text
+    }
     
     // Set Right Button Content
     public func setRightButtonImage(position: ERightButton.Position, image: UIImage) {
