@@ -78,6 +78,10 @@ public class SearchViewController: BaseViewController {
         self.resultView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         self.resultView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
+        self.resultTableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchCell")
+        self.resultTableView.delegate = self
+        self.resultTableView.dataSource = self
+        
         self.resultView.addSubview(self.resultTableView)
         self.resultTableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -95,11 +99,8 @@ public class SearchViewController: BaseViewController {
         self.resultPlaceholderView.translatesAutoresizingMaskIntoConstraints = false
         
         self.resultPlaceholderView.backgroundColor = .green
-//        self.resultPlaceholderView.topAnchor.constraint(equalTo: self.resultView.topAnchor, constant: 60).isActive = true
         self.resultPlaceholderView.leadingAnchor.constraint(equalTo: self.resultView.leadingAnchor, constant: 30).isActive = true
         self.resultPlaceholderView.trailingAnchor.constraint(equalTo: self.resultView.trailingAnchor, constant: -30).isActive = true
-//        self.resultPlaceholderView.bottomAnchor.constraint(equalTo: self.resultView.bottomAnchor, constant: 60).isActive = true
-        
         self.resultPlaceholderView.centerXAnchor.constraint(equalTo: self.resultView.centerXAnchor).isActive = true
         self.resultPlaceholderView.centerYAnchor.constraint(equalTo: self.resultView.centerYAnchor).isActive = true
     }
@@ -179,11 +180,23 @@ extension SearchViewController: ETabButtonDelegate {
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 5
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        ELog.debug(message: "Selected Table Cell : \(indexPath.row)")
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell") as! SearchTableViewCell
+        cell.title = "TEST \(indexPath.row)"
+        cell.selectionStyle = .none
+        ELog.debug(message: "TEST \(indexPath.row)")
+        return cell
     }
 }
