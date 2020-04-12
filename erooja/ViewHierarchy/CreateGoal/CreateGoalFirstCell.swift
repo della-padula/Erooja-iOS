@@ -11,9 +11,10 @@ import UIKit
 public class CreateGoalFirstCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
-    public var titleText: String = "" {
+    public var titleText: String? {
         didSet {
             self.titleLabel.text = titleText
+            self.titleLabel.backgroundColor = .cyan
         }
     }
     

@@ -50,6 +50,7 @@ public class CreateGoalViewController: BaseViewController {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
         layout.itemSize = CGSize(width: view.frame.width, height: view.frame.height - self.headerView.height)
         
         contentCollectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
@@ -89,18 +90,15 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
         switch indexPath.row {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createFirstCell", for: indexPath) as! CreateGoalFirstCell
-            cell.titleText = "테스트 타이틀 \(indexPath.row)"
-            cell.backgroundColor = .green
+            cell.titleText = "어떤 직무와 관련된 목표인가요?"
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createSecondCell", for: indexPath) as! CreateGoalSecondCell
-            cell.titleText = "테스트 타이틀 \(indexPath.row)"
-            cell.backgroundColor = .blue
+            cell.titleText = "어떤 목표를 달성하려고 하세요?"
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createThirdCell", for: indexPath) as! CreateGoalThirdCell
-            cell.titleText = "테스트 타이틀 \(indexPath.row)"
-            cell.backgroundColor = .red
+            cell.titleText = "어떤 목표인지\n조금 더 자세히 설명해주시겠어요?"
             return cell
         default:
             return UICollectionViewCell()
