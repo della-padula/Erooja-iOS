@@ -117,7 +117,8 @@ public class EUIHeaderView: UIView {
     
     // Progress Value Setting
     public func setProgressValue(value: CGFloat) {
-        
+        ELog.debug(message: "value : \(value)")
+        progressView.progress = Float(value)
     }
     
     // Get Text Field Data
@@ -152,9 +153,9 @@ public class EUIHeaderView: UIView {
                 switch option {
                 case .backButton:
                     self.addBackButton()
-                    break
                 case .progressBar:
                     viewHeight = 46
+                    setProgressBarLayout()
                 case .rightFirstButton:
                     isHiddenRightFirstButton = true
                     addRightButton(position: .first)
@@ -175,6 +176,18 @@ public class EUIHeaderView: UIView {
     
     private func setRightButtonStyle(type: ERightButton.ButtonType, position: Int) {
         rightButtons?[position].setButtonType(buttonType: type)
+    }
+    
+    private func setProgressBarLayout() {
+        progressView.trackTintColor = EroojaColorSet.shared.gray500s
+        progressView.progressTintColor = EroojaColorSet.shared.orgDefault400s
+        
+        addSubview(progressView)
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        progressView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        progressView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        progressView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        progressView.heightAnchor.constraint(equalToConstant: 2).isActive = true
     }
     
     private func setTextFieldLayout() {

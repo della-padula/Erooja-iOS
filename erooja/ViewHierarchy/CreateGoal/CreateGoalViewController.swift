@@ -21,6 +21,8 @@ public class CreateGoalViewController: BaseViewController {
         
         bindViewModel()
         setContentView()
+        
+        viewModel?.setProgressValue(value: 0.5)
     }
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -31,6 +33,7 @@ public class CreateGoalViewController: BaseViewController {
         if let viewModel = viewModel {
             viewModel.progressValue.bind({ progress in
                 ELog.debug(message: "Progress : \(progress)")
+                self.headerView.setProgressValue(value: CGFloat(Float(progress)))
             })
         }
     }
