@@ -65,6 +65,8 @@ public class CreateGoalViewController: BaseViewController {
 //
 //        contentCollectionView?.delegate = self
 //        contentCollectionView?.dataSource = self
+        
+        headerView.setRightButtonActive(position: .second, isActive: true)
     }
 }
 

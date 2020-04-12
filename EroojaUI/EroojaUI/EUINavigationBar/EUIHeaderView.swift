@@ -101,9 +101,9 @@ public class EUIHeaderView: UIView {
     // Set Right Button Content
     public func setRightButtonActive(position: ERightButton.Position, isActive: Bool) {
         if position == .first {
-            self.rightFirstButton.isUserInteractionEnabled = isActive
+            self.rightFirstButton.isActive = isActive
         } else {
-            self.rightSecondButton.isUserInteractionEnabled = isActive
+            self.rightSecondButton.isActive = isActive
         }
     }
     
