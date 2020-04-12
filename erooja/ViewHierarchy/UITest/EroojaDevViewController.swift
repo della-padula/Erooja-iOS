@@ -73,22 +73,16 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
             vc = SignUpViewController()
         case .onboard:
             vc = OnboardViewController()
+        case .addGoal:
+            let dst = CreateGoalViewController()
+            dst.viewModel = CreateGoalViewModel()
+            self.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(dst, animated: true)
         case .search:
             let dst = SearchViewController()
-            
-//            self.view.superview?.insertSubview(dst.view, aboveSubview: self.view)
-//            dst.view.transform = CGAffineTransform(translationX: self.view.frame.size.width, y: 0)
-            
-            self.modalPresentationStyle = .fullScreen
-            
-            self.navigationController?.pushViewController(dst, animated: true)
             dst.viewModel = SearchViewModel()
-//            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
-//                dst.view.transform = CGAffineTransform(translationX: 0, y: 0)
-//            }, completion: { finished in
-//                self.present(dst, animated: false
-//                    , completion: nil)
-//            })
+            self.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(dst, animated: true)
         case .modalViewTest:
             vc = EUIModalViewController()
         case .dragTable:

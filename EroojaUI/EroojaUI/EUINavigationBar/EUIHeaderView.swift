@@ -51,6 +51,9 @@ public class EUIHeaderView: UIView {
     private var backButton = EButton()
     private var rightFirstButton = EButton()
     private var rightSecondButton = EButton()
+    private var progressView = UIProgressView()
+    private var viewHeight: CGFloat = 44
+    private var viewHeightAnchor: NSLayoutConstraint?
     
     private var rightButtons: [EButton]?
     
@@ -96,6 +99,14 @@ public class EUIHeaderView: UIView {
     }
     
     // Set Right Button Content
+    public func setRightButtonActive(position: ERightButton.Position, isActive: Bool) {
+        if position == .first {
+            self.rightFirstButton.isActive = isActive
+        } else {
+            self.rightSecondButton.isActive = isActive
+        }
+    }
+    
     public func setRightButtonImage(position: ERightButton.Position, image: UIImage) {
         if position == .first {
             self.rightFirstButton.image = image
@@ -114,7 +125,8 @@ public class EUIHeaderView: UIView {
     
     // Progress Value Setting
     public func setProgressValue(value: CGFloat) {
-        
+        ELog.debug(message: "value : \(value)")
+        self.progressView.setProgress(Float(value), animated: true)
     }
     
     // Get Text Field Data
@@ -138,7 +150,6 @@ public class EUIHeaderView: UIView {
     
     private func setNavigationBarOption() {
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 44).isActive = true
         topAnchor.constraint(equalTo: topAnchor).isActive = true
         leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
         trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
@@ -150,9 +161,9 @@ public class EUIHeaderView: UIView {
                 switch option {
                 case .backButton:
                     self.addBackButton()
-                    break
                 case .progressBar:
-                    break
+                    viewHeight = 46
+                    setProgressBarLayout()
                 case .rightFirstButton:
                     isHiddenRightFirstButton = true
                     addRightButton(position: .first)
@@ -164,10 +175,27 @@ public class EUIHeaderView: UIView {
                 }
             }
         }
+        
+        viewHeightAnchor = heightAnchor.constraint(equalToConstant: viewHeight)
+        viewHeightAnchor?.isActive = true
+        
+        ELog.debug(message: "Header Height : \(viewHeight)")
     }
     
     private func setRightButtonStyle(type: ERightButton.ButtonType, position: Int) {
         rightButtons?[position].setButtonType(buttonType: type)
+    }
+    
+    private func setProgressBarLayout() {
+        progressView.trackTintColor = EroojaColorSet.shared.gray500s
+        progressView.progressTintColor = EroojaColorSet.shared.orgDefault400s
+        
+        addSubview(progressView)
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        progressView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        progressView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        progressView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        progressView.heightAnchor.constraint(equalToConstant: 2).isActive = true
     }
     
     private func setTextFieldLayout() {
