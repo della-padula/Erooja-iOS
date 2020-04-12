@@ -29,6 +29,7 @@
 		B08AD9D1242F604D001CE297 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9CB242F604D001CE297 /* UIView+Frame.swift */; };
 		B0C030232434FE26008771BB /* UIView+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C030222434FE26008771BB /* UIView+CALayer.swift */; };
 		B0C03025243556EF008771BB /* EroojaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C03024243556EF008771BB /* EroojaTextField.swift */; };
+		B0F98E6C24428B3C00F7510E /* EPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E6B24428B3C00F7510E /* EPlaceholderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		B08AD9CB242F604D001CE297 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		B0C030222434FE26008771BB /* UIView+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CALayer.swift"; sourceTree = "<group>"; };
 		B0C03024243556EF008771BB /* EroojaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaTextField.swift; sourceTree = "<group>"; };
+		B0F98E6B24428B3C00F7510E /* EPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPlaceholderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				B08AD9CB242F604D001CE297 /* UIView+Frame.swift */,
 				B08AD9C4242F602C001CE297 /* UIView+Resize.swift */,
 				B0C030222434FE26008771BB /* UIView+CALayer.swift */,
+				B0F98E6B24428B3C00F7510E /* EPlaceholderView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				B03D4A722433AC9E009180E9 /* UILabel+LineSpacing.swift in Sources */,
 				B031CFE12437057000BDD599 /* EButton.swift in Sources */,
 				B031CFB62436FE7700BDD599 /* EUIHeaderView.swift in Sources */,
+				B0F98E6C24428B3C00F7510E /* EPlaceholderView.swift in Sources */,
 				B05DC3CB24394EE200626501 /* CustomNavigationBar.swift in Sources */,
 				B0C030232434FE26008771BB /* UIView+CALayer.swift in Sources */,
 				B08AD9CE242F604D001CE297 /* UIImage+Resize.swift in Sources */,

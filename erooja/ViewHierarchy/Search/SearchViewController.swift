@@ -13,9 +13,20 @@ import EroojaNetwork
 import EroojaSharedBase
 
 public class SearchViewController: BaseViewController {
-    
     private var navigationBar = EUIHeaderView()
     public var viewModel: SearchViewModel?
+    private var selectedIndex: Int = 0
+    
+    // MARK: TEST
+    private var tempResultCount: Int = 5
+    
+    private let buttonStackView = UIStackView()
+    private let jobButton = ETabButton(tag: 0)
+    private let goalButton = ETabButton(tag: 1)
+    
+    private let resultPlaceholderView = EPlaceholderView()
+    private let resultView = UIView()
+    private let resultTableView = UITableView()
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,6 +36,11 @@ public class SearchViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
+        
+        self.resultTableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchCell")
+        self.resultTableView.tableFooterView = UIView()
+        self.resultTableView.delegate = self
+        self.resultTableView.dataSource = self
         
         self.bindViewModel()
         self.setViewLayout()
@@ -40,6 +56,22 @@ public class SearchViewController: BaseViewController {
             viewModel.resultList.bind({ (resultList) in
                 DispatchQueue.main.async {
                     ELog.debug(message: "Result List Count : \(resultList.count)")
+                }
+            })
+            
+            viewModel.stringList.bind({ list in
+                ELog.debug(message: "String List Changed")
+                DispatchQueue.main.async {
+                    self.resultPlaceholderView.isHidden = list.count > 0 ? true : false
+                    self.resultTableView.isHidden = list.count > 0 ? false : true
+                    
+                    self.resultTableView.reloadData()
+                }
+            })
+            
+            viewModel.searchKeyword.bind({ keyword in
+                DispatchQueue.main.async {
+                    ELog.debug(message: "SearchKeyword Changed")
                 }
             })
         }
@@ -61,21 +93,47 @@ public class SearchViewController: BaseViewController {
         self.navigationBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         
         self.setToggleButtonLayout()
+        
+        self.view.addSubview(self.resultView)
+        self.resultView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.resultView.topAnchor.constraint(equalTo: self.buttonStackView.bottomAnchor).isActive = true
+        self.resultView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        self.resultView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        self.resultView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        self.resultView.addSubview(self.resultTableView)
+        self.resultTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.resultTableView.topAnchor.constraint(equalTo: self.resultView.topAnchor).isActive = true
+        self.resultTableView.leadingAnchor.constraint(equalTo: self.resultView.leadingAnchor).isActive = true
+        self.resultTableView.trailingAnchor.constraint(equalTo: self.resultView.trailingAnchor).isActive = true
+        self.resultTableView.bottomAnchor.constraint(equalTo: self.resultView.bottomAnchor).isActive = true
+        
+        self.resultView.addSubview(resultPlaceholderView)
+        resultPlaceholderView.imageHeight = 150
+        resultPlaceholderView.image = .mainLogo
+        resultPlaceholderView.text = "Test Placeholder"
+        resultPlaceholderView.textColor = EroojaColorSet.shared.gray000s
+        resultPlaceholderView.font = .AppleSDSemiBold14P
+        self.resultPlaceholderView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.resultPlaceholderView.backgroundColor = .green
+        self.resultPlaceholderView.leadingAnchor.constraint(equalTo: self.resultView.leadingAnchor, constant: 30).isActive = true
+        self.resultPlaceholderView.trailingAnchor.constraint(equalTo: self.resultView.trailingAnchor, constant: -30).isActive = true
+        self.resultPlaceholderView.centerXAnchor.constraint(equalTo: self.resultView.centerXAnchor).isActive = true
+        self.resultPlaceholderView.centerYAnchor.constraint(equalTo: self.resultView.centerYAnchor).isActive = true
     }
     
     private func setToggleButtonLayout() {
-        let buttonStackView = UIStackView()
-        let jobButton = ETabButton()
-        let goalButton = ETabButton()
         
-//        jobButton.setTitle("직무", for: .normal)
-//        jobButton.backgroundColor = .green
+        jobButton.delegate = self
+        goalButton.delegate = self
+        
         jobButton.title = "직무"
         jobButton.isActive = true
         jobButton.barTintColor = .black
         
-//        goalButton.setTitle("목표", for: .normal)
-//        goalButton.backgroundColor = .cyan
         goalButton.title = "목표"
         goalButton.isActive = false
         goalButton.barTintColor = .black
@@ -108,5 +166,60 @@ extension SearchViewController: EUINavigationBarDelegate {
         #else
         self.navigationController?.popViewController(animated: true)
         #endif
+    }
+}
+
+extension SearchViewController: ETabButtonDelegate {
+    public func didChangeTextField(_ textField: EroojaTextField, text: String?) {
+        ELog.debug(message: "TextField Changed : \(text ?? "nil")")
+        if text?.isEmpty ?? true {
+            viewModel?.removeAllStringList()
+        } else {
+            viewModel?.setStringListBasedKeyword(keyword: text ?? "")
+        }
+    }
+    
+    public func onClickButton(_ button: ETabButton, tag: Int) {
+        ELog.debug(message: "Clicked : \(tag)")
+        setButtonState(tag: tag)
+        navigationBar.setTextFieldText(text: "")
+        viewModel?.removeAllStringList()
+    }
+    
+    fileprivate func setButtonState(tag: Int) {
+        for button in buttonStackView.subviews.enumerated() {
+            if let button = button.element as? ETabButton {
+                if button.tag != tag {
+                    ELog.debug(message: "setFalse : \(button.tag)")
+                    button.isActive = false
+                } else {
+                    ELog.debug(message: "setTrue : \(button.tag)")
+                    button.isActive = true
+                    selectedIndex = tag
+                }
+            }
+        }
+    }
+}
+
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.stringList.valueForBind.count ?? 0
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        ELog.debug(message: "Selected Table Cell : \(indexPath.row)")
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell") as! SearchTableViewCell
+        cell.title = viewModel?.stringList.valueForBind[indexPath.row] ?? "ERROR"
+        cell.selectionStyle = .none
+        ELog.debug(message: "TEST \(indexPath.row)")
+        return cell
     }
 }

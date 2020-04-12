@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EroojaCommon
 
 public enum EBarOption {
     case backButton
@@ -39,12 +40,14 @@ public enum EBackButton {
 public protocol EUINavigationBarDelegate {
     func onClickBackButton()
     
+    func didChangeTextField(_ textField: EroojaTextField, text: String?)
+    
     func onClickRightSectionButton(at position: ERightButton.Position)
     
 }
 
 public class EUIHeaderView: UIView {
-    private var textField = UITextField()
+    private var textField = EroojaTextField()
     private var backButton = EButton()
     private var rightFirstButton = EButton()
     private var rightSecondButton = EButton()
@@ -56,6 +59,7 @@ public class EUIHeaderView: UIView {
     
     // USER Property
     public var delegate: EUINavigationBarDelegate?
+    
     public var barOptions: [EBarOption]? {
         didSet {
             self.setNavigationBarOption()
@@ -87,6 +91,9 @@ public class EUIHeaderView: UIView {
     }
     
     // MARK: USER Method
+    public func setTextFieldText(text: String) {
+        self.textField.text = text
+    }
     
     // Set Right Button Content
     public func setRightButtonImage(position: ERightButton.Position, image: UIImage) {
@@ -167,6 +174,10 @@ public class EUIHeaderView: UIView {
         addSubview(textField)
         textField.font = .AppleSDRegular14P
         textField.tintColor = EroojaColorSet.shared.orgDefault400s
+        textField.delegate = self
+        textField.debounce(delay: 0.3, callback: { text in
+            self.delegate?.didChangeTextField(self.textField, text: text)
+        })
         textField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([textField.leadingAnchor.constraint(equalTo: backButton.trailingAnchor)])
@@ -247,5 +258,19 @@ public class EUIHeaderView: UIView {
     @objc
     private func onClickRightSecondButton() {
         delegate?.onClickRightSectionButton(at: .second)
+    }
+}
+
+extension EUIHeaderView: UITextFieldDelegate {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        ELog.debug(message: "Begin Editing")
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        ELog.debug(message: "End Editing")
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
     }
 }
