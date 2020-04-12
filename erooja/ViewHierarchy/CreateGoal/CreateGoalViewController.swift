@@ -13,6 +13,10 @@ import EroojaCommon
 public class CreateGoalViewController: BaseViewController {
     private var contentCollectionView: UICollectionView?
     private let headerView = EUIHeaderView()
+    private let stageCount = 5
+    
+    private var currentIndex = 0
+    
     public var viewModel: CreateGoalViewModel?
     
     override public func viewDidLoad() {
@@ -40,6 +44,7 @@ public class CreateGoalViewController: BaseViewController {
         headerView.barOptions = [.backButton, .progressBar, .rightSecondButton]
         headerView.rightSecondButtonType = .text
         headerView.setRightButtonTitle(position: .second, title: "다음")
+        viewModel?.setProgressValue(value: 0.2)
         view.addSubview(headerView)
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,10 +63,11 @@ public class CreateGoalViewController: BaseViewController {
         contentCollectionView?.register(UINib(nibName: "CreateGoalFirstCell", bundle: nil), forCellWithReuseIdentifier: "createFirstCell")
         contentCollectionView?.register(UINib(nibName: "CreateGoalSecondCell", bundle: nil), forCellWithReuseIdentifier: "createSecondCell")
         contentCollectionView?.register(UINib(nibName: "CreateGoalThirdCell", bundle: nil), forCellWithReuseIdentifier: "createThirdCell")
+        contentCollectionView?.register(UINib(nibName: "CreateGoalFourthCell", bundle: nil), forCellWithReuseIdentifier: "createFourthCell")
+        contentCollectionView?.register(UINib(nibName: "CreateGoalFifthCell", bundle: nil), forCellWithReuseIdentifier: "createFifthCell")
         
         contentCollectionView?.backgroundColor = .white
-        contentCollectionView?.isScrollEnabled = true
-        contentCollectionView?.isPagingEnabled = true
+        contentCollectionView?.isScrollEnabled = false
         contentCollectionView?.delegate = self
         contentCollectionView?.dataSource = self
         
@@ -83,7 +89,7 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return stageCount
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -100,6 +106,14 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createThirdCell", for: indexPath) as! CreateGoalThirdCell
             cell.titleText = "어떤 목표인지\n조금 더 자세히 설명해주시겠어요?"
             return cell
+        case 3:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createFourthCell", for: indexPath) as! CreateGoalFourthCell
+            cell.titleText = "목표 기간을 설정해주세요."
+            return cell
+        case 4:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createFifthCell", for: indexPath) as! CreateGoalFifthCell
+            cell.titleText = "기간 내 달성할 세부 목표 리스트를\n만들어보세요."
+            return cell
         default:
             return UICollectionViewCell()
         }
@@ -114,8 +128,17 @@ extension CreateGoalViewController: EUINavigationBarDelegate {
     public func didChangeTextField(_ textField: EroojaTextField, text: String?) { }
     
     public func onClickRightSectionButton(at position: ERightButton.Position) {
+        currentIndex += 1
+        if currentIndex == stageCount - 1 {
+            headerView.setRightButtonActive(position: .second, isActive: false)
+        }
+        
         ELog.debug(message: "Position: \(position)")
-        viewModel?.setProgressValue(value: (viewModel?.progressValue.valueForBind ?? 0) + 0.1)
+        ELog.debug(message: "Current Progress : \(Double(Double(currentIndex + 1) / Double(stageCount)))")
+        
+        let progress = Double(Double(currentIndex + 1) / Double(stageCount))
+        viewModel?.setProgressValue(value: progress)
+        contentCollectionView?.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .right, animated: false)
     }
     
     

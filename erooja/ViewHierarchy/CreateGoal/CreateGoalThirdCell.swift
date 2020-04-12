@@ -15,7 +15,6 @@ public class CreateGoalThirdCell: UICollectionViewCell {
     public var titleText: String? {
         didSet {
             self.titleLabel.text = titleText
-            self.titleLabel.backgroundColor = .cyan
         }
     }
     
