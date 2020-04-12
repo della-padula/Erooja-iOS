@@ -12,9 +12,11 @@ import EroojaSharedBase
 import EroojaCommon
 
 public class CreateGoalViewModel {
-    
+    var progressValue = DataBinding(0.0)
 }
 
 extension CreateGoalViewModel {
-    
+    func setProgressValue(value: Double) {
+        progressValue.valueForBind = value
+    }
 }
