@@ -126,7 +126,7 @@ public class EUIHeaderView: UIView {
     // Progress Value Setting
     public func setProgressValue(value: CGFloat) {
         ELog.debug(message: "value : \(value)")
-        progressView.progress = Float(value)
+        self.progressView.setProgress(Float(value), animated: true)
     }
     
     // Get Text Field Data

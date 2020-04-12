@@ -67,6 +67,7 @@ public class CreateGoalViewController: BaseViewController {
 //        contentCollectionView?.dataSource = self
         
         headerView.setRightButtonActive(position: .second, isActive: true)
+        headerView.delegate = self
     }
 }
 
@@ -78,4 +79,17 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return UICollectionViewCell()
     }
+}
+
+extension CreateGoalViewController: EUINavigationBarDelegate {
+    public func onClickBackButton() { }
+    
+    public func didChangeTextField(_ textField: EroojaTextField, text: String?) { }
+    
+    public func onClickRightSectionButton(at position: ERightButton.Position) {
+        ELog.debug(message: "Position: \(position)")
+        viewModel?.setProgressValue(value: (viewModel?.progressValue.valueForBind ?? 0) + 0.1)
+    }
+    
+    
 }
