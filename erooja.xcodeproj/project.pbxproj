@@ -63,6 +63,12 @@
 		B0F98E6E2442914B00F7510E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E6D2442914B00F7510E /* SearchTableViewCell.swift */; };
 		B0F98E812442A06500F7510E /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E802442A06500F7510E /* CreateGoalViewController.swift */; };
 		B0F98E832442A07100F7510E /* CreateGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E822442A07100F7510E /* CreateGoalViewModel.swift */; };
+		B0F98E8A2442EA5A00F7510E /* CreateGoalFirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E882442EA5A00F7510E /* CreateGoalFirstCell.swift */; };
+		B0F98E8B2442EA5A00F7510E /* CreateGoalFirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F98E892442EA5A00F7510E /* CreateGoalFirstCell.xib */; };
+		B0F98E8E2442EB2E00F7510E /* CreateGoalSecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E8C2442EB2E00F7510E /* CreateGoalSecondCell.swift */; };
+		B0F98E8F2442EB2E00F7510E /* CreateGoalSecondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F98E8D2442EB2E00F7510E /* CreateGoalSecondCell.xib */; };
+		B0F98E922442EB3D00F7510E /* CreateGoalThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E902442EB3D00F7510E /* CreateGoalThirdCell.swift */; };
+		B0F98E932442EB3D00F7510E /* CreateGoalThirdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F98E912442EB3D00F7510E /* CreateGoalThirdCell.xib */; };
 		B0FE8E7F2432328400103A54 /* EroojaDevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */; };
 		B0FE8E812432329600103A54 /* EroojaDevTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */; };
 		B0FE8EC124323DEE00103A54 /* EroojaDev.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8E82243232A100103A54 /* EroojaDev.storyboard */; };
@@ -196,6 +202,12 @@
 		B0F98E6D2442914B00F7510E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		B0F98E802442A06500F7510E /* CreateGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
 		B0F98E822442A07100F7510E /* CreateGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewModel.swift; sourceTree = "<group>"; };
+		B0F98E882442EA5A00F7510E /* CreateGoalFirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalFirstCell.swift; sourceTree = "<group>"; };
+		B0F98E892442EA5A00F7510E /* CreateGoalFirstCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateGoalFirstCell.xib; sourceTree = "<group>"; };
+		B0F98E8C2442EB2E00F7510E /* CreateGoalSecondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalSecondCell.swift; sourceTree = "<group>"; };
+		B0F98E8D2442EB2E00F7510E /* CreateGoalSecondCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateGoalSecondCell.xib; sourceTree = "<group>"; };
+		B0F98E902442EB3D00F7510E /* CreateGoalThirdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalThirdCell.swift; sourceTree = "<group>"; };
+		B0F98E912442EB3D00F7510E /* CreateGoalThirdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateGoalThirdCell.xib; sourceTree = "<group>"; };
 		B0FE8E7E2432328400103A54 /* EroojaDevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevViewController.swift; sourceTree = "<group>"; };
 		B0FE8E802432329600103A54 /* EroojaDevTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevTableViewCell.swift; sourceTree = "<group>"; };
 		B0FE8E82243232A100103A54 /* EroojaDev.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EroojaDev.storyboard; sourceTree = "<group>"; };
@@ -527,6 +539,12 @@
 			children = (
 				B0F98E802442A06500F7510E /* CreateGoalViewController.swift */,
 				B0F98E822442A07100F7510E /* CreateGoalViewModel.swift */,
+				B0F98E882442EA5A00F7510E /* CreateGoalFirstCell.swift */,
+				B0F98E892442EA5A00F7510E /* CreateGoalFirstCell.xib */,
+				B0F98E8C2442EB2E00F7510E /* CreateGoalSecondCell.swift */,
+				B0F98E8D2442EB2E00F7510E /* CreateGoalSecondCell.xib */,
+				B0F98E902442EB3D00F7510E /* CreateGoalThirdCell.swift */,
+				B0F98E912442EB3D00F7510E /* CreateGoalThirdCell.xib */,
 			);
 			path = CreateGoal;
 			sourceTree = "<group>";
@@ -760,9 +778,12 @@
 				B0462ADE242B8E6100B51854 /* LaunchScreen.storyboard in Resources */,
 				B0A8C5662433395B002B2C83 /* Image.xcassets in Resources */,
 				B03D4A6E2433A2DC009180E9 /* OnboardCollectionViewCell.xib in Resources */,
+				B0F98E8B2442EA5A00F7510E /* CreateGoalFirstCell.xib in Resources */,
 				B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */,
 				B03D4A6A24339ECF009180E9 /* Roboto-Regular.otf in Resources */,
 				B0C0311824364AFC008771BB /* SignUpDetailView.xib in Resources */,
+				B0F98E8F2442EB2E00F7510E /* CreateGoalSecondCell.xib in Resources */,
+				B0F98E932442EB3D00F7510E /* CreateGoalThirdCell.xib in Resources */,
 				B05DC3E72439A2D100626501 /* Common.xcassets in Resources */,
 				B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */,
 				B0FE8ECC2432404F00103A54 /* Start.storyboard in Resources */,
@@ -840,6 +861,7 @@
 				B0C0302724356AC1008771BB /* SignUpFieldButton.swift in Sources */,
 				B03D4A9E24342167009180E9 /* LoginViewController.swift in Sources */,
 				B0FE8E7F2432328400103A54 /* EroojaDevViewController.swift in Sources */,
+				B0F98E8E2442EB2E00F7510E /* CreateGoalSecondCell.swift in Sources */,
 				B0462B29242BAA9200B51854 /* Notification+Common.swift in Sources */,
 				B0462AF0242B921000B51854 /* APIResponseCode.swift in Sources */,
 				B0A37AB6243A13840054933D /* DraggableTableViewModel.swift in Sources */,
@@ -849,6 +871,7 @@
 				B0A8C5562433341D002B2C83 /* StartViewController.swift in Sources */,
 				B03D4A3224333C9D009180E9 /* BaseViewController.swift in Sources */,
 				B03D4A4024339001009180E9 /* EroojaProperty.swift in Sources */,
+				B0F98E8A2442EA5A00F7510E /* CreateGoalFirstCell.swift in Sources */,
 				B0F98E812442A06500F7510E /* CreateGoalViewController.swift in Sources */,
 				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,
 				B031CFA02436F79900BDD599 /* DataBinding.swift in Sources */,
@@ -858,6 +881,7 @@
 				B0168186243CC34B008497E2 /* DynamicTextView.swift in Sources */,
 				B09CD5D22436C1210073733D /* SignUpDetailViewCell.swift in Sources */,
 				B0C0310F243639C0008771BB /* JobModel.swift in Sources */,
+				B0F98E922442EB3D00F7510E /* CreateGoalThirdCell.swift in Sources */,
 				B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */,
 				B0FE8ED42432491300103A54 /* UIStoryboard+Onboard.swift in Sources */,
 				B0C030022434E247008771BB /* SignUpViewController.swift in Sources */,
