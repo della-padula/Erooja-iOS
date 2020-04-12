@@ -52,6 +52,13 @@ public class EButton: UIView {
         }
     }
     
+    public var isActive: Bool = false {
+        didSet {
+            self.isUserInteractionEnabled = isActive
+            textColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray300s
+        }
+    }
+    
     private var constraintList = [NSLayoutConstraint]()
     
     public func setButtonType(buttonType: ERightButton.ButtonType) {

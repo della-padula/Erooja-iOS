@@ -40,6 +40,8 @@ public class CreateGoalViewController: BaseViewController {
     
     fileprivate func setContentView() {
         headerView.barOptions = [.backButton, .progressBar, .rightSecondButton]
+        headerView.rightSecondButtonType = .text
+        headerView.setRightButtonTitle(position: .second, title: "다음")
         view.addSubview(headerView)
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,6 +76,4 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return UICollectionViewCell()
     }
-    
-    
 }

@@ -99,6 +99,14 @@ public class EUIHeaderView: UIView {
     }
     
     // Set Right Button Content
+    public func setRightButtonActive(position: ERightButton.Position, isActive: Bool) {
+        if position == .first {
+            self.rightFirstButton.isUserInteractionEnabled = isActive
+        } else {
+            self.rightSecondButton.isUserInteractionEnabled = isActive
+        }
+    }
+    
     public func setRightButtonImage(position: ERightButton.Position, image: UIImage) {
         if position == .first {
             self.rightFirstButton.image = image
