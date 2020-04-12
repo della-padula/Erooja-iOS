@@ -11,11 +11,13 @@ import EroojaUI
 import EroojaCommon
 
 public class CreateGoalViewController: BaseViewController {
-    private let contentCollectionView = UICollectionView()
+    private var contentCollectionView: UICollectionView?
+    private let headerView = EUIHeaderView()
     public var viewModel: CreateGoalViewModel?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
         
         bindViewModel()
         setContentView()
@@ -34,8 +36,30 @@ public class CreateGoalViewController: BaseViewController {
     }
     
     fileprivate func setContentView() {
-        self.contentCollectionView.delegate = self
-        self.contentCollectionView.dataSource = self
+        headerView.barOptions = [.backButton, .progressBar, .rightSecondButton]
+        view.addSubview(headerView)
+        
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: view.frame.width, height: view.frame.height - self.headerView.height)
+        
+//        contentCollectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+//
+//        view.addSubview(contentCollectionView!)
+//        contentCollectionView?.translatesAutoresizingMaskIntoConstraints = false
+//        contentCollectionView?.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+//        contentCollectionView?.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        contentCollectionView?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        contentCollectionView?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//
+//        contentCollectionView?.delegate = self
+//        contentCollectionView?.dataSource = self
     }
 }
 
