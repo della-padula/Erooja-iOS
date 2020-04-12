@@ -79,6 +79,7 @@ public class SearchViewController: BaseViewController {
         self.resultView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
         self.resultTableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchCell")
+        self.resultTableView.tableFooterView = UIView()
         self.resultTableView.delegate = self
         self.resultTableView.dataSource = self
         

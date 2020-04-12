@@ -13,6 +13,7 @@ class SearchTableViewCell: UITableViewCell {
     public var title: String = "" {
         didSet {
             contentLabel.text = title
+            setCellLayout()
         }
     }
     
@@ -25,10 +26,10 @@ class SearchTableViewCell: UITableViewCell {
     private func setCellLayout() {
         self.contentView.addSubview(contentLabel)
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
-        contentLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
+        contentLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10).isActive = true
+        contentLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10).isActive = true
         contentLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        contentLabel.heightAnchor.constraint(equalTo: self.contentView.heightAnchor).isActive = true
+        contentLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
     }
 
