@@ -21,8 +21,6 @@ public class CreateGoalViewController: BaseViewController {
         
         bindViewModel()
         setContentView()
-        
-        viewModel?.setProgressValue(value: 0.5)
     }
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -82,7 +80,9 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
 }
 
 extension CreateGoalViewController: EUINavigationBarDelegate {
-    public func onClickBackButton() { }
+    public func onClickBackButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     public func didChangeTextField(_ textField: EroojaTextField, text: String?) { }
     
