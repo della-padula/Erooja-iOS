@@ -11,11 +11,28 @@ import EroojaCommon
 
 public struct SearchViewModel {
     var searchKeyword = DataBinding("")
+    var stringList = DataBinding([String]())
     var resultList = DataBinding([PortfolioModel]())
 }
 
 extension SearchViewModel {
+    func setSearchKeyworld(keyword: String) {
+        searchKeyword.valueForBind = keyword
+    }
+    
     func fetchDataForSearch(keyword: String) {
         
+    }
+    
+    func removeAllStringList() {
+        stringList.valueForBind.removeAll()
+    }
+    
+    func setStringListBasedKeyword(keyword: String) {
+        stringList.valueForBind.removeAll()
+        
+        for index in 0..<5 {
+            stringList.valueForBind.append("\(keyword) - \(index)")
+        }
     }
 }

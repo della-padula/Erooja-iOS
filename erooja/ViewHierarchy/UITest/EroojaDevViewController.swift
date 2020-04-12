@@ -82,7 +82,7 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
             self.modalPresentationStyle = .fullScreen
             
             self.navigationController?.pushViewController(dst, animated: true)
-            
+            dst.viewModel = SearchViewModel()
 //            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
 //                dst.view.transform = CGAffineTransform(translationX: 0, y: 0)
 //            }, completion: { finished in

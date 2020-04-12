@@ -17,6 +17,9 @@ public class SearchViewController: BaseViewController {
     public var viewModel: SearchViewModel?
     private var selectedIndex: Int = 0
     
+    // MARK: TEST
+    private var tempResultCount: Int = 5
+    
     private let buttonStackView = UIStackView()
     private let jobButton = ETabButton(tag: 0)
     private let goalButton = ETabButton(tag: 1)
@@ -34,6 +37,11 @@ public class SearchViewController: BaseViewController {
         self.view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
         
+        self.resultTableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchCell")
+        self.resultTableView.tableFooterView = UIView()
+        self.resultTableView.delegate = self
+        self.resultTableView.dataSource = self
+        
         self.bindViewModel()
         self.setViewLayout()
     }
@@ -48,6 +56,19 @@ public class SearchViewController: BaseViewController {
             viewModel.resultList.bind({ (resultList) in
                 DispatchQueue.main.async {
                     ELog.debug(message: "Result List Count : \(resultList.count)")
+                }
+            })
+            
+            viewModel.stringList.bind({ list in
+                ELog.debug(message: "String List Changed")
+                DispatchQueue.main.async {
+                    self.resultTableView.reloadData()
+                }
+            })
+            
+            viewModel.searchKeyword.bind({ keyword in
+                DispatchQueue.main.async {
+                    ELog.debug(message: "SearchKeyword Changed")
                 }
             })
         }
@@ -78,11 +99,6 @@ public class SearchViewController: BaseViewController {
         self.resultView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         self.resultView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
-        self.resultTableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchCell")
-        self.resultTableView.tableFooterView = UIView()
-        self.resultTableView.delegate = self
-        self.resultTableView.dataSource = self
-        
         self.resultView.addSubview(self.resultTableView)
         self.resultTableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -111,14 +127,10 @@ public class SearchViewController: BaseViewController {
         jobButton.delegate = self
         goalButton.delegate = self
         
-//        jobButton.setTitle("직무", for: .normal)
-//        jobButton.backgroundColor = .green
         jobButton.title = "직무"
         jobButton.isActive = true
         jobButton.barTintColor = .black
         
-//        goalButton.setTitle("목표", for: .normal)
-//        goalButton.backgroundColor = .cyan
         goalButton.title = "목표"
         goalButton.isActive = false
         goalButton.barTintColor = .black
@@ -155,6 +167,15 @@ extension SearchViewController: EUINavigationBarDelegate {
 }
 
 extension SearchViewController: ETabButtonDelegate {
+    public func didChangeTextField(_ textField: EroojaTextField, text: String?) {
+        ELog.debug(message: "TextField Changed : \(text ?? "nil")")
+        if text?.isEmpty ?? true {
+            viewModel?.removeAllStringList()
+        } else {
+            viewModel?.setStringListBasedKeyword(keyword: text ?? "")
+        }
+    }
+    
     public func onClickButton(_ button: ETabButton, tag: Int) {
         ELog.debug(message: "Clicked : \(tag)")
         setButtonState(tag: tag)
@@ -186,7 +207,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel?.stringList.valueForBind.count ?? 0
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -195,7 +216,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell") as! SearchTableViewCell
-        cell.title = "TEST \(indexPath.row)"
+        cell.title = viewModel?.stringList.valueForBind[indexPath.row] ?? "ERROR"
         cell.selectionStyle = .none
         ELog.debug(message: "TEST \(indexPath.row)")
         return cell
