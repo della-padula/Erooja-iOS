@@ -54,6 +54,13 @@
                         <rect key="frame" x="292.5" y="255" width="30.5" height="32"/>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.34901960780000002" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-BE-58E">
+                        <rect key="frame" x="292.5" y="255" width="30.5" height="32"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="onClickCalendar:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Gd0-fg-awh"/>
+                        </connections>
+                    </button>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Qa-8d-orT">
                         <rect key="frame" x="20" y="365" width="283" height="40"/>
                         <subviews>
@@ -130,14 +137,17 @@
                 <constraint firstItem="X3i-Qi-5Vc" firstAttribute="width" secondItem="kKu-bl-V9g" secondAttribute="width" id="GWu-aJ-NoH"/>
                 <constraint firstItem="a2d-rh-srI" firstAttribute="height" secondItem="X3i-Qi-5Vc" secondAttribute="height" id="NHX-7A-2Rh"/>
                 <constraint firstItem="kKu-bl-V9g" firstAttribute="top" secondItem="nKi-fZ-wkW" secondAttribute="bottom" constant="4" id="PpQ-mC-laB"/>
+                <constraint firstItem="bhh-BE-58E" firstAttribute="leading" secondItem="a2d-rh-srI" secondAttribute="leading" id="Q6d-EQ-okc"/>
                 <constraint firstItem="X3i-Qi-5Vc" firstAttribute="leading" secondItem="kKu-bl-V9g" secondAttribute="trailing" id="QCz-VG-Dbs"/>
                 <constraint firstItem="kKu-bl-V9g" firstAttribute="trailing" secondItem="nKi-fZ-wkW" secondAttribute="trailing" id="QI5-26-Cr7"/>
                 <constraint firstItem="HQA-YI-thX" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="R3U-yf-tr0"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="HQA-YI-thX" secondAttribute="trailing" constant="20" id="ScL-qE-Jxl"/>
                 <constraint firstItem="6sa-Hb-JOH" firstAttribute="trailing" secondItem="QBU-h1-tBo" secondAttribute="trailing" id="Xku-UL-ooa"/>
+                <constraint firstItem="bhh-BE-58E" firstAttribute="trailing" secondItem="a2d-rh-srI" secondAttribute="trailing" id="aZF-RX-bZS"/>
                 <constraint firstItem="a2d-rh-srI" firstAttribute="leading" secondItem="X3i-Qi-5Vc" secondAttribute="trailing" id="b1Z-TZ-mtC"/>
                 <constraint firstItem="3Qa-8d-orT" firstAttribute="leading" secondItem="6sa-Hb-JOH" secondAttribute="leading" id="dqN-36-FHM"/>
                 <constraint firstItem="6sa-Hb-JOH" firstAttribute="leading" secondItem="kKu-bl-V9g" secondAttribute="leading" id="h5c-rP-1mE"/>
+                <constraint firstItem="bhh-BE-58E" firstAttribute="bottom" secondItem="a2d-rh-srI" secondAttribute="bottom" id="hb2-c0-Wc7"/>
                 <constraint firstItem="kKu-bl-V9g" firstAttribute="leading" secondItem="nKi-fZ-wkW" secondAttribute="leading" id="iP8-jm-zFj"/>
                 <constraint firstItem="X3i-Qi-5Vc" firstAttribute="height" secondItem="kKu-bl-V9g" secondAttribute="height" id="nQs-ni-kSc"/>
                 <constraint firstItem="a2d-rh-srI" firstAttribute="trailing" secondItem="QBU-h1-tBo" secondAttribute="trailing" id="nXr-4N-Md4"/>
@@ -145,6 +155,7 @@
                 <constraint firstItem="QBU-h1-tBo" firstAttribute="centerY" secondItem="nKi-fZ-wkW" secondAttribute="centerY" id="pvT-Rt-5t7"/>
                 <constraint firstItem="nKi-fZ-wkW" firstAttribute="top" secondItem="HQA-YI-thX" secondAttribute="bottom" constant="100" id="rYo-Ma-DR9"/>
                 <constraint firstItem="a2d-rh-srI" firstAttribute="centerY" secondItem="X3i-Qi-5Vc" secondAttribute="centerY" id="sSE-3o-Spw"/>
+                <constraint firstItem="bhh-BE-58E" firstAttribute="top" secondItem="a2d-rh-srI" secondAttribute="top" id="sWb-T8-VKr"/>
                 <constraint firstItem="HQA-YI-thX" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="66" id="t8h-zd-H7h"/>
                 <constraint firstItem="X3i-Qi-5Vc" firstAttribute="centerY" secondItem="kKu-bl-V9g" secondAttribute="centerY" id="tdU-hr-SLL"/>
                 <constraint firstItem="nKi-fZ-wkW" firstAttribute="leading" secondItem="HQA-YI-thX" secondAttribute="leading" id="tpz-HF-c1U"/>
@@ -154,9 +165,12 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="343" height="597"/>
             <connections>
+                <outlet property="calendarButton" destination="bhh-BE-58E" id="2Ga-Co-dfL"/>
+                <outlet property="lblEndDate" destination="X3i-Qi-5Vc" id="ccn-8s-TKC"/>
+                <outlet property="lblStartDate" destination="kKu-bl-V9g" id="Gri-zP-xe0"/>
                 <outlet property="titleLabel" destination="HQA-YI-thX" id="Euf-jv-tNe"/>
             </connections>
-            <point key="canvasLocation" x="348.55072463768118" y="297.65625"/>
+            <point key="canvasLocation" x="345.6521739130435" y="301.00446428571428"/>
         </collectionViewCell>
     </objects>
 </document>
