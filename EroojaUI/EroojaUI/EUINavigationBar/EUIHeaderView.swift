@@ -51,6 +51,9 @@ public class EUIHeaderView: UIView {
     private var backButton = EButton()
     private var rightFirstButton = EButton()
     private var rightSecondButton = EButton()
+    private var progressView = UIProgressView()
+    private var viewHeight: CGFloat = 44
+    private var viewHeightAnchor: NSLayoutConstraint?
     
     private var rightButtons: [EButton]?
     
@@ -138,7 +141,6 @@ public class EUIHeaderView: UIView {
     
     private func setNavigationBarOption() {
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 44).isActive = true
         topAnchor.constraint(equalTo: topAnchor).isActive = true
         leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
         trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
@@ -152,7 +154,7 @@ public class EUIHeaderView: UIView {
                     self.addBackButton()
                     break
                 case .progressBar:
-                    break
+                    viewHeight = 46
                 case .rightFirstButton:
                     isHiddenRightFirstButton = true
                     addRightButton(position: .first)
@@ -164,6 +166,11 @@ public class EUIHeaderView: UIView {
                 }
             }
         }
+        
+        viewHeightAnchor = heightAnchor.constraint(equalToConstant: viewHeight)
+        viewHeightAnchor?.isActive = true
+        
+        ELog.debug(message: "Header Height : \(viewHeight)")
     }
     
     private func setRightButtonStyle(type: ERightButton.ButtonType, position: Int) {
