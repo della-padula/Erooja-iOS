@@ -56,7 +56,6 @@
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-BE-58E">
                         <rect key="frame" x="292.5" y="255" width="30.5" height="32"/>
-                        <state key="normal" title="Button"/>
                         <connections>
                             <action selector="onClickCalendar:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Gd0-fg-awh"/>
                         </connections>
@@ -73,9 +72,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Haj-Lt-ufP">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Haj-Lt-ufP">
                                         <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="onClickSwitchButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="wQ6-2Y-Cjn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -99,9 +101,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vk3-wh-2d2">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vk3-wh-2d2">
                                         <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="onClickSwitchButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3bT-u1-DNB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -169,7 +174,9 @@
                 <outlet property="lblEndDate" destination="X3i-Qi-5Vc" id="ccn-8s-TKC"/>
                 <outlet property="lblStartDate" destination="kKu-bl-V9g" id="Gri-zP-xe0"/>
                 <outlet property="modifyAvailableBtn" destination="Haj-Lt-ufP" id="IAA-3f-RfC"/>
+                <outlet property="modifyAvailableLabel" destination="GXs-YB-CwB" id="VUU-t1-Ve9"/>
                 <outlet property="modifyUnavailableBtn" destination="vk3-wh-2d2" id="B9w-Oh-e52"/>
+                <outlet property="modifyUnavailableLabel" destination="n20-u2-nRK" id="7Bw-gj-OR1"/>
                 <outlet property="titleLabel" destination="HQA-YI-thX" id="Euf-jv-tNe"/>
             </connections>
             <point key="canvasLocation" x="345.6521739130435" y="301.00446428571428"/>

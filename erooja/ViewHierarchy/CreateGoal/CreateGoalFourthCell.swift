@@ -14,6 +14,9 @@ public class CreateGoalFourthCell: UICollectionViewCell {
     @IBOutlet weak var modifyAvailableBtn: UIButton!
     @IBOutlet weak var modifyUnavailableBtn: UIButton!
     
+    @IBOutlet weak var modifyAvailableLabel: UILabel!
+    @IBOutlet weak var modifyUnavailableLabel: UILabel!
+    
     @IBOutlet weak var lblStartDate: UILabel!
     @IBOutlet weak var lblEndDate: UILabel!
     
@@ -24,6 +27,10 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         NotificationCenter.default.post(
         name: NSNotification.Name(rawValue: "CalendarButton"),
         object: nil)
+    }
+    
+    @IBAction func onClickSwitchButton(_ sender: UIButton) {
+        self.setAvailableButton(tag: sender.tag)
     }
     
     public var titleText: String? {
@@ -45,6 +52,38 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         let formattedDate = format.string(from: Date())
         
         lblStartDate.text = formattedDate
+        
+        setFourthLayout()
+    }
+    
+    private func setFourthLayout() {
+        setAvailableButton(tag: 0)
+    }
+    
+    private func setAvailableButton(tag: Int) {
+        if tag == 0 {
+            setModifyAvailableButton(isActive: true)
+            setModifyUnavailableButton(isActive: false)
+        } else {
+            setModifyAvailableButton(isActive: false)
+            setModifyUnavailableButton(isActive: true)
+        }
+    }
+    
+    private func setModifyAvailableButton(isActive: Bool) {
+        modifyAvailableBtn.layer.cornerRadius = 8
+        modifyAvailableBtn.layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray500s.cgColor
+        modifyAvailableBtn.layer.borderWidth = 1
+        modifyAvailableLabel.font = .AppleSDSemiBold15P
+        modifyAvailableLabel.textColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray300s
+    }
+    
+    private func setModifyUnavailableButton(isActive: Bool) {
+        modifyUnavailableBtn.layer.cornerRadius = 8
+        modifyUnavailableBtn.layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray500s.cgColor
+        modifyUnavailableBtn.layer.borderWidth = 1
+        modifyUnavailableLabel.font = .AppleSDSemiBold15P
+        modifyUnavailableLabel.textColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray300s
     }
      
     @objc func didReceiveTestNotification(_ notification: Notification) {
