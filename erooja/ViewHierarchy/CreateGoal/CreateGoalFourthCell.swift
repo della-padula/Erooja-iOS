@@ -11,6 +11,9 @@ import EroojaCommon
 import EroojaUI
 
 public class CreateGoalFourthCell: UICollectionViewCell {
+    @IBOutlet weak var modifyAvailableBtn: UIButton!
+    @IBOutlet weak var modifyUnavailableBtn: UIButton!
+    
     @IBOutlet weak var lblStartDate: UILabel!
     @IBOutlet weak var lblEndDate: UILabel!
     
@@ -36,6 +39,12 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         selector: #selector(didReceiveTestNotification(_:)),
         name: NSNotification.Name("CGDatePickerSelected"),
         object: nil)
+        
+        let format = DateFormatter()
+        format.dateFormat = "yyyy년 MM월 dd일"
+        let formattedDate = format.string(from: Date())
+        
+        lblStartDate.text = formattedDate
     }
      
     @objc func didReceiveTestNotification(_ notification: Notification) {

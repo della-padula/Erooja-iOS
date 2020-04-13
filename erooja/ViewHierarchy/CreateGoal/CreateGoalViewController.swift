@@ -45,6 +45,7 @@ public class CreateGoalViewController: BaseViewController {
         let myDatePicker: UIDatePicker = UIDatePicker()
         myDatePicker.datePickerMode = .date
         myDatePicker.timeZone = .current
+        myDatePicker.minimumDate = Date()
         myDatePicker.frame = CGRect(x: 0, y: 15, width: view.frame.width - 15, height: 160)
         
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)

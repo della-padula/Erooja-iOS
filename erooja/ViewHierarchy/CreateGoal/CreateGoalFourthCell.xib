@@ -168,6 +168,8 @@
                 <outlet property="calendarButton" destination="bhh-BE-58E" id="2Ga-Co-dfL"/>
                 <outlet property="lblEndDate" destination="X3i-Qi-5Vc" id="ccn-8s-TKC"/>
                 <outlet property="lblStartDate" destination="kKu-bl-V9g" id="Gri-zP-xe0"/>
+                <outlet property="modifyAvailableBtn" destination="Haj-Lt-ufP" id="IAA-3f-RfC"/>
+                <outlet property="modifyUnavailableBtn" destination="vk3-wh-2d2" id="B9w-Oh-e52"/>
                 <outlet property="titleLabel" destination="HQA-YI-thX" id="Euf-jv-tNe"/>
             </connections>
             <point key="canvasLocation" x="345.6521739130435" y="301.00446428571428"/>
