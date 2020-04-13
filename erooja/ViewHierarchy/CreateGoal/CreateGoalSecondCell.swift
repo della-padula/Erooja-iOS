@@ -11,7 +11,9 @@ import EroojaCommon
 
 public class CreateGoalSecondCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textDescriptionLabel: UILabel!
+    @IBOutlet weak var textCountLabel: UILabel!
+    @IBOutlet weak var textField: EroojaTextField!
     @IBOutlet weak var textFieldBottomLine: UIView!
     @IBOutlet weak var bottomLineHeightContraint: NSLayoutConstraint!
     
@@ -34,7 +36,17 @@ public class CreateGoalSecondCell: UICollectionViewCell {
         textField.textColor = EroojaColorSet.shared.gray100s
         textField.tintColor = EroojaColorSet.shared.orgDefault400s
         
+        textField.debounce(delay: 0.0, callback: { text in
+            self.processInputText(text: text ?? "")
+        })
+        
+        textDescriptionLabel.textColor = EroojaColorSet.shared.error000s
+        textCountLabel.textColor = EroojaColorSet.shared.gray400s
         setBottomLineStyle(isActive: false)
+    }
+    
+    private func processInputText(text: String) {
+        textCountLabel.text = "\(text.count)/50"
     }
     
     private func setBottomLineStyle(isActive: Bool) {
