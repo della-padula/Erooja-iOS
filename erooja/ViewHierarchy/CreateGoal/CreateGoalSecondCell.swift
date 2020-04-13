@@ -32,6 +32,7 @@ public class CreateGoalSecondCell: UICollectionViewCell {
 
     private func initializeLayout() {
         textField.borderStyle = .none
+        textField.delegate = self
         textField.placeholder = "목표명을 입력해주세요."
         textField.textColor = EroojaColorSet.shared.gray100s
         textField.tintColor = EroojaColorSet.shared.orgDefault400s
@@ -46,11 +47,23 @@ public class CreateGoalSecondCell: UICollectionViewCell {
     }
     
     private func processInputText(text: String) {
+        if text.count > 50 {
+            
+        }
         textCountLabel.text = "\(text.count)/50"
     }
     
     private func setBottomLineStyle(isActive: Bool) {
         bottomLineHeightContraint.constant = isActive ? 4 : 2
         textFieldBottomLine.backgroundColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray500s
+    }
+}
+
+extension CreateGoalSecondCell: UITextFieldDelegate {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let newLength = text.count + string.count  - range.length
+        
+        return newLength < 51
     }
 }
