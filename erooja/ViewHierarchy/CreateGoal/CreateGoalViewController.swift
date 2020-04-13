@@ -9,6 +9,7 @@
 import Foundation
 import EroojaUI
 import EroojaCommon
+import NotificationCenter
 
 public class CreateGoalViewController: BaseViewController {
     private var contentCollectionView: UICollectionView?
@@ -23,12 +24,53 @@ public class CreateGoalViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         
+        addNotificationListener()
         bindViewModel()
         setContentView()
     }
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    private func addNotificationListener() {
+        NotificationCenter.default.addObserver(self,
+        selector: #selector(showDatePickerView),
+        name: NSNotification.Name(rawValue: "CalendarButton"),
+        object: nil)
+    }
+    
+    @objc
+    private func showDatePickerView() {
+        let myDatePicker: UIDatePicker = UIDatePicker()
+        let modifiedDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+        
+        myDatePicker.datePickerMode = .date
+        myDatePicker.timeZone = .current
+        myDatePicker.minimumDate = modifiedDate
+        myDatePicker.frame = CGRect(x: 0, y: 15, width: view.frame.width - 15, height: 160)
+        
+        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
+        alertController.view.addSubview(myDatePicker)
+        
+        let selectAction = UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            
+            let format = DateFormatter()
+            format.dateFormat = "yyyy년 MM월 dd일"
+            let formattedDate = format.string(from: myDatePicker.date)
+            
+            let userInfo: [AnyHashable: Any] = ["SelectedDate":"\(formattedDate)"]
+            
+            NotificationCenter.default.post(
+            name: NSNotification.Name(rawValue: "CGDatePickerSelected"),
+            object: nil,
+            userInfo: userInfo)
+            
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(selectAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true)
     }
     
     private func bindViewModel() {

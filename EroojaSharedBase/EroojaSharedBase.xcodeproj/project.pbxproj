@@ -9,12 +9,33 @@
 /* Begin PBXBuildFile section */
 		B02B71172432B9A700045F93 /* ESharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B71162432B9A700045F93 /* ESharedDataManager.swift */; };
 		B02B71432432BFA800045F93 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B71422432BFA800045F93 /* ActivityIndicatorView.swift */; };
+		B08F0958244338C9001AA193 /* EroojaCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08F0956244338C9001AA193 /* EroojaCommon.framework */; };
+		B08F0959244338C9001AA193 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08F0956244338C9001AA193 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B08F095A244338C9001AA193 /* EroojaUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08F0957244338C9001AA193 /* EroojaUI.framework */; };
+		B08F095B244338C9001AA193 /* EroojaUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08F0957244338C9001AA193 /* EroojaUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0FE8F0A2432B8B800103A54 /* EroojaSharedBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FE8F082432B8B800103A54 /* EroojaSharedBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B08F095C244338C9001AA193 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B08F095B244338C9001AA193 /* EroojaUI.framework in Embed Frameworks */,
+				B08F0959244338C9001AA193 /* EroojaCommon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B02B71162432B9A700045F93 /* ESharedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESharedDataManager.swift; sourceTree = "<group>"; };
 		B02B71422432BFA800045F93 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		B08F0956244338C9001AA193 /* EroojaCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EroojaCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B08F0957244338C9001AA193 /* EroojaUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EroojaUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE8F052432B8B800103A54 /* EroojaSharedBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EroojaSharedBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE8F082432B8B800103A54 /* EroojaSharedBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EroojaSharedBase.h; sourceTree = "<group>"; };
 		B0FE8F092432B8B800103A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -25,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08F095A244338C9001AA193 /* EroojaUI.framework in Frameworks */,
+				B08F0958244338C9001AA193 /* EroojaCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,11 +70,21 @@
 			path = "UI Components";
 			sourceTree = "<group>";
 		};
+		B08F0955244338C9001AA193 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B08F0956244338C9001AA193 /* EroojaCommon.framework */,
+				B08F0957244338C9001AA193 /* EroojaUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0FE8EFB2432B8B800103A54 = {
 			isa = PBXGroup;
 			children = (
 				B0FE8F072432B8B800103A54 /* EroojaSharedBase */,
 				B0FE8F062432B8B800103A54 /* Products */,
+				B08F0955244338C9001AA193 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +129,7 @@
 				B0FE8F012432B8B800103A54 /* Sources */,
 				B0FE8F022432B8B800103A54 /* Frameworks */,
 				B0FE8F032432B8B800103A54 /* Resources */,
+				B08F095C244338C9001AA193 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1of-Ux-8p0">
-                        <rect key="frame" x="20" y="96" width="294" height="24"/>
+                        <rect key="frame" x="20" y="110" width="294" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -27,7 +27,7 @@
             </view>
             <constraints>
                 <constraint firstItem="1of-Ux-8p0" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="g4q-vO-MeL"/>
-                <constraint firstItem="1of-Ux-8p0" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="52" id="huE-YX-eXv"/>
+                <constraint firstItem="1of-Ux-8p0" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="66" id="huE-YX-eXv"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="1of-Ux-8p0" secondAttribute="trailing" constant="20" id="vfx-ZW-RfR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

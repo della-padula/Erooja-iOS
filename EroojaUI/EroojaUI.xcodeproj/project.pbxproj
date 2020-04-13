@@ -27,10 +27,26 @@
 		B08AD9CF242F604D001CE297 /* UIColor+ContrastingColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9C9242F604D001CE297 /* UIColor+ContrastingColor.swift */; };
 		B08AD9D0242F604D001CE297 /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9CA242F604D001CE297 /* UIImage+Crop.swift */; };
 		B08AD9D1242F604D001CE297 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9CB242F604D001CE297 /* UIView+Frame.swift */; };
+		B08F095F244338DD001AA193 /* EroojaCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08F095E244338DD001AA193 /* EroojaCommon.framework */; };
+		B08F0960244338DD001AA193 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08F095E244338DD001AA193 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0C030232434FE26008771BB /* UIView+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C030222434FE26008771BB /* UIView+CALayer.swift */; };
 		B0C03025243556EF008771BB /* EroojaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C03024243556EF008771BB /* EroojaTextField.swift */; };
 		B0F98E6C24428B3C00F7510E /* EPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E6B24428B3C00F7510E /* EPlaceholderView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B08F0961244338DD001AA193 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B08F0960244338DD001AA193 /* EroojaCommon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B0168189243CC4EE008497E2 /* UIColor+EUIDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+EUIDefine.swift"; sourceTree = "<group>"; };
@@ -55,6 +71,7 @@
 		B08AD9C9242F604D001CE297 /* UIColor+ContrastingColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ContrastingColor.swift"; sourceTree = "<group>"; };
 		B08AD9CA242F604D001CE297 /* UIImage+Crop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Crop.swift"; sourceTree = "<group>"; };
 		B08AD9CB242F604D001CE297 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
+		B08F095E244338DD001AA193 /* EroojaCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EroojaCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C030222434FE26008771BB /* UIView+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CALayer.swift"; sourceTree = "<group>"; };
 		B0C03024243556EF008771BB /* EroojaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaTextField.swift; sourceTree = "<group>"; };
 		B0F98E6B24428B3C00F7510E /* EPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPlaceholderView.swift; sourceTree = "<group>"; };
@@ -65,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08F095F244338DD001AA193 /* EroojaCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +123,7 @@
 				B04B4EE42436F3E200EA438B /* Roboto-Regular.otf */,
 				B08AD9B2242F5FFD001CE297 /* EroojaUI */,
 				B08AD9B1242F5FFD001CE297 /* Products */,
+				B08F095D244338DD001AA193 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +185,14 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		B08F095D244338DD001AA193 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B08F095E244338DD001AA193 /* EroojaCommon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -188,6 +215,7 @@
 				B08AD9AC242F5FFD001CE297 /* Sources */,
 				B08AD9AD242F5FFD001CE297 /* Frameworks */,
 				B08AD9AE242F5FFD001CE297 /* Resources */,
+				B08F0961244338DD001AA193 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
