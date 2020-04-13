@@ -11,6 +11,9 @@ import EroojaCommon
 
 public class CreateGoalSecondCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textFieldBottomLine: UIView!
+    @IBOutlet weak var bottomLineHeightContraint: NSLayoutConstraint!
     
     public var titleText: String? {
         didSet {
@@ -21,6 +24,21 @@ public class CreateGoalSecondCell: UICollectionViewCell {
     override public func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        initializeLayout()
     }
 
+    private func initializeLayout() {
+        textField.borderStyle = .none
+        textField.placeholder = "목표명을 입력해주세요."
+        textField.textColor = EroojaColorSet.shared.gray100s
+        textField.tintColor = EroojaColorSet.shared.orgDefault400s
+        
+        setBottomLineStyle(isActive: false)
+    }
+    
+    private func setBottomLineStyle(isActive: Bool) {
+        bottomLineHeightContraint.constant = isActive ? 4 : 2
+        textFieldBottomLine.backgroundColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray500s
+    }
 }
