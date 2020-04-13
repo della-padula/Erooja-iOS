@@ -41,14 +41,17 @@ public class CreateGoalSecondCell: UICollectionViewCell {
             self.processInputText(text: text ?? "")
         })
         
+        textDescriptionLabel.text = "목표를 5자 이상 입력해주세요."
         textDescriptionLabel.textColor = EroojaColorSet.shared.error000s
         textCountLabel.textColor = EroojaColorSet.shared.gray400s
         setBottomLineStyle(isActive: false)
     }
     
     private func processInputText(text: String) {
-        if text.count > 50 {
-            
+        if !text.isEmpty && text.count < 5 {
+            textDescriptionLabel.isHidden = false
+        } else {
+            textDescriptionLabel.isHidden = true
         }
         textCountLabel.text = "\(text.count)/50"
     }
