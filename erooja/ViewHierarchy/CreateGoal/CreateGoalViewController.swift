@@ -43,9 +43,11 @@ public class CreateGoalViewController: BaseViewController {
     @objc
     private func showDatePickerView() {
         let myDatePicker: UIDatePicker = UIDatePicker()
+        let modifiedDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+        
         myDatePicker.datePickerMode = .date
         myDatePicker.timeZone = .current
-        myDatePicker.minimumDate = Date()
+        myDatePicker.minimumDate = modifiedDate
         myDatePicker.frame = CGRect(x: 0, y: 15, width: view.frame.width - 15, height: 160)
         
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)

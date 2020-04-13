@@ -17,6 +17,10 @@ public class CreateGoalFourthCell: UICollectionViewCell {
     @IBOutlet weak var modifyAvailableLabel: UILabel!
     @IBOutlet weak var modifyUnavailableLabel: UILabel!
     
+    @IBOutlet weak var switchTitle: UILabel!
+    @IBOutlet weak var startTitle: UILabel!
+    @IBOutlet weak var endTitle: UILabel!
+    
     @IBOutlet weak var lblStartDate: UILabel!
     @IBOutlet weak var lblEndDate: UILabel!
     
@@ -52,11 +56,22 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         let formattedDate = format.string(from: Date())
         
         lblStartDate.text = formattedDate
-        
         setFourthLayout()
     }
     
     private func setFourthLayout() {
+        switchTitle.text = "추후 수정이 가능한 목표인가요?"
+        switchTitle.font = .AppleSDBold16P
+        
+        startTitle.text = "시작"
+        startTitle.font = .AppleSDBold16P
+        
+        endTitle.text = "종료"
+        endTitle.font = .AppleSDBold16P
+        
+        modifyAvailableLabel.text = "수정 가능"
+        modifyUnavailableLabel.text = "수정 불가능"
+        
         setAvailableButton(tag: 0)
     }
     
@@ -71,7 +86,7 @@ public class CreateGoalFourthCell: UICollectionViewCell {
     }
     
     private func setModifyAvailableButton(isActive: Bool) {
-        modifyAvailableBtn.layer.cornerRadius = 8
+        modifyAvailableBtn.layer.cornerRadius = 14
         modifyAvailableBtn.layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray500s.cgColor
         modifyAvailableBtn.layer.borderWidth = 1
         modifyAvailableLabel.font = .AppleSDSemiBold15P
@@ -79,7 +94,7 @@ public class CreateGoalFourthCell: UICollectionViewCell {
     }
     
     private func setModifyUnavailableButton(isActive: Bool) {
-        modifyUnavailableBtn.layer.cornerRadius = 8
+        modifyUnavailableBtn.layer.cornerRadius = 14
         modifyUnavailableBtn.layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray500s.cgColor
         modifyUnavailableBtn.layer.borderWidth = 1
         modifyUnavailableLabel.font = .AppleSDSemiBold15P
@@ -90,9 +105,13 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         guard let selectedDate: String = notification.userInfo?["SelectedDate"] as? String else { return }
         
         print("SelectedDate :", selectedDate)
-        lblEndDate.text = selectedDate
+        
+        let attributedString = NSMutableAttributedString.init(string: selectedDate)
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range:
+            NSRange.init(location: 0, length: attributedString.length));
+        lblEndDate.attributedText = attributedString
+        lblEndDate.textColor = EroojaColorSet.shared.orgDefault400s
+//        lblEndDate.text = selectedDate
     }
-
-    
-    
+ 
 }
