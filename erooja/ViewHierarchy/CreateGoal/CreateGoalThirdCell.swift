@@ -14,6 +14,8 @@ public class CreateGoalThirdCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textView: KMPlaceholderTextView!
     
+    public var delegate: CreateGoalHeaderViewDelegate?
+    
     public var titleText: String? {
         didSet {
             self.titleLabel.text = titleText

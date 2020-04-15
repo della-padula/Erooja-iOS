@@ -43,7 +43,6 @@ public protocol EUINavigationBarDelegate {
     func didChangeTextField(_ textField: EroojaTextField, text: String?)
     
     func onClickRightSectionButton(at position: ERightButton.Position)
-    
 }
 
 public class EUIHeaderView: UIView {

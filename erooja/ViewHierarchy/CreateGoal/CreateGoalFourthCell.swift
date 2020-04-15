@@ -37,6 +37,8 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         self.setAvailableButton(tag: sender.tag)
     }
     
+    public var delegate: CreateGoalHeaderViewDelegate?
+    
     public var titleText: String? {
         didSet {
             self.titleLabel.text = titleText

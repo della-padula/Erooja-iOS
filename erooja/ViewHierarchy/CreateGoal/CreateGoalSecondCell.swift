@@ -17,6 +17,8 @@ public class CreateGoalSecondCell: UICollectionViewCell {
     @IBOutlet weak var textFieldBottomLine: UIView!
     @IBOutlet weak var bottomLineHeightContraint: NSLayoutConstraint!
     
+    public var delegate: CreateGoalHeaderViewDelegate?
+    
     public var titleText: String? {
         didSet {
             self.titleLabel.text = titleText

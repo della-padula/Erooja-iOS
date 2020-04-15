@@ -11,6 +11,8 @@ import UIKit
 public class CreateGoalFirstCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
+    public var delegate: CreateGoalHeaderViewDelegate?
+    
     public var titleText: String? {
         didSet {
             self.titleLabel.text = titleText
