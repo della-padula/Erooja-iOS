@@ -81,7 +81,7 @@ public class OnboardViewController: UIViewController {
         // Next Button
         self.nextButton.setTitle("Next", for: .normal)
         self.nextButton.addTarget(self, action: #selector(onClickNextButton), for: .touchUpInside)
-        self.nextButton.titleLabel?.font = .RobotoRegular15P
+        self.nextButton.titleLabel?.font = .SpoqaRegular15P
         self.nextButton.setTitleColor(EroojaColorSet.shared.orgDefault400s, for: .normal)
         
         self.nextButton.translatesAutoresizingMaskIntoConstraints = false
@@ -94,7 +94,7 @@ public class OnboardViewController: UIViewController {
         // Skip Button
         self.skipButton.setTitle("Skip", for: .normal)
         self.skipButton.addTarget(self, action: #selector(onClickSkipButton), for: .touchUpInside)
-        self.skipButton.titleLabel?.font = .RobotoRegular15P
+        self.skipButton.titleLabel?.font = .SpoqaRegular15P
         self.skipButton.setTitleColor(EroojaColorSet.shared.gray300s, for: .normal)
         
         self.skipButton.translatesAutoresizingMaskIntoConstraints = false

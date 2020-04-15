@@ -14,6 +14,7 @@ public class CreateGoalFirstCell: UICollectionViewCell {
     public var titleText: String? {
         didSet {
             self.titleLabel.text = titleText
+            self.titleLabel.font = .SpoqaBold20P
         }
     }
     

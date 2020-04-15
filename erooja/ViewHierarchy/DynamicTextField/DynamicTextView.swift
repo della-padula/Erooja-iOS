@@ -85,7 +85,7 @@ class DynamicTextView: UIView {
         textView.textContainer.lineBreakMode = .byClipping
         textView.enablesReturnKeyAutomatically = true
         textView.returnKeyType = .default
-        textView.font = .AppleSDRegular14P
+        textView.font = .SpoqaRegular14P
         textView.backgroundColor = UIColor.white
         textView.textColor = self.inputTextColor
         textView.tintColor = EroojaColorSet.shared.orgDefault400s

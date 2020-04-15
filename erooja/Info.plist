@@ -6,7 +6,10 @@
 	<string>Light</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Roboto-Regular.otf</string>
+		<string>SpoqaHanSansLight.ttf</string>
+		<string>SpoqaHanSansThin.ttf</string>
+		<string>SpoqaHanSansBold.ttf</string>
+		<string>SpoqaHanSansRegular.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

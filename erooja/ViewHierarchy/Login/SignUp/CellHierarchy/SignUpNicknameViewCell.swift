@@ -82,7 +82,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
     
     private func setupCell() {
         self.lblTitle.text = self.title ?? "NO TITLE"
-        self.lblTitle.font = .AppleSDBold20P
+        self.lblTitle.font = .SpoqaBold20P
         self.lblTitle.textAlignment = .center
         self.lblTitle.textColor = EroojaColorSet.shared.gray100s
         self.addSubview(lblTitle)
@@ -149,7 +149,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
                 self.delegate?.setButtonStyle(forState: isValid ? .active : .inActive)
             }
         }
-        textFieldView.font = .AppleSDBold15P
+        textFieldView.font = .SpoqaBold15P
         textFieldView.textColor = EroojaColorSet.shared.gray100s
         
         self.addSubview(fieldView)
@@ -183,7 +183,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
         bottomBorderView.leadingAnchor.constraint(equalTo: fieldView.leadingAnchor).isActive = true
         bottomBorderView.trailingAnchor.constraint(equalTo: fieldView.trailingAnchor).isActive = true
         
-        bottomHintLabel.font = .AppleSDSemiBold12P
+        bottomHintLabel.font = .SpoqaRegular12P
         bottomHintLabel.textAlignment = .center
         bottomHintLabel.textColor = EroojaColorSet.shared.orgDefault400s
         

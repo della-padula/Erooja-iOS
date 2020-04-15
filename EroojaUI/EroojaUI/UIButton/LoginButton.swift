@@ -34,13 +34,13 @@ public class LoginButton: UIButton {
         case .kakao:
             backgroundColor = EroojaColorSet.shared.kakaoYellow000s
             setTitle("카카오 계정으로 로그인", for: .normal)
-            titleLabel?.font = .AppleSDSemiBold17P
+            titleLabel?.font = .SpoqaRegular17P
             layer.cornerRadius = 4
             setTitleColor(EroojaColorSet.shared.kakaoBrown000s, for: .normal)
         case .guest:
             backgroundColor = .white
             setTitle("게스트로 시작", for: .normal)
-            titleLabel?.font = .AppleSDSemiBold17P
+            titleLabel?.font = .SpoqaRegular17P
             layer.cornerRadius = 4
             setTitleColor(EroojaColorSet.shared.gray300s, for: .normal)
         case .google:
@@ -48,7 +48,7 @@ public class LoginButton: UIButton {
         case .naver:
             backgroundColor = EroojaColorSet.shared.naverGreen000s
             setTitle("네이버 계정으로 로그인", for: .normal)
-            titleLabel?.font = .AppleSDSemiBold17P
+            titleLabel?.font = .SpoqaRegular17P
             layer.cornerRadius = 4
             setTitleColor(.white, for: .normal)
         case .apple:

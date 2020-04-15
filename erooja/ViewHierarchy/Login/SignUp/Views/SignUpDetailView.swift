@@ -137,7 +137,7 @@ public class SignUpDetailView: UIView {
             buttons![index].layer.cornerRadius = 8
             buttons![index].layer.borderColor = EroojaColorSet.shared.orgDefault400s.cgColor
             buttons![index].layer.borderWidth = 1
-            labels![index].font = .AppleSDSemiBold15P
+            labels![index].font = .SpoqaRegular15P
             labels![index].textColor = EroojaColorSet.shared.orgDefault400s
             buttons![index].isHidden = false
             labels![index].isHidden = false
@@ -145,7 +145,7 @@ public class SignUpDetailView: UIView {
             buttons![index].layer.cornerRadius = 8
             buttons![index].layer.borderColor = EroojaColorSet.shared.gray500s.cgColor
             buttons![index].layer.borderWidth = 1
-            labels![index].font = .AppleSDSemiBold15P
+            labels![index].font = .SpoqaRegular15P
             labels![index].textColor = EroojaColorSet.shared.gray300s
             buttons![index].isHidden = false
             labels![index].isHidden = false

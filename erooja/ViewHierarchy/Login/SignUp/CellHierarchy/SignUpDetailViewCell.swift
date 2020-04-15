@@ -44,7 +44,7 @@ public class SignUpDetailViewCell: UICollectionViewCell {
     
     private func setupCell() {
         self.lblTitle.text = self.viewModel?.title ?? "NO TITLE"
-        self.lblTitle.font = .AppleSDBold20P
+        self.lblTitle.font = .SpoqaBold20P
         self.lblTitle.textAlignment = .center
         self.lblTitle.textColor = EroojaColorSet.shared.gray100s
         self.addSubview(lblTitle)
@@ -59,7 +59,7 @@ public class SignUpDetailViewCell: UICollectionViewCell {
     
     private func setupDetailView() {
         self.lblSubTitle.text = self.viewModel?.subTitle ?? "NO TITLE"
-        self.lblSubTitle.font = .AppleSDSemiBold15P
+        self.lblSubTitle.font = .SpoqaRegular15P
         self.lblSubTitle.textAlignment = .center
         self.lblSubTitle.textColor = EroojaColorSet.shared.gray300s
         self.addSubview(lblSubTitle)

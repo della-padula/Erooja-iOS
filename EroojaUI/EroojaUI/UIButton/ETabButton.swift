@@ -52,7 +52,7 @@ public class ETabButton: UIView {
     
     fileprivate func setTitle() {
         self.titleLabel.text = self.title
-        self.titleLabel.font = .AppleSDSemiBold14P
+        self.titleLabel.font = .SpoqaBold14P
     }
     
     fileprivate func setViewLayout() {
