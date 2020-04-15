@@ -52,16 +52,26 @@ public class CreateGoalSecondCell: UICollectionViewCell {
     }
     
     private func processInputText(text: String) {
-        if !text.isEmpty && text.count < 5 {
-            textDescriptionLabel.isHidden = false
+        if !text.isEmpty && text.count > 4 && text.count < 51 {
+            setInputState(isValid: true)
         } else {
-            textDescriptionLabel.isHidden = true
+            setInputState(isValid: false)
+            
+            if text.isEmpty {
+                textDescriptionLabel.isHidden = true
+            }
         }
+        
         textCountLabel.text = "\(text.count)/50"
     }
     
+    private func setInputState(isValid: Bool) {
+        setBottomLineStyle(isActive: isValid)
+        textDescriptionLabel.isHidden = isValid
+    }
+    
     private func setBottomLineStyle(isActive: Bool) {
-        bottomLineHeightContraint.constant = isActive ? 4 : 2
+        bottomLineHeightContraint.constant = 2
         textFieldBottomLine.backgroundColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray500s
     }
 }
