@@ -19,7 +19,6 @@
 		B03D4A3224333C9D009180E9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3124333C9D009180E9 /* BaseViewController.swift */; };
 		B03D4A3924338DE3009180E9 /* LoginSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3824338DE3009180E9 /* LoginSwitcher.swift */; };
 		B03D4A4024339001009180E9 /* EroojaProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A3F24339001009180E9 /* EroojaProperty.swift */; };
-		B03D4A6A24339ECF009180E9 /* Roboto-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6424339ECB009180E9 /* Roboto-Regular.otf */; };
 		B03D4A6D2433A2DC009180E9 /* OnboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A6B2433A2DC009180E9 /* OnboardCollectionViewCell.swift */; };
 		B03D4A6E2433A2DC009180E9 /* OnboardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03D4A6C2433A2DC009180E9 /* OnboardCollectionViewCell.xib */; };
 		B03D4A9E24342167009180E9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A9D24342167009180E9 /* LoginViewController.swift */; };
@@ -81,6 +80,18 @@
 		B0FE8ED42432491300103A54 /* UIStoryboard+Onboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ED32432491300103A54 /* UIStoryboard+Onboard.swift */; };
 		B0FE8EE22432B77600103A54 /* eroojaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EE12432B77600103A54 /* eroojaUITests.swift */; };
 		B0FE8EF22432B85C00103A54 /* eroojaUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8EF12432B85C00103A54 /* eroojaUnitTests.swift */; };
+		DE808FC124469F4E0097C31E /* SpoqaHanSansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FBD24469F4B0097C31E /* SpoqaHanSansLight.ttf */; };
+		DE808FC224469F4E0097C31E /* SpoqaHanSansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FBD24469F4B0097C31E /* SpoqaHanSansLight.ttf */; };
+		DE808FC324469F4E0097C31E /* SpoqaHanSansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FBD24469F4B0097C31E /* SpoqaHanSansLight.ttf */; };
+		DE808FC424469F4E0097C31E /* SpoqaHanSansRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FBE24469F4C0097C31E /* SpoqaHanSansRegular.ttf */; };
+		DE808FC524469F4E0097C31E /* SpoqaHanSansRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FBE24469F4C0097C31E /* SpoqaHanSansRegular.ttf */; };
+		DE808FC624469F4E0097C31E /* SpoqaHanSansRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FBE24469F4C0097C31E /* SpoqaHanSansRegular.ttf */; };
+		DE808FC724469F4E0097C31E /* SpoqaHanSansThin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FBF24469F4D0097C31E /* SpoqaHanSansThin.ttf */; };
+		DE808FC824469F4E0097C31E /* SpoqaHanSansThin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FBF24469F4D0097C31E /* SpoqaHanSansThin.ttf */; };
+		DE808FC924469F4E0097C31E /* SpoqaHanSansThin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FBF24469F4D0097C31E /* SpoqaHanSansThin.ttf */; };
+		DE808FCA24469F4E0097C31E /* SpoqaHanSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FC024469F4D0097C31E /* SpoqaHanSansBold.ttf */; };
+		DE808FCB24469F4E0097C31E /* SpoqaHanSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FC024469F4D0097C31E /* SpoqaHanSansBold.ttf */; };
+		DE808FCC24469F4E0097C31E /* SpoqaHanSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FC024469F4D0097C31E /* SpoqaHanSansBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,7 +171,6 @@
 		B03D4A3124333C9D009180E9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B03D4A3824338DE3009180E9 /* LoginSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwitcher.swift; sourceTree = "<group>"; };
 		B03D4A3F24339001009180E9 /* EroojaProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaProperty.swift; sourceTree = "<group>"; };
-		B03D4A6424339ECB009180E9 /* Roboto-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.otf"; sourceTree = "<group>"; };
 		B03D4A6B2433A2DC009180E9 /* OnboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardCollectionViewCell.swift; sourceTree = "<group>"; };
 		B03D4A6C2433A2DC009180E9 /* OnboardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardCollectionViewCell.xib; sourceTree = "<group>"; };
 		B03D4A9D24342167009180E9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +244,10 @@
 		B0FE8EF32432B85C00103A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0FE8F102432B8D700103A54 /* EroojaSharedBase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaSharedBase.xcodeproj; path = EroojaSharedBase/EroojaSharedBase.xcodeproj; sourceTree = "<group>"; };
 		B7EC43A88CE7BA9D68CE3D8B /* Pods-erooja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erooja.debug.xcconfig"; path = "Target Support Files/Pods-erooja/Pods-erooja.debug.xcconfig"; sourceTree = "<group>"; };
+		DE808FBD24469F4B0097C31E /* SpoqaHanSansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansLight.ttf; sourceTree = "<group>"; };
+		DE808FBE24469F4C0097C31E /* SpoqaHanSansRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansRegular.ttf; sourceTree = "<group>"; };
+		DE808FBF24469F4D0097C31E /* SpoqaHanSansThin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansThin.ttf; sourceTree = "<group>"; };
+		DE808FC024469F4D0097C31E /* SpoqaHanSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansBold.ttf; sourceTree = "<group>"; };
 		F839532DC0F68802565B88E6 /* Pods-EroojaDev.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.inhouse.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.inhouse.xcconfig"; sourceTree = "<group>"; };
 		F87B7FEA3CF76898E1A4522D /* Pods-EroojaDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.debug.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.debug.xcconfig"; sourceTree = "<group>"; };
 		FBD0A481CFCF149DD39F0F7F /* Pods_EroojaDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EroojaDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -502,8 +516,8 @@
 		B0A8C55F243338FF002B2C83 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE808FA0244692A40097C31E /* Fonts */,
 				B05DC3E12439A2BA00626501 /* Common */,
-				B03D4A6424339ECB009180E9 /* Roboto-Regular.otf */,
 				B0A8C5622433392B002B2C83 /* UIImage+EroojaImage.swift */,
 				B0A8C5652433395B002B2C83 /* Image.xcassets */,
 			);
@@ -614,6 +628,17 @@
 				B0FE8F152432B8D700103A54 /* EroojaSharedBase.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DE808FA0244692A40097C31E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DE808FC024469F4D0097C31E /* SpoqaHanSansBold.ttf */,
+				DE808FBD24469F4B0097C31E /* SpoqaHanSansLight.ttf */,
+				DE808FBE24469F4C0097C31E /* SpoqaHanSansRegular.ttf */,
+				DE808FBF24469F4D0097C31E /* SpoqaHanSansThin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		E289B42C32A309B73ED34963 /* Pods */ = {
@@ -790,13 +815,16 @@
 				B08F09172442F5F6001AA193 /* CreateGoalFifthCell.xib in Resources */,
 				B0462ADE242B8E6100B51854 /* LaunchScreen.storyboard in Resources */,
 				B0A8C5662433395B002B2C83 /* Image.xcassets in Resources */,
+				DE808FC424469F4E0097C31E /* SpoqaHanSansRegular.ttf in Resources */,
 				B08F09142442F5ED001AA193 /* CreateGoalFourthCell.xib in Resources */,
+				DE808FC724469F4E0097C31E /* SpoqaHanSansThin.ttf in Resources */,
 				B03D4A6E2433A2DC009180E9 /* OnboardCollectionViewCell.xib in Resources */,
+				DE808FCA24469F4E0097C31E /* SpoqaHanSansBold.ttf in Resources */,
 				B0F98E8B2442EA5A00F7510E /* CreateGoalFirstCell.xib in Resources */,
 				B0462ADB242B8E6100B51854 /* Assets.xcassets in Resources */,
-				B03D4A6A24339ECF009180E9 /* Roboto-Regular.otf in Resources */,
 				B0C0311824364AFC008771BB /* SignUpDetailView.xib in Resources */,
 				B0F98E8F2442EB2E00F7510E /* CreateGoalSecondCell.xib in Resources */,
+				DE808FC124469F4E0097C31E /* SpoqaHanSansLight.ttf in Resources */,
 				B0F98E932442EB3D00F7510E /* CreateGoalThirdCell.xib in Resources */,
 				B05DC3E72439A2D100626501 /* Common.xcassets in Resources */,
 				B0462AEB242B8FE800B51854 /* Home.storyboard in Resources */,
@@ -810,6 +838,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE808FC224469F4E0097C31E /* SpoqaHanSansLight.ttf in Resources */,
+				DE808FCB24469F4E0097C31E /* SpoqaHanSansBold.ttf in Resources */,
+				DE808FC524469F4E0097C31E /* SpoqaHanSansRegular.ttf in Resources */,
+				DE808FC824469F4E0097C31E /* SpoqaHanSansThin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,6 +849,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE808FC324469F4E0097C31E /* SpoqaHanSansLight.ttf in Resources */,
+				DE808FCC24469F4E0097C31E /* SpoqaHanSansBold.ttf in Resources */,
+				DE808FC624469F4E0097C31E /* SpoqaHanSansRegular.ttf in Resources */,
+				DE808FC924469F4E0097C31E /* SpoqaHanSansThin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

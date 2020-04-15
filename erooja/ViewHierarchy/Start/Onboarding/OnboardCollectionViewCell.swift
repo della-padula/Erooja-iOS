@@ -41,8 +41,8 @@ public class OnboardCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.lblMainText.font = .AppleSDBold20P
-        self.lblSubText.font = .AppleSDSemiBold15P
+        self.lblMainText.font = .SpoqaBold20P
+        self.lblSubText.font = .SpoqaRegular15P
         
         self.lblMainText.textColor = EroojaColorSet.shared.gray100s
         self.lblSubText.textColor = EroojaColorSet.shared.gray300s

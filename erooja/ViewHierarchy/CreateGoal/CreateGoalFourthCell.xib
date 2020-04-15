@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansBold.ttf">
+            <string>SpoqaHanSans-Bold</string>
+        </array>
+        <array key="SpoqaHanSansRegular.ttf">
+            <string>SpoqaHanSans-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,63 +26,67 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQA-YI-thX">
-                        <rect key="frame" x="20" y="110" width="303" height="24"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <rect key="frame" x="20" y="110" width="303" height="30"/>
+                        <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKi-fZ-wkW">
-                        <rect key="frame" x="20" y="234" width="136.5" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="20" y="240" width="131.5" height="22.5"/>
+                        <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBU-h1-tBo">
-                        <rect key="frame" x="156.5" y="234" width="166.5" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="151.5" y="240" width="171.5" height="22.5"/>
+                        <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000년 00월 00일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKu-bl-V9g">
-                        <rect key="frame" x="20" y="255" width="136.5" height="32"/>
+                        <rect key="frame" x="20" y="266.5" width="131.5" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="32" id="iDT-cW-ciQ"/>
+                            <constraint firstAttribute="height" constant="40" id="iDT-cW-ciQ"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000년 00월 00일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3i-Qi-5Vc">
-                        <rect key="frame" x="156.5" y="255" width="136" height="32"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <rect key="frame" x="151.5" y="266.5" width="131.5" height="40"/>
+                        <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a2d-rh-srI">
-                        <rect key="frame" x="292.5" y="255" width="30.5" height="32"/>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.34901960780000002" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_select" translatesAutoresizingMaskIntoConstraints="NO" id="a2d-rh-srI">
+                        <rect key="frame" x="283" y="266.5" width="40" height="40"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="a2d-rh-srI" secondAttribute="height" multiplier="1:1" id="4eb-EZ-9yM"/>
+                        </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-BE-58E">
-                        <rect key="frame" x="292.5" y="255" width="30.5" height="32"/>
+                        <rect key="frame" x="283" y="266.5" width="40" height="40"/>
                         <connections>
                             <action selector="onClickCalendar:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Gd0-fg-awh"/>
                         </connections>
                     </button>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Qa-8d-orT">
-                        <rect key="frame" x="20" y="365" width="212" height="40"/>
+                        <rect key="frame" x="20" y="390" width="197" height="40"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbb-bd-Q3b">
-                                <rect key="frame" x="0.0" y="0.0" width="102" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXs-YB-CwB">
-                                        <rect key="frame" x="1" y="1" width="100" height="38"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="1" y="1" width="92.5" height="38"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Haj-Lt-ufP">
-                                        <rect key="frame" x="0.0" y="0.0" width="102" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="14"/>
                                         <connections>
                                             <action selector="onClickSwitchButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="wQ6-2Y-Cjn"/>
                                         </connections>
@@ -93,17 +105,18 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPD-ms-0ta">
-                                <rect key="frame" x="110" y="0.0" width="102" height="40"/>
+                                <rect key="frame" x="102.5" y="0.0" width="94.5" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n20-u2-nRK">
-                                        <rect key="frame" x="1" y="1" width="100" height="38"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="1" y="1" width="92.5" height="38"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vk3-wh-2d2">
-                                        <rect key="frame" x="0.0" y="0.0" width="102" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="14"/>
                                         <connections>
                                             <action selector="onClickSwitchButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3bT-u1-DNB"/>
                                         </connections>
@@ -127,8 +140,8 @@
                         </constraints>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sa-Hb-JOH">
-                        <rect key="frame" x="20" y="333" width="303" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="20" y="352.5" width="303" height="22.5"/>
+                        <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -137,9 +150,8 @@
             <constraints>
                 <constraint firstItem="QBU-h1-tBo" firstAttribute="leading" secondItem="nKi-fZ-wkW" secondAttribute="trailing" id="7JN-Ia-8zT"/>
                 <constraint firstItem="3Qa-8d-orT" firstAttribute="top" secondItem="6sa-Hb-JOH" secondAttribute="bottom" constant="15" id="BL8-Bi-jSy"/>
-                <constraint firstItem="3Qa-8d-orT" firstAttribute="width" secondItem="6sa-Hb-JOH" secondAttribute="width" multiplier="0.7" id="ClF-om-Ad8"/>
+                <constraint firstItem="3Qa-8d-orT" firstAttribute="width" secondItem="6sa-Hb-JOH" secondAttribute="width" multiplier="0.65" id="ClF-om-Ad8"/>
                 <constraint firstItem="QBU-h1-tBo" firstAttribute="trailing" secondItem="HQA-YI-thX" secondAttribute="trailing" id="EXJ-GV-Yj3"/>
-                <constraint firstItem="nKi-fZ-wkW" firstAttribute="width" secondItem="HQA-YI-thX" secondAttribute="width" multiplier="0.45" id="Eoo-Va-SdA"/>
                 <constraint firstItem="X3i-Qi-5Vc" firstAttribute="width" secondItem="kKu-bl-V9g" secondAttribute="width" id="GWu-aJ-NoH"/>
                 <constraint firstItem="a2d-rh-srI" firstAttribute="height" secondItem="X3i-Qi-5Vc" secondAttribute="height" id="NHX-7A-2Rh"/>
                 <constraint firstItem="kKu-bl-V9g" firstAttribute="top" secondItem="nKi-fZ-wkW" secondAttribute="bottom" constant="4" id="PpQ-mC-laB"/>
@@ -185,4 +197,7 @@
             <point key="canvasLocation" x="345.6521739130435" y="301.00446428571428"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="calendar_select" width="96" height="96"/>
+    </resources>
 </document>

@@ -20,6 +20,7 @@ public class CreateGoalSecondCell: UICollectionViewCell {
     public var titleText: String? {
         didSet {
             self.titleLabel.text = titleText
+            self.titleLabel.font = .SpoqaBold20P
         }
     }
     
@@ -34,6 +35,7 @@ public class CreateGoalSecondCell: UICollectionViewCell {
         textField.borderStyle = .none
         textField.delegate = self
         textField.placeholder = "목표명을 입력해주세요."
+        textField.font = .SpoqaRegular15P
         textField.textColor = EroojaColorSet.shared.gray100s
         textField.tintColor = EroojaColorSet.shared.orgDefault400s
         
@@ -42,8 +44,10 @@ public class CreateGoalSecondCell: UICollectionViewCell {
         })
         
         textDescriptionLabel.text = "목표를 5자 이상 입력해주세요."
+        textDescriptionLabel.font = .SpoqaRegular12P
         textDescriptionLabel.textColor = EroojaColorSet.shared.error000s
         textCountLabel.textColor = EroojaColorSet.shared.gray400s
+        textCountLabel.font = .SpoqaRegular12P
         setBottomLineStyle(isActive: false)
     }
     

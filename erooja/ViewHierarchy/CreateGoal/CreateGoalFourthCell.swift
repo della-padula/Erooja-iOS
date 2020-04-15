@@ -40,6 +40,7 @@ public class CreateGoalFourthCell: UICollectionViewCell {
     public var titleText: String? {
         didSet {
             self.titleLabel.text = titleText
+            self.titleLabel.font = .SpoqaBold20P
         }
     }
     
@@ -61,13 +62,16 @@ public class CreateGoalFourthCell: UICollectionViewCell {
     
     private func setFourthLayout() {
         switchTitle.text = "추후 수정이 가능한 목표인가요?"
-        switchTitle.font = .AppleSDBold16P
+        switchTitle.font = .SpoqaBold15P
         
         startTitle.text = "시작"
-        startTitle.font = .AppleSDBold16P
+        startTitle.font = .SpoqaBold15P
         
         endTitle.text = "종료"
-        endTitle.font = .AppleSDBold16P
+        endTitle.font = .SpoqaBold15P
+        
+        lblStartDate.font = .SpoqaRegular17P
+        lblEndDate.font = .SpoqaRegular17P
         
         modifyAvailableLabel.text = "수정 가능"
         modifyUnavailableLabel.text = "수정 불가능"
@@ -89,7 +93,7 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         modifyAvailableBtn.layer.cornerRadius = 14
         modifyAvailableBtn.layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray500s.cgColor
         modifyAvailableBtn.layer.borderWidth = 1
-        modifyAvailableLabel.font = .AppleSDSemiBold15P
+        modifyAvailableLabel.font = .SpoqaRegular15P
         modifyAvailableLabel.textColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray300s
     }
     
@@ -97,7 +101,7 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         modifyUnavailableBtn.layer.cornerRadius = 14
         modifyUnavailableBtn.layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray500s.cgColor
         modifyUnavailableBtn.layer.borderWidth = 1
-        modifyUnavailableLabel.font = .AppleSDSemiBold15P
+        modifyUnavailableLabel.font = .SpoqaRegular15P
         modifyUnavailableLabel.textColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray300s
     }
      
@@ -111,7 +115,6 @@ public class CreateGoalFourthCell: UICollectionViewCell {
             NSRange.init(location: 0, length: attributedString.length));
         lblEndDate.attributedText = attributedString
         lblEndDate.textColor = EroojaColorSet.shared.orgDefault400s
-//        lblEndDate.text = selectedDate
     }
  
 }

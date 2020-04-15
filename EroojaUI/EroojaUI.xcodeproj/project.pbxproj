@@ -15,7 +15,6 @@
 		B03D4A722433AC9E009180E9 /* UILabel+LineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4A712433AC9E009180E9 /* UILabel+LineSpacing.swift */; };
 		B03D4AA1243421B0009180E9 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4AA0243421B0009180E9 /* LoginButton.swift */; };
 		B03D4ACD24346605009180E9 /* EroojaColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D4ACC24346605009180E9 /* EroojaColorSet.swift */; };
-		B04B4EE52436F3E200EA438B /* Roboto-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B04B4EE42436F3E200EA438B /* Roboto-Regular.otf */; };
 		B05DB2372440ADD600CA5D88 /* ETabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB2362440ADD600CA5D88 /* ETabButton.swift */; };
 		B05DC3A824394C8200626501 /* EUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DC3A724394C8200626501 /* EUINavigationController.swift */; };
 		B05DC3CB24394EE200626501 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DC3CA24394EE200626501 /* CustomNavigationBar.swift */; };
@@ -57,7 +56,6 @@
 		B03D4A712433AC9E009180E9 /* UILabel+LineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+LineSpacing.swift"; sourceTree = "<group>"; };
 		B03D4AA0243421B0009180E9 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		B03D4ACC24346605009180E9 /* EroojaColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaColorSet.swift; sourceTree = "<group>"; };
-		B04B4EE42436F3E200EA438B /* Roboto-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.otf"; path = "../erooja/Resources/Roboto-Regular.otf"; sourceTree = "<group>"; };
 		B05DB2362440ADD600CA5D88 /* ETabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETabButton.swift; sourceTree = "<group>"; };
 		B05DC3A724394C8200626501 /* EUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUINavigationController.swift; sourceTree = "<group>"; };
 		B05DC3CA24394EE200626501 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 		B08AD9A6242F5FFD001CE297 = {
 			isa = PBXGroup;
 			children = (
-				B04B4EE42436F3E200EA438B /* Roboto-Regular.otf */,
 				B08AD9B2242F5FFD001CE297 /* EroojaUI */,
 				B08AD9B1242F5FFD001CE297 /* Products */,
 				B08F095D244338DD001AA193 /* Frameworks */,
@@ -264,7 +261,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B04B4EE52436F3E200EA438B /* Roboto-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

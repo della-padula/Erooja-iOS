@@ -107,6 +107,14 @@ public class EUIHeaderView: UIView {
         }
     }
     
+    public func setRightButtonFont(position: ERightButton.Position, font: UIFont) {
+        if position == .first {
+            self.rightFirstButton.font = font
+        } else {
+            self.rightSecondButton.font = font
+        }
+    }
+    
     public func setRightButtonImage(position: ERightButton.Position, image: UIImage) {
         if position == .first {
             self.rightFirstButton.image = image
@@ -200,7 +208,7 @@ public class EUIHeaderView: UIView {
     
     private func setTextFieldLayout() {
         addSubview(textField)
-        textField.font = .AppleSDRegular14P
+        textField.font = .SpoqaRegular14P
         textField.tintColor = EroojaColorSet.shared.orgDefault400s
         textField.delegate = self
         textField.debounce(delay: 0.3, callback: { text in

@@ -9,69 +9,121 @@
 import UIKit
 
 public extension UIFont {
-    class var AppleSDRegular17P: UIFont {
+    // SpoqaBold
+    class var SpoqaBold14P: UIFont {
         get {
-            return UIFont(name: "AppleSDGothicNeo-Regular", size: 17.0)!
+            return UIFont(name: "SpoqaHanSans-Bold", size: 14.0)!
         }
     }
     
-    class var AppleSDRegular14P: UIFont {
+    class var SpoqaBold15P: UIFont {
         get {
-            return UIFont(name: "AppleSDGothicNeo-Regular", size: 14.0)!
+            return UIFont(name: "SpoqaHanSans-Bold", size: 15.0)!
         }
     }
     
-    class var AppleSDRegular10P: UIFont {
+    class var SpoqaBold16P: UIFont {
         get {
-            return UIFont(name: "AppleSDGothicNeo-Regular", size: 10.0)!
+            return UIFont(name: "SpoqaHanSans-Bold", size: 16.0)!
         }
     }
     
-    class var AppleSDSemiBold17P: UIFont {
+    class var SpoqaBold17P: UIFont {
         get {
-            return UIFont(name: "AppleSDGothicNeo-SemiBold", size: 17.0)!
+            return UIFont(name: "SpoqaHanSans-Bold", size: 17.0)!
         }
     }
     
-    class var AppleSDSemiBold12P: UIFont {
+    class var SpoqaBold20P: UIFont {
         get {
-            return UIFont(name: "AppleSDGothicNeo-SemiBold", size: 12.0)!
+            return UIFont(name: "SpoqaHanSans-Bold", size: 20.0)!
         }
     }
     
-    class var AppleSDSemiBold14P: UIFont {
+    // SpoqaRegular
+    class var SpoqaRegular12P: UIFont {
         get {
-            return UIFont(name: "AppleSDGothicNeo-SemiBold", size: 14.0)!
+            return UIFont(name: "SpoqaHanSans-Regular", size: 12.0)!
         }
     }
     
-    class var AppleSDSemiBold15P: UIFont {
+    class var SpoqaRegular14P: UIFont {
         get {
-            return UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15.0)!
+            return UIFont(name: "SpoqaHanSans-Regular", size: 14.0)!
         }
     }
     
-    class var AppleSDBold15P: UIFont {
+    class var SpoqaRegular15P: UIFont {
         get {
-            return UIFont(name: "AppleSDGothicNeo-Bold", size: 15.0)!
+            return UIFont(name: "SpoqaHanSans-Regular", size: 15.0)!
         }
     }
     
-    class var AppleSDBold16P: UIFont {
+    class var SpoqaRegular16P: UIFont {
         get {
-            return UIFont(name: "AppleSDGothicNeo-Bold", size: 16.0)!
+            return UIFont(name: "SpoqaHanSans-Regular", size: 16.0)!
         }
     }
     
-    class var AppleSDBold20P: UIFont {
+    class var SpoqaRegular17P: UIFont {
         get {
-            return UIFont(name: "AppleSDGothicNeo-Bold", size: 20.0)!
+            return UIFont(name: "SpoqaHanSans-Regular", size: 17.0)!
         }
     }
     
-    class var RobotoRegular15P: UIFont {
+    class var SpoqaRegular20P: UIFont {
         get {
-            return UIFont(name: "Roboto-Regular", size: 15.0)!
+            return UIFont(name: "SpoqaHanSans-Regular", size: 20.0)!
+        }
+    }
+    
+    // SpoqaLight
+    class var SpoqaLight14P: UIFont {
+        get {
+            return UIFont(name: "SpoqaHanSans-Light", size: 14.0)!
+        }
+    }
+    
+    class var SpoqaLight15P: UIFont {
+        get {
+            return UIFont(name: "SpoqaHanSans-Light", size: 15.0)!
+        }
+    }
+    
+    class var SpoqaLight17P: UIFont {
+        get {
+            return UIFont(name: "SpoqaHanSans-Light", size: 17.0)!
+        }
+    }
+    
+    class var SpoqaLight20P: UIFont {
+        get {
+            return UIFont(name: "SpoqaHanSans-Light", size: 20.0)!
+        }
+    }
+    
+    // SpoqaThin
+    class var SpoqaThin14P: UIFont {
+        get {
+            return UIFont(name: "SpoqaHanSans-Thin", size: 14.0)!
+        }
+    }
+    
+    class var SpoqaThin15P: UIFont {
+        get {
+            return UIFont(name: "SpoqaHanSans-Thin", size: 15.0)!
+        }
+    }
+    
+    class var SpoqaThin17P: UIFont {
+        get {
+            return UIFont(name: "SpoqaHanSans-Thin", size: 17.0)!
+        }
+    }
+    
+    class var SpoqaThin20P: UIFont {
+        get {
+            return UIFont(name: "SpoqaHanSans-Thin", size: 20.0)!
         }
     }
 }

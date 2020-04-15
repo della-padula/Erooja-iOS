@@ -86,6 +86,7 @@ public class CreateGoalViewController: BaseViewController {
         headerView.barOptions = [.backButton, .progressBar, .rightSecondButton]
         headerView.rightSecondButtonType = .text
         headerView.setRightButtonTitle(position: .second, title: "다음")
+        headerView.setRightButtonFont(position: .second, font: .SpoqaRegular17P)
         viewModel?.setProgressValue(value: 0.2)
         view.addSubview(headerView)
         

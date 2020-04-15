@@ -88,7 +88,7 @@ public class SignUpViewController: BaseViewController {
     
     private func setViewLayout() {
         bottomButton.setTitle("다음", for: .normal)
-        bottomButton.titleLabel?.font = .AppleSDSemiBold15P
+        bottomButton.titleLabel?.font = .SpoqaRegular15P
         
         bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
         bottomButton.setTitleColor(EroojaColorSet.shared.whiteBg000s, for: .normal)
