@@ -78,6 +78,10 @@ public class CreateGoalSecondCell: UICollectionViewCell {
         bottomLineHeightContraint.constant = 2
         textFieldBottomLine.backgroundColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray500s
     }
+    
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
 }
 
 extension CreateGoalSecondCell: UITextFieldDelegate {

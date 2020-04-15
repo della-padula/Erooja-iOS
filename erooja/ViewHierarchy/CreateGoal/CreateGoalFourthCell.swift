@@ -120,4 +120,7 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         lblEndDate.textColor = EroojaColorSet.shared.orgDefault400s
     }
  
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
 }

@@ -35,4 +35,8 @@ public class CreateGoalThirdCell: UICollectionViewCell {
         textView.tintColor = EroojaColorSet.shared.orgDefault400s
         delegate?.rightButton(at: .second, active: true)
     }
+    
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
 }

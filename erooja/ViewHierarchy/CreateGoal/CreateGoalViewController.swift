@@ -166,6 +166,10 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
             return UICollectionViewCell()
         }
     }
+    
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 extension CreateGoalViewController: EUINavigationBarDelegate {
@@ -181,12 +185,11 @@ extension CreateGoalViewController: EUINavigationBarDelegate {
             headerView.setRightButtonActive(position: .second, isActive: false)
         }
         
-        ELog.debug(message: "Position: \(position)")
-        ELog.debug(message: "Current Progress : \(Double(Double(currentIndex + 1) / Double(stageCount)))")
-        
         let progress = Double(Double(currentIndex + 1) / Double(stageCount))
         viewModel?.setProgressValue(value: progress)
         contentCollectionView?.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .right, animated: false)
+        
+        self.view.endEditing(true)
     }
 }
 

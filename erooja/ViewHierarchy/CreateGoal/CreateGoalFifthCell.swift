@@ -26,4 +26,7 @@ public class CreateGoalFifthCell: UICollectionViewCell {
         // Initialization code
     }
 
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
 }
