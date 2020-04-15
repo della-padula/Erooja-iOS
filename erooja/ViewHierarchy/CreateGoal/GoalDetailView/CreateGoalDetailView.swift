@@ -94,6 +94,12 @@ extension CreateGoalDetailView: UITableViewDelegate, UITableViewDataSource {
 extension CreateGoalDetailView: GoalDetailInputDelegate {
     public func returnKeyEvent(_ textField: UITextField, content: String?) {
         ELog.debug(message: "[CreateGoalDetailView] Return : \(content)")
+        let strongContent = content ?? ""
+        if strongContent.isEmpty {
+            // Empty Process
+        } else {
+            viewModel?.append(item: strongContent)
+        }
     }
 }
 
