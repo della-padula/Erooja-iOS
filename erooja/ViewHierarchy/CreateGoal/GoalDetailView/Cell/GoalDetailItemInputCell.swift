@@ -33,6 +33,7 @@ public class GoalDetailItemInputCell: UITableViewCell {
 extension GoalDetailItemInputCell: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         delegate?.returnKeyEvent(textField, content: textField.text)
+        textField.text = ""
         return true
     }
 }
