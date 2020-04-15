@@ -1,15 +1,14 @@
 //
-//  CreateGoalThirdCell.swift
+//  CreateGoalFirstCell.swift
 //  erooja
 //
 //  Created by 김태인 on 2020/04/12.
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
-import EroojaCommon
-import EroojaUI
+import UIKit
 
-public class CreateGoalFifthCell: UICollectionViewCell {
+public class CreateGoalFirstCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     public var delegate: CreateGoalHeaderViewDelegate?
@@ -23,7 +22,12 @@ public class CreateGoalFifthCell: UICollectionViewCell {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        // TEMP
+        delegate?.rightButton(at: .second, active: true)
     }
 
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
 }

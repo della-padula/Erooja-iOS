@@ -107,7 +107,7 @@ public class CreateGoalViewController: BaseViewController {
         contentCollectionView?.register(UINib(nibName: "CreateGoalSecondCell", bundle: nil), forCellWithReuseIdentifier: "createSecondCell")
         contentCollectionView?.register(UINib(nibName: "CreateGoalThirdCell", bundle: nil), forCellWithReuseIdentifier: "createThirdCell")
         contentCollectionView?.register(UINib(nibName: "CreateGoalFourthCell", bundle: nil), forCellWithReuseIdentifier: "createFourthCell")
-        contentCollectionView?.register(UINib(nibName: "CreateGoalFifthCell", bundle: nil), forCellWithReuseIdentifier: "createFifthCell")
+        contentCollectionView?.register(UINib(nibName: "CreateGoalDetailView", bundle: nil), forCellWithReuseIdentifier: "createFifthCell")
         
         contentCollectionView?.backgroundColor = .white
         contentCollectionView?.isScrollEnabled = false
@@ -158,7 +158,7 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
             cell.delegate = self
             return cell
         case 4:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createFifthCell", for: indexPath) as! CreateGoalFifthCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createFifthCell", for: indexPath) as! CreateGoalDetailView
             cell.titleText = "기간 내 달성할 세부 목표 리스트를\n만들어보세요."
             cell.delegate = self
             return cell
@@ -166,27 +166,47 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
             return UICollectionViewCell()
         }
     }
+    
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 extension CreateGoalViewController: EUINavigationBarDelegate {
     public func onClickBackButton() {
-        self.navigationController?.popViewController(animated: true)
+        if currentIndex < 1 {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            currentIndex -= 1
+            let progress = Double(Double(currentIndex + 1) / Double(stageCount))
+            viewModel?.setProgressValue(value: progress)
+            contentCollectionView?.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .left, animated: false)
+        }
     }
     
     public func didChangeTextField(_ textField: EroojaTextField, text: String?) { }
     
     public func onClickRightSectionButton(at position: ERightButton.Position) {
-        currentIndex += 1
-        if currentIndex == stageCount - 1 {
-            headerView.setRightButtonActive(position: .second, isActive: false)
+        ELog.debug(message: "CurrentIndex : \(currentIndex), stageCount : \(stageCount)")
+        
+        NotificationCenter.default.post(name: Notification.Name.init(rawValue: "RightButtonClicked"), object: nil)
+        
+        if currentIndex < stageCount - 1 {
+            currentIndex += 1
+            if currentIndex == stageCount - 1 {
+                headerView.setRightButtonActive(position: .second, isActive: false)
+            }
+            
+            let progress = Double(Double(currentIndex + 1) / Double(stageCount))
+            viewModel?.setProgressValue(value: progress)
+            contentCollectionView?.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .right, animated: false)
+            
+            self.view.endEditing(true)
+        } else {
+            #if DEBUG
+            self.navigationController?.popViewController(animated: true)
+            #endif
         }
-        
-        ELog.debug(message: "Position: \(position)")
-        ELog.debug(message: "Current Progress : \(Double(Double(currentIndex + 1) / Double(stageCount)))")
-        
-        let progress = Double(Double(currentIndex + 1) / Double(stageCount))
-        viewModel?.setProgressValue(value: progress)
-        contentCollectionView?.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .right, animated: false)
     }
 }
 

@@ -6,6 +6,7 @@
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
+import NotificationCenter
 import EroojaCommon
 import EroojaUI
 import KMPlaceholderTextView
@@ -34,5 +35,20 @@ public class CreateGoalThirdCell: UICollectionViewCell {
         textView.textColor = EroojaColorSet.shared.gray100s
         textView.tintColor = EroojaColorSet.shared.orgDefault400s
         delegate?.rightButton(at: .second, active: true)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onClickRightButton(_:)),
+                                               name: NSNotification.Name("RightButtonClicked"),
+                                               object: nil)
+    }
+    
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
+    
+    @objc
+    public func onClickRightButton(_ notification: Notification) -> Void {
+        ELog.debug(message: "Save Goal Content to Property")
+        CreateGoalDynamicProperty.goalContent = textView.text
     }
 }
