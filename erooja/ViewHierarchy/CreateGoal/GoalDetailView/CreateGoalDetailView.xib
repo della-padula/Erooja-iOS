@@ -41,6 +41,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="343" height="491"/>
             <connections>
+                <outlet property="detailTableView" destination="Qf6-Aw-XzP" id="7Rc-tQ-Xuk"/>
                 <outlet property="titleLabel" destination="HQA-YI-thX" id="Euf-jv-tNe"/>
             </connections>
             <point key="canvasLocation" x="348.55072463768118" y="262.16517857142856"/>
