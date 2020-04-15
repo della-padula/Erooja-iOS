@@ -9,6 +9,7 @@ target 'erooja' do
 
   # Pods for erooja
   pod 'Alamofire'
+  pod 'KMPlaceholderTextView', '~> 1.4.0'
   pod 'SwiftLint'
   pod 'Kingfisher'
   pod 'PromisesSwift'
