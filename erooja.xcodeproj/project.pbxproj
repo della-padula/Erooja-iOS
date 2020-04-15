@@ -92,6 +92,7 @@
 		DE808FCA24469F4E0097C31E /* SpoqaHanSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FC024469F4D0097C31E /* SpoqaHanSansBold.ttf */; };
 		DE808FCB24469F4E0097C31E /* SpoqaHanSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FC024469F4D0097C31E /* SpoqaHanSansBold.ttf */; };
 		DE808FCC24469F4E0097C31E /* SpoqaHanSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE808FC024469F4D0097C31E /* SpoqaHanSansBold.ttf */; };
+		DE808FD62446ADEF0097C31E /* CreateGoalDynamicProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE808FD52446ADEF0097C31E /* CreateGoalDynamicProperty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,7 @@
 		DE808FBE24469F4C0097C31E /* SpoqaHanSansRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansRegular.ttf; sourceTree = "<group>"; };
 		DE808FBF24469F4D0097C31E /* SpoqaHanSansThin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansThin.ttf; sourceTree = "<group>"; };
 		DE808FC024469F4D0097C31E /* SpoqaHanSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpoqaHanSansBold.ttf; sourceTree = "<group>"; };
+		DE808FD52446ADEF0097C31E /* CreateGoalDynamicProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalDynamicProperty.swift; sourceTree = "<group>"; };
 		F839532DC0F68802565B88E6 /* Pods-EroojaDev.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.inhouse.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.inhouse.xcconfig"; sourceTree = "<group>"; };
 		F87B7FEA3CF76898E1A4522D /* Pods-EroojaDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EroojaDev.debug.xcconfig"; path = "Target Support Files/Pods-EroojaDev/Pods-EroojaDev.debug.xcconfig"; sourceTree = "<group>"; };
 		FBD0A481CFCF149DD39F0F7F /* Pods_EroojaDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EroojaDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -571,6 +573,7 @@
 				B08F09122442F5ED001AA193 /* CreateGoalFourthCell.xib */,
 				B08F09162442F5F6001AA193 /* CreateGoalFifthCell.swift */,
 				B08F09152442F5F6001AA193 /* CreateGoalFifthCell.xib */,
+				DE808FD52446ADEF0097C31E /* CreateGoalDynamicProperty.swift */,
 			);
 			path = CreateGoal;
 			sourceTree = "<group>";
@@ -941,6 +944,7 @@
 				B0F1BB322436BC5800D04DD5 /* SignUpFieldViewCell.swift in Sources */,
 				B0C0311B24366241008771BB /* SignUpBaseProperty.swift in Sources */,
 				B05DC3E92439AB9500626501 /* SignUpDetailViewModel.swift in Sources */,
+				DE808FD62446ADEF0097C31E /* CreateGoalDynamicProperty.swift in Sources */,
 				B0A37AB4243A12980054933D /* DraggableTableViewController.swift in Sources */,
 				B03D4A3924338DE3009180E9 /* LoginSwitcher.swift in Sources */,
 				B0F98E832442A07100F7510E /* CreateGoalViewModel.swift in Sources */,

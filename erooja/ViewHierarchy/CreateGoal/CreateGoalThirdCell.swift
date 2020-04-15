@@ -33,5 +33,6 @@ public class CreateGoalThirdCell: UICollectionViewCell {
         textView.placeholder = "이 목표는 애프터이펙트/모션그래픽 역량\n함양을 위한 단기간 영상 제작 프로젝트입니다.\n간단한 모션 제작을 통해 ~하려 합니다.\n(내용 생략 가능)"
         textView.textColor = EroojaColorSet.shared.gray100s
         textView.tintColor = EroojaColorSet.shared.orgDefault400s
+        delegate?.rightButton(at: .second, active: true)
     }
 }

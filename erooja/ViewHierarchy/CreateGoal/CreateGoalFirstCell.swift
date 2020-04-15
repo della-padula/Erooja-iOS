@@ -22,7 +22,9 @@ public class CreateGoalFirstCell: UICollectionViewCell {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        // TEMP
+        delegate?.rightButton(at: .second, active: true)
     }
 
 }

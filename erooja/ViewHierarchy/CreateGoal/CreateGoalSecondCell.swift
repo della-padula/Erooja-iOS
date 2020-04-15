@@ -70,6 +70,8 @@ public class CreateGoalSecondCell: UICollectionViewCell {
     private func setInputState(isValid: Bool) {
         setBottomLineStyle(isActive: isValid)
         textDescriptionLabel.isHidden = isValid
+        
+        delegate?.rightButton(at: .second, active: isValid)
     }
     
     private func setBottomLineStyle(isActive: Bool) {

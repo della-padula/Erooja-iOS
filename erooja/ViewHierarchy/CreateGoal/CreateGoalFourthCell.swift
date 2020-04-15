@@ -79,6 +79,7 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         modifyUnavailableLabel.text = "수정 불가능"
         
         setAvailableButton(tag: 0)
+        delegate?.rightButton(at: .second, active: false)
     }
     
     private func setAvailableButton(tag: Int) {
@@ -110,7 +111,7 @@ public class CreateGoalFourthCell: UICollectionViewCell {
     @objc func didReceiveTestNotification(_ notification: Notification) {
         guard let selectedDate: String = notification.userInfo?["SelectedDate"] as? String else { return }
         
-        print("SelectedDate :", selectedDate)
+        delegate?.rightButton(at: .second, active: true)
         
         let attributedString = NSMutableAttributedString.init(string: selectedDate)
         attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range:
