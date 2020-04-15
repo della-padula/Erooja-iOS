@@ -19,6 +19,7 @@
                 <subviews>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hht-2l-YIe">
                         <rect key="frame" x="16" y="5" width="288" height="34"/>
+                        <color key="backgroundColor" red="0.0" green="0.69411764710000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
@@ -27,6 +28,8 @@
                     <constraint firstItem="hht-2l-YIe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5aI-K8-UKz"/>
                     <constraint firstAttribute="trailing" secondItem="hht-2l-YIe" secondAttribute="trailing" constant="16" id="BTU-Az-Xht"/>
                     <constraint firstItem="hht-2l-YIe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MJm-A8-cWc"/>
+                    <constraint firstAttribute="bottom" secondItem="hht-2l-YIe" secondAttribute="bottom" constant="5" id="uh1-t5-AFC"/>
+                    <constraint firstItem="hht-2l-YIe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="y30-od-BqH"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

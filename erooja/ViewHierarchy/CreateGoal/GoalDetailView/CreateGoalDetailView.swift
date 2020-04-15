@@ -25,6 +25,7 @@ public class CreateGoalDetailView: UICollectionViewCell {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
+        ELog.debug(message: "CreateGoalDetailView")
         bindViewModel()
         setViewLayout()
     }
@@ -34,9 +35,16 @@ public class CreateGoalDetailView: UICollectionViewCell {
     }
     
     private func setViewLayout() {
+        
         detailTableView.tableFooterView = UIView()
         detailTableView.dataSource = self
         detailTableView.delegate = self
+        
+        let itemNibName = UINib(nibName: "GoalDetailItemCell", bundle: nil)
+        let inputNibName = UINib(nibName: "GoalDetailItemInputCell", bundle: nil)
+        
+        detailTableView.register(inputNibName, forCellReuseIdentifier: "goalDetailInputCell")
+        detailTableView.register(itemNibName, forCellReuseIdentifier: "goalDetailItemCell")
     }
     
     fileprivate func bindViewModel() {
@@ -53,16 +61,26 @@ public class CreateGoalDetailView: UICollectionViewCell {
 
 extension CreateGoalDetailView: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.detailList.valueForBind.count ?? 0
+        ELog.debug(message: "tableView numberOfRowsInSection")
+        return (viewModel?.detailList.valueForBind.count ?? 0) + 1
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let lastIndex = (viewModel?.detailList.valueForBind.count ?? 1) - 1
+        var lastIndex = 0
+        if (viewModel?.detailList.valueForBind.count ?? 0) < 1 {
+            lastIndex = 0
+        } else {
+            lastIndex = (viewModel?.detailList.valueForBind.count ?? 1) - 1
+        }
+        
         ELog.debug(message: "lastIndex : \(lastIndex), indexPath.row : \(indexPath.row)")
+        ELog.debug(message: "isLastItem : \(indexPath.row == lastIndex)")
+        
         if indexPath.row == lastIndex {
             let inputCell = tableView.dequeueReusableCell(withIdentifier: "goalDetailInputCell")
                                         as! GoalDetailItemInputCell
             inputCell.delegate = self
+            inputCell.selectionStyle = .none
             return inputCell
         } else {
             let itemCell = tableView.dequeueReusableCell(withIdentifier: "goalDetailItemCell")
@@ -78,3 +96,4 @@ extension CreateGoalDetailView: GoalDetailInputDelegate {
         ELog.debug(message: "[CreateGoalDetailView] Return : \(content)")
     }
 }
+
