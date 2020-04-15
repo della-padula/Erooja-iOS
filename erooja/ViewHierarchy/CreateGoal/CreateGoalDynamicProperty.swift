@@ -24,15 +24,18 @@ public struct CreateGoalDynamicProperty {
     public static var detailGoalList = [String]()
     
     public static func printPropertyInfo() {
-        ELog.debug(message: "goalName : \(goalName ?? "nil")")
-        ELog.debug(message: "goalContent : \(goalContent ?? "nil")")
-        ELog.debug(message: "isModifyAvailable : \(isModifyAvailable)")
-        ELog.debug(message: "startDateString : \(startDateString ?? "nil")")
-        ELog.debug(message: "startDateString : \(startDateString ?? "nil")")
+        var debugStr = ""
+        debugStr.append(contentsOf: "goalName : \(goalName ?? "nil")\n")
+        debugStr.append(contentsOf: "goalContent : \(goalContent ?? "nil")\n")
+        debugStr.append(contentsOf: "isModifyAvailable : \(isModifyAvailable)\n")
+        debugStr.append(contentsOf: "startDateString : \(startDateString ?? "nil")\n")
+        debugStr.append(contentsOf: "endDateString : \(endDateString ?? "nil")\n\n")
         
-        ELog.debug(message: "detail Goal List -- count : \(detailGoalList.count)")
+        debugStr.append(contentsOf: "detail Goal List -- count : \(detailGoalList.count)\n")
         for (index, detail) in detailGoalList.enumerated() {
-            ELog.debug(message: "--> detail \(index) : \(detail)")
+            debugStr.append(contentsOf: "--> detail \(index) : \(detail)\n")
         }
+        
+        ELog.debug(message: debugStr)
     }
 }
