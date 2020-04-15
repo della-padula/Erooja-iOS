@@ -37,6 +37,8 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         self.setAvailableButton(tag: sender.tag)
     }
     
+    private var isModifyAvailable: Bool = true
+    
     public var delegate: CreateGoalHeaderViewDelegate?
     
     public var titleText: String? {
@@ -80,13 +82,20 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         
         setAvailableButton(tag: 0)
         delegate?.rightButton(at: .second, active: false)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onClickRightButton(_:)),
+                                               name: NSNotification.Name("RightButtonClicked"),
+                                               object: nil)
     }
     
     private func setAvailableButton(tag: Int) {
         if tag == 0 {
+            isModifyAvailable = true
             setModifyAvailableButton(isActive: true)
             setModifyUnavailableButton(isActive: false)
         } else {
+            isModifyAvailable = false
             setModifyAvailableButton(isActive: false)
             setModifyUnavailableButton(isActive: true)
         }
@@ -122,5 +131,13 @@ public class CreateGoalFourthCell: UICollectionViewCell {
  
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.endEditing(true)
+    }
+    
+    @objc
+    public func onClickRightButton(_ notification: Notification) -> Void {
+        ELog.debug(message: "Save Goal Date to Property")
+        CreateGoalDynamicProperty.startDateString = lblStartDate.text
+        CreateGoalDynamicProperty.endDateString = lblEndDate.text
+        CreateGoalDynamicProperty.isModifyAvailable = isModifyAvailable
     }
 }

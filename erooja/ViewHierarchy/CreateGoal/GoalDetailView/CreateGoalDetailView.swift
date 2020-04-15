@@ -55,6 +55,11 @@ public class CreateGoalDetailView: UICollectionViewCell {
         
         detailTableView.register(inputNibName, forCellReuseIdentifier: "goalDetailInputCell")
         detailTableView.register(itemNibName, forCellReuseIdentifier: "goalDetailItemCell")
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onClickRightButton(_:)),
+                                               name: NSNotification.Name("RightButtonClicked"),
+                                               object: nil)
     }
     
     fileprivate func bindViewModel() {
@@ -101,6 +106,13 @@ public class CreateGoalDetailView: UICollectionViewCell {
     
     func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc
+    public func onClickRightButton(_ notification: Notification) -> Void {
+        ELog.debug(message: "Save Detail List to Property")
+        CreateGoalDynamicProperty.detailGoalList = detailList
+        CreateGoalDynamicProperty.printPropertyInfo()
     }
 }
 

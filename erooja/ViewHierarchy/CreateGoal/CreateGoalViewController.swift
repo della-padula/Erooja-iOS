@@ -188,6 +188,9 @@ extension CreateGoalViewController: EUINavigationBarDelegate {
     
     public func onClickRightSectionButton(at position: ERightButton.Position) {
         ELog.debug(message: "CurrentIndex : \(currentIndex), stageCount : \(stageCount)")
+        
+        NotificationCenter.default.post(name: Notification.Name.init(rawValue: "RightButtonClicked"), object: nil)
+        
         if currentIndex < stageCount - 1 {
             currentIndex += 1
             if currentIndex == stageCount - 1 {

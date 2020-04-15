@@ -51,11 +51,17 @@ public class CreateGoalSecondCell: UICollectionViewCell {
         textCountLabel.textColor = EroojaColorSet.shared.gray400s
         textCountLabel.font = .SpoqaRegular12P
         setBottomLineStyle(isActive: false)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onClickRightButton(_:)),
+                                               name: NSNotification.Name("RightButtonClicked"),
+                                               object: nil)
     }
     
     private func processInputText(text: String) {
         if !text.isEmpty && text.count > 4 && text.count < 51 {
             setInputState(isValid: true)
+            CreateGoalDynamicProperty.goalName = text
         } else {
             setInputState(isValid: false)
             
@@ -81,6 +87,12 @@ public class CreateGoalSecondCell: UICollectionViewCell {
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.endEditing(true)
+    }
+    
+    @objc
+    public func onClickRightButton(_ notification: Notification) -> Void {
+        ELog.debug(message: "Save Goal Content to Property")
+        CreateGoalDynamicProperty.goalName = textField.text
     }
 }
 
