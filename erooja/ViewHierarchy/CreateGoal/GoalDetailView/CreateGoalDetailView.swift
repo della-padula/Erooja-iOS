@@ -45,16 +45,22 @@ public class CreateGoalFifthCell: UICollectionViewCell {
 
 extension CreateGoalFifthCell: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel?.detailList.valueForBind.count ?? 0
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let itemCell = tableView.dequeueReusableCell(withIdentifier: "goalDetailItemCell") as! GoalDetailItemCell
+        let lastIndex = (viewModel?.detailList.valueForBind.count ?? 1) - 1
         
-        let inputCell = tableView.dequeueReusableCell(withIdentifier: "goalDetailInputCell") as! GoalDetailItemInputCell
-        
-        
-        
-        return UITableViewCell()
+        if indexPath.row == lastIndex {
+            let inputCell = tableView.dequeueReusableCell(withIdentifier: "goalDetailInputCell")
+                                        as! GoalDetailItemInputCell
+            
+            return inputCell
+        } else {
+            let itemCell = tableView.dequeueReusableCell(withIdentifier: "goalDetailItemCell")
+                                        as! GoalDetailItemCell
+            
+            return itemCell
+        }
     }
 }
