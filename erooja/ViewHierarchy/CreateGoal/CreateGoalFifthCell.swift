@@ -12,9 +12,12 @@ import EroojaUI
 public class CreateGoalFifthCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
+    public var delegate: CreateGoalHeaderViewDelegate?
+    
     public var titleText: String? {
         didSet {
             self.titleLabel.text = titleText
+            self.titleLabel.font = .SpoqaBold20P
         }
     }
     

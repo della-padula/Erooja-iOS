@@ -3,6 +3,7 @@ PODS:
   - Kingfisher (5.13.2):
     - Kingfisher/Core (= 5.13.2)
   - Kingfisher/Core (5.13.2)
+  - KMPlaceholderTextView (1.4.0)
   - PromisesObjC (1.2.8)
   - PromisesSwift (1.2.8):
     - PromisesObjC (= 1.2.8)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
+  - KMPlaceholderTextView (~> 1.4.0)
   - PromisesSwift
   - SwiftLint
 
@@ -18,6 +20,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - KMPlaceholderTextView
     - PromisesObjC
     - PromisesSwift
     - SwiftLint
@@ -25,10 +28,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 9eaa47df05fa73ec2d9170984cd1f9439ba15630
+PODFILE CHECKSUM: 03e2531288b7686d6f683860730fc9ce6b3bec66
 
 COCOAPODS: 1.9.1

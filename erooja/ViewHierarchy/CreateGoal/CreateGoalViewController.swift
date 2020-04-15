@@ -140,22 +140,27 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createFirstCell", for: indexPath) as! CreateGoalFirstCell
             cell.titleText = "어떤 직무와 관련된 목표인가요?"
+            cell.delegate = self
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createSecondCell", for: indexPath) as! CreateGoalSecondCell
             cell.titleText = "어떤 목표를 달성하려고 하세요?"
+            cell.delegate = self
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createThirdCell", for: indexPath) as! CreateGoalThirdCell
             cell.titleText = "어떤 목표인지\n조금 더 자세히 설명해주시겠어요?"
+            cell.delegate = self
             return cell
         case 3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createFourthCell", for: indexPath) as! CreateGoalFourthCell
             cell.titleText = "목표 기간을 설정해주세요."
+            cell.delegate = self
             return cell
         case 4:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createFifthCell", for: indexPath) as! CreateGoalFifthCell
             cell.titleText = "기간 내 달성할 세부 목표 리스트를\n만들어보세요."
+            cell.delegate = self
             return cell
         default:
             return UICollectionViewCell()
@@ -183,6 +188,14 @@ extension CreateGoalViewController: EUINavigationBarDelegate {
         viewModel?.setProgressValue(value: progress)
         contentCollectionView?.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .right, animated: false)
     }
-    
-    
+}
+
+extension CreateGoalViewController: CreateGoalHeaderViewDelegate {
+    public func rightButton(at position: ERightButton.Position, active: Bool) {
+        headerView.setRightButtonActive(position: position, isActive: active)
+    }
+}
+
+public protocol CreateGoalHeaderViewDelegate {
+    func rightButton(at position: ERightButton.Position, active: Bool)
 }

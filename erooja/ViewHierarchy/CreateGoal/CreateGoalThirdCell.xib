@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,9 +23,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QdF-5H-duD" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                        <rect key="frame" x="20" y="180" width="303" height="128"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="DiP-3f-fVd"/>
+                        </constraints>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="QdF-5H-duD" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="6cx-Ja-cUw"/>
+                <constraint firstItem="QdF-5H-duD" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="6ft-dP-wnD"/>
+                <constraint firstItem="QdF-5H-duD" firstAttribute="top" secondItem="HQA-YI-thX" secondAttribute="bottom" constant="46" id="AhS-mo-9KN"/>
                 <constraint firstItem="HQA-YI-thX" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="R3U-yf-tr0"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="HQA-YI-thX" secondAttribute="trailing" constant="20" id="ScL-qE-Jxl"/>
                 <constraint firstItem="HQA-YI-thX" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="66" id="t8h-zd-H7h"/>
@@ -33,6 +46,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="343" height="491"/>
             <connections>
+                <outlet property="textView" destination="QdF-5H-duD" id="Tz5-Vc-jOL"/>
                 <outlet property="titleLabel" destination="HQA-YI-thX" id="Euf-jv-tNe"/>
             </connections>
             <point key="canvasLocation" x="348.55072463768118" y="262.16517857142856"/>

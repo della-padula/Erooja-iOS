@@ -11,6 +11,8 @@ import UIKit
 public class CreateGoalFirstCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
+    public var delegate: CreateGoalHeaderViewDelegate?
+    
     public var titleText: String? {
         didSet {
             self.titleLabel.text = titleText
@@ -20,7 +22,9 @@ public class CreateGoalFirstCell: UICollectionViewCell {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        // TEMP
+        delegate?.rightButton(at: .second, active: true)
     }
 
 }
