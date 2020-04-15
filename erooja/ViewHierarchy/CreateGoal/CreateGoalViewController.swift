@@ -107,7 +107,7 @@ public class CreateGoalViewController: BaseViewController {
         contentCollectionView?.register(UINib(nibName: "CreateGoalSecondCell", bundle: nil), forCellWithReuseIdentifier: "createSecondCell")
         contentCollectionView?.register(UINib(nibName: "CreateGoalThirdCell", bundle: nil), forCellWithReuseIdentifier: "createThirdCell")
         contentCollectionView?.register(UINib(nibName: "CreateGoalFourthCell", bundle: nil), forCellWithReuseIdentifier: "createFourthCell")
-        contentCollectionView?.register(UINib(nibName: "CreateGoalFifthCell", bundle: nil), forCellWithReuseIdentifier: "createFifthCell")
+        contentCollectionView?.register(UINib(nibName: "CreateGoalDetailView", bundle: nil), forCellWithReuseIdentifier: "createFifthCell")
         
         contentCollectionView?.backgroundColor = .white
         contentCollectionView?.isScrollEnabled = false
@@ -158,7 +158,7 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
             cell.delegate = self
             return cell
         case 4:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createFifthCell", for: indexPath) as! CreateGoalFifthCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createFifthCell", for: indexPath) as! CreateGoalDetailView
             cell.titleText = "기간 내 달성할 세부 목표 리스트를\n만들어보세요."
             cell.delegate = self
             cell.viewModel = CreateGoalDetailViewModel()

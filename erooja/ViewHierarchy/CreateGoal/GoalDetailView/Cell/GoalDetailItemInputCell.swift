@@ -8,11 +8,18 @@
 
 import UIKit
 
+public protocol GoalDetailInputDelegate {
+    func returnKeyEvent(_ textField: UITextField, content: String?)
+}
+
 public class GoalDetailItemInputCell: UITableViewCell {
 
+    @IBOutlet weak var textField: UITextField!
+    public var delegate: GoalDetailInputDelegate?
+    
     override public func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        textField.delegate = self
     }
 
     override public func setSelected(_ selected: Bool, animated: Bool) {
@@ -21,4 +28,11 @@ public class GoalDetailItemInputCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+extension GoalDetailItemInputCell: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        delegate?.returnKeyEvent(textField, content: textField.text)
+        return true
+    }
 }

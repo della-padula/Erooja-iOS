@@ -30,6 +30,7 @@ public class CreateGoalDetailViewModel {
     
     func removeAll() {
         detailList.valueForBind.removeAll()
+        detailList.valueForBind.append("")
     }
     
     func removeItem(at index: Int) {

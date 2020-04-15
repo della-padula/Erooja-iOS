@@ -10,6 +10,14 @@ import UIKit
 
 public class GoalDetailItemCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    public var title: String? {
+        didSet {
+            self.titleLabel.text = title
+        }
+    }
+    
     override public func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
