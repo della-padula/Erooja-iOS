@@ -6,8 +6,14 @@
 //  Copyright © 2020 김태인. All rights reserved.
 //
 
+import NotificationCenter
 import EroojaCommon
 import EroojaUI
+
+enum DetailListSection: Int {
+    case result = 0
+    case input = 1
+}
 
 public class CreateGoalDetailView: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
@@ -17,6 +23,7 @@ public class CreateGoalDetailView: UICollectionViewCell {
     public var viewModel = CreateGoalDetailViewModel()
     
     private var detailList = [String]()
+    private var keyboardSize: CGSize?
     
     public var titleText: String? {
         didSet {
@@ -31,14 +38,15 @@ public class CreateGoalDetailView: UICollectionViewCell {
         bindViewModel()
         setViewLayout()
     }
-
+    
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.endEditing(true)
     }
     
     private func setViewLayout() {
-        
+        registerForKeyboardNotifications()
         detailTableView.tableFooterView = UIView()
+        detailTableView.separatorInset = .zero
         detailTableView.dataSource = self
         detailTableView.delegate = self
         
@@ -50,54 +58,92 @@ public class CreateGoalDetailView: UICollectionViewCell {
     }
     
     fileprivate func bindViewModel() {
-            viewModel.detailList.bind({ (detailList) in
-                DispatchQueue.main.async {
-                    ELog.debug(message: "[CreateGoalDetailView] detailList count : \(detailList.count)")
-                    self.detailList = detailList
-                    self.detailTableView.reloadData()
-                }
-            })
+        viewModel.detailList.bind({ (detailList) in
+            DispatchQueue.main.async {
+                self.detailList = detailList
+                self.delegate?.rightButton(at: .second, active: self.detailList.count > 0)
+                self.detailTableView.reloadSections(IndexSet(arrayLiteral: DetailListSection.result.rawValue), with: .none)
+                self.tableViewLayoutSetUpperKeyboard()
+            }
+        })
+    }
+    
+    private func tableViewLayoutSetUpperKeyboard() {
+        var contentInsets:UIEdgeInsets
+        var topPadding: CGFloat?
+        var bottomPadding: CGFloat?
+        
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            topPadding = window?.safeAreaInsets.top
+            bottomPadding = (window?.safeAreaInsets.bottom ?? 0) + 20
+        }
+        
+        if UIApplication.shared.statusBarOrientation.isPortrait {
+            contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: self.keyboardSize!.height + (bottomPadding ?? 0), right: 0.0);
+        } else {
+            contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: self.keyboardSize!.width, right: 0.0);
+        }
+        
+        self.detailTableView.contentInset = contentInsets
+        self.detailTableView.scrollToRow(at: IndexPath(row: 0, section: 1), at: .none, animated: false)
+        self.detailTableView.scrollIndicatorInsets = self.detailTableView.contentInset
+    }
+    
+    @objc func keyboardWasShown (notification: NSNotification) {
+        ELog.debug(message: "keyboard was shown")
+        let info = notification.userInfo
+        if let value = info?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue {
+            self.keyboardSize = value.cgRectValue.size
+            self.tableViewLayoutSetUpperKeyboard()
+        }
+    }
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
 }
 
 extension CreateGoalDetailView: UITableViewDelegate, UITableViewDataSource {
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ELog.debug(message: "tableView numberOfRowsInSection")
-        return self.detailList.count + 1
+        switch (section) {
+        case DetailListSection.result.rawValue:
+            return self.detailList.count
+        case DetailListSection.input.rawValue:
+            return 1
+        default:
+            return 0
+        }
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var lastIndex = 0
-        if (self.detailList.count) < 1 {
-            lastIndex = 0
-        } else {
-            lastIndex = (self.detailList.count)
-        }
-        
-        ELog.debug(message: "lastIndex : \(lastIndex), indexPath.row : \(indexPath.row)")
-        ELog.debug(message: "isLastItem : \(indexPath.row == lastIndex)")
-        
-        if indexPath.row == lastIndex {
+        switch indexPath.section {
+        case DetailListSection.result.rawValue:
+            let itemCell = tableView.dequeueReusableCell(withIdentifier: "goalDetailItemCell")
+                as! GoalDetailItemCell
+            itemCell.title = self.detailList[indexPath.row]
+            return itemCell
+        case DetailListSection.input.rawValue:
             let inputCell = tableView.dequeueReusableCell(withIdentifier: "goalDetailInputCell")
-                                        as! GoalDetailItemInputCell
+                as! GoalDetailItemInputCell
             inputCell.delegate = self
             inputCell.selectionStyle = .none
             return inputCell
-        } else {
-            let itemCell = tableView.dequeueReusableCell(withIdentifier: "goalDetailItemCell")
-                                        as! GoalDetailItemCell
-            itemCell.title = self.detailList[indexPath.row]
-            return itemCell
+        default:
+            return UITableViewCell()
         }
     }
 }
 
 extension CreateGoalDetailView: GoalDetailInputDelegate {
     public func returnKeyEvent(_ textField: UITextField, content: String?) {
-        ELog.debug(message: "[CreateGoalDetailView] Return : \(content)")
         let strongContent = content ?? ""
         if strongContent.isEmpty {
-            // Empty Process
+            ELog.debug(message: "세부 항목을 입력해주세요.")
         } else {
             viewModel.append(item: strongContent)
         }

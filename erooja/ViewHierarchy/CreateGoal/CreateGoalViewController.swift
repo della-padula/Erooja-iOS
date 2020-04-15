@@ -180,16 +180,23 @@ extension CreateGoalViewController: EUINavigationBarDelegate {
     public func didChangeTextField(_ textField: EroojaTextField, text: String?) { }
     
     public func onClickRightSectionButton(at position: ERightButton.Position) {
-        currentIndex += 1
-        if currentIndex == stageCount - 1 {
-            headerView.setRightButtonActive(position: .second, isActive: false)
+        ELog.debug(message: "CurrentIndex : \(currentIndex), stageCount : \(stageCount)")
+        if currentIndex < stageCount - 4 {
+            currentIndex += 1
+            if currentIndex == stageCount - 1 {
+                headerView.setRightButtonActive(position: .second, isActive: false)
+            }
+            
+            let progress = Double(Double(currentIndex + 1) / Double(stageCount))
+            viewModel?.setProgressValue(value: progress)
+            contentCollectionView?.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .right, animated: false)
+            
+            self.view.endEditing(true)
+        } else {
+            #if DEBUG
+            self.dismiss(animated: true, completion: nil)
+            #endif
         }
-        
-        let progress = Double(Double(currentIndex + 1) / Double(stageCount))
-        viewModel?.setProgressValue(value: progress)
-        contentCollectionView?.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .right, animated: false)
-        
-        self.view.endEditing(true)
     }
 }
 
