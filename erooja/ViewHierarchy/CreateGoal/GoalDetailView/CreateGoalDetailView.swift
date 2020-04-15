@@ -14,7 +14,9 @@ public class CreateGoalDetailView: UICollectionViewCell {
     @IBOutlet weak var detailTableView: UITableView!
     
     public var delegate: CreateGoalHeaderViewDelegate?
-    public var viewModel: CreateGoalDetailViewModel?
+    public var viewModel = CreateGoalDetailViewModel()
+    
+    private var detailList = [String]()
     
     public var titleText: String? {
         didSet {
@@ -48,29 +50,28 @@ public class CreateGoalDetailView: UICollectionViewCell {
     }
     
     fileprivate func bindViewModel() {
-        if let viewModel = viewModel {
             viewModel.detailList.bind({ (detailList) in
                 DispatchQueue.main.async {
                     ELog.debug(message: "[CreateGoalDetailView] detailList count : \(detailList.count)")
+                    self.detailList = detailList
                     self.detailTableView.reloadData()
                 }
             })
-        }
     }
 }
 
 extension CreateGoalDetailView: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         ELog.debug(message: "tableView numberOfRowsInSection")
-        return (viewModel?.detailList.valueForBind.count ?? 0) + 1
+        return self.detailList.count + 1
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var lastIndex = 0
-        if (viewModel?.detailList.valueForBind.count ?? 0) < 1 {
+        if (self.detailList.count) < 1 {
             lastIndex = 0
         } else {
-            lastIndex = (viewModel?.detailList.valueForBind.count ?? 1) - 1
+            lastIndex = (self.detailList.count)
         }
         
         ELog.debug(message: "lastIndex : \(lastIndex), indexPath.row : \(indexPath.row)")
@@ -85,7 +86,7 @@ extension CreateGoalDetailView: UITableViewDelegate, UITableViewDataSource {
         } else {
             let itemCell = tableView.dequeueReusableCell(withIdentifier: "goalDetailItemCell")
                                         as! GoalDetailItemCell
-            itemCell.title = viewModel?.detailList.valueForBind[indexPath.row]
+            itemCell.title = self.detailList[indexPath.row]
             return itemCell
         }
     }
@@ -98,7 +99,7 @@ extension CreateGoalDetailView: GoalDetailInputDelegate {
         if strongContent.isEmpty {
             // Empty Process
         } else {
-            viewModel?.append(item: strongContent)
+            viewModel.append(item: strongContent)
         }
     }
 }

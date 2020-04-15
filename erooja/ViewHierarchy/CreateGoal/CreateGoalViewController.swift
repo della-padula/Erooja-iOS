@@ -161,7 +161,6 @@ extension CreateGoalViewController: UICollectionViewDelegate, UICollectionViewDa
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createFifthCell", for: indexPath) as! CreateGoalDetailView
             cell.titleText = "기간 내 달성할 세부 목표 리스트를\n만들어보세요."
             cell.delegate = self
-            cell.viewModel = CreateGoalDetailViewModel()
             return cell
         default:
             return UICollectionViewCell()

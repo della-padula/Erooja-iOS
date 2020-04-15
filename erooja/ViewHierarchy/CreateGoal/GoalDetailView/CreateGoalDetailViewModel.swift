@@ -13,8 +13,8 @@ public class CreateGoalDetailViewModel {
     var detailList = DataBinding([String]())
     
     func append(item: String) {
-        detailList.valueForBind.removeLast()
         detailList.valueForBind.append(item)
+        ELog.debug(message: "detailList count : \(detailList.valueForBind.count)")
     }
     
     // MARK: Not Yet
