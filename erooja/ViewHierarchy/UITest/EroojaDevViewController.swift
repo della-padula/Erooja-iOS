@@ -97,10 +97,11 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
         case .modalViewTest:
             vc = EUIModalViewController()
         case .dragTable:
-            let dragVC = DraggableTableViewController()
-            dragVC.viewModel = DraggableTableViewModel()
-            dragVC.modalPresentationStyle = .fullScreen
-            present(dragVC, animated: true, completion: nil)
+//            let dragVC = DraggableTableViewController()
+//            dragVC.viewModel = DraggableTableViewModel()
+//            dragVC.modalPresentationStyle = .fullScreen
+//            present(dragVC, animated: true, completion: nil)
+            break
         default:
             break
         }

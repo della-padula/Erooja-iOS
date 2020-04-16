@@ -155,10 +155,6 @@ extension CreateGoalDetailView: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
         let deleteAction = UIContextualAction(style: .destructive, title:  "삭제", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-//            // Call edit action
-//            // Reset state
-//            self.tableView.isEditing = false
-//            self.viewModel?.tableListItem.valueForBind.remove(at: indexPath.row)
             self.viewModel.removeItem(at: indexPath.row)
             success(true)
         })

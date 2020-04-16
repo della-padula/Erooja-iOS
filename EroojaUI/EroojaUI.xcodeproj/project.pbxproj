@@ -30,6 +30,8 @@
 		B08F0960244338DD001AA193 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08F095E244338DD001AA193 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0C030232434FE26008771BB /* UIView+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C030222434FE26008771BB /* UIView+CALayer.swift */; };
 		B0C03025243556EF008771BB /* EroojaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C03024243556EF008771BB /* EroojaTextField.swift */; };
+		B0D113EA2449158400FE7C0C /* DraggableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D113E82449158400FE7C0C /* DraggableTableViewController.swift */; };
+		B0D113EB2449158400FE7C0C /* DraggableTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D113E92449158400FE7C0C /* DraggableTableViewModel.swift */; };
 		B0F98E6C24428B3C00F7510E /* EPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E6B24428B3C00F7510E /* EPlaceholderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,9 @@
 		B08F095E244338DD001AA193 /* EroojaCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EroojaCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C030222434FE26008771BB /* UIView+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CALayer.swift"; sourceTree = "<group>"; };
 		B0C03024243556EF008771BB /* EroojaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaTextField.swift; sourceTree = "<group>"; };
+		B0D113E6244914FB00FE7C0C /* DynamicTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextView.swift; sourceTree = "<group>"; };
+		B0D113E82449158400FE7C0C /* DraggableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableTableViewController.swift; sourceTree = "<group>"; };
+		B0D113E92449158400FE7C0C /* DraggableTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableTableViewModel.swift; sourceTree = "<group>"; };
 		B0F98E6B24428B3C00F7510E /* EPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPlaceholderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +146,8 @@
 				B08AD9D4242F606D001CE297 /* UIView */,
 				B08AD9D3242F6066001CE297 /* UIImage */,
 				B08AD9D2242F605A001CE297 /* UIColor */,
+				B0D113E7244914FB00FE7C0C /* DynamicTextView */,
+				B0D113E1244914FB00FE7C0C /* DraggableTableView */,
 				B08AD9B3242F5FFD001CE297 /* EroojaUI.h */,
 				B08AD9B4242F5FFD001CE297 /* Info.plist */,
 				B03D4A5A24339923009180E9 /* EPageControl.swift */,
@@ -188,6 +195,23 @@
 				B08F095E244338DD001AA193 /* EroojaCommon.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0D113E1244914FB00FE7C0C /* DraggableTableView */ = {
+			isa = PBXGroup;
+			children = (
+				B0D113E82449158400FE7C0C /* DraggableTableViewController.swift */,
+				B0D113E92449158400FE7C0C /* DraggableTableViewModel.swift */,
+			);
+			path = DraggableTableView;
+			sourceTree = "<group>";
+		};
+		B0D113E7244914FB00FE7C0C /* DynamicTextView */ = {
+			isa = PBXGroup;
+			children = (
+				B0D113E6244914FB00FE7C0C /* DynamicTextView.swift */,
+			);
+			path = DynamicTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +302,9 @@
 				B08AD9C5242F602C001CE297 /* UIView+Resize.swift in Sources */,
 				B08AD9D0242F604D001CE297 /* UIImage+Crop.swift in Sources */,
 				B08AD9D1242F604D001CE297 /* UIView+Frame.swift in Sources */,
+				B0D113EA2449158400FE7C0C /* DraggableTableViewController.swift in Sources */,
 				B08AD9CC242F604D001CE297 /* UIImage+Initialize.swift in Sources */,
+				B0D113EB2449158400FE7C0C /* DraggableTableViewModel.swift in Sources */,
 				B03D4A6024339C9C009180E9 /* UIFont+EroojaFont.swift in Sources */,
 				B016818A243CC4EE008497E2 /* UIColor+EUIDefine.swift in Sources */,
 				B0C03025243556EF008771BB /* EroojaTextField.swift in Sources */,
