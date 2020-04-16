@@ -46,7 +46,7 @@ public class CreateGoalDetailView: UICollectionViewCell {
     private func setViewLayout() {
         registerForKeyboardNotifications()
         detailTableView.tableFooterView = UIView()
-        detailTableView.separatorInset = .zero
+        detailTableView.separatorStyle = .none
         detailTableView.dataSource = self
         detailTableView.delegate = self
         

@@ -3,38 +3,63 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalDetailItemCell" id="KGk-i7-Jjw" customClass="GoalDetailItemCell" customModule="erooja" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalDetailItemCell" rowHeight="76" id="KGk-i7-Jjw" customClass="GoalDetailItemCell" customModule="erooja" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="76"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="369" height="76"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUg-b5-h8u">
+                        <rect key="frame" x="0.0" y="8" width="369" height="52"/>
+                        <color key="backgroundColor" red="0.95854922279999999" green="0.95854922279999999" blue="0.95854922279999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="52" id="KhK-qE-8Oo"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="629-0N-fkv">
+                        <rect key="frame" x="16" y="31" width="6" height="6"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.34901960780000002" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="6" id="MLt-f2-HFn"/>
+                            <constraint firstAttribute="width" constant="6" id="dUH-nj-L2w"/>
+                        </constraints>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlX-8h-c0I">
-                        <rect key="frame" x="16" y="11.5" width="42" height="21"/>
-                        <color key="backgroundColor" red="1" green="0.76862745099999996" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <rect key="frame" x="30" y="23.5" width="323" height="21"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="hlX-8h-c0I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Q5d-a6-amx"/>
+                    <constraint firstItem="hlX-8h-c0I" firstAttribute="leading" secondItem="629-0N-fkv" secondAttribute="trailing" constant="8" id="41i-K1-QON"/>
+                    <constraint firstItem="GUg-b5-h8u" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7uJ-GB-m8C"/>
+                    <constraint firstItem="629-0N-fkv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8Cu-72-L0N"/>
+                    <constraint firstItem="629-0N-fkv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="FHS-Zz-jYf"/>
+                    <constraint firstAttribute="bottom" secondItem="GUg-b5-h8u" secondAttribute="bottom" constant="8" id="PZE-oS-UcY"/>
+                    <constraint firstAttribute="trailing" secondItem="GUg-b5-h8u" secondAttribute="trailing" id="TXW-v8-2xV"/>
+                    <constraint firstItem="GUg-b5-h8u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Wkn-rl-gB1"/>
                     <constraint firstItem="hlX-8h-c0I" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fjh-Yp-NfY"/>
+                    <constraint firstItem="GUg-b5-h8u" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="mB1-mv-zet"/>
+                    <constraint firstAttribute="trailing" secondItem="hlX-8h-c0I" secondAttribute="trailing" constant="16" id="zfb-nG-wRz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bgColorView" destination="GUg-b5-h8u" id="Mc7-3i-R8r"/>
+                <outlet property="dotView" destination="629-0N-fkv" id="9ZS-0y-IK5"/>
                 <outlet property="titleLabel" destination="hlX-8h-c0I" id="Nno-1w-zN3"/>
             </connections>
-            <point key="canvasLocation" x="139" y="143"/>
+            <point key="canvasLocation" x="173.18840579710147" y="131.91964285714286"/>
         </tableViewCell>
     </objects>
 </document>
