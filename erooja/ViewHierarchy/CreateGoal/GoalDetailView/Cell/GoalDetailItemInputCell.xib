@@ -18,40 +18,41 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADx-KX-vYr">
-                        <rect key="frame" x="0.0" y="8" width="347" height="52"/>
+                        <rect key="frame" x="16" y="8" width="315" height="52"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Doq-Wt-Zhq">
+                                <rect key="frame" x="16" y="23" width="6" height="6"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.34901960780000002" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="6" id="Kvg-F1-pjL"/>
+                                    <constraint firstAttribute="height" constant="6" id="Qy7-hp-ojX"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hht-2l-YIe" customClass="EroojaTextField" customModule="EroojaUI">
+                                <rect key="frame" x="30" y="8" width="269" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="0.95854922279999999" green="0.95854922279999999" blue="0.95854922279999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="52" id="45R-wP-P5g"/>
-                        </constraints>
-                    </view>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hht-2l-YIe" customClass="EroojaTextField" customModule="EroojaUI">
-                        <rect key="frame" x="30" y="8" width="301" height="52"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Doq-Wt-Zhq">
-                        <rect key="frame" x="16" y="31" width="6" height="6"/>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.34901960780000002" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="6" id="Kvg-F1-pjL"/>
-                            <constraint firstAttribute="height" constant="6" id="Qy7-hp-ojX"/>
+                            <constraint firstAttribute="trailing" secondItem="hht-2l-YIe" secondAttribute="trailing" constant="16" id="5jb-W6-GvH"/>
+                            <constraint firstItem="Doq-Wt-Zhq" firstAttribute="leading" secondItem="ADx-KX-vYr" secondAttribute="leading" constant="16" id="Cj2-3W-kL7"/>
+                            <constraint firstItem="Doq-Wt-Zhq" firstAttribute="centerY" secondItem="ADx-KX-vYr" secondAttribute="centerY" id="EiL-Xs-Wdl"/>
+                            <constraint firstItem="hht-2l-YIe" firstAttribute="top" secondItem="ADx-KX-vYr" secondAttribute="top" constant="8" id="FgZ-GN-hrz"/>
+                            <constraint firstItem="hht-2l-YIe" firstAttribute="leading" secondItem="Doq-Wt-Zhq" secondAttribute="trailing" constant="8" id="Naq-TI-Aau"/>
+                            <constraint firstItem="hht-2l-YIe" firstAttribute="centerY" secondItem="ADx-KX-vYr" secondAttribute="centerY" id="Peo-6b-Ln9"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="hht-2l-YIe" secondAttribute="trailing" constant="16" id="BTU-Az-Xht"/>
-                    <constraint firstItem="hht-2l-YIe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MJm-A8-cWc"/>
-                    <constraint firstItem="ADx-KX-vYr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ai8-xP-Jgr"/>
-                    <constraint firstAttribute="trailing" secondItem="ADx-KX-vYr" secondAttribute="trailing" id="cIZ-6H-ObM"/>
+                    <constraint firstItem="ADx-KX-vYr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ai8-xP-Jgr"/>
+                    <constraint firstAttribute="trailing" secondItem="ADx-KX-vYr" secondAttribute="trailing" constant="16" id="cIZ-6H-ObM"/>
                     <constraint firstItem="ADx-KX-vYr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="cKH-eg-maY"/>
                     <constraint firstItem="ADx-KX-vYr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gkV-dy-P5A"/>
-                    <constraint firstItem="Doq-Wt-Zhq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ock-rE-oI1"/>
-                    <constraint firstItem="Doq-Wt-Zhq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="stw-BK-Ccw"/>
-                    <constraint firstAttribute="bottom" secondItem="hht-2l-YIe" secondAttribute="bottom" constant="8" id="uh1-t5-AFC"/>
                     <constraint firstAttribute="bottom" secondItem="ADx-KX-vYr" secondAttribute="bottom" constant="8" id="w5a-wf-rGf"/>
-                    <constraint firstItem="hht-2l-YIe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="y30-od-BqH"/>
-                    <constraint firstItem="hht-2l-YIe" firstAttribute="leading" secondItem="Doq-Wt-Zhq" secondAttribute="trailing" constant="8" id="ymr-qY-jjv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

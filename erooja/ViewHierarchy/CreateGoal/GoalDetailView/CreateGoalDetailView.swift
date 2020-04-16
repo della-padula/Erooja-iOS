@@ -149,6 +149,23 @@ extension CreateGoalDetailView: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
+    public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let deleteAction = UIContextualAction(style: .destructive, title:  "삭제", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+//            // Call edit action
+//            // Reset state
+//            self.tableView.isEditing = false
+//            self.viewModel?.tableListItem.valueForBind.remove(at: indexPath.row)
+            success(true)
+        })
+        
+        if indexPath.section == DetailListSection.result.rawValue {
+            return UISwipeActionsConfiguration(actions:[deleteAction])
+        } else {
+            return nil
+        }
+    }
 }
 
 extension CreateGoalDetailView: GoalDetailInputDelegate {
