@@ -47,7 +47,8 @@ public class CreateGoalViewController: BaseViewController {
         
         myDatePicker.datePickerMode = .date
         myDatePicker.timeZone = .current
-        myDatePicker.minimumDate = modifiedDate
+//        myDatePicker.minimumDate = modifiedDate
+        myDatePicker.minimumDate = Date()
         myDatePicker.frame = CGRect(x: 0, y: 15, width: view.frame.width - 15, height: 160)
         
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
@@ -180,6 +181,11 @@ extension CreateGoalViewController: EUINavigationBarDelegate {
             currentIndex -= 1
             let progress = Double(Double(currentIndex + 1) / Double(stageCount))
             viewModel?.setProgressValue(value: progress)
+            
+            headerView.setRightButtonTitle(position: .second, title: "다음")
+            let isActive = CreateGoalDynamicProperty.isCellActive(at: currentIndex)
+            headerView.setRightButtonActive(position: .second, isActive: isActive)
+            
             contentCollectionView?.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .left, animated: false)
         }
     }
@@ -194,8 +200,13 @@ extension CreateGoalViewController: EUINavigationBarDelegate {
         if currentIndex < stageCount - 1 {
             currentIndex += 1
             if currentIndex == stageCount - 1 {
-                headerView.setRightButtonActive(position: .second, isActive: false)
+                headerView.setRightButtonTitle(position: .second, title: "완료")
+            } else {
+                headerView.setRightButtonTitle(position: .second, title: "다음")
             }
+            
+            let isActive = CreateGoalDynamicProperty.isCellActive(at: currentIndex)
+            headerView.setRightButtonActive(position: .second, isActive: isActive)
             
             let progress = Double(Double(currentIndex + 1) / Double(stageCount))
             viewModel?.setProgressValue(value: progress)

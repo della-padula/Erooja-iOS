@@ -58,9 +58,16 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         
         let format = DateFormatter()
         format.dateFormat = "yyyy년 MM월 dd일"
-        let formattedDate = format.string(from: Date())
         
+        let formattedDate = format.string(from: Date())
         lblStartDate.text = formattedDate
+        
+        let attributedString = NSMutableAttributedString.init(string: formattedDate)
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range:
+            NSRange.init(location: 0, length: attributedString.length));
+        lblEndDate.attributedText = attributedString
+        lblEndDate.textColor = EroojaColorSet.shared.orgDefault400s
+        
         setFourthLayout()
     }
     

@@ -61,9 +61,11 @@ public class CreateGoalSecondCell: UICollectionViewCell {
     private func processInputText(text: String) {
         if !text.isEmpty && text.count > 4 && text.count < 51 {
             setInputState(isValid: true)
+            CreateGoalDynamicProperty.cellValid[1] = true
             CreateGoalDynamicProperty.goalName = text
         } else {
             setInputState(isValid: false)
+            CreateGoalDynamicProperty.cellValid[1] = false
             
             if text.isEmpty {
                 textDescriptionLabel.isHidden = true

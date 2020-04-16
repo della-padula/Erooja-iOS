@@ -10,6 +10,8 @@ import Foundation
 import EroojaCommon
 
 public struct CreateGoalDynamicProperty {
+    public static var cellValid: [Bool] = [false, false, true, true, false]
+    
     public static var goalName: String?
     public static var goalContent: String?
     public static var isModifyAvailable: Bool = true
@@ -37,5 +39,9 @@ public struct CreateGoalDynamicProperty {
         }
         
         ELog.debug(message: debugStr)
+    }
+    
+    public static func isCellActive(at: Int) -> Bool {
+        return cellValid[at]
     }
 }
