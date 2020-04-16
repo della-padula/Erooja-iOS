@@ -24,6 +24,7 @@ public class CreateGoalDetailView: UICollectionViewCell {
     
     private var detailList = [String]()
     private var keyboardSize: CGSize?
+    private var isKeyboardShown = false
     
     public var titleText: String? {
         didSet {
@@ -40,6 +41,7 @@ public class CreateGoalDetailView: UICollectionViewCell {
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        isKeyboardShown = false
         self.endEditing(true)
     }
     
@@ -157,6 +159,7 @@ extension CreateGoalDetailView: UITableViewDelegate, UITableViewDataSource {
 //            // Reset state
 //            self.tableView.isEditing = false
 //            self.viewModel?.tableListItem.valueForBind.remove(at: indexPath.row)
+            self.viewModel.removeItem(at: indexPath.row)
             success(true)
         })
         
@@ -174,6 +177,7 @@ extension CreateGoalDetailView: GoalDetailInputDelegate {
         if strongContent.isEmpty {
             ELog.debug(message: "세부 항목을 입력해주세요.")
         } else {
+            isKeyboardShown = true
             viewModel.append(item: strongContent)
         }
     }
