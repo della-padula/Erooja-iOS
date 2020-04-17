@@ -28,6 +28,10 @@ public struct CreateGoalDynamicProperty {
     public static var detailGoalList = [String]()
     
     public static func printPropertyInfo() {
+        ELog.debug(message: getDebugPropertyInfo())
+    }
+    
+    public static func getDebugPropertyInfo() -> String {
         var debugStr = ""
         debugStr.append(contentsOf: "Selected Field List -- count : \(goalFieldList.count)\n")
         for (index, field) in goalFieldList.enumerated() {
@@ -45,7 +49,7 @@ public struct CreateGoalDynamicProperty {
             debugStr.append(contentsOf: "--> detail \(index) : \(detail)\n")
         }
         
-        ELog.debug(message: debugStr)
+        return debugStr
     }
     
     public static func isCellActive(at: Int) -> Bool {

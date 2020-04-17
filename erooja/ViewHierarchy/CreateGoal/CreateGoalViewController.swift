@@ -215,7 +215,9 @@ extension CreateGoalViewController: EUINavigationBarDelegate {
             self.view.endEditing(true)
         } else {
             #if DEBUG
-            self.navigationController?.popViewController(animated: true)
+            showAlertWithNoAction(title: "(Debug) 목표 정보", message: CreateGoalDynamicProperty.getDebugPropertyInfo(), completion: { action in
+                self.navigationController?.popViewController(animated: true)
+            })
             #endif
         }
     }
