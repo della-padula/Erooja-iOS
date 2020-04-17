@@ -84,62 +84,41 @@ public class EroojaFilterView: UIView {
     
     fileprivate func configureFilterStackView(type: FieldType) {
         if type == .development {
-            let devCount = JobType.Develop.allCases.count
+//            let devCount = JobType.Develop.allCases.count
             let devFieldItems = JobType.Develop.allCases
-            ELog.debug(message: "devCount : \(devCount)")
-            
-            var horizontalStackView: UIStackView?
-            horizontalStackView?.axis = .horizontal
-            horizontalStackView?.distribution = .equalSpacing
-            
-            for (index, item) in devFieldItems.enumerated() {
-                if index % 2 == 0 {
-                    // First Column
-                    horizontalStackView = UIStackView()
-                    
-                    let button = JobItemButton()
-                    button.title = item.rawValue
-                    
-                    horizontalStackView?.addArrangedSubview(button)
-                } else {
-                    // Second Column
-                    let button = JobItemButton()
-                    button.title = item.rawValue
-                    
-                    horizontalStackView?.addArrangedSubview(button)
-                    
-                    if let horiStackView = horizontalStackView {
-                        devJobListStackView.addArrangedSubview(horiStackView)
-                    }
-                }
-            }
-            
+            dynamicAppendButton(list: devFieldItems.map { $0.rawValue }, type: .development)
         } else if type == .design {
-            let designCount = JobType.Design.allCases.count
+//            let designCount = JobType.Design.allCases.count
             let designFieldItems = JobType.Design.allCases
-            ELog.debug(message: "designCount : \(designCount)")
-            
-            var horizontalStackView: UIStackView?
-            horizontalStackView?.axis = .horizontal
-            horizontalStackView?.distribution = .equalSpacing
-            
-            for (index, item) in designFieldItems.enumerated() {
-                if index % 2 == 0 {
-                    // First Column
-                    horizontalStackView = UIStackView()
-                    
-                    let button = JobItemButton()
-                    button.title = item.rawValue
-                    
-                    horizontalStackView?.addArrangedSubview(button)
-                } else {
-                    // Second Column
-                    let button = JobItemButton()
-                    button.title = item.rawValue
-                    
-                    horizontalStackView?.addArrangedSubview(button)
-                    
-                    if let horiStackView = horizontalStackView {
+            dynamicAppendButton(list: designFieldItems.map { $0.rawValue }, type: .design)
+        }
+    }
+    
+    fileprivate func dynamicAppendButton(list: [String], type: FieldType) {
+        var horizontalStackView: UIStackView?
+        horizontalStackView?.axis = .horizontal
+        horizontalStackView?.distribution = .equalSpacing
+        
+        for (index, item) in list.enumerated() {
+            if index % 2 == 0 {
+                // First Column
+                horizontalStackView = UIStackView()
+                
+                let button = JobItemButton()
+                button.title = item
+                
+                horizontalStackView?.addArrangedSubview(button)
+            } else {
+                // Second Column
+                let button = JobItemButton()
+                button.title = item
+                
+                horizontalStackView?.addArrangedSubview(button)
+                
+                if let horiStackView = horizontalStackView {
+                    if type == .development {
+                        devJobListStackView.addArrangedSubview(horiStackView)
+                    } else if type == .design {
                         designJobListStackView.addArrangedSubview(horiStackView)
                     }
                 }
