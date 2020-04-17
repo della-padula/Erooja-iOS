@@ -11,7 +11,7 @@ import EroojaCommon
 import UIKit
 
 public protocol JobItemButtonDelegate {
-    func onClickButton(jobItemButton: JobItemButton, title: String?, isActive: Bool)
+    func onClickButton(jobItemButton: JobItemButton, index: Int, title: String?, isActive: Bool)
 }
 
 public class JobItemButton: UIView {
@@ -20,7 +20,7 @@ public class JobItemButton: UIView {
     private let label = UILabel()
     
     public var delegate: JobItemButtonDelegate?
-    
+    public var index: Int = -1
     public var title: String? {
         didSet {
             self.label.text = title
@@ -79,8 +79,7 @@ public class JobItemButton: UIView {
     @objc
     private func onClickButton(_ sender: UIButton) {
         self.isActive = !isActive
-        ELog.debug(message: "Job Button Clicked - title : \(title ?? "nil") / isActive : \(isActive)")
-        delegate?.onClickButton(jobItemButton: self, title: title, isActive: isActive)
+        delegate?.onClickButton(jobItemButton: self, index: index, title: title, isActive: isActive)
     }
 }
 

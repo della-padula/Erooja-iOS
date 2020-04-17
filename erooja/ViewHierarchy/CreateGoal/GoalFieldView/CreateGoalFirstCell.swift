@@ -26,9 +26,6 @@ public class CreateGoalFirstCell: UICollectionViewCell {
     override public func awakeFromNib() {
         super.awakeFromNib()
         setViewLayout()
-        
-        // TEMP
-        delegate?.rightButton(at: .second, active: true)
     }
 
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -36,11 +33,25 @@ public class CreateGoalFirstCell: UICollectionViewCell {
     }
     
     fileprivate func setViewLayout() {
+        delegate?.rightButton(at: .second, active: false)
         self.scrollContentView.addSubview(filterView)
+        filterView.delegate = self
         filterView.translatesAutoresizingMaskIntoConstraints = false
         filterView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0).isActive = true
         filterView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
         filterView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
         filterView.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
+    }
+}
+
+extension CreateGoalFirstCell: JobItemButtonDelegate {
+    public func onClickButton(jobItemButton: JobItemButton, index: Int, title: String?, isActive: Bool) {
+        if isActive {
+            CreateGoalDynamicProperty.addFieldToGoal(field: title)
+        } else {
+            CreateGoalDynamicProperty.removeFieldFromGoal(field: title)
+        }
+        CreateGoalDynamicProperty.cellValid[0] = CreateGoalDynamicProperty.goalFieldList.count > 0
+        delegate?.rightButton(at: .second, active: CreateGoalDynamicProperty.goalFieldList.count > 0)
     }
 }

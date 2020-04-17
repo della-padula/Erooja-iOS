@@ -20,6 +20,8 @@ public class EroojaFilterView: UIView {
     private let devJobListStackView = UIStackView()
     private let designJobListStackView = UIStackView()
     
+    public var delegate: JobItemButtonDelegate?
+    
     public init() {
         super.init(frame: .zero)
         setViewLayout()
@@ -116,10 +118,14 @@ public class EroojaFilterView: UIView {
                 
                 let button = JobItemButton()
                 button.title = item
+                button.index = index
+                button.delegate = self
                 horizontalStackView?.addArrangedSubview(button)
             } else {
                 let button = JobItemButton()
                 button.title = item
+                button.index = index
+                button.delegate = self
                 horizontalStackView?.addArrangedSubview(button)
             }
             
@@ -137,5 +143,11 @@ public class EroojaFilterView: UIView {
                 }
             }
         }
+    }
+}
+
+extension EroojaFilterView: JobItemButtonDelegate {
+    public func onClickButton(jobItemButton: JobItemButton, index: Int, title: String?, isActive: Bool) {
+        delegate?.onClickButton(jobItemButton: jobItemButton, index: index, title: title, isActive: isActive)
     }
 }
