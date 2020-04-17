@@ -24,6 +24,7 @@ public class CreateGoalDetailView: UICollectionViewCell {
     
     private var detailList = [String]()
     private var keyboardSize: CGSize?
+    private var isKeyboardShown = false
     
     public var titleText: String? {
         didSet {
@@ -40,13 +41,14 @@ public class CreateGoalDetailView: UICollectionViewCell {
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        isKeyboardShown = false
         self.endEditing(true)
     }
     
     private func setViewLayout() {
         registerForKeyboardNotifications()
         detailTableView.tableFooterView = UIView()
-        detailTableView.separatorInset = .zero
+        detailTableView.separatorStyle = .none
         detailTableView.dataSource = self
         detailTableView.delegate = self
         
@@ -149,6 +151,20 @@ extension CreateGoalDetailView: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
+    public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let deleteAction = UIContextualAction(style: .destructive, title:  "삭제", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            self.viewModel.removeItem(at: indexPath.row)
+            success(true)
+        })
+        
+        if indexPath.section == DetailListSection.result.rawValue {
+            return UISwipeActionsConfiguration(actions:[deleteAction])
+        } else {
+            return nil
+        }
+    }
 }
 
 extension CreateGoalDetailView: GoalDetailInputDelegate {
@@ -157,6 +173,7 @@ extension CreateGoalDetailView: GoalDetailInputDelegate {
         if strongContent.isEmpty {
             ELog.debug(message: "세부 항목을 입력해주세요.")
         } else {
+            isKeyboardShown = true
             viewModel.append(item: strongContent)
         }
     }
