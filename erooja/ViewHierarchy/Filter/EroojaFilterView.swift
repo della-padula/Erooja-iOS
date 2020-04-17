@@ -10,6 +10,9 @@ import EroojaUI
 import EroojaCommon
 
 public class EroojaFilterView: UIView {
+    private var devFieldButtons = [JobItemButton]()
+    private var designFieldButtons = [JobItemButton]()
+    
     private let devTitleLabel = UILabel()
     private let designTitleLabel = UILabel()
     
@@ -26,7 +29,6 @@ public class EroojaFilterView: UIView {
         super.init(coder: aDecoder)
         setViewLayout()
         setLayoutProperty()
-//        fatalError("init(coder:) has not been implemented")
     }
     
     fileprivate func setViewLayout() {
@@ -35,6 +37,14 @@ public class EroojaFilterView: UIView {
         addSubview(designTitleLabel)
         addSubview(devJobListStackView)
         addSubview(designJobListStackView)
+        
+        configureFilterStackView(type: .development)
+        configureFilterStackView(type: .design)
+        
+        devJobListStackView.axis = .vertical
+        devJobListStackView.distribution = .equalSpacing
+        designJobListStackView.axis = .vertical
+        designJobListStackView.distribution = .equalSpacing
         
         devTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         devJobListStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -49,9 +59,8 @@ public class EroojaFilterView: UIView {
         devJobListStackView.topAnchor.constraint(equalTo: devTitleLabel.bottomAnchor, constant: 20).isActive = true
         devJobListStackView.leadingAnchor.constraint(equalTo: devTitleLabel.leadingAnchor).isActive = true
         devJobListStackView.trailingAnchor.constraint(equalTo: devTitleLabel.trailingAnchor).isActive = true
-        devJobListStackView.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
-        designTitleLabel.topAnchor.constraint(equalTo: devJobListStackView.topAnchor, constant: 40).isActive = true
+        designTitleLabel.topAnchor.constraint(equalTo: devJobListStackView.bottomAnchor, constant: 40).isActive = true
         designTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         designTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
         designTitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -59,7 +68,6 @@ public class EroojaFilterView: UIView {
         designJobListStackView.topAnchor.constraint(equalTo: designTitleLabel.bottomAnchor, constant: 20).isActive = true
         designJobListStackView.leadingAnchor.constraint(equalTo: designTitleLabel.leadingAnchor).isActive = true
         designJobListStackView.trailingAnchor.constraint(equalTo: designTitleLabel.trailingAnchor).isActive = true
-        designJobListStackView.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
     
     fileprivate func setLayoutProperty() {
@@ -72,5 +80,70 @@ public class EroojaFilterView: UIView {
         
         devJobListStackView.backgroundColor = .cyan
         designJobListStackView.backgroundColor = .orange
+    }
+    
+    fileprivate func configureFilterStackView(type: FieldType) {
+        if type == .development {
+            let devCount = JobType.Develop.allCases.count
+            let devFieldItems = JobType.Develop.allCases
+            ELog.debug(message: "devCount : \(devCount)")
+            
+            var horizontalStackView: UIStackView?
+            horizontalStackView?.axis = .horizontal
+            horizontalStackView?.distribution = .equalSpacing
+            
+            for (index, item) in devFieldItems.enumerated() {
+                if index % 2 == 0 {
+                    // First Column
+                    horizontalStackView = UIStackView()
+                    
+                    let button = JobItemButton()
+                    button.title = item.rawValue
+                    
+                    horizontalStackView?.addArrangedSubview(button)
+                } else {
+                    // Second Column
+                    let button = JobItemButton()
+                    button.title = item.rawValue
+                    
+                    horizontalStackView?.addArrangedSubview(button)
+                    
+                    if let horiStackView = horizontalStackView {
+                        devJobListStackView.addArrangedSubview(horiStackView)
+                    }
+                }
+            }
+            
+        } else if type == .design {
+            let designCount = JobType.Design.allCases.count
+            let designFieldItems = JobType.Design.allCases
+            ELog.debug(message: "designCount : \(designCount)")
+            
+            var horizontalStackView: UIStackView?
+            horizontalStackView?.axis = .horizontal
+            horizontalStackView?.distribution = .equalSpacing
+            
+            for (index, item) in designFieldItems.enumerated() {
+                if index % 2 == 0 {
+                    // First Column
+                    horizontalStackView = UIStackView()
+                    
+                    let button = JobItemButton()
+                    button.title = item.rawValue
+                    
+                    horizontalStackView?.addArrangedSubview(button)
+                } else {
+                    // Second Column
+                    let button = JobItemButton()
+                    button.title = item.rawValue
+                    
+                    horizontalStackView?.addArrangedSubview(button)
+                    
+                    if let horiStackView = horizontalStackView {
+                        designJobListStackView.addArrangedSubview(horiStackView)
+                    }
+                }
+            }
+        }
     }
 }

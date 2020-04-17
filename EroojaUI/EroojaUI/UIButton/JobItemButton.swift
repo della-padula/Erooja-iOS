@@ -12,6 +12,15 @@ import UIKit
 
 public class JobItemButton: UIView {
     
+    private let button = UIButton()
+    private let label = UILabel()
+    
+    public var title: String? {
+        didSet {
+            self.label.text = title
+        }
+    }
+    
     public var isActive: Bool = false {
         didSet {
             self.setButtonStyle()
@@ -26,12 +35,35 @@ public class JobItemButton: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        addSubview(button)
+        addSubview(label)
+        
+        button.setTitle("", for: .normal)
+        button.addTarget(self, action: #selector(onClickButton(_:)), for: .touchUpInside)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        button.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        button.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        
+        label.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        label.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    @objc
+    private func onClickButton(_ sender: UIButton) {
+        ELog.debug(message: "Job Button Clicked - title : \(title ?? "nil")")
+    }
 }
 
 
