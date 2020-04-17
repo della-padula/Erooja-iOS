@@ -70,27 +70,24 @@ public class EroojaFilterView: UIView {
         designJobListStackView.topAnchor.constraint(equalTo: designTitleLabel.bottomAnchor, constant: 20).isActive = true
         designJobListStackView.leadingAnchor.constraint(equalTo: designTitleLabel.leadingAnchor).isActive = true
         designJobListStackView.trailingAnchor.constraint(equalTo: designTitleLabel.trailingAnchor).isActive = true
+        designJobListStackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     fileprivate func setLayoutProperty() {
         devTitleLabel.text = "개발"
+        devTitleLabel.textColor = EroojaColorSet.shared.gray100s
+        devTitleLabel.font = .SpoqaBold16P
+        
         designTitleLabel.text = "디자인"
-        
-        // TEMP
-        devTitleLabel.backgroundColor = .green
-        designTitleLabel.backgroundColor = .blue
-        
-        devJobListStackView.backgroundColor = .cyan
-        designJobListStackView.backgroundColor = .orange
+        designTitleLabel.textColor = EroojaColorSet.shared.gray100s
+        designTitleLabel.font = .SpoqaBold16P
     }
     
     fileprivate func configureFilterStackView(type: FieldType) {
         if type == .development {
-//            let devCount = JobType.Develop.allCases.count
             let devFieldItems = JobType.Develop.allCases
             dynamicAppendButton(list: devFieldItems.map { $0.rawValue }, type: .development)
         } else if type == .design {
-//            let designCount = JobType.Design.allCases.count
             let designFieldItems = JobType.Design.allCases
             dynamicAppendButton(list: designFieldItems.map { $0.rawValue }, type: .design)
         }
@@ -113,11 +110,12 @@ public class EroojaFilterView: UIView {
             } else {
                 let button = JobItemButton()
                 button.title = item
-                
+                horizontalStackView?.addArrangedSubview(button)
+            }
+            
+            if index % 2 == 1 || index == list.count - 1 {
                 let spacingView = UIView()
                 spacingView.setContentHuggingPriority(.defaultLow, for: .horizontal)
-                
-                horizontalStackView?.addArrangedSubview(button)
                 horizontalStackView?.addArrangedSubview(spacingView)
                 
                 if let horiView = horizontalStackView {

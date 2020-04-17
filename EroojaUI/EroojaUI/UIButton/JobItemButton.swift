@@ -10,14 +10,21 @@ import Foundation
 import EroojaCommon
 import UIKit
 
+public protocol JobItemButtonDelegate {
+    func onClickButton(jobItemButton: JobItemButton, title: String?, isActive: Bool)
+}
+
 public class JobItemButton: UIView {
     
     private let button = UIButton()
     private let label = UILabel()
     
+    public var delegate: JobItemButtonDelegate?
+    
     public var title: String? {
         didSet {
             self.label.text = title
+//            self.button.setTitle(title, for: .normal)
         }
     }
     
@@ -28,19 +35,30 @@ public class JobItemButton: UIView {
     }
     
     private func setButtonStyle() {
-        layer.cornerRadius = 4
+        layer.cornerRadius = 8
         layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray500s.cgColor
-        layer.borderWidth = isActive ? 1.5 : 1
+        layer.borderWidth = 1
+        
+        label.textColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray500s
+        button.setTitleColor(isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray500s, for: .normal)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setButtonLayout()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setButtonLayout()
+    }
+    
+    private func setButtonLayout() {
         addSubview(button)
         addSubview(label)
         
         setButtonStyle()
-        
+        label.font = .SpoqaRegular15P
         button.setTitle("", for: .normal)
         button.addTarget(self, action: #selector(onClickButton(_:)), for: .touchUpInside)
         
@@ -54,21 +72,16 @@ public class JobItemButton: UIView {
         button.widthAnchor.constraint(equalTo: label.widthAnchor, constant: 16).isActive = true
         button.heightAnchor.constraint(equalTo: label.heightAnchor, constant: 16).isActive = true
         
-        label.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        label.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        label.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        label.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         label.textAlignment = .center
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
     }
     
     @objc
     private func onClickButton(_ sender: UIButton) {
         ELog.debug(message: "Job Button Clicked - title : \(title ?? "nil") / isActive : \(isActive)")
         self.isActive = !isActive
+        delegate?.onClickButton(jobItemButton: self, title: title, isActive: isActive)
     }
 }
 

@@ -38,7 +38,7 @@ public class CreateGoalFirstCell: UICollectionViewCell {
     fileprivate func setViewLayout() {
         self.scrollContentView.addSubview(filterView)
         filterView.translatesAutoresizingMaskIntoConstraints = false
-        filterView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
+        filterView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0).isActive = true
         filterView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
         filterView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
         filterView.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
