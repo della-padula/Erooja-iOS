@@ -122,7 +122,7 @@ public class CreateGoalViewController: BaseViewController {
         contentCollectionView?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         contentCollectionView?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        headerView.setRightButtonActive(position: .second, isActive: true)
+        headerView.setRightButtonActive(position: .second, isActive: false)
         headerView.delegate = self
     }
 }

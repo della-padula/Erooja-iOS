@@ -11,7 +11,7 @@ import EroojaCommon
 
 public struct CreateGoalDynamicProperty {
     // 첫 번째 항목은 false로 추후 변경 필요
-    public static var cellValid: [Bool] = [true, false, true, true, false]
+    public static var cellValid: [Bool] = [false, false, true, true, false]
     
     public static var goalName: String?
     public static var goalContent: String?

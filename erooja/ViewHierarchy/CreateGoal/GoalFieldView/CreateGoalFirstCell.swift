@@ -33,7 +33,6 @@ public class CreateGoalFirstCell: UICollectionViewCell {
     }
     
     fileprivate func setViewLayout() {
-        delegate?.rightButton(at: .second, active: false)
         self.scrollContentView.addSubview(filterView)
         filterView.delegate = self
         filterView.translatesAutoresizingMaskIntoConstraints = false
