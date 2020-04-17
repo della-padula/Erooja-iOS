@@ -36,11 +36,10 @@ public class JobItemButton: UIView {
     
     private func setButtonStyle() {
         layer.cornerRadius = 8
-        layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray500s.cgColor
+        layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray400s.cgColor
         layer.borderWidth = 1
         
-        label.textColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray500s
-        button.setTitleColor(isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray500s, for: .normal)
+        label.textColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray400s
     }
     
     override init(frame: CGRect) {
@@ -79,8 +78,8 @@ public class JobItemButton: UIView {
     
     @objc
     private func onClickButton(_ sender: UIButton) {
-        ELog.debug(message: "Job Button Clicked - title : \(title ?? "nil") / isActive : \(isActive)")
         self.isActive = !isActive
+        ELog.debug(message: "Job Button Clicked - title : \(title ?? "nil") / isActive : \(isActive)")
         delegate?.onClickButton(jobItemButton: self, title: title, isActive: isActive)
     }
 }

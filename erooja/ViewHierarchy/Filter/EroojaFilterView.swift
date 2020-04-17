@@ -13,6 +13,7 @@ public class EroojaFilterView: UIView {
     private var devFieldButtons = [JobItemButton]()
     private var designFieldButtons = [JobItemButton]()
     
+    private let duplicateInfoLabel = UILabel()
     private let devTitleLabel = UILabel()
     private let designTitleLabel = UILabel()
     
@@ -34,6 +35,7 @@ public class EroojaFilterView: UIView {
     fileprivate func setViewLayout() {
         backgroundColor = .white
         addSubview(devTitleLabel)
+        addSubview(duplicateInfoLabel)
         addSubview(designTitleLabel)
         addSubview(devJobListStackView)
         addSubview(designJobListStackView)
@@ -48,6 +50,7 @@ public class EroojaFilterView: UIView {
         designJobListStackView.distribution = .equalSpacing
         designJobListStackView.spacing = 8
         
+        duplicateInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         devTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         devJobListStackView.translatesAutoresizingMaskIntoConstraints = false
         designTitleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -55,8 +58,11 @@ public class EroojaFilterView: UIView {
         
         devTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
         devTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        devTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+        devTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         devTitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        
+        duplicateInfoLabel.centerYAnchor.constraint(equalTo: devTitleLabel.centerYAnchor).isActive = true
+        duplicateInfoLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
         
         devJobListStackView.topAnchor.constraint(equalTo: devTitleLabel.bottomAnchor, constant: 20).isActive = true
         devJobListStackView.leadingAnchor.constraint(equalTo: devTitleLabel.leadingAnchor).isActive = true
@@ -81,6 +87,10 @@ public class EroojaFilterView: UIView {
         designTitleLabel.text = "디자인"
         designTitleLabel.textColor = EroojaColorSet.shared.gray100s
         designTitleLabel.font = .SpoqaBold16P
+        
+        duplicateInfoLabel.text = "*중복 선택 가능"
+        duplicateInfoLabel.textColor = EroojaColorSet.shared.gray300s
+        duplicateInfoLabel.font = .SpoqaRegular12P
     }
     
     fileprivate func configureFilterStackView(type: FieldType) {
