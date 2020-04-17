@@ -43,8 +43,10 @@ public class EroojaFilterView: UIView {
         
         devJobListStackView.axis = .vertical
         devJobListStackView.distribution = .equalSpacing
+        devJobListStackView.spacing = 8
         designJobListStackView.axis = .vertical
         designJobListStackView.distribution = .equalSpacing
+        designJobListStackView.spacing = 8
         
         devTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         devJobListStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -96,30 +98,33 @@ public class EroojaFilterView: UIView {
     
     fileprivate func dynamicAppendButton(list: [String], type: FieldType) {
         var horizontalStackView: UIStackView?
-        horizontalStackView?.axis = .horizontal
-        horizontalStackView?.distribution = .equalSpacing
         
         for (index, item) in list.enumerated() {
             if index % 2 == 0 {
-                // First Column
                 horizontalStackView = UIStackView()
+                horizontalStackView?.axis = .horizontal
+                horizontalStackView?.alignment = .center
+                horizontalStackView?.distribution = .fill
+                horizontalStackView?.spacing = 8
                 
                 let button = JobItemButton()
                 button.title = item
-                
                 horizontalStackView?.addArrangedSubview(button)
             } else {
-                // Second Column
                 let button = JobItemButton()
                 button.title = item
                 
-                horizontalStackView?.addArrangedSubview(button)
+                let spacingView = UIView()
+                spacingView.setContentHuggingPriority(.defaultLow, for: .horizontal)
                 
-                if let horiStackView = horizontalStackView {
+                horizontalStackView?.addArrangedSubview(button)
+                horizontalStackView?.addArrangedSubview(spacingView)
+                
+                if let horiView = horizontalStackView {
                     if type == .development {
-                        devJobListStackView.addArrangedSubview(horiStackView)
+                        devJobListStackView.addArrangedSubview(horiView)
                     } else if type == .design {
-                        designJobListStackView.addArrangedSubview(horiStackView)
+                        designJobListStackView.addArrangedSubview(horiView)
                     }
                 }
             }
