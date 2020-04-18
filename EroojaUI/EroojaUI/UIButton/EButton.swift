@@ -15,7 +15,7 @@ public class EButton: UIView {
     
     public init() {
         super.init(frame: .zero)
-        
+        titleLabel.textAlignment = .center
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(button)

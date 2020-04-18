@@ -72,6 +72,7 @@ public class EUIModalViewController: BaseViewController {
         
         bottomButton.font = .SpoqaRegular15P
         bottomButton.textColor = .white
+        bottomButton.layer.cornerRadius = 4
         bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
         
         // For DEBUG
