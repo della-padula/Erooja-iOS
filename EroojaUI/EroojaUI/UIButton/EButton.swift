@@ -81,9 +81,7 @@ public class EButton: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
     
         // Disable Constraint
-        for constraint in constraintList {
-            constraint.isActive = false
-        }
+        NSLayoutConstraint.deactivate(constraintList)
         
         constraintList.removeAll()
         
@@ -101,6 +99,7 @@ public class EButton: UIView {
         constraintList.append(titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: padding))
         constraintList.append(titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding))
         constraintList.append(titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: padding))
+        constraintList.append(titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor))
         
         constraintList.append(button.topAnchor.constraint(equalTo: topAnchor))
         constraintList.append(button.bottomAnchor.constraint(equalTo: bottomAnchor))
@@ -108,9 +107,7 @@ public class EButton: UIView {
         constraintList.append(button.trailingAnchor.constraint(equalTo: trailingAnchor))
         
         // Enable Constraint
-        for constraint in constraintList {
-            constraint.isActive = true
-        }
+        NSLayoutConstraint.activate(constraintList)
     }
     
     private func setButtonStyle() {

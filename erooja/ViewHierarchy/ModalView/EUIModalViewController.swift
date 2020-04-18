@@ -70,6 +70,10 @@ public class EUIModalViewController: BaseViewController {
         imageButton.image = .commonIcoClose
         imageButton.padding = 10
         
+        bottomButton.font = .SpoqaRegular15P
+        bottomButton.textColor = .white
+        bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
+        
         // For DEBUG
         imageButton.backgroundColor = .green
         imageForegroundLogoGoal.backgroundColor = .cyan
@@ -138,9 +142,9 @@ public class EUIModalViewController: BaseViewController {
         modalContentLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         modalContentLabel.topAnchor.constraint(equalTo: modalTitleLabel.bottomAnchor, constant: 10).isActive = true
         
-        bottomButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 10).isActive = true
+        bottomButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -10).isActive = true
         bottomButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10).isActive = true
-        bottomButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 10).isActive = true
+        bottomButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10).isActive = true
         bottomButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
         bottomButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
