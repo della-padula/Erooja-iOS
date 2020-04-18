@@ -60,6 +60,8 @@
 		B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0D113EE24491C9800FE7C0C /* EroojaFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D113ED24491C9800FE7C0C /* EroojaFilterView.swift */; };
 		B0D11444244AE6F900FE7C0C /* GoalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D11443244AE6F900FE7C0C /* GoalDetailViewController.swift */; };
+		B0D11447244AF67700FE7C0C /* DetailGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D11445244AF67700FE7C0C /* DetailGoalViewController.swift */; };
+		B0D11448244AF67700FE7C0C /* DetailGoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0D11446244AF67700FE7C0C /* DetailGoalViewController.xib */; };
 		B0F1BB322436BC5800D04DD5 /* SignUpFieldViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1BB312436BC5800D04DD5 /* SignUpFieldViewCell.swift */; };
 		B0F98E6E2442914B00F7510E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E6D2442914B00F7510E /* SearchTableViewCell.swift */; };
 		B0F98E812442A06500F7510E /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E802442A06500F7510E /* CreateGoalViewController.swift */; };
@@ -218,6 +220,8 @@
 		B0C0311A24366241008771BB /* SignUpBaseProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBaseProperty.swift; sourceTree = "<group>"; };
 		B0D113ED24491C9800FE7C0C /* EroojaFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaFilterView.swift; sourceTree = "<group>"; };
 		B0D11443244AE6F900FE7C0C /* GoalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewController.swift; sourceTree = "<group>"; };
+		B0D11445244AF67700FE7C0C /* DetailGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGoalViewController.swift; sourceTree = "<group>"; };
+		B0D11446244AF67700FE7C0C /* DetailGoalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailGoalViewController.xib; sourceTree = "<group>"; };
 		B0F1BB312436BC5800D04DD5 /* SignUpFieldViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFieldViewCell.swift; sourceTree = "<group>"; };
 		B0F98E6D2442914B00F7510E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		B0F98E802442A06500F7510E /* CreateGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
@@ -556,6 +560,8 @@
 			isa = PBXGroup;
 			children = (
 				B0D11443244AE6F900FE7C0C /* GoalDetailViewController.swift */,
+				B0D11445244AF67700FE7C0C /* DetailGoalViewController.swift */,
+				B0D11446244AF67700FE7C0C /* DetailGoalViewController.xib */,
 			);
 			path = GoalDetail;
 			sourceTree = "<group>";
@@ -856,6 +862,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D11448244AF67700FE7C0C /* DetailGoalViewController.xib in Resources */,
 				B08F09172442F5F6001AA193 /* CreateGoalDetailView.xib in Resources */,
 				B0462ADE242B8E6100B51854 /* LaunchScreen.storyboard in Resources */,
 				DEB7E4012446F3830085322F /* GoalDetailItemInputCell.xib in Resources */,
@@ -968,6 +975,7 @@
 				B0A8C5562433341D002B2C83 /* StartViewController.swift in Sources */,
 				B03D4A3224333C9D009180E9 /* BaseViewController.swift in Sources */,
 				B03D4A4024339001009180E9 /* EroojaProperty.swift in Sources */,
+				B0D11447244AF67700FE7C0C /* DetailGoalViewController.swift in Sources */,
 				B0F98E8A2442EA5A00F7510E /* CreateGoalFirstCell.swift in Sources */,
 				B0F98E812442A06500F7510E /* CreateGoalViewController.swift in Sources */,
 				B0462ACF242B8E5F00B51854 /* AppDelegate.swift in Sources */,

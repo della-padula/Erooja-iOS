@@ -37,6 +37,18 @@ public extension UIImage {
     class var goalDetailMenu: UIImage {
         return UIImage(named: "goal_detail_menu")!
     }
+
+    class var goalDetailUpArrow: UIImage {
+        return UIImage(named: "goal_detail_up_arrow")!
+    }
+    
+    class var goalDetailDownArrow: UIImage {
+        return UIImage(named: "goal_detail_down_arrow")!
+    }
+
+    class var goalDetailLight: UIImage {
+        return UIImage(named: "goal_detail_light")!
+    }
     
     class var onboard_1: UIImage {
         return UIImage(named: "onboard_1")!

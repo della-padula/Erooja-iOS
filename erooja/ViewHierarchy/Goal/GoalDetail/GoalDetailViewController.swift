@@ -13,7 +13,7 @@ import EroojaCommon
 public class GoalDetailViewController: BaseViewController {
     private var navigationBar = EUIHeaderView()
     private var scrollView = UIScrollView()
-    private var scrollContentView = UIView()
+    private var contentView = UIView()
     
     private var topContentView = UIView()
     private var topDateLabel = UILabel()
@@ -27,6 +27,40 @@ public class GoalDetailViewController: BaseViewController {
     }
     
     fileprivate func setViewLayout() {
+        setNavigationLayout()
+        
+        // Scroll View Setting
+        contentView.backgroundColor = .systemBlue
+        
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        scrollView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+
+        contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        
+        // Top Section View Layout
+        contentView.addSubview(topContentView)
+        topContentView.backgroundColor = EroojaColorSet.shared.orgDefault400
+        
+        self.topContentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.topContentView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        self.topContentView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
+        self.topContentView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
+        self.topContentView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+    }
+    
+    fileprivate func setNavigationLayout() {
         if #available(iOS 11.0, *) {
             let window = UIApplication.shared.keyWindow
             let topPadding = window?.safeAreaInsets.top
@@ -40,57 +74,21 @@ public class GoalDetailViewController: BaseViewController {
             safeAreaBGView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         }
         
-        self.view.backgroundColor = EroojaColorSet.shared.white100
-        self.navigationBar.barOptions = [.backButton, .rightSecondButton]
-        self.view.addSubview(self.navigationBar)
+//        view.backgroundColor = EroojaColorSet.shared.white100
+        navigationBar.barOptions = [.backButton, .rightSecondButton]
+        view.addSubview(navigationBar)
         
-        self.navigationBar.setRightButtonColor(position: .second, colorActive: EroojaColorSet.shared.white100, colorInActive: EroojaColorSet.shared.white100)
-        self.navigationBar.delegate = self
-        self.navigationBar.rightSecondButtonType = .image
-        self.navigationBar.setBackButtonImage(image: .goalDetailBackArrow)
-        self.navigationBar.setRightButtonImage(position: .second, image: .goalDetailMenu)
+        navigationBar.setRightButtonColor(position: .second, colorActive: EroojaColorSet.shared.white100, colorInActive: EroojaColorSet.shared.white100)
+        navigationBar.delegate = self
+        navigationBar.rightSecondButtonType = .image
+        navigationBar.setBackButtonImage(image: .goalDetailBackArrow)
+        navigationBar.setRightButtonImage(position: .second, image: .goalDetailMenu)
         
-        
-        self.navigationBar.backgroundColor = EroojaColorSet.shared.orgDefault400
-        self.navigationBar.translatesAutoresizingMaskIntoConstraints = false
-        self.navigationBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
-        self.navigationBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        self.navigationBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        
-        // Scroll View Setting
-        self.scrollView.backgroundColor = .green
-        self.view.addSubview(self.scrollView)
-        self.scrollView.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.scrollView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
-        self.scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        self.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        
-        self.scrollView.addSubview(scrollContentView)
-        self.scrollContentView.translatesAutoresizingMaskIntoConstraints = false
-        self.scrollContentView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
-        self.scrollContentView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
-        self.scrollContentView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
-        
-        // Top Section View Layout
-//        self.topContentView.backgroundColor = EroojaColorSet.shared.orgDefault400
-        self.topContentView.backgroundColor = .cyan
-        self.topContentView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 16.0)
-        self.scrollContentView.addSubview(topContentView)
-//        self.topContentView.addSubview(topDateLabel)
-//        self.topContentView.addSubview(topTitleLabel)
-//        self.topContentView.addSubview(topLogoImageView)
-        
-//        self.topDateLabel.translatesAutoresizingMaskIntoConstraints = false
-//        self.topTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.topContentView.translatesAutoresizingMaskIntoConstraints = false
-//        self.topLogoImageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.topContentView.topAnchor.constraint(equalTo: scrollContentView.topAnchor).isActive = true
-        self.topContentView.leadingAnchor.constraint(equalTo: self.scrollContentView.leadingAnchor).isActive = true
-        self.topContentView.trailingAnchor.constraint(equalTo: self.scrollContentView.trailingAnchor).isActive = true
-        self.topContentView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        navigationBar.backgroundColor = EroojaColorSet.shared.orgDefault400
+        navigationBar.translatesAutoresizingMaskIntoConstraints = false
+        navigationBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        navigationBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        navigationBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
     }
 }
 
@@ -105,14 +103,5 @@ extension GoalDetailViewController: EUINavigationBarDelegate {
     
     public func onClickRightSectionButton(at position: ERightButton.Position) {
         
-    }
-}
-
-extension UIView {
-   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
     }
 }
