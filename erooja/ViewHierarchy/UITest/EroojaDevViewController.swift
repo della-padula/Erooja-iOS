@@ -96,6 +96,7 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(dst, animated: true)
         case .modalViewTest:
             vc = EUIModalViewController()
+            (vc as! EUIModalViewController).delegate = self
         case .dragTable:
 //            let dragVC = DraggableTableViewController()
 //            dragVC.viewModel = DraggableTableViewModel()
@@ -113,3 +114,16 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+extension UITestViewController: EUIModalViewDelegate {
+    func onClickBottomButton() {
+        ELog.debug(message: "Modal VC - Bottom Button Clicked")
+    }
+    
+    func modalViewController() -> (String, String, String, ModalType) {
+        let title = "목표를 80% 달성했습니다!"
+        let content = "열심히 달려온 당신, 칭찬의 박수 짝짝짝.\n새로운 목표에서 리스트를 시작해보세요."
+        let buttonTitle = "새로운 목표 둘러보기"
+        
+        return (title, content, buttonTitle, .flagWithHands)
+    }
+}
