@@ -14,6 +14,22 @@ public extension UIImage {
         return UIImage(named: "main_logo")!
     }
     
+    class var modalBackground: UIImage {
+        return UIImage(named: "bg_congratu")!
+    }
+    
+    class var modelLogoGoal: UIImage {
+        return UIImage(named: "modal_logo_goal")!
+    }
+    
+    class var modelLogoGoalFlag: UIImage {
+        return UIImage(named: "modal_logo_goal_flag")!
+    }
+    
+    class var modelLogoGoalFlagHand: UIImage {
+        return UIImage(named: "modal_logo_goal_flag_hand")!
+    }
+    
     class var onboard_1: UIImage {
         return UIImage(named: "onboard_1")!
     }
