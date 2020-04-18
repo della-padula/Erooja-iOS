@@ -12,9 +12,9 @@ import EroojaCommon
 public enum JobType {
     // MARK: To be modified
     public enum Develop: String, CaseIterable {
-        case android = "Android" // Android
+        case android = "안드로이드" // 안드로이드
         case ios     = "iOS"     // iOS
-        case web     = "웹"     // 웹
+        case web     = "프론트엔드"     // 프론트엔드
         case backend = "백엔드" // 백엔드
         case deep    = "머신러닝"    // 머신러닝
         case dataS   = "데이터 사이언스"   // 데이터 사이언스

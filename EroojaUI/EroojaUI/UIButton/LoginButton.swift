@@ -32,21 +32,21 @@ public class LoginButton: UIButton {
     private func setButtonStyle() {
         switch socialType {
         case .kakao:
-            backgroundColor = EroojaColorSet.shared.kakaoYellow000s
+            backgroundColor = EroojaColorSet.shared.kakaoYellow100
             setTitle("카카오 계정으로 로그인", for: .normal)
             titleLabel?.font = .SpoqaRegular17P
             layer.cornerRadius = 4
-            setTitleColor(EroojaColorSet.shared.kakaoBrown000s, for: .normal)
+            setTitleColor(EroojaColorSet.shared.kakaoBrown100, for: .normal)
         case .guest:
             backgroundColor = .white
             setTitle("게스트로 시작", for: .normal)
             titleLabel?.font = .SpoqaRegular17P
             layer.cornerRadius = 4
-            setTitleColor(EroojaColorSet.shared.gray300s, for: .normal)
+            setTitleColor(EroojaColorSet.shared.gray500, for: .normal)
         case .google:
             break
         case .naver:
-            backgroundColor = EroojaColorSet.shared.naverGreen000s
+            backgroundColor = EroojaColorSet.shared.naverGreen100
             setTitle("네이버 계정으로 로그인", for: .normal)
             titleLabel?.font = .SpoqaRegular17P
             layer.cornerRadius = 4

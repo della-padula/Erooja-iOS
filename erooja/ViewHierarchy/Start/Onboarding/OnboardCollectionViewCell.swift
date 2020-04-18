@@ -44,8 +44,8 @@ public class OnboardCollectionViewCell: UICollectionViewCell {
         self.lblMainText.font = .SpoqaBold20P
         self.lblSubText.font = .SpoqaRegular15P
         
-        self.lblMainText.textColor = EroojaColorSet.shared.gray100s
-        self.lblSubText.textColor = EroojaColorSet.shared.gray300s
+        self.lblMainText.textColor = EroojaColorSet.shared.gray700
+        self.lblSubText.textColor = EroojaColorSet.shared.gray500
         
         self.setupLayout()
     }

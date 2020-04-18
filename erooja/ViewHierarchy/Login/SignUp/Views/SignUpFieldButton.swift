@@ -52,9 +52,9 @@ public class SignUpFieldButton: UIView {
     }
     
     private func setViewStyle() {
-        self.nameLabel.font = .SpoqaBold15P
+        self.nameLabel.font = .SpoqaRegular15P
         self.nameLabel.text = field?.title
-        self.nameLabel.textColor = EroojaColorSet.shared.gray300s
+        self.nameLabel.textColor = EroojaColorSet.shared.gray500
         
         if field?.isActive ?? false {
             self.imageView.image = field?.imageOn

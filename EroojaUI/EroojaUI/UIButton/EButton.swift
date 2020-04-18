@@ -55,7 +55,7 @@ public class EButton: UIView {
     public var isActive: Bool = false {
         didSet {
             self.isUserInteractionEnabled = isActive
-            textColor = isActive ? EroojaColorSet.shared.gray100s : EroojaColorSet.shared.gray400s
+            textColor = isActive ? EroojaColorSet.shared.gray700 : EroojaColorSet.shared.gray400
         }
     }
     

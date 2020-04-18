@@ -66,7 +66,7 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range:
             NSRange.init(location: 0, length: attributedString.length));
         lblEndDate.attributedText = attributedString
-        lblEndDate.textColor = EroojaColorSet.shared.orgDefault400s
+        lblEndDate.textColor = EroojaColorSet.shared.orgDefault400
         
         setFourthLayout()
     }
@@ -110,18 +110,18 @@ public class CreateGoalFourthCell: UICollectionViewCell {
     
     private func setModifyAvailableButton(isActive: Bool) {
         modifyAvailableBtn.layer.cornerRadius = 14
-        modifyAvailableBtn.layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray500s.cgColor
+        modifyAvailableBtn.layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400.cgColor : EroojaColorSet.shared.gray400.cgColor
         modifyAvailableBtn.layer.borderWidth = 1
         modifyAvailableLabel.font = .SpoqaRegular15P
-        modifyAvailableLabel.textColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray300s
+        modifyAvailableLabel.textColor = isActive ? EroojaColorSet.shared.orgDefault400 : EroojaColorSet.shared.gray400
     }
     
     private func setModifyUnavailableButton(isActive: Bool) {
         modifyUnavailableBtn.layer.cornerRadius = 14
-        modifyUnavailableBtn.layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray500s.cgColor
+        modifyUnavailableBtn.layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400.cgColor : EroojaColorSet.shared.gray400.cgColor
         modifyUnavailableBtn.layer.borderWidth = 1
         modifyUnavailableLabel.font = .SpoqaRegular15P
-        modifyUnavailableLabel.textColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray300s
+        modifyUnavailableLabel.textColor = isActive ? EroojaColorSet.shared.orgDefault400 : EroojaColorSet.shared.gray400
     }
      
     @objc func didReceiveTestNotification(_ notification: Notification) {
@@ -133,7 +133,7 @@ public class CreateGoalFourthCell: UICollectionViewCell {
         attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range:
             NSRange.init(location: 0, length: attributedString.length));
         lblEndDate.attributedText = attributedString
-        lblEndDate.textColor = EroojaColorSet.shared.orgDefault400s
+        lblEndDate.textColor = EroojaColorSet.shared.orgDefault400
     }
  
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -84,7 +84,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
         self.lblTitle.text = self.title ?? "NO TITLE"
         self.lblTitle.font = .SpoqaBold20P
         self.lblTitle.textAlignment = .center
-        self.lblTitle.textColor = EroojaColorSet.shared.gray100s
+        self.lblTitle.textColor = EroojaColorSet.shared.gray700
         self.addSubview(lblTitle)
         
         self.lblTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -117,7 +117,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
             let inputText = text ?? ""
             
             if inputText.isEmpty {
-                self.bottomBorderView.backgroundColor = EroojaColorSet.shared.gray400s
+                self.bottomBorderView.backgroundColor = EroojaColorSet.shared.gray300
                 self.checkBadgeView.isHidden = true
                 
                 if !self.isInitialShown {
@@ -145,12 +145,12 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
                     SignUpBaseProperty.nickname = text
                     isValid = true
                 }
-                self.bottomBorderView.backgroundColor = EroojaColorSet.shared.orgDefault400s
+                self.bottomBorderView.backgroundColor = EroojaColorSet.shared.orgDefault400
                 self.delegate?.setButtonStyle(forState: isValid ? .active : .inActive)
             }
         }
         textFieldView.font = .SpoqaBold15P
-        textFieldView.textColor = EroojaColorSet.shared.gray100s
+        textFieldView.textColor = EroojaColorSet.shared.gray700
         
         self.addSubview(fieldView)
         fieldView.addSubview(textFieldView)
@@ -175,7 +175,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
         checkBadgeView.widthAnchor.constraint(equalTo: checkBadgeView.heightAnchor).isActive = true
         checkBadgeView.trailingAnchor.constraint(equalTo: fieldView.trailingAnchor).isActive = true
         
-        bottomBorderView.backgroundColor = EroojaColorSet.shared.gray400s
+        bottomBorderView.backgroundColor = EroojaColorSet.shared.gray300
         self.addSubview(bottomBorderView)
         bottomBorderView.translatesAutoresizingMaskIntoConstraints = false
         bottomBorderView.topAnchor.constraint(equalTo: fieldView.bottomAnchor).isActive = true
@@ -185,7 +185,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
         
         bottomHintLabel.font = .SpoqaRegular12P
         bottomHintLabel.textAlignment = .center
-        bottomHintLabel.textColor = EroojaColorSet.shared.orgDefault400s
+        bottomHintLabel.textColor = EroojaColorSet.shared.orgDefault400
         
         self.addSubview(bottomHintLabel)
         bottomHintLabel.translatesAutoresizingMaskIntoConstraints = false

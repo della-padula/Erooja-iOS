@@ -72,8 +72,8 @@ public class EUIModalViewController: BaseViewController {
         
         modalTitleLabel.font = .SpoqaBold20P
         modalContentLabel.font = .SpoqaRegular14P
-        modalTitleLabel.textColor = EroojaColorSet.shared.gray100s
-        modalContentLabel.textColor = EroojaColorSet.shared.gray300s
+        modalTitleLabel.textColor = EroojaColorSet.shared.gray700
+        modalContentLabel.textColor = EroojaColorSet.shared.gray500
         
         modalTitleLabel.numberOfLines = 0
         modalTitleLabel.textAlignment = .center
@@ -83,7 +83,7 @@ public class EUIModalViewController: BaseViewController {
         bottomButton.font = .SpoqaRegular15P
         bottomButton.textColor = .white
         bottomButton.layer.cornerRadius = 4
-        bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
+        bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400
         
         imageButton.addTarget(target: self, action: #selector(onClickCloseButton), forEvent: .touchUpInside)
         bottomButton.addTarget(target: self, action: #selector(onClickBottomButton), forEvent: .touchUpInside)

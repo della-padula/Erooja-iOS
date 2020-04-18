@@ -194,8 +194,8 @@ public class EUIHeaderView: UIView {
     }
     
     private func setProgressBarLayout() {
-        progressView.trackTintColor = EroojaColorSet.shared.gray500s
-        progressView.progressTintColor = EroojaColorSet.shared.orgDefault400s
+        progressView.trackTintColor = EroojaColorSet.shared.gray100
+        progressView.progressTintColor = EroojaColorSet.shared.orgDefault400
         
         addSubview(progressView)
         progressView.translatesAutoresizingMaskIntoConstraints = false
@@ -208,7 +208,7 @@ public class EUIHeaderView: UIView {
     private func setTextFieldLayout() {
         addSubview(textField)
         textField.font = .SpoqaRegular14P
-        textField.tintColor = EroojaColorSet.shared.orgDefault400s
+        textField.tintColor = EroojaColorSet.shared.orgDefault400
         textField.delegate = self
         textField.debounce(delay: 0.3, callback: { text in
             self.delegate?.didChangeTextField(self.textField, text: text)

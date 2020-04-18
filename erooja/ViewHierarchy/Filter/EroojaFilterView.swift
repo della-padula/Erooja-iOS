@@ -20,6 +20,9 @@ public class EroojaFilterView: UIView {
     private let devJobListStackView = UIStackView()
     private let designJobListStackView = UIStackView()
     
+    private let horizontalSpacing: CGFloat = 10
+    private let verticalSpacing: CGFloat = 10
+    
     public var delegate: JobItemButtonDelegate?
     
     public init() {
@@ -47,10 +50,10 @@ public class EroojaFilterView: UIView {
         
         devJobListStackView.axis = .vertical
         devJobListStackView.distribution = .equalSpacing
-        devJobListStackView.spacing = 8
+        devJobListStackView.spacing = verticalSpacing
         designJobListStackView.axis = .vertical
         designJobListStackView.distribution = .equalSpacing
-        designJobListStackView.spacing = 8
+        designJobListStackView.spacing = verticalSpacing
         
         duplicateInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         devTitleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -83,15 +86,15 @@ public class EroojaFilterView: UIView {
     
     fileprivate func setLayoutProperty() {
         devTitleLabel.text = "개발"
-        devTitleLabel.textColor = EroojaColorSet.shared.gray100s
+        devTitleLabel.textColor = EroojaColorSet.shared.gray700
         devTitleLabel.font = .SpoqaBold16P
         
         designTitleLabel.text = "디자인"
-        designTitleLabel.textColor = EroojaColorSet.shared.gray100s
+        designTitleLabel.textColor = EroojaColorSet.shared.gray700
         designTitleLabel.font = .SpoqaBold16P
         
         duplicateInfoLabel.text = "*중복 선택 가능"
-        duplicateInfoLabel.textColor = EroojaColorSet.shared.gray300s
+        duplicateInfoLabel.textColor = EroojaColorSet.shared.gray500
         duplicateInfoLabel.font = .SpoqaRegular12P
     }
     
@@ -114,7 +117,7 @@ public class EroojaFilterView: UIView {
                 horizontalStackView?.axis = .horizontal
                 horizontalStackView?.alignment = .center
                 horizontalStackView?.distribution = .fill
-                horizontalStackView?.spacing = 8
+                horizontalStackView?.spacing = horizontalSpacing
                 
                 let button = JobItemButton()
                 button.title = item

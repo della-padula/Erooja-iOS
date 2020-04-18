@@ -82,7 +82,7 @@ public class OnboardViewController: UIViewController {
         self.nextButton.setTitle("Next", for: .normal)
         self.nextButton.addTarget(self, action: #selector(onClickNextButton), for: .touchUpInside)
         self.nextButton.titleLabel?.font = .SpoqaRegular15P
-        self.nextButton.setTitleColor(EroojaColorSet.shared.orgDefault400s, for: .normal)
+        self.nextButton.setTitleColor(EroojaColorSet.shared.orgDefault400, for: .normal)
         
         self.nextButton.translatesAutoresizingMaskIntoConstraints = false
         self.bottomView.addSubview(nextButton)
@@ -95,7 +95,7 @@ public class OnboardViewController: UIViewController {
         self.skipButton.setTitle("Skip", for: .normal)
         self.skipButton.addTarget(self, action: #selector(onClickSkipButton), for: .touchUpInside)
         self.skipButton.titleLabel?.font = .SpoqaRegular15P
-        self.skipButton.setTitleColor(EroojaColorSet.shared.gray300s, for: .normal)
+        self.skipButton.setTitleColor(EroojaColorSet.shared.gray500, for: .normal)
         
         self.skipButton.translatesAutoresizingMaskIntoConstraints = false
         self.bottomView.addSubview(skipButton)
@@ -110,8 +110,8 @@ public class OnboardViewController: UIViewController {
         self.pageControl.indicatorDiameter = 9
         self.pageControl.currentIndicatorDiameter = 9
         self.pageControl.spacing = 20
-        self.pageControl.indicatorTintColor = EroojaColorSet.shared.gray400s
-        self.pageControl.currentIndicatorTintColor = EroojaColorSet.shared.orgDefault400s
+        self.pageControl.indicatorTintColor = EroojaColorSet.shared.gray400
+        self.pageControl.currentIndicatorTintColor = EroojaColorSet.shared.orgDefault400
         
         self.pageControl.translatesAutoresizingMaskIntoConstraints = false
         self.bottomView.addSubview(pageControl)

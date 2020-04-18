@@ -135,18 +135,18 @@ public class SignUpDetailView: UIView {
     private func setButtonState(index: Int, isActive: Bool) {
         if isActive {
             buttons![index].layer.cornerRadius = 8
-            buttons![index].layer.borderColor = EroojaColorSet.shared.orgDefault400s.cgColor
+            buttons![index].layer.borderColor = EroojaColorSet.shared.orgDefault400.cgColor
             buttons![index].layer.borderWidth = 1
             labels![index].font = .SpoqaRegular15P
-            labels![index].textColor = EroojaColorSet.shared.orgDefault400s
+            labels![index].textColor = EroojaColorSet.shared.orgDefault400
             buttons![index].isHidden = false
             labels![index].isHidden = false
         } else {
             buttons![index].layer.cornerRadius = 8
-            buttons![index].layer.borderColor = EroojaColorSet.shared.gray500s.cgColor
+            buttons![index].layer.borderColor = EroojaColorSet.shared.gray300.cgColor
             buttons![index].layer.borderWidth = 1
             labels![index].font = .SpoqaRegular15P
-            labels![index].textColor = EroojaColorSet.shared.gray300s
+            labels![index].textColor = EroojaColorSet.shared.gray500
             buttons![index].isHidden = false
             labels![index].isHidden = false
         }

@@ -24,7 +24,7 @@ public class ETabButton: UIView {
     public var isActive: Bool = false {
         didSet {
             self.bottomLine.isHidden = !isActive
-            self.titleLabel.textColor = isActive ? .black : EroojaColorSet.shared.gray300s
+            self.titleLabel.textColor = isActive ? EroojaColorSet.shared.black100 : EroojaColorSet.shared.gray400
         }
     }
     
