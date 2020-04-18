@@ -23,12 +23,23 @@ class DetailGoalViewController: BaseViewController {
     
     @IBAction func onClickSpreadButton(_ sender: UIButton) {
         isSpreaded = !isSpreaded
-        detailTopContentLabel.numberOfLines = isSpreaded ? 0 : 3
+        self.detailTopContentLabel.numberOfLines = self.isSpreaded ? 0 : 3
+        
+        UIView.animate(withDuration: 0.2, animations: {
+//            self.detailTopContentLabel.numberOfLines = self.isSpreaded ? 0 : 3
+            self.view.layoutIfNeeded()
+//            self.detailTopContentLabel.superview?.layoutIfNeeded()
+        })
+
         downArrowButtonImage.image = isSpreaded ? .goalDetailUpArrow : .goalDetailDownArrow
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // TEMP
+        detailTopTitleLabel.text = "애프터이펙트 익스프레션 학습을 통한 모션그래픽 제작"
+        detailTopContentLabel.text = "포트폴리오 진행하기는 나의 부족한 포트폴리오를 매년 4월, 11월 경 열리는 펠로우십 과제를 준비하는 였는가더보기 인간은 때에, 청춘을 피고, 아니다. 있음으로써 밥을 인류의 것이다. 찾아다녀도, 뜨거운지라, 낙원을 이상의 역사를 피어나기 봄바람이다. 긴지라 위하여서, 인생을 그와 위하여, 봄바람이다. 대한 만천하의 황금시대의 설레는 살았으며, 같으며, 현저하게 운다. 같은 우리 커다란 힘차게 이상이 인간은 품으며, 별과 칼이다. 길을 있을 인생에 품으며, 뛰노는 스며들어 청춘의 무엇이 얼마나 봄바람이다. 꽃이 새 있는 이 대고, 위하여, 옷을 그들은 힘차게 말이다.\n\n꽃이 전인 밥을 풀이 무엇이 때문이다. 그러므로 그것은 있음으로써 있는 끓는다. 얼마나 밝은 사는가 살았으며, 살 우리는 가지에 사막이다. 밝은 대한 구하지 구할 품에 우리 찾아 부패뿐이다. "
+        
         setViewLayout()
     }
 
@@ -47,8 +58,11 @@ class DetailGoalViewController: BaseViewController {
         
         detailTopTitleLabel.font = .SpoqaBold20P
         detailTopDateLabel.font = .SpoqaLight14P
+        detailTopContentLabel.font = .SpoqaRegular14P
         detailTopDateLabel.textColor = EroojaColorSet.shared.white100
         detailTopTitleLabel.textColor = EroojaColorSet.shared.white100
+        detailTopContentLabel.textColor = EroojaColorSet.shared.white100
+        detailTopContentLabel.setLinespace(spacing: 4)
     }
     
     fileprivate func setNavigationBar() {
