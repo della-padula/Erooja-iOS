@@ -38,8 +38,8 @@ public class CreateGoalSecondCell: UICollectionViewCell {
         textField.delegate = self
         textField.placeholder = "목표명을 입력해주세요."
         textField.font = .SpoqaRegular15P
-        textField.textColor = EroojaColorSet.shared.gray100s
-        textField.tintColor = EroojaColorSet.shared.orgDefault400s
+        textField.textColor = EroojaColorSet.shared.gray700
+        textField.tintColor = EroojaColorSet.shared.orgDefault400
         
         textField.debounce(delay: 0.0, callback: { text in
             self.processInputText(text: text ?? "")
@@ -47,8 +47,8 @@ public class CreateGoalSecondCell: UICollectionViewCell {
         
         textDescriptionLabel.text = "목표를 5자 이상 입력해주세요."
         textDescriptionLabel.font = .SpoqaRegular12P
-        textDescriptionLabel.textColor = EroojaColorSet.shared.error000s
-        textCountLabel.textColor = EroojaColorSet.shared.gray400s
+        textDescriptionLabel.textColor = EroojaColorSet.shared.error100
+        textCountLabel.textColor = EroojaColorSet.shared.gray300
         textCountLabel.font = .SpoqaRegular12P
         setBottomLineStyle(isActive: false)
         
@@ -84,7 +84,7 @@ public class CreateGoalSecondCell: UICollectionViewCell {
     
     private func setBottomLineStyle(isActive: Bool) {
         bottomLineHeightContraint.constant = 2
-        textFieldBottomLine.backgroundColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray500s
+        textFieldBottomLine.backgroundColor = isActive ? EroojaColorSet.shared.orgDefault400 : EroojaColorSet.shared.gray300
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

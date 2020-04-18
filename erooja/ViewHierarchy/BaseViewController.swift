@@ -20,3 +20,12 @@ public class BaseViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        if responds(to: Selector("statusBar")) {
+            return value(forKey: "statusBar") as? UIView
+        }
+        return nil
+    }
+}

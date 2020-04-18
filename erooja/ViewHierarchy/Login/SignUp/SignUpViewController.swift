@@ -90,8 +90,8 @@ public class SignUpViewController: BaseViewController {
         bottomButton.setTitle("다음", for: .normal)
         bottomButton.titleLabel?.font = .SpoqaRegular15P
         
-        bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
-        bottomButton.setTitleColor(EroojaColorSet.shared.whiteBg000s, for: .normal)
+        bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400
+        bottomButton.setTitleColor(EroojaColorSet.shared.white100, for: .normal)
         bottomButton.addTarget(self, action: #selector(onClickNext), for: .touchUpInside)
         
         view.addSubview(bottomButton)
@@ -214,12 +214,12 @@ extension SignUpViewController: SignUpCellDelegate {
     public func setButtonStyle(forState: ButtonState) {
         switch forState {
         case .active:
-            bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
-            bottomButton.setTitleColor(EroojaColorSet.shared.whiteBg000s, for: .normal)
+            bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400
+            bottomButton.setTitleColor(EroojaColorSet.shared.white100, for: .normal)
             bottomButton.isEnabled = true
         case .inActive:
-            bottomButton.backgroundColor = EroojaColorSet.shared.gray500s
-            bottomButton.setTitleColor(EroojaColorSet.shared.gray300s, for: .normal)
+            bottomButton.backgroundColor = EroojaColorSet.shared.gray300
+            bottomButton.setTitleColor(EroojaColorSet.shared.gray500, for: .normal)
             bottomButton.isEnabled = false
         }
     }

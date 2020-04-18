@@ -34,13 +34,13 @@ public class GoalDetailItemInputCell: UITableViewCell {
     private func setViewLayout() {
         dotView.layer.cornerRadius = dotView.bounds.width / 2
         bgColorView.layer.cornerRadius = 12
-        bgColorView.backgroundColor = EroojaColorSet.shared.grayBg700s
+        bgColorView.backgroundColor = EroojaColorSet.shared.gray100
         textField.delegate = self
         textField.debounce(delay: 0, callback: { text in
             if (text ?? "").isEmpty {
-                self.dotView.backgroundColor = EroojaColorSet.shared.gray400s
+                self.dotView.backgroundColor = EroojaColorSet.shared.gray400
             } else {
-                self.dotView.backgroundColor = EroojaColorSet.shared.orgDefault400s
+                self.dotView.backgroundColor = EroojaColorSet.shared.orgDefault400
             }
         })
     }
@@ -51,7 +51,7 @@ extension GoalDetailItemInputCell: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         delegate?.returnKeyEvent(textField, content: textField.text)
         textField.text = ""
-        self.dotView.backgroundColor = EroojaColorSet.shared.gray400s
+        self.dotView.backgroundColor = EroojaColorSet.shared.gray400
         return true
     }
 }

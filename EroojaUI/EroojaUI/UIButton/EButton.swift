@@ -22,6 +22,25 @@ public class EButton: UIView {
         setButtonLayout()
     }
     
+    public var isEnableActiveOption: Bool = true
+    
+    public var activeColor: UIColor = EroojaColorSet.shared.gray700 {
+        didSet {
+            textColor = isActive ? activeColor : inActiveColor
+            if isEnableActiveOption {
+                imageView.tintColor = isActive ? activeColor : inActiveColor
+            }
+        }
+    }
+    public var inActiveColor: UIColor = EroojaColorSet.shared.gray400 {
+        didSet {
+            textColor = isActive ? activeColor : inActiveColor
+            if isEnableActiveOption {
+                imageView.tintColor = isActive ? activeColor : inActiveColor
+            }
+        }
+    }
+    
     public var image: UIImage? {
         didSet {
             setButtonStyle()
@@ -55,7 +74,10 @@ public class EButton: UIView {
     public var isActive: Bool = false {
         didSet {
             self.isUserInteractionEnabled = isActive
-            textColor = isActive ? EroojaColorSet.shared.gray100s : EroojaColorSet.shared.gray400s
+            if isEnableActiveOption {
+                textColor = isActive ? activeColor : inActiveColor
+                imageView.tintColor = isActive ? activeColor : inActiveColor
+            }
         }
     }
     
@@ -117,6 +139,11 @@ public class EButton: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(frame: .zero)
+        titleLabel.textAlignment = .center
+        addSubview(imageView)
+        addSubview(titleLabel)
+        addSubview(button)
+        setButtonLayout()
     }
 }

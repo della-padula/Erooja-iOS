@@ -68,7 +68,7 @@ public class SignUpFieldViewCell: UICollectionViewCell {
         self.lblTitle.text = self.title ?? "NO TITLE"
         self.lblTitle.font = .SpoqaBold20P
         self.lblTitle.textAlignment = .center
-        self.lblTitle.textColor = EroojaColorSet.shared.gray100s
+        self.lblTitle.textColor = EroojaColorSet.shared.gray700
         self.addSubview(lblTitle)
         
         self.lblTitle.translatesAutoresizingMaskIntoConstraints = false

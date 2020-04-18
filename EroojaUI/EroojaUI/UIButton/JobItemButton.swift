@@ -35,11 +35,11 @@ public class JobItemButton: UIView {
     }
     
     private func setButtonStyle() {
-        layer.cornerRadius = 8
-        layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400s.cgColor : EroojaColorSet.shared.gray400s.cgColor
+        layer.cornerRadius = 12
+        layer.borderColor = isActive ? EroojaColorSet.shared.orgDefault400.cgColor : EroojaColorSet.shared.gray400.cgColor
         layer.borderWidth = 1
         
-        label.textColor = isActive ? EroojaColorSet.shared.orgDefault400s : EroojaColorSet.shared.gray400s
+        label.textColor = isActive ? EroojaColorSet.shared.orgDefault400 : EroojaColorSet.shared.gray400
     }
     
     override init(frame: CGRect) {
@@ -68,7 +68,7 @@ public class JobItemButton: UIView {
         button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         button.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         button.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        button.widthAnchor.constraint(equalTo: label.widthAnchor, constant: 16).isActive = true
+        button.widthAnchor.constraint(equalTo: label.widthAnchor, constant: 32).isActive = true
         button.heightAnchor.constraint(equalTo: label.heightAnchor, constant: 16).isActive = true
         
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true

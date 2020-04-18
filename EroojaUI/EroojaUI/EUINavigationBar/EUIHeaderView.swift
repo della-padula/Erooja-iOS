@@ -106,12 +106,26 @@ public class EUIHeaderView: UIView {
         }
     }
     
+    public func setRightButtonColor(position: ERightButton.Position, colorActive: UIColor, colorInActive: UIColor) {
+        if position == .first {
+            self.rightFirstButton.activeColor = colorActive
+            self.rightFirstButton.inActiveColor = colorInActive
+        } else {
+            self.rightSecondButton.activeColor = colorActive
+            self.rightSecondButton.inActiveColor = colorInActive
+        }
+    }
+    
     public func setRightButtonFont(position: ERightButton.Position, font: UIFont) {
         if position == .first {
             self.rightFirstButton.font = font
         } else {
             self.rightSecondButton.font = font
         }
+    }
+    
+    public func setBackButtonImage(image: UIImage) {
+        self.backButton.image = image
     }
     
     public func setRightButtonImage(position: ERightButton.Position, image: UIImage) {
@@ -152,7 +166,13 @@ public class EUIHeaderView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(frame: .zero)
+        self.addSubview(rightFirstButton)
+        self.addSubview(rightSecondButton)
+        
+        self.rightButtons = [self.rightFirstButton, self.rightSecondButton]
+        
+        self.setNavigationBarOption()
     }
     
     private func setNavigationBarOption() {
@@ -194,8 +214,8 @@ public class EUIHeaderView: UIView {
     }
     
     private func setProgressBarLayout() {
-        progressView.trackTintColor = EroojaColorSet.shared.gray500s
-        progressView.progressTintColor = EroojaColorSet.shared.orgDefault400s
+        progressView.trackTintColor = EroojaColorSet.shared.gray100
+        progressView.progressTintColor = EroojaColorSet.shared.orgDefault400
         
         addSubview(progressView)
         progressView.translatesAutoresizingMaskIntoConstraints = false
@@ -208,7 +228,7 @@ public class EUIHeaderView: UIView {
     private func setTextFieldLayout() {
         addSubview(textField)
         textField.font = .SpoqaRegular14P
-        textField.tintColor = EroojaColorSet.shared.orgDefault400s
+        textField.tintColor = EroojaColorSet.shared.orgDefault400
         textField.delegate = self
         textField.debounce(delay: 0.3, callback: { text in
             self.delegate?.didChangeTextField(self.textField, text: text)

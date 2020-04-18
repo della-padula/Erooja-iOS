@@ -114,7 +114,7 @@ public class SearchViewController: BaseViewController {
         resultPlaceholderView.imageHeight = 150
         resultPlaceholderView.image = .mainLogo
         resultPlaceholderView.text = "Test Placeholder"
-        resultPlaceholderView.textColor = EroojaColorSet.shared.gray000s
+        resultPlaceholderView.textColor = EroojaColorSet.shared.black100
         resultPlaceholderView.font = .SpoqaRegular14P
         self.resultPlaceholderView.translatesAutoresizingMaskIntoConstraints = false
         

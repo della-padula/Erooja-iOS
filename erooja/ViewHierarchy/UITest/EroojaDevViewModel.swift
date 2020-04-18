@@ -17,6 +17,7 @@ public enum EroojaType: String, CaseIterable {
     case main          = "메인"
     case nowGoal       = "진행중인 목표"
     case search        = "검색"
+    case goalDetail    = "목표 상세"
     case addGoal       = "목표 추가"
     case peopleProfile = "타 계정페이지"
     case guest         = "게스트 로직"

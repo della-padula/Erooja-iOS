@@ -33,9 +33,9 @@ public class GoalDetailItemCell: UITableViewCell {
     
     private func setViewLayout() {
         dotView.layer.cornerRadius = dotView.bounds.width / 2
-        dotView.backgroundColor = EroojaColorSet.shared.orgDefault400s
+        dotView.backgroundColor = EroojaColorSet.shared.orgDefault400
         bgColorView.layer.cornerRadius = 12
-        bgColorView.backgroundColor = EroojaColorSet.shared.grayBg700s
+        bgColorView.backgroundColor = EroojaColorSet.shared.gray100
     }
     
 }
