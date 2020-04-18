@@ -22,6 +22,19 @@ public class EButton: UIView {
         setButtonLayout()
     }
     
+    public var activeColor: UIColor = EroojaColorSet.shared.gray700 {
+        didSet {
+            textColor = isActive ? activeColor : inActiveColor
+            imageView.tintColor = isActive ? activeColor : inActiveColor
+        }
+    }
+    public var inActiveColor: UIColor = EroojaColorSet.shared.gray400 {
+        didSet {
+            textColor = isActive ? activeColor : inActiveColor
+            imageView.tintColor = isActive ? activeColor : inActiveColor
+        }
+    }
+    
     public var image: UIImage? {
         didSet {
             setButtonStyle()
@@ -55,7 +68,8 @@ public class EButton: UIView {
     public var isActive: Bool = false {
         didSet {
             self.isUserInteractionEnabled = isActive
-            textColor = isActive ? EroojaColorSet.shared.gray700 : EroojaColorSet.shared.gray400
+            textColor = isActive ? activeColor : inActiveColor
+            imageView.tintColor = isActive ? activeColor : inActiveColor
         }
     }
     

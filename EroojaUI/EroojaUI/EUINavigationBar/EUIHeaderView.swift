@@ -106,12 +106,26 @@ public class EUIHeaderView: UIView {
         }
     }
     
+    public func setRightButtonColor(position: ERightButton.Position, colorActive: UIColor, colorInActive: UIColor) {
+        if position == .first {
+            self.rightFirstButton.activeColor = colorActive
+            self.rightFirstButton.inActiveColor = colorInActive
+        } else {
+            self.rightSecondButton.activeColor = colorActive
+            self.rightSecondButton.inActiveColor = colorInActive
+        }
+    }
+    
     public func setRightButtonFont(position: ERightButton.Position, font: UIFont) {
         if position == .first {
             self.rightFirstButton.font = font
         } else {
             self.rightSecondButton.font = font
         }
+    }
+    
+    public func setBackButtonImage(image: UIImage) {
+        self.backButton.image = image
     }
     
     public func setRightButtonImage(position: ERightButton.Position, image: UIImage) {

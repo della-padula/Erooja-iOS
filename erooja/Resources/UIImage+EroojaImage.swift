@@ -30,6 +30,14 @@ public extension UIImage {
         return UIImage(named: "modal_logo_goal_flag_hand")!
     }
     
+    class var goalDetailBackArrow: UIImage {
+        return UIImage(named: "goal_detail_back_arrow")!
+    }
+    
+    class var goalDetailMenu: UIImage {
+        return UIImage(named: "goal_detail_menu")!
+    }
+    
     class var onboard_1: UIImage {
         return UIImage(named: "onboard_1")!
     }

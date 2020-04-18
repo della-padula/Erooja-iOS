@@ -59,6 +59,7 @@
 		B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; };
 		B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0D113EE24491C9800FE7C0C /* EroojaFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D113ED24491C9800FE7C0C /* EroojaFilterView.swift */; };
+		B0D11444244AE6F900FE7C0C /* GoalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D11443244AE6F900FE7C0C /* GoalDetailViewController.swift */; };
 		B0F1BB322436BC5800D04DD5 /* SignUpFieldViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1BB312436BC5800D04DD5 /* SignUpFieldViewCell.swift */; };
 		B0F98E6E2442914B00F7510E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E6D2442914B00F7510E /* SearchTableViewCell.swift */; };
 		B0F98E812442A06500F7510E /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E802442A06500F7510E /* CreateGoalViewController.swift */; };
@@ -216,6 +217,7 @@
 		B0C0311724364AFC008771BB /* SignUpDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpDetailView.xib; sourceTree = "<group>"; };
 		B0C0311A24366241008771BB /* SignUpBaseProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBaseProperty.swift; sourceTree = "<group>"; };
 		B0D113ED24491C9800FE7C0C /* EroojaFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaFilterView.swift; sourceTree = "<group>"; };
+		B0D11443244AE6F900FE7C0C /* GoalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewController.swift; sourceTree = "<group>"; };
 		B0F1BB312436BC5800D04DD5 /* SignUpFieldViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFieldViewCell.swift; sourceTree = "<group>"; };
 		B0F98E6D2442914B00F7510E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		B0F98E802442A06500F7510E /* CreateGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
@@ -397,8 +399,8 @@
 		B0462B1E242BA93C00B51854 /* ViewHierarchy */ = {
 			isa = PBXGroup;
 			children = (
+				B0D11441244AE6DA00FE7C0C /* Goal */,
 				B0D113EC24491C7000FE7C0C /* Filter */,
-				B0F98E7B2442A05700F7510E /* CreateGoal */,
 				B031CFBC243702D000BDD599 /* ModalView */,
 				B04B4EDF2436F22C00EA438B /* Main */,
 				B04B4EDC2436F06200EA438B /* Search */,
@@ -539,6 +541,23 @@
 				B0D113ED24491C9800FE7C0C /* EroojaFilterView.swift */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		B0D11441244AE6DA00FE7C0C /* Goal */ = {
+			isa = PBXGroup;
+			children = (
+				B0D11442244AE6EA00FE7C0C /* GoalDetail */,
+				B0F98E7B2442A05700F7510E /* CreateGoal */,
+			);
+			path = Goal;
+			sourceTree = "<group>";
+		};
+		B0D11442244AE6EA00FE7C0C /* GoalDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B0D11443244AE6F900FE7C0C /* GoalDetailViewController.swift */,
+			);
+			path = GoalDetail;
 			sourceTree = "<group>";
 		};
 		B0F1BB382436BC5B00D04DD5 /* CellHierarchy */ = {
@@ -978,6 +997,7 @@
 				B05DC3A22438FCD500626501 /* EroojaDevViewModel.swift in Sources */,
 				B03D4A6D2433A2DC009180E9 /* OnboardCollectionViewCell.swift in Sources */,
 				B031CFA62436F88500BDD599 /* PortfolioModel.swift in Sources */,
+				B0D11444244AE6F900FE7C0C /* GoalDetailViewController.swift in Sources */,
 				B0462AD9242B8E5F00B51854 /* erooja.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
