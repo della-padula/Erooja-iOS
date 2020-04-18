@@ -12,7 +12,7 @@ import EroojaCommon
 class DetailGoalViewController: BaseViewController {
     @IBOutlet weak var detailTopSectionView: UIView!
     @IBOutlet weak var navigationBar: EUIHeaderView!
-    
+    @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var detailTopDateLabel: UILabel!
     @IBOutlet weak var detailTopTitleLabel: UILabel!
     @IBOutlet weak var detailTopContentLabel: UILabel!
@@ -38,7 +38,7 @@ class DetailGoalViewController: BaseViewController {
         super.viewDidLoad()
         // TEMP
         detailTopTitleLabel.text = "애프터이펙트 익스프레션 학습을 통한 모션그래픽 제작"
-        detailTopContentLabel.text = "포트폴리오 진행하기는 나의 부족한 포트폴리오를 매년 4월, 11월 경 열리는 펠로우십 과제를 준비하는 였는가더보기 인간은 때에, 청춘을 피고, 아니다. 있음으로써 밥을 인류의 것이다. 찾아다녀도, 뜨거운지라, 낙원을 이상의 역사를 피어나기 봄바람이다. 긴지라 위하여서, 인생을 그와 위하여, 봄바람이다. 대한 만천하의 황금시대의 설레는 살았으며, 같으며, 현저하게 운다. 같은 우리 커다란 힘차게 이상이 인간은 품으며, 별과 칼이다. 길을 있을 인생에 품으며, 뛰노는 스며들어 청춘의 무엇이 얼마나 봄바람이다. 꽃이 새 있는 이 대고, 위하여, 옷을 그들은 힘차게 말이다.\n\n꽃이 전인 밥을 풀이 무엇이 때문이다. 그러므로 그것은 있음으로써 있는 끓는다. 얼마나 밝은 사는가 살았으며, 살 우리는 가지에 사막이다. 밝은 대한 구하지 구할 품에 우리 찾아 부패뿐이다. "
+        detailTopContentLabel.text = "포트폴리오 진행하기는 나의 부족한 포트폴리오를 매년 4월, 11월 경 열리는 펠로우십 과제를 준비하는 였는가더보기 인간은 때에, 청춘을 피고, 아니다. 있음으로써 밥을 인류의 것이다. 찾아다녀도, 뜨거운지라, 낙원을 이상의 역사를 피어나기 봄바람이다. 긴지라 위하여서, 인생을 그와 위하여, 봄바람이다. 대한 만천하의 황금시대의 설레는 살았으며, 같으며, 현저하게 운다. 같은 우리 커다란 힘차게 이상이 인간은 품으며, 별과 칼이다. 길을 있을 인생에 품으며, 뛰노는 스며들어 청춘의 무엇이 얼마나 봄바람이다. 꽃이 새 있는 이 대고, 위하여, 옷을 그들은 힘차게 말이다.\n\n꽃이 전인 밥을 풀이 무엇이 때문이다. 그러므로 그것은 있음으로써 있는 끓는다. 얼마나 밝은 사는가 살았으며, 살 우리는 가지에 사막이다. 밝은 대한 구하지 구할 품에 우리 찾아 부패뿐이다. 길을 있을 인생에 품으며, 뛰노는 스며들어 청춘의 무엇이 얼마나 봄바람이다. 꽃이 새 있는 이 대고, 위하여, 옷을 그들은 힘차게 말이다.\n\n꽃이 전인 밥을 풀이 무엇이 때문이다. 그러므로 그것은 있음으로써 있는 끓는다. 얼마나 밝은 사는가 살았으며, 살 우리는 가지에 사막이다. 밝은 대한 구하지 구할 품에 우리 찾아 부패뿐이다. "
         
         setViewLayout()
     }
