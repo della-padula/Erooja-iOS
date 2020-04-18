@@ -75,6 +75,11 @@ public class EUIModalViewController: BaseViewController {
         modalTitleLabel.textColor = EroojaColorSet.shared.gray100s
         modalContentLabel.textColor = EroojaColorSet.shared.gray300s
         
+        modalTitleLabel.numberOfLines = 0
+        modalTitleLabel.textAlignment = .center
+        modalContentLabel.numberOfLines = 0
+        modalContentLabel.textAlignment = .center
+        
         bottomButton.font = .SpoqaRegular15P
         bottomButton.textColor = .white
         bottomButton.layer.cornerRadius = 4
@@ -87,8 +92,11 @@ public class EUIModalViewController: BaseViewController {
         imageBackgroundView.contentMode = .scaleToFill
         
         imageForegroundLogoGoal.image = .modelLogoGoal
+        imageForegroundLogoGoal.contentMode = .scaleAspectFit
         imageForegroundLogoFlag.image = .modelLogoGoalFlag
+        imageForegroundLogoFlag.contentMode = .scaleAspectFit
         imageForegroundLogoFlagWithHands.image = .modelLogoGoalFlagHand
+        imageForegroundLogoFlagWithHands.contentMode = .scaleAspectFit
         
         self.view.addSubview(imageButton)
         self.view.addSubview(bottomButton)
@@ -123,13 +131,13 @@ public class EUIModalViewController: BaseViewController {
         imageBackgroundView.heightAnchor.constraint(equalTo: imageBackgroundView.widthAnchor, multiplier: 306/360).isActive = true
 
         imageForegroundLogoGoal.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        imageForegroundLogoGoal.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive = true
+        imageForegroundLogoGoal.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.6).isActive = true
         imageForegroundLogoGoal.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 120).isActive = true
         imageForegroundLogoGoal.heightAnchor.constraint(equalTo: imageForegroundLogoGoal.widthAnchor, multiplier: 230/211).isActive = true
         
         imageForegroundLogoFlag.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         imageForegroundLogoFlag.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive = true
-        imageForegroundLogoFlag.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 120).isActive = true
+        imageForegroundLogoFlag.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 132).isActive = true
         imageForegroundLogoFlag.heightAnchor.constraint(equalTo: imageForegroundLogoGoal.widthAnchor).isActive = true
         
         imageForegroundLogoFlagWithHands.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
@@ -142,7 +150,7 @@ public class EUIModalViewController: BaseViewController {
         modalContentLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         modalContentLabel.topAnchor.constraint(equalTo: modalTitleLabel.bottomAnchor, constant: 10).isActive = true
         
-        bottomButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -10).isActive = true
+        bottomButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         bottomButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10).isActive = true
         bottomButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10).isActive = true
         bottomButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
@@ -163,5 +171,7 @@ public class EUIModalViewController: BaseViewController {
         imageForegroundLogoGoal.isHidden = isHiddenGoal
         imageForegroundLogoFlag.isHidden = isHiddenFlag
         imageForegroundLogoFlagWithHands.isHidden = isHiddenFlagWithHands
+        
+        imageBackgroundView.isHidden = !isHiddenGoal
     }
 }

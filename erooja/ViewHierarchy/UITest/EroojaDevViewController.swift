@@ -124,6 +124,8 @@ extension UITestViewController: EUIModalViewDelegate {
         let content = "열심히 달려온 당신, 칭찬의 박수 짝짝짝.\n새로운 목표에서 리스트를 시작해보세요."
         let buttonTitle = "새로운 목표 둘러보기"
         
-        return (title, content, buttonTitle, .flagWithHands)
+//        return (title, content, buttonTitle, .flagWithHands)
+        return (title, content, buttonTitle, .goal)
+//        return (title, content, buttonTitle, .flag)
     }
 }
