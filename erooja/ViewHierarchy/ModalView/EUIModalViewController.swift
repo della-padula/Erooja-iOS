@@ -70,16 +70,15 @@ public class EUIModalViewController: BaseViewController {
         imageButton.image = .commonIcoClose
         imageButton.padding = 10
         
+        modalTitleLabel.font = .SpoqaBold20P
+        modalContentLabel.font = .SpoqaRegular14P
+        modalTitleLabel.textColor = EroojaColorSet.shared.gray100s
+        modalContentLabel.textColor = EroojaColorSet.shared.gray300s
+        
         bottomButton.font = .SpoqaRegular15P
         bottomButton.textColor = .white
         bottomButton.layer.cornerRadius = 4
         bottomButton.backgroundColor = EroojaColorSet.shared.orgDefault400s
-        
-        // For DEBUG
-        imageButton.backgroundColor = .green
-        imageForegroundLogoGoal.backgroundColor = .cyan
-        imageForegroundLogoFlag.backgroundColor = .orange
-        imageForegroundLogoFlagWithHands.backgroundColor = .blue
         
         imageButton.addTarget(target: self, action: #selector(onClickCloseButton), forEvent: .touchUpInside)
         bottomButton.addTarget(target: self, action: #selector(onClickBottomButton), forEvent: .touchUpInside)

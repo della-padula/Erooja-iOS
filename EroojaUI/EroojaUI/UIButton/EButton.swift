@@ -95,10 +95,11 @@ public class EButton: UIView {
 //        constraintList.append(imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding))
 //        constraintList.append(imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: padding))
         
-        constraintList.append(titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding))
-        constraintList.append(titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: padding))
+//        constraintList.append(titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding))
+//        constraintList.append(titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: padding))
         constraintList.append(titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding))
         constraintList.append(titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: padding))
+        constraintList.append(titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor))
         constraintList.append(titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor))
         
         constraintList.append(button.topAnchor.constraint(equalTo: topAnchor))
