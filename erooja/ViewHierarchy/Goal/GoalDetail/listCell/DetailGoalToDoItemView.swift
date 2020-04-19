@@ -33,6 +33,6 @@ public class DetailGoalToDoItemView: UIView {
         textLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         textLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         textLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        textLabel.topAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        textLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
     }
 }

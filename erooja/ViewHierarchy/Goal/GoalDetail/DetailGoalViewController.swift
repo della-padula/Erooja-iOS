@@ -13,12 +13,17 @@ class DetailGoalViewController: BaseViewController {
     @IBOutlet weak var detailTopSectionView: UIView!
     @IBOutlet weak var navigationBar: EUIHeaderView!
     @IBOutlet weak var percentLabel: UILabel!
+    
     @IBOutlet weak var detailTopDateLabel: UILabel!
     @IBOutlet weak var detailTopTitleLabel: UILabel!
     @IBOutlet weak var detailTopContentLabel: UILabel!
+    
     @IBOutlet weak var downArrowButton: UIView!
     @IBOutlet weak var downArrowButtonImage: UIImageView!
+    
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollContentView: UIView!
+    
     
     @IBOutlet weak var detailTopDateLabelTopSpacing: NSLayoutConstraint!
     @IBOutlet weak var detailTopTitleLabelTopSpacing: NSLayoutConstraint!
@@ -56,8 +61,11 @@ class DetailGoalViewController: BaseViewController {
         setNavigationBar()
         setTopSectionView()
         setStackView()
-        
-        self.view.addSubview(saveButton)
+        setSaveButton()
+    }
+    
+    fileprivate func setSaveButton() {
+        self.scrollContentView.addSubview(saveButton)
         
         saveButton.title = "변경 저장"
         saveButton.backgroundColor = EroojaColorSet.shared.white100
@@ -70,9 +78,9 @@ class DetailGoalViewController: BaseViewController {
         saveButton.shadowColor = EroojaColorSet.shared.gray700
         
         saveButton.translatesAutoresizingMaskIntoConstraints = false
-        saveButton.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -20).isActive = true
-        saveButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        saveButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.3).isActive = true
+        saveButton.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor, constant: -20).isActive = true
+        saveButton.centerXAnchor.constraint(equalTo: scrollContentView.centerXAnchor).isActive = true
+        saveButton.widthAnchor.constraint(equalTo: scrollContentView.widthAnchor, multiplier: 0.3).isActive = true
         saveButton.heightAnchor.constraint(equalTo: saveButton.widthAnchor, multiplier: 0.5).isActive = true
         saveButton.topAnchor.constraint(equalTo: detailToDoListView.bottomAnchor, constant: 20).isActive = true
     }
@@ -81,16 +89,20 @@ class DetailGoalViewController: BaseViewController {
         // DetailGoalToDoItemView
         
         for _ in 0..<10 {
-            detailToDoListView.addArrangedSubview(DetailGoalToDoItemView())
+            let view = DetailGoalToDoItemView()
+            view.backgroundColor = .systemBlue
+            detailToDoListView.addArrangedSubview(view)
         }
         
-        self.view.addSubview(detailToDoListView)
-        
+        self.scrollContentView.addSubview(detailToDoListView)
+        detailToDoListView.backgroundColor = .green
+        detailToDoListView.axis = .vertical
         detailToDoListView.distribution = .equalSpacing
+        detailToDoListView.spacing = 2
         detailToDoListView.translatesAutoresizingMaskIntoConstraints = false
         detailToDoListView.topAnchor.constraint(equalTo: percentLabel.bottomAnchor, constant: 20).isActive = true
-        detailToDoListView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        detailToDoListView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        detailToDoListView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
+        detailToDoListView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
     }
     
     fileprivate func setTopSectionView() {
@@ -150,15 +162,5 @@ extension DetailGoalViewController: EUINavigationBarDelegate {
     
     public func onClickRightSectionButton(at position: ERightButton.Position) {
         
-    }
-}
-
-extension DetailGoalViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
     }
 }
