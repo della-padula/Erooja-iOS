@@ -47,7 +47,7 @@ public class DetailGoalToDoItemView: UIView {
     private func setViewLayout() {
         setCheckButton()
         setTitleLabel()
-        
+        self.backgroundColor = EroojaColorSet.shared.white100
         self.bounds.size.height = 44
     }
     

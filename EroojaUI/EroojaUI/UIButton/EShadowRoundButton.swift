@@ -8,10 +8,17 @@
 
 import Foundation
 import UIKit
+import EroojaCommon
 
 public class EShadowRoundButton: UIView {
     private let button = UIButton()
     private let titleLabel = UILabel()
+    
+    public var cornerRadius: CGFloat = 0 {
+        didSet {
+            addShadowToView()
+        }
+    }
     
     public var title: String? {
         didSet {
@@ -61,6 +68,7 @@ public class EShadowRoundButton: UIView {
     
     fileprivate func setViewLayout() {
         self.layer.cornerRadius = self.bounds.height / 2
+        self.clipsToBounds = true
         self.addSubview(button)
         
         titleLabel.textAlignment = .center
@@ -86,8 +94,15 @@ public class EShadowRoundButton: UIView {
         }
         
         self.layer.shadowColor = shadowColor.cgColor
-        self.layer.shadowOpacity = 1
+        self.layer.shadowOpacity = 0.7
         self.layer.shadowOffset = .init(width: 0, height: shadowVerticalOffset)
         self.layer.shadowRadius = shadowWidth
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        ELog.debug(message: "self.frame = \(self.frame)")
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = self.frame.height * 0.5
     }
 }

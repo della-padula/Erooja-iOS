@@ -109,8 +109,8 @@ class DetailGoalViewController: BaseViewController {
         saveButton.backgroundColor = EroojaColorSet.shared.white100
         saveButton.titleColor = EroojaColorSet.shared.orgDefault400
         saveButton.titleFont = .SpoqaBold17P
-        saveButton.shadowWidth = 10
-        saveButton.shadowVerticalOffset = 10
+        saveButton.shadowWidth = 6
+        saveButton.shadowVerticalOffset = 8
         
         // MARK: TEMP Shadow Color
         saveButton.shadowColor = EroojaColorSet.shared.gray700
@@ -121,6 +121,8 @@ class DetailGoalViewController: BaseViewController {
         saveButton.widthAnchor.constraint(equalTo: scrollContentView.widthAnchor, multiplier: 0.3).isActive = true
         saveButton.heightAnchor.constraint(equalTo: saveButton.widthAnchor, multiplier: 0.5).isActive = true
         saveButton.topAnchor.constraint(equalTo: detailToDoListView.bottomAnchor, constant: 20).isActive = true
+        
+        saveButton.cornerRadius = saveButton.height * 0.5
     }
     
     fileprivate func setStackView() {
