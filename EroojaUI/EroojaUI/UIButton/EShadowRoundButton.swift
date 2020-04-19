@@ -60,8 +60,10 @@ public class EShadowRoundButton: UIView {
     }
     
     fileprivate func setViewLayout() {
-        self.layer.cornerRadius = self.frame.height / 2
+        self.layer.cornerRadius = self.bounds.height / 2
         self.addSubview(button)
+        
+        titleLabel.textAlignment = .center
         button.setTitle("", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true

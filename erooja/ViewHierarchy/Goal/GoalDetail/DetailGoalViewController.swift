@@ -18,7 +18,7 @@ class DetailGoalViewController: BaseViewController {
     @IBOutlet weak var detailTopContentLabel: UILabel!
     @IBOutlet weak var downArrowButton: UIView!
     @IBOutlet weak var downArrowButtonImage: UIImageView!
-    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var detailTopDateLabelTopSpacing: NSLayoutConstraint!
     @IBOutlet weak var detailTopTitleLabelTopSpacing: NSLayoutConstraint!
@@ -26,25 +26,17 @@ class DetailGoalViewController: BaseViewController {
     @IBOutlet weak var detailTopViewHeight: NSLayoutConstraint!
     @IBOutlet weak var downArrowButtonTopSpacing: NSLayoutConstraint!
     @IBOutlet weak var downArrowButtonHeight: NSLayoutConstraint!
+    
+    private let saveButton = EShadowRoundButton()
+    private let detailToDoListView = UIStackView()
     private var isSpreaded: Bool = false
     
     @IBAction func onClickSpreadButton(_ sender: UIButton) {
         isSpreaded = !isSpreaded
         self.detailTopContentLabel.numberOfLines = self.isSpreaded ? 0 : 3
 
-//        let totalSpacing = downArrowButtonTopSpacing.constant + detailTopContentLabelTopSpacing.constant + detailTopTitleLabelTopSpacing.constant + detailTopDateLabelTopSpacing.constant
-        
-//        let totalHeight = downArrowButtonHeight.constant + detailTopContentLabel.frame.height + detailTopTitleLabel.frame.height
-        
-//        self.detailTopViewHeight.constant = totalSpacing + totalHeight
-        
-//        ELog.debug(message: "Top Detail Content Label Height : \(self.detailTopContentLabel.frame.height)")
-//        ELog.debug(message: "Top Section View Height : \(self.detailTopViewHeight.constant)")
-        
         UIView.animate(withDuration: 0.2, animations: {
-//            self.detailTopContentLabel.numberOfLines = self.isSpreaded ? 0 : 3
             self.view.layoutIfNeeded()
-//            self.detailTopContentLabel.superview?.layoutIfNeeded()
         })
 
         downArrowButtonImage.image = isSpreaded ? .goalDetailUpArrow : .goalDetailDownArrow
@@ -63,6 +55,42 @@ class DetailGoalViewController: BaseViewController {
         setStatusBarBackground()
         setNavigationBar()
         setTopSectionView()
+        setStackView()
+        
+        self.view.addSubview(saveButton)
+        
+        saveButton.title = "변경 저장"
+        saveButton.backgroundColor = EroojaColorSet.shared.white100
+        saveButton.titleColor = EroojaColorSet.shared.orgDefault400
+        saveButton.titleFont = .SpoqaBold17P
+        saveButton.shadowWidth = 10
+        saveButton.shadowVerticalOffset = 10
+        
+        // MARK: TEMP Shadow Color
+        saveButton.shadowColor = EroojaColorSet.shared.gray700
+        
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        saveButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        saveButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.3).isActive = true
+        saveButton.heightAnchor.constraint(equalTo: saveButton.widthAnchor, multiplier: 0.5).isActive = true
+        saveButton.topAnchor.constraint(equalTo: detailToDoListView.bottomAnchor, constant: 20).isActive = true
+    }
+    
+    fileprivate func setStackView() {
+        // DetailGoalToDoItemView
+        
+        for _ in 0..<10 {
+            detailToDoListView.addArrangedSubview(DetailGoalToDoItemView())
+        }
+        
+        self.view.addSubview(detailToDoListView)
+        
+        detailToDoListView.distribution = .equalSpacing
+        detailToDoListView.translatesAutoresizingMaskIntoConstraints = false
+        detailToDoListView.topAnchor.constraint(equalTo: percentLabel.bottomAnchor, constant: 20).isActive = true
+        detailToDoListView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        detailToDoListView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
     }
     
     fileprivate func setTopSectionView() {
@@ -122,5 +150,15 @@ extension DetailGoalViewController: EUINavigationBarDelegate {
     
     public func onClickRightSectionButton(at position: ERightButton.Position) {
         
+    }
+}
+
+extension DetailGoalViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
