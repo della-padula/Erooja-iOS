@@ -33,6 +33,7 @@
 		B0D113EA2449158400FE7C0C /* DraggableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D113E82449158400FE7C0C /* DraggableTableViewController.swift */; };
 		B0D113EB2449158400FE7C0C /* DraggableTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D113E92449158400FE7C0C /* DraggableTableViewModel.swift */; };
 		B0D113F02449218900FE7C0C /* JobItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D113EF2449218900FE7C0C /* JobItemButton.swift */; };
+		B0D11452244BE2EC00FE7C0C /* EShadowRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D11451244BE2EC00FE7C0C /* EShadowRoundButton.swift */; };
 		B0F98E6C24428B3C00F7510E /* EPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E6B24428B3C00F7510E /* EPlaceholderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		B0D113E82449158400FE7C0C /* DraggableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableTableViewController.swift; sourceTree = "<group>"; };
 		B0D113E92449158400FE7C0C /* DraggableTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableTableViewModel.swift; sourceTree = "<group>"; };
 		B0D113EF2449218900FE7C0C /* JobItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobItemButton.swift; sourceTree = "<group>"; };
+		B0D11451244BE2EC00FE7C0C /* EShadowRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EShadowRoundButton.swift; sourceTree = "<group>"; };
 		B0F98E6B24428B3C00F7510E /* EPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPlaceholderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 				B031CFE02437057000BDD599 /* EButton.swift */,
 				B05DB2362440ADD600CA5D88 /* ETabButton.swift */,
 				B0D113EF2449218900FE7C0C /* JobItemButton.swift */,
+				B0D11451244BE2EC00FE7C0C /* EShadowRoundButton.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				B08AD9C5242F602C001CE297 /* UIView+Resize.swift in Sources */,
 				B08AD9D0242F604D001CE297 /* UIImage+Crop.swift in Sources */,
 				B08AD9D1242F604D001CE297 /* UIView+Frame.swift in Sources */,
+				B0D11452244BE2EC00FE7C0C /* EShadowRoundButton.swift in Sources */,
 				B0D113EA2449158400FE7C0C /* DraggableTableViewController.swift in Sources */,
 				B08AD9CC242F604D001CE297 /* UIImage+Initialize.swift in Sources */,
 				B0D113EB2449158400FE7C0C /* DraggableTableViewModel.swift in Sources */,
