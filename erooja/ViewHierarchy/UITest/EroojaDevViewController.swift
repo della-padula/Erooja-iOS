@@ -87,6 +87,7 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
         case .goalDetail:
 //            let dst = GoalDetailViewController()
             let dst = DetailGoalViewController()
+            dst.viewModel = DetailGoalViewModel()
             self.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(dst, animated: true)
         case .addGoal:

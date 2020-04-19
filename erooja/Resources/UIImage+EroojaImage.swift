@@ -30,6 +30,14 @@ public extension UIImage {
         return UIImage(named: "modal_logo_goal_flag_hand")!
     }
     
+    class var checkButtonOff: UIImage {
+        return UIImage(named: "check_btn_off")!
+    }
+    
+    class var checkButtonOn: UIImage {
+        return UIImage(named: "check_btn_on")!
+    }
+    
     class var goalDetailBackArrow: UIImage {
         return UIImage(named: "goal_detail_back_arrow")!
     }
