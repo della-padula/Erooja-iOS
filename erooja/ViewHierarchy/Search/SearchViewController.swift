@@ -78,12 +78,12 @@ public class SearchViewController: BaseViewController {
     }
     
     private func setViewLayout() {
-        self.navigationBar.barOptions = [.backButton, .textField, .rightSecondButton]
+        self.navigationBar.barOptions = [.backButton, .textField]
         self.view.addSubview(self.navigationBar)
         
         self.navigationBar.delegate = self
-        self.navigationBar.rightSecondButtonType = .image
-        self.navigationBar.setRightButtonImage(position: .second, image: UIImage.search_button)
+//        self.navigationBar.rightSecondButtonType = .image
+//        self.navigationBar.setRightButtonImage(position: .second, image: UIImage.search_button)
         
         self.navigationBar.backgroundColor = .white
         self.navigationBar.textFieldPlaceholder = "검색어를 입력해주세요."
