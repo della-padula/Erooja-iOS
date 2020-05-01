@@ -67,4 +67,28 @@ public class EroojaAPIRequest {
             }
         })
     }
+    
+    public func requestNicknameExist(nickname: String, token: String, completion: @escaping (Result<Bool, EroojaAPIError>) -> Void) {
+        let urlString = UserAPIRequest.RequestType.nicknameExist(nickname).requestURL.absoluteString
+        let parameters = UserAPIRequest.RequestType.nicknameExist(nickname).requestParameter
+        
+        let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
+        
+        AF.request(urlString, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).responseString(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                ELog.debug("[EroojaAPIRequest]: Check Nickname Exist ")
+                ELog.debug(response.value!)
+                if response.value == "false" {
+                    completion(.success(false))
+                } else if response.value == "true" {
+                    completion(.success(true))
+                } else {
+                    completion(.failure(.decodeError))
+                }
+            case .failure(let _):
+                completion(.failure(.urlRequestError))
+            }
+        })
+    }
 }
