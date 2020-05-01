@@ -62,6 +62,7 @@
 		B0C0311824364AFC008771BB /* SignUpDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C0311724364AFC008771BB /* SignUpDetailView.xib */; };
 		B0C0311B24366241008771BB /* SignUpBaseProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0311A24366241008771BB /* SignUpBaseProperty.swift */; };
 		B0C38792245BFC5E006159F1 /* AccessTokenTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C38791245BFC5E006159F1 /* AccessTokenTestViewController.swift */; };
+		B0C3879C245C1051006159F1 /* UserAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3879B245C1051006159F1 /* UserAPIViewController.swift */; };
 		B0C5F38D242F671100582AE5 /* EroojaNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; };
 		B0C5F38E242F671100582AE5 /* EroojaNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B02DFA8B242F64E100B6DF89 /* EroojaNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0D113EE24491C9800FE7C0C /* EroojaFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D113ED24491C9800FE7C0C /* EroojaFilterView.swift */; };
@@ -231,6 +232,7 @@
 		B0C0311724364AFC008771BB /* SignUpDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpDetailView.xib; sourceTree = "<group>"; };
 		B0C0311A24366241008771BB /* SignUpBaseProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBaseProperty.swift; sourceTree = "<group>"; };
 		B0C38791245BFC5E006159F1 /* AccessTokenTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenTestViewController.swift; sourceTree = "<group>"; };
+		B0C3879B245C1051006159F1 /* UserAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIViewController.swift; sourceTree = "<group>"; };
 		B0D113ED24491C9800FE7C0C /* EroojaFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaFilterView.swift; sourceTree = "<group>"; };
 		B0D11445244AF67700FE7C0C /* DetailGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGoalViewController.swift; sourceTree = "<group>"; };
 		B0D11446244AF67700FE7C0C /* DetailGoalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailGoalViewController.xib; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 				B084D3CF245BE9DC0098DB2F /* APITestViewController.swift */,
 				B084D3D1245BEA3A0098DB2F /* APITestViewModel.swift */,
 				B0C38791245BFC5E006159F1 /* AccessTokenTestViewController.swift */,
+				B0C3879B245C1051006159F1 /* UserAPIViewController.swift */,
 			);
 			path = APITest;
 			sourceTree = "<group>";
@@ -1027,6 +1030,7 @@
 				B084D3BD245BBE5B0098DB2F /* TokenModel.swift in Sources */,
 				B0F98E922442EB3D00F7510E /* CreateGoalThirdCell.swift in Sources */,
 				B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */,
+				B0C3879C245C1051006159F1 /* UserAPIViewController.swift in Sources */,
 				B0C38792245BFC5E006159F1 /* AccessTokenTestViewController.swift in Sources */,
 				B08F09132442F5ED001AA193 /* CreateGoalFourthCell.swift in Sources */,
 				B0FE8ED42432491300103A54 /* UIStoryboard+Onboard.swift in Sources */,
