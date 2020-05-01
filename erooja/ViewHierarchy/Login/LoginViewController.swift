@@ -123,38 +123,40 @@ public class LoginViewController: UIViewController {
         
         session.open { (error) in
             if error != nil || !session.isOpen() { return }
-            
-            ELog.debug("Session.token.accessToken : \(session.token?.accessToken)")
-            ELog.debug("Session.token.accessTokenExpiresAt : \(session.token?.accessTokenExpiresAt)")
-            
             KOSessionTask.accessTokenInfoTask(completionHandler: { (token, error) in
-                ELog.debug("token        : \(String(describing: token.unsafelyUnwrapped))")
-                ELog.debug("token(id)    : \(String(describing: token?.id))")
-                
-                ELog.debug("token(expire): \(String(describing: token?.expiresInMillis))")
+                ELog.debug("\(String(describing: self)) token        : \(String(describing: token.unsafelyUnwrapped))")
+                ELog.debug("\(String(describing: self)) token(id)    : \(String(describing: token?.id))")
+                ELog.debug("\(String(describing: self)) token(expire): \(String(describing: token?.expiresInMillis))")
             })
             
             KOSessionTask.userMeTask(completion: { (error, user) in
-                ELog.debug("id          : \(String(describing: user?.id))")
-                ELog.debug("email       : \(String(describing: user?.account?.email))")
-                ELog.debug("birthday    : \(String(describing: user?.account?.birthday))")
-                ELog.debug("birthYear   : \(String(describing: user?.account?.birthyear))")
-                ELog.debug("phoneNumber : \(String(describing: user?.account?.phoneNumber))")
-                ELog.debug("gender      : \(String(describing: user?.account?.gender.rawValue))")
-                ELog.debug("nickname    : \(String(describing: user?.account?.profile?.nickname))")
+                ELog.debug("\(String(describing: self)) id          : \(String(describing: user?.id))")
+                ELog.debug("\(String(describing: self)) email       : \(String(describing: user?.account?.email))")
+                ELog.debug("\(String(describing: self)) birthday    : \(String(describing: user?.account?.birthday))")
+                ELog.debug("\(String(describing: self)) birthYear   : \(String(describing: user?.account?.birthyear))")
+                ELog.debug("\(String(describing: self)) phoneNumber : \(String(describing: user?.account?.phoneNumber))")
+                ELog.debug("\(String(describing: self)) gender      : \(String(describing: user?.account?.gender.rawValue))")
+                ELog.debug("\(String(describing: self)) nickname    : \(String(describing: user?.account?.profile?.nickname))")
                 
                 guard let user = user else { return }
-//                    let email = user.account?.email,
-//                    let nickname = user.account?.profile?.nickname else { return }
-                
                 let request = EroojaAPIRequest()
                 request.requestTokenByKakao(id: user.id, accessToken: nil, completion: { result in
                     switch result {
-                    case .success(let dict):
-                        
-                        break
+                    case .success(let responseValue):
+                        do {
+                            let decoder = JSONDecoder()
+                            let jsonData = try JSONSerialization.data(withJSONObject: responseValue, options: .prettyPrinted)
+                            
+                            let tokenInfo = try decoder.decode(TokenModel.self, from: jsonData)
+                            ELog.debug("\(String(describing: self)) Token : \(tokenInfo.token)")
+                            ELog.debug("\(String(describing: self)) RefreshToken : \(tokenInfo.refreshToken)")
+                            ELog.debug("\(String(describing: self)) isAdditionalInfoNeeded : \(tokenInfo.isAdditionalInfoNeeded)")
+                        } catch {
+                            ELog.error("\(String(describing: self)) JSON Decode Error")
+                        }
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        ELog.error(error.localizedDescription)
+                        ELog.error(error.errorMessage ?? "nil")
                     }
                 })
             })

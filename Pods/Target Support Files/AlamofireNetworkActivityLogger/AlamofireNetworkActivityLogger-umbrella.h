@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_EroojaDevVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_EroojaDevVersionString[];
+FOUNDATION_EXPORT double AlamofireNetworkActivityLoggerVersionNumber;
+FOUNDATION_EXPORT const unsigned char AlamofireNetworkActivityLoggerVersionString[];
 

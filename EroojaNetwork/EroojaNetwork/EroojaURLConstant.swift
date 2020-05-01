@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct EURLConstant {
+public struct EroojaURLConstant {
     fileprivate static let debugHostURL = "http://www.siotman.com:20000/api/v1/"
     
     fileprivate static let releaseHostURL = "http://www.siotman.com:20000/api/v1/"
