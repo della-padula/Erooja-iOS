@@ -149,10 +149,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSg-Ei-Ovb">
                                 <rect key="frame" x="24" y="142" width="366" height="30"/>
                                 <state key="normal" title="Generate Token"/>
+                                <connections>
+                                    <action selector="onClickGenerateToken:" destination="Wee-UH-YUn" eventType="touchUpInside" id="V2J-Rf-DZY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OI-fV-lw7">
                                 <rect key="frame" x="24" y="479" width="366" height="30"/>
                                 <state key="normal" title="Refresh Token"/>
+                                <connections>
+                                    <action selector="onClickRefreshToken:" destination="Wee-UH-YUn" eventType="touchUpInside" id="Ql8-uD-s0N"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Log Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Scz-gQ-pF7">
                                 <rect key="frame" x="24" y="180" width="366" height="191"/>
@@ -203,6 +209,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L4X-oG-bIp"/>
                     </view>
+                    <connections>
+                        <outlet property="genTokenTextView" destination="Scz-gQ-pF7" id="hiV-vp-Tlp"/>
+                        <outlet property="refreshTokenTextView" destination="dW1-Xx-YeE" id="n9L-0X-mfg"/>
+                        <outlet property="tfKakaoId" destination="QVa-2k-FEv" id="CBK-Zg-Vum"/>
+                        <outlet property="tfRefreshToken" destination="Mbr-zr-5Q1" id="ezz-t3-H02"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2f-yB-xyj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
