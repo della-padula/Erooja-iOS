@@ -125,7 +125,7 @@ public class EroojaAPIRequest {
         AF.request(urlString, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).responseJSON(completionHandler: { response in
             switch response.result {
             case .success(_):
-                ELog.debug("[EroojaAPIRequest] - Response.value : \(response.value)")
+                ELog.debug("[EroojaAPIRequest] - Response.value : \(String(describing: response.value))")
                 completion(.success(["token":"sample"]))
                 break
             case .failure(let error):
