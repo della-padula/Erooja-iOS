@@ -30,7 +30,8 @@ public struct AuthAPIRequest {
                 // MARK: TEMP (Need to be updated)
                 compositeRequestURL = baseURL
             case .refreshToken:
-                compositeRequestURL = baseURL.appendingPathComponent("token").appendingPathComponent("refresh")
+                let tempRequestURL = baseURL.appendingPathComponent("auth")
+                compositeRequestURL = tempRequestURL.appendingPathComponent("token").appendingPathComponent("refresh")
             }
             return compositeRequestURL
         }

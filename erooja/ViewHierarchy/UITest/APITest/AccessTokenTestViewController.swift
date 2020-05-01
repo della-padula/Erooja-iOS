@@ -30,17 +30,17 @@ public class AccessTokenViewController: BaseViewController {
                         
                         let tokenInfo = try decoder.decode(TokenModel.self, from: jsonData)
                         var debugLogText = ""
-                        debugLogText += "\(String(describing: self)) Token : \(tokenInfo.token)\n"
-                        debugLogText += "\(String(describing: self)) RefreshToken : \(tokenInfo.refreshToken)\n"
-                        debugLogText += "\(String(describing: self)) isAdditionalInfoNeeded : \(tokenInfo.isAdditionalInfoNeeded)"
+                        debugLogText += "Token : \(tokenInfo.token)\n"
+                        debugLogText += "RefreshToken : \(tokenInfo.refreshToken)\n"
+                        debugLogText += "isAdditionalInfoNeeded : \(tokenInfo.isAdditionalInfoNeeded)"
                         
                         self.genTokenTextView.text = debugLogText
                     } catch {
                         var debugLogText = ""
                         let message: String = (responseValue["message"] as? String) ?? ""
-                        debugLogText += "\(String(describing: self)) \(responseValue["status"])\n"
-                        debugLogText += "\(String(describing: self)) \(message.removingPercentEncoding)\n"
-                        debugLogText += "\(String(describing: self)) JSON Decode Error"
+                        debugLogText += "\(responseValue["status"])\n"
+                        debugLogText += "\(message.removingPercentEncoding)\n"
+                        debugLogText += "JSON Decode Error"
                         self.genTokenTextView.text = debugLogText
                     }
                 case .failure(let error):
@@ -64,17 +64,17 @@ public class AccessTokenViewController: BaseViewController {
                     
                     let tokenInfo = try decoder.decode(TokenModel.self, from: jsonData)
                     var debugLogText = ""
-                    debugLogText += "\(String(describing: self)) Token : \(tokenInfo.token)\n"
-                    debugLogText += "\(String(describing: self)) RefreshToken : \(tokenInfo.refreshToken)\n"
-                    debugLogText += "\(String(describing: self)) isAdditionalInfoNeeded : \(tokenInfo.isAdditionalInfoNeeded)"
+                    debugLogText += "Token : \(tokenInfo.token)\n"
+                    debugLogText += "RefreshToken : \(tokenInfo.refreshToken)\n"
+                    debugLogText += "isAdditionalInfoNeeded : \(tokenInfo.isAdditionalInfoNeeded)"
                     
                     self.refreshTokenTextView.text = debugLogText
                 } catch {
                     var debugLogText = ""
                     let message: String = (responseValue["message"] as? String) ?? ""
-                    debugLogText += "\(String(describing: self)) \(responseValue["status"])\n"
-                    debugLogText += "\(String(describing: self)) \(message.removingPercentEncoding)\n"
-                    debugLogText += "\(String(describing: self)) JSON Decode Error"
+                    debugLogText += "\(responseValue["status"])\n"
+                    debugLogText += "\(message.removingPercentEncoding)\n"
+                    debugLogText += "JSON Decode Error"
                     self.refreshTokenTextView.text = debugLogText
                 }
             case .failure(let error):
@@ -83,11 +83,15 @@ public class AccessTokenViewController: BaseViewController {
         })
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    public override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
     }
 }
