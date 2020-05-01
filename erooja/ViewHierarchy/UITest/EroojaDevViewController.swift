@@ -21,7 +21,6 @@ class UITestViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
         showAllCustomFonts()
         bindViewModel()
         
@@ -30,6 +29,11 @@ class UITestViewController: BaseViewController {
         self.tableView.tableFooterView = UIView()
         
         loadMenuItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     private func showAllCustomFonts() {
@@ -111,6 +115,11 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
 //            dragVC.modalPresentationStyle = .fullScreen
 //            present(dragVC, animated: true, completion: nil)
             break
+        case .apiTest:
+            let dst = storyboard?.instantiateViewController(withIdentifier: "apiTestVC") as! APITestViewController
+            dst.viewModel = APITestViewModel()
+            dst.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(dst, animated: true)
         default:
             break
         }

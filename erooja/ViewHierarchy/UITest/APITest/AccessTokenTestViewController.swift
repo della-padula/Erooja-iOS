@@ -1,5 +1,5 @@
 //
-//  UserModel.swift
+//  AccessTokenTestViewController.swift
 //  erooja
 //
 //  Created by Denny on 2020/05/01.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-public struct UserModel: Codable {
-    var uid: Int
-    var nickname: String
-    var imagePath: String
+public class AccessTokenViewController: BaseViewController {
+    
 }

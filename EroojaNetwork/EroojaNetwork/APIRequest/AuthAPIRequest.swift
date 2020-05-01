@@ -17,7 +17,7 @@ public struct AuthAPIRequest {
         
         var requestURL: URL{
             let compositeRequestURL: URL
-            let baseURL = URL(string: EURLConstant.hostURLString)!
+            let baseURL = URL(string: EroojaURLConstant.hostURLString)!
             switch self {
             case let .kakaoToken(type, _):
                 let tempRequestURL = baseURL.appendingPathComponent("auth")

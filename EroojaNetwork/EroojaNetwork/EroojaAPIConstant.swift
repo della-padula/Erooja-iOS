@@ -1,14 +1,12 @@
 //
-//  EroojaAPIRequest.swift
-//  erooja
+//  EroojaAPIConstant.swift
+//  EroojaNetwork
 //
-//  Created by denny.k on 2020/03/28.
-//  Copyright © 2020 denny.k. All rights reserved.
+//  Created by Denny on 2020/05/01.
+//  Copyright © 2020 김태인. All rights reserved.
 //
 
 import Foundation
-import Alamofire
-import AlamofireNetworkActivityLogger
 import EroojaCommon
 
 public enum KakaoTokenReqType {
@@ -106,55 +104,5 @@ public enum EroojaAPIError: Error {
         } else {
             return nil
         }
-    }
-}
-
-public class EroojaAPIRequest {
-    public init() {
-        #if DEBUG
-            NetworkActivityLogger.shared.level = .debug
-            NetworkActivityLogger.shared.startLogging()
-        #endif
-    }
-    
-    public func requestTokenByKakao(id: String?, accessToken: String?, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
-        
-        ELog.debug("[EroojaAPIRequest] - requestTokenByKakao")
-        
-        if (id == nil && accessToken == nil) || (id != nil && accessToken != nil) {
-            completion(.failure(.invalidParameter))
-        }
-        
-        let url = (id != nil) ? AuthAPIRequest.RequestType.kakaoToken(.id, id!)
-                              : AuthAPIRequest.RequestType.kakaoToken(.token, accessToken!)
-        
-        let parameters = (id != nil) ? AuthAPIRequest.RequestType.kakaoToken(.id, id!).requestParameter
-                                     : AuthAPIRequest.RequestType.kakaoToken(.token, accessToken!).requestParameter
-        
-        let urlString = url.requestURL.absoluteString.replacingOccurrences(of: "%3F", with: "?")
-        ELog.debug("[EroojaAPIRequest] - Request URL : \(urlString)")
-        ELog.debug("[EroojaAPIRequest] - Request Parameters : \(parameters)")
-        
-        AF.request(urlString, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).responseJSON(completionHandler: { response in
-            switch response.result {
-            case .success(_):
-                ELog.debug("[EroojaAPIRequest] - Response.value : \(response.value)")
-                
-                if let responseValue = (response.value as? NSDictionary) {
-                    completion(.success(responseValue))
-//                    if let data = try? Data(contentsOf: responseValue) {
-//                    }
-                } else {
-                    completion(.failure(.decodeError))
-                }
-            case .failure(let error):
-                ELog.error(error.localizedDescription)
-                completion(.failure(.urlRequestError)) // TEMP Error
-            }
-        })
-    }
-    
-    public func refreshAccessToken(token: String, completion: @escaping (Result<[String: Any], EroojaAPIError>) -> Void) {
-        let headers = ["Authorization" : "Bearer \(token)"]
     }
 }

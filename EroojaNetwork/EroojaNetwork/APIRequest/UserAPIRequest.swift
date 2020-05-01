@@ -24,7 +24,7 @@ public struct UserAPIRequest {
         
         var requestURL: URL{
             let compositeRequestURL: URL
-            let baseURL = URL(string: EURLConstant.hostURLString)!.appendingPathComponent("member")
+            let baseURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("member")
             switch self {
             // /api/v1/member/nickname/duplicity
             case .nicknameExist:
