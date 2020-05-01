@@ -241,7 +241,7 @@
         <!--UserAPI View Controller-->
         <scene sceneID="CjB-dZ-ixF">
             <objects>
-                <viewController storyboardIdentifier="apiTestTokenVC" id="jUE-JG-Dyg" customClass="UserAPIViewController" customModule="erooja" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="apiTestUserInfoVC" id="jUE-JG-Dyg" customClass="UserAPIViewController" customModule="erooja" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bot-7k-hJe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,7 +250,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o70-f9-jwk">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="860"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRI-C1-5bN">
                                                 <rect key="frame" x="22" y="16" width="372" height="32"/>
@@ -272,14 +272,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXN-VH-UgB">
                                                 <rect key="frame" x="22" y="96" width="372" height="30"/>
                                                 <state key="normal" title="Check Duplicity"/>
+                                                <connections>
+                                                    <action selector="onClickCheckDuplicity:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="ufn-aP-v7v"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wed-sN-dO6">
                                                 <rect key="frame" x="22" y="498" width="370" height="30"/>
                                                 <state key="normal" title="Get User Info"/>
+                                                <connections>
+                                                    <action selector="onClickGetUserInfo:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="xUy-je-lX2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMI-ba-6qB">
                                                 <rect key="frame" x="22" y="614" width="370" height="30"/>
-                                                <state key="normal" title="Get User Info"/>
+                                                <state key="normal" title="Modify User Info"/>
+                                                <connections>
+                                                    <action selector="onClickModifyUserInfo:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="CkH-gO-Nh4"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname for update" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yoy-xe-8Do">
                                                 <rect key="frame" x="22" y="130" width="372" height="34"/>
@@ -299,6 +308,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vi-EW-TIK">
                                                 <rect key="frame" x="22" y="168" width="372" height="30"/>
                                                 <state key="normal" title="Update Nickname"/>
+                                                <connections>
+                                                    <action selector="onClickUpdateNickname:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="jo0-cs-ime"/>
+                                                </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Log Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ila-GX-6bZ">
                                                 <rect key="frame" x="22" y="200" width="372" height="191"/>
@@ -352,6 +364,7 @@
                                             <constraint firstItem="m8j-FM-DOA" firstAttribute="centerX" secondItem="o70-f9-jwk" secondAttribute="centerX" id="Zgf-nu-7sI"/>
                                             <constraint firstItem="SX2-xS-J2I" firstAttribute="leading" secondItem="wed-sN-dO6" secondAttribute="leading" id="ZwY-fI-krH"/>
                                             <constraint firstItem="SXN-VH-UgB" firstAttribute="leading" secondItem="3Tx-OG-KYC" secondAttribute="leading" id="ecO-S4-7un"/>
+                                            <constraint firstAttribute="bottom" secondItem="SX2-xS-J2I" secondAttribute="bottom" constant="23" id="ecf-og-jmQ"/>
                                             <constraint firstItem="8Vi-EW-TIK" firstAttribute="leading" secondItem="yoy-xe-8Do" secondAttribute="leading" id="gFY-Lz-rm8"/>
                                             <constraint firstItem="SXN-VH-UgB" firstAttribute="top" secondItem="3Tx-OG-KYC" secondAttribute="bottom" constant="4" id="gM5-Mn-IFM"/>
                                             <constraint firstItem="gRI-C1-5bN" firstAttribute="leading" secondItem="o70-f9-jwk" secondAttribute="leading" constant="22" id="gjB-Bq-kyE"/>
@@ -366,7 +379,7 @@
                                             <constraint firstItem="hMI-ba-6qB" firstAttribute="trailing" secondItem="24V-xd-rBe" secondAttribute="trailing" id="u2Q-rn-gnW"/>
                                             <constraint firstItem="J3v-uo-qg0" firstAttribute="trailing" secondItem="m8j-FM-DOA" secondAttribute="trailing" id="uGp-Om-qfJ"/>
                                             <constraint firstItem="24V-xd-rBe" firstAttribute="top" secondItem="wed-sN-dO6" secondAttribute="bottom" constant="8" id="xmJ-sb-2S0"/>
-                                            <constraint firstAttribute="height" constant="1000" id="yJT-Ar-Zg2"/>
+                                            <constraint firstAttribute="height" constant="860" id="yJT-Ar-Zg2"/>
                                             <constraint firstItem="m8j-FM-DOA" firstAttribute="leading" secondItem="o70-f9-jwk" secondAttribute="leading" constant="22" id="z7O-AQ-a3o"/>
                                         </constraints>
                                     </view>
@@ -389,6 +402,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bEo-6s-VVe"/>
                     </view>
+                    <connections>
+                        <outlet property="accessTokenTf" destination="J3v-uo-qg0" id="K4m-tI-CHi"/>
+                        <outlet property="existNicknameTf" destination="3Tx-OG-KYC" id="MAh-B1-pMu"/>
+                        <outlet property="nicknameLogView" destination="ila-GX-6bZ" id="aic-Vc-4Oz"/>
+                        <outlet property="updateNicknameTf" destination="yoy-xe-8Do" id="d7N-wL-zuo"/>
+                        <outlet property="userInfoImageURLTf" destination="MzN-dJ-ggS" id="BOe-b2-XJR"/>
+                        <outlet property="userInfoLogView" destination="SX2-xS-J2I" id="Mo3-dK-f8P"/>
+                        <outlet property="userInfoNicknameTf" destination="24V-xd-rBe" id="pAp-II-ERc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zre-Wv-iBZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
