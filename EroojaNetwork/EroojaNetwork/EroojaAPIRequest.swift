@@ -19,6 +19,8 @@ public enum EroojaAPIError: Error {
     case basicAPIError(BasicAPIError)
     case unknown
     case urlRequestError
+    case encodeError
+    case decodeError
     case fileURLError
     case clientError
     case invalidParameter
@@ -49,6 +51,10 @@ public enum EroojaAPIError: Error {
             message = "Gallery_Warning_Message_UnknownError"
         case .onFetchingError:
             message = "already fetching.."
+        case .encodeError:
+            message = "Encode Error"
+        case .decodeError:
+            message = "Decode Error"
         case let .tokenExpired(errorMessage):
             message = errorMessage
         default:
@@ -119,19 +125,23 @@ public class EroojaAPIRequest {
         let parameters = (id != nil) ? AuthAPIRequest.RequestType.kakaoToken(.id, id!).requestParameter
                                      : AuthAPIRequest.RequestType.kakaoToken(.token, accessToken!).requestParameter
         let urlString = url.requestURL.absoluteString.replacingOccurrences(of: "%3F", with: "?")
-        ELog.debug("[EroojaAPIRequest] Request URL String : \(urlString)")
-        ELog.debug("[EroojaAPIRequest] Request Parameters : \(parameters)")
-        
+
         AF.request(urlString, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).responseJSON(completionHandler: { response in
             switch response.result {
             case .success(_):
                 ELog.debug("[EroojaAPIRequest] - Response.value : \(String(describing: response.value))")
-                completion(.success(["token":"sample"]))
+                let decoder = JSONDecoder()
+                guard let responseValue = response.value as? String else { completion(.failure(.)) }
+                completion(.success(["isAdditionalInfoNeeded":"sample"]))
                 break
             case .failure(let error):
                 ELog.error(error.localizedDescription)
                 completion(.failure(.urlRequestError)) // TEMP Error
             }
         })
+    }
+    
+    public func refreshAccessToken(token: String, completion: @escaping (Result<[String: Any], EroojaAPIError>) -> Void) {
+        let headers = ["Authorization" : "Bearer \(token)"]
     }
 }
