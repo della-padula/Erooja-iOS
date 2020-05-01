@@ -14,6 +14,7 @@ import EroojaNetwork
 public class UserAPIViewController: BaseViewController {
     @IBOutlet weak var existNicknameTf: UITextField!
     @IBOutlet weak var updateNicknameTf: UITextField!
+    @IBOutlet weak var existNicknameAccessTokenTf: UITextField!
     
     @IBOutlet weak var accessTokenTf: UITextField!
     @IBOutlet weak var userInfoNicknameTf: UITextField!
@@ -23,7 +24,19 @@ public class UserAPIViewController: BaseViewController {
     @IBOutlet weak var userInfoLogView: UITextView!
     
     @IBAction func onClickCheckDuplicity(_ sender: UIButton) {
+        guard let nickname = existNicknameTf.text, let token = existNicknameAccessTokenTf.text else {
+            nicknameLogView.text = "Please enter your nickname and access token."
+            return
+        }
         
+        EroojaAPIRequest().requestNicknameExist(nickname: nickname, token: token, completion: { result in
+            switch result {
+            case .success(let isExist):
+                self.nicknameLogView.text = "isExist : \(isExist)"
+            case .failure(let error):
+                self.nicknameLogView.text = " \(error.localizedDescription)"
+            }
+        })
     }
     
     @IBAction func onClickUpdateNickname(_ sender: UIButton) {
@@ -36,6 +49,10 @@ public class UserAPIViewController: BaseViewController {
     
     @IBAction func onClickModifyUserInfo(_ sender: UIButton) {
         
+    }
+    
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 }

@@ -45,8 +45,8 @@ public struct UserAPIRequest {
             return compositeRequestURL
         }
         
-        var requestParameter: [String: Any] {
-            var parameters: [String: Any] = [:]
+        var requestParameter: [String: String] {
+            var parameters: [String: String] = [:]
             switch self {
             case let .nicknameExist(value):
                 parameters["nickname"] = value
@@ -56,9 +56,17 @@ public struct UserAPIRequest {
                 parameters["nickname"] = nickname
                 parameters["imagePath"] = imageURL
             case let.addJobInterestList(ids):
-                parameters["ids"] = ids
+                var idsString = "["
+                for (index, id) in ids.enumerated() {
+                    idsString += "\(id)"
+                    if index < ids.count - 1 {
+                        idsString += ", "
+                    }
+                }
+                idsString += "]"
+                parameters["ids"] = idsString
             case let.addJobInterestItem(id):
-                parameters["id"] = id
+                parameters["id"] = "\(id)"
             default:
                 break
             }
