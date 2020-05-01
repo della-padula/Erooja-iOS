@@ -12,6 +12,7 @@
 		B084D3C7245BDD330098DB2F /* UserAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B084D3C6245BDD330098DB2F /* UserAPIRequest.swift */; };
 		B084D3D9245BEC6C0098DB2F /* EroojaAPIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B084D3D8245BEC6C0098DB2F /* EroojaAPIConstant.swift */; };
 		B0C387A2245C6BBF006159F1 /* JobAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C387A1245C6BBF006159F1 /* JobAPIRequest.swift */; };
+		B0C387A4245C6E4C006159F1 /* EroojaAPIRequest+Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C387A3245C6E4C006159F1 /* EroojaAPIRequest+Job.swift */; };
 		B0C5F37D242F668900582AE5 /* EroojaURLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5F37C242F668900582AE5 /* EroojaURLConstant.swift */; };
 		B0C5F37F242F669900582AE5 /* BasicAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5F37E242F669900582AE5 /* BasicAPIError.swift */; };
 		B0C5F384242F66B600582AE5 /* HomeAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5F383242F66B600582AE5 /* HomeAPIRequest.swift */; };
@@ -28,6 +29,7 @@
 		B084D3C6245BDD330098DB2F /* UserAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIRequest.swift; sourceTree = "<group>"; };
 		B084D3D8245BEC6C0098DB2F /* EroojaAPIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaAPIConstant.swift; sourceTree = "<group>"; };
 		B0C387A1245C6BBF006159F1 /* JobAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobAPIRequest.swift; sourceTree = "<group>"; };
+		B0C387A3245C6E4C006159F1 /* EroojaAPIRequest+Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EroojaAPIRequest+Job.swift"; sourceTree = "<group>"; };
 		B0C5F37C242F668900582AE5 /* EroojaURLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaURLConstant.swift; sourceTree = "<group>"; };
 		B0C5F37E242F669900582AE5 /* BasicAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAPIError.swift; sourceTree = "<group>"; };
 		B0C5F383242F66B600582AE5 /* HomeAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPIRequest.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B05DB162243F6DA300CA5D88 /* AuthAPIRequest.swift */,
 				B084D3C6245BDD330098DB2F /* UserAPIRequest.swift */,
 				B0C387A1245C6BBF006159F1 /* JobAPIRequest.swift */,
+				B0C387A3245C6E4C006159F1 /* EroojaAPIRequest+Job.swift */,
 			);
 			path = APIRequest;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				B084D3D9245BEC6C0098DB2F /* EroojaAPIConstant.swift in Sources */,
 				B0C5F386242F66D100582AE5 /* EroojaAPIRequest.swift in Sources */,
 				B0C5F384242F66B600582AE5 /* HomeAPIRequest.swift in Sources */,
+				B0C387A4245C6E4C006159F1 /* EroojaAPIRequest+Job.swift in Sources */,
 				B0C387A2245C6BBF006159F1 /* JobAPIRequest.swift in Sources */,
 				B0C5F37F242F669900582AE5 /* BasicAPIError.swift in Sources */,
 				B0C5F37D242F668900582AE5 /* EroojaURLConstant.swift in Sources */,

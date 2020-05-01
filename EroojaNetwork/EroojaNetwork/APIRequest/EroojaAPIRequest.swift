@@ -86,7 +86,7 @@ public class EroojaAPIRequest {
                 } else {
                     completion(.failure(.decodeError))
                 }
-            case .failure(let error):
+            case .failure(let _):
                 completion(.failure(.urlRequestError))
             }
         })
