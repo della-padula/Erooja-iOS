@@ -142,7 +142,7 @@ public class CreateGoalFourthCell: UICollectionViewCell {
     
     @objc
     public func onClickRightButton(_ notification: Notification) -> Void {
-        ELog.debug(message: "Save Goal Date to Property")
+        ELog.debug("Save Goal Date to Property")
         CreateGoalDynamicProperty.startDateString = lblStartDate.text
         CreateGoalDynamicProperty.endDateString = lblEndDate.text
         CreateGoalDynamicProperty.isModifyAvailable = isModifyAvailable

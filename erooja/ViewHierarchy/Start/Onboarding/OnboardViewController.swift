@@ -161,7 +161,7 @@ extension OnboardViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        ELog.debug(message: "(Did End Display) Current Page : \(self.currentPage)")
+        ELog.debug("(Did End Display) Current Page : \(self.currentPage)")
         self.pageControl.currentPage = self.currentPage
     }
     

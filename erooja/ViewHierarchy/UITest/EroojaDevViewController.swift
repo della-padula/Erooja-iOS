@@ -55,7 +55,7 @@ class UITestViewController: BaseViewController {
     }
     
     func loadMenuItems() {
-        ELog.debug(message: "loadMenuItems")
+        ELog.debug("loadMenuItems")
         viewModel?.setDevMenuItemsToView()
     }
 
@@ -75,7 +75,7 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let type = types[indexPath.row]
-        ELog.debug(message: "Selected : \(type.rawValue)")
+        ELog.debug("Selected : \(type.rawValue)")
         
         var vc: UIViewController?
         
@@ -84,6 +84,8 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
             vc = SignUpViewController()
         case .onboard:
             vc = OnboardViewController()
+        case .login:
+            vc = LoginViewController()
         case .goalDetail:
 //            let dst = GoalDetailViewController()
             let dst = DetailGoalViewController()
@@ -122,7 +124,7 @@ extension UITestViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension UITestViewController: EUIModalViewDelegate {
     func onClickBottomButton() {
-        ELog.debug(message: "Modal VC - Bottom Button Clicked")
+        ELog.debug("Modal VC - Bottom Button Clicked")
     }
     
     func modalViewController() -> (String, String, String, ModalType) {

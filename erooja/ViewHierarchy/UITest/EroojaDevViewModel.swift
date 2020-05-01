@@ -15,6 +15,7 @@ public enum EroojaType: String, CaseIterable {
     case signup        = "회원가입"
     case mypage        = "마이페이지"
     case main          = "메인"
+    case login         = "로그인"
     case nowGoal       = "진행중인 목표"
     case search        = "검색"
     case goalDetail    = "목표 상세"
@@ -35,7 +36,7 @@ public class UITestViewModel {
     var menuItems = DataBinding([EroojaType]())
     
     func setDevMenuItemsToView() {
-        ELog.debug(message: "ViewModel : setDevMenuItemsToView")
+        ELog.debug("ViewModel : setDevMenuItemsToView")
         fetchMenuItems().then { list in
             self.menuItems.valueForBind = list
         }

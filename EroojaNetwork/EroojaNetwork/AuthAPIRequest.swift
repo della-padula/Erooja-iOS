@@ -35,8 +35,8 @@ public struct AuthAPIRequest {
             return compositeRequestURL
         }
         
-        var requestParameter: [String: Any] {
-            var parameters: [String: Any] = [:]
+        var requestParameter: [String: String] {
+            var parameters: [String: String] = [:]
             switch self {
             case let .kakaoToken(type, value):
                 if type == .id {

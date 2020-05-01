@@ -55,12 +55,12 @@ public class SearchViewController: BaseViewController {
         if let viewModel = viewModel {
             viewModel.resultList.bind({ (resultList) in
                 DispatchQueue.main.async {
-                    ELog.debug(message: "Result List Count : \(resultList.count)")
+                    ELog.debug("Result List Count : \(resultList.count)")
                 }
             })
             
             viewModel.stringList.bind({ list in
-                ELog.debug(message: "String List Changed")
+                ELog.debug("String List Changed")
                 DispatchQueue.main.async {
                     self.resultPlaceholderView.isHidden = list.count > 0 ? true : false
                     self.resultTableView.isHidden = list.count > 0 ? false : true
@@ -71,7 +71,7 @@ public class SearchViewController: BaseViewController {
             
             viewModel.searchKeyword.bind({ keyword in
                 DispatchQueue.main.async {
-                    ELog.debug(message: "SearchKeyword Changed")
+                    ELog.debug("SearchKeyword Changed")
                 }
             })
         }
@@ -155,11 +155,11 @@ public class SearchViewController: BaseViewController {
 
 extension SearchViewController: EUINavigationBarDelegate {
     public func onClickRightSectionButton(at position: ERightButton.Position) {
-        ELog.debug(message: "Right Button Click : position - \(position)")
+        ELog.debug("Right Button Click : position - \(position)")
     }
     
     public func onClickBackButton() {
-        ELog.debug(message: "Back Button Click")
+        ELog.debug("Back Button Click")
         #if DEBUG
 //        self.dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)
@@ -171,7 +171,7 @@ extension SearchViewController: EUINavigationBarDelegate {
 
 extension SearchViewController: ETabButtonDelegate {
     public func didChangeTextField(_ textField: EroojaTextField, text: String?) {
-        ELog.debug(message: "TextField Changed : \(text ?? "nil")")
+        ELog.debug("TextField Changed : \(text ?? "nil")")
         if text?.isEmpty ?? true {
             viewModel?.removeAllStringList()
         } else {
@@ -180,7 +180,7 @@ extension SearchViewController: ETabButtonDelegate {
     }
     
     public func onClickButton(_ button: ETabButton, tag: Int) {
-        ELog.debug(message: "Clicked : \(tag)")
+        ELog.debug("Clicked : \(tag)")
         setButtonState(tag: tag)
         navigationBar.setTextFieldText(text: "")
         viewModel?.removeAllStringList()
@@ -190,10 +190,10 @@ extension SearchViewController: ETabButtonDelegate {
         for button in buttonStackView.subviews.enumerated() {
             if let button = button.element as? ETabButton {
                 if button.tag != tag {
-                    ELog.debug(message: "setFalse : \(button.tag)")
+                    ELog.debug("setFalse : \(button.tag)")
                     button.isActive = false
                 } else {
-                    ELog.debug(message: "setTrue : \(button.tag)")
+                    ELog.debug("setTrue : \(button.tag)")
                     button.isActive = true
                     selectedIndex = tag
                 }
@@ -212,14 +212,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        ELog.debug(message: "Selected Table Cell : \(indexPath.row)")
+        ELog.debug("Selected Table Cell : \(indexPath.row)")
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell") as! SearchTableViewCell
         cell.title = viewModel?.stringList.valueForBind[indexPath.row] ?? "ERROR"
         cell.selectionStyle = .none
-        ELog.debug(message: "TEST \(indexPath.row)")
+        ELog.debug("TEST \(indexPath.row)")
         return cell
     }
 }

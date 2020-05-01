@@ -61,7 +61,7 @@ class DetailGoalViewController: BaseViewController {
     private func bindViewModel() {
         if let viewModel = viewModel {
             viewModel.todoItems.bindAndFire({ list in
-                ELog.debug(message: "viewModel Bind --- refreshStackView")
+                ELog.debug("viewModel Bind --- refreshStackView")
                 self.refreshStackView()
             })
             
@@ -153,8 +153,8 @@ class DetailGoalViewController: BaseViewController {
         detailTopContentLabel.textColor = EroojaColorSet.shared.white100
         detailTopContentLabel.setLinespace(spacing: 4)
         
-        ELog.debug(message: "Top Detail Content Label Height : \(self.detailTopContentLabel.frame.height)")
-        ELog.debug(message: "Top Section View Height : \(self.detailTopViewHeight.constant)")
+        ELog.debug("Top Detail Content Label Height : \(self.detailTopContentLabel.frame.height)")
+        ELog.debug("Top Section View Height : \(self.detailTopViewHeight.constant)")
     }
     
     fileprivate func setNavigationBar() {
@@ -200,7 +200,7 @@ extension DetailGoalViewController: EUINavigationBarDelegate {
 
 extension DetailGoalViewController: DetailGoalToDoItemDelegate {
     func onClickCheckButton(index: Int, isChecked: Bool) {
-        ELog.debug(message: "Index : \(index), Is Checked : \(isChecked)")
+        ELog.debug("Index : \(index), Is Checked : \(isChecked)")
         viewModel?.setCheckItem(index: index, isChecked: !isChecked)
     }
 }

@@ -78,9 +78,9 @@ public class SignUpDetailView: UIView {
     
     private func bindView() {
         viewModel?.selectedList.bind({ (selectStateList) in
-            ELog.debug(message: "Bind Triggered")
+            ELog.debug("Bind Triggered")
             for (index, isActive) in selectStateList.enumerated() {
-                ELog.debug(message: "Bind Event Triggered index : \(index), isActive : \(isActive)")
+                ELog.debug("Bind Event Triggered index : \(index), isActive : \(isActive)")
                 self.setButtonState(index: index, isActive: isActive)
             }
         })
@@ -99,7 +99,7 @@ public class SignUpDetailView: UIView {
     }
     
     public func setButtonStyle() {
-        ELog.debug(message: "setButtonStyle, \(String(describing: SignUpBaseProperty.fieldType))")
+        ELog.debug("setButtonStyle, \(String(describing: SignUpBaseProperty.fieldType))")
         for (index, button) in buttons!.enumerated() {
             button.isHidden = true
         }

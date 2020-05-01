@@ -9,16 +9,31 @@
 import Foundation
 
 final public class ELog {
-    public class func debug(message: String?) {
-        print("🗣 [\(getCurrentTime())] EROOJA - \(message ?? "nil")")
+    public class func debug(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+        #if DEBUG
+            let output = items.map { "\($0)" }.joined(separator: separator)
+            print("🗣 [\(getCurrentTime())] EROOJA - \(output)", terminator: terminator)
+        #else
+            print("🗣 [\(getCurrentTime())] EROOJA - RELEASE MODE")
+        #endif
     }
     
-    public class func warning(message: String?) {
-        print("⚡️ [\(getCurrentTime())] EROOJA - \(message ?? "nil")")
+    public class func warning(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+        #if DEBUG
+            let output = items.map { "\($0)" }.joined(separator: separator)
+            print("⚡️ [\(getCurrentTime())] EROOJA - \(output)", terminator: terminator)
+        #else
+            print("⚡️ [\(getCurrentTime())] EROOJA - RELEASE MODE")
+        #endif
     }
     
-    public class func error(message: String?) {
-        print("🚨 [\(getCurrentTime())] EROOJA - \(message ?? "nil")")
+    public class func error(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+        #if DEBUG
+            let output = items.map { "\($0)" }.joined(separator: separator)
+            print("🚨 [\(getCurrentTime())] EROOJA - \(output)", terminator: terminator)
+        #else
+            print("🚨 [\(getCurrentTime())] EROOJA - RELEASE MODE")
+        #endif
     }
     
     fileprivate class func getCurrentTime() -> String {
@@ -28,4 +43,5 @@ final public class ELog {
 
         return dateFormatter.string(from: now as Date)
     }
+
 }

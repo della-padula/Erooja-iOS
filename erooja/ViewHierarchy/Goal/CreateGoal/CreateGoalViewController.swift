@@ -77,7 +77,7 @@ public class CreateGoalViewController: BaseViewController {
     private func bindViewModel() {
         if let viewModel = viewModel {
             viewModel.progressValue.bind({ progress in
-                ELog.debug(message: "Progress : \(progress)")
+                ELog.debug("Progress : \(progress)")
                 self.headerView.setProgressValue(value: CGFloat(Float(progress)))
             })
         }
@@ -193,7 +193,7 @@ extension CreateGoalViewController: EUINavigationBarDelegate {
     public func didChangeTextField(_ textField: EroojaTextField, text: String?) { }
     
     public func onClickRightSectionButton(at position: ERightButton.Position) {
-        ELog.debug(message: "CurrentIndex : \(currentIndex), stageCount : \(stageCount)")
+        ELog.debug("CurrentIndex : \(currentIndex), stageCount : \(stageCount)")
         
         NotificationCenter.default.post(name: Notification.Name.init(rawValue: "RightButtonClicked"), object: nil)
         

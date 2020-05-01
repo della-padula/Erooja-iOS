@@ -54,10 +54,10 @@ public class OnboardCollectionViewCell: UICollectionViewCell {
         let cellHeight = UIScreen.main.bounds.height - bottomViewHeight
         let viewHeight = self.imageView.frame.height + self.lblMainText.frame.height + self.lblSubText.frame.height
         
-        ELog.debug(message: "collectionView Cell Height : \(cellHeight)")
-        ELog.debug(message: "cellHeight - viewHeight : \(cellHeight - viewHeight)")
-        ELog.debug(message: "topAnchor : \((cellHeight - viewHeight) * 114 / 192)")
-        ELog.debug(message: "bottomAnchor : \((cellHeight - viewHeight) * 78 / 192)")
+        ELog.debug("collectionView Cell Height : \(cellHeight)")
+        ELog.debug("cellHeight - viewHeight : \(cellHeight - viewHeight)")
+        ELog.debug("topAnchor : \((cellHeight - viewHeight) * 114 / 192)")
+        ELog.debug("bottomAnchor : \((cellHeight - viewHeight) * 78 / 192)")
         
         let topAnchor = (cellHeight - viewHeight) * 114 / 192
         viewTopAnchor.constant = topAnchor

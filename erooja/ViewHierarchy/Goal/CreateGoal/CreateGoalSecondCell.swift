@@ -93,7 +93,7 @@ public class CreateGoalSecondCell: UICollectionViewCell {
     
     @objc
     public func onClickRightButton(_ notification: Notification) -> Void {
-        ELog.debug(message: "Save Goal Content to Property")
+        ELog.debug("Save Goal Content to Property")
         CreateGoalDynamicProperty.goalName = textField.text
     }
 }

@@ -146,7 +146,7 @@ public class EUIHeaderView: UIView {
     
     // Progress Value Setting
     public func setProgressValue(value: CGFloat) {
-        ELog.debug(message: "value : \(value)")
+        ELog.debug("value : \(value)")
         self.progressView.setProgress(Float(value), animated: true)
     }
     
@@ -206,7 +206,7 @@ public class EUIHeaderView: UIView {
         viewHeightAnchor = heightAnchor.constraint(equalToConstant: viewHeight)
         viewHeightAnchor?.isActive = true
         
-        ELog.debug(message: "Header Height : \(viewHeight)")
+        ELog.debug("Header Height : \(viewHeight)")
     }
     
     private func setRightButtonStyle(type: ERightButton.ButtonType, position: Int) {
@@ -318,11 +318,11 @@ public class EUIHeaderView: UIView {
 
 extension EUIHeaderView: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        ELog.debug(message: "Begin Editing")
+        ELog.debug("Begin Editing")
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        ELog.debug(message: "End Editing")
+        ELog.debug("End Editing")
     }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {

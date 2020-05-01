@@ -101,7 +101,7 @@ public class EShadowRoundButton: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        ELog.debug(message: "self.frame = \(self.frame)")
+        ELog.debug("self.frame = \(self.frame)")
         self.layer.masksToBounds = false
         self.layer.cornerRadius = self.frame.height * 0.5
     }

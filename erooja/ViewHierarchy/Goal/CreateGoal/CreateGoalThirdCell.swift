@@ -48,7 +48,7 @@ public class CreateGoalThirdCell: UICollectionViewCell {
     
     @objc
     public func onClickRightButton(_ notification: Notification) -> Void {
-        ELog.debug(message: "Save Goal Content to Property")
+        ELog.debug("Save Goal Content to Property")
         CreateGoalDynamicProperty.goalContent = textView.text
     }
 }

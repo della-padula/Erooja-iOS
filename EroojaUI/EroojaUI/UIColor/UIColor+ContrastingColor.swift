@@ -23,7 +23,7 @@ public extension UIColor {
         var hex = hex.deletingPrefix("#")
         hex = hex.deletingPrefix("0x")
         if hex.count != 6 {
-            ELog.error(message: "")
+            ELog.error("")
         }
         
         let scanner = Scanner(string: hex)

@@ -109,16 +109,16 @@ public class SignUpViewController: BaseViewController {
         
         if currentPage > (viewModels.count - 1) {
             currentPage -= 1
-            ELog.debug(message: "화면 전환이 이루어집니다.")
-            ELog.debug(message: SignUpBaseProperty.nickname)
-            ELog.debug(message: SignUpBaseProperty.fieldType?.rawValue)
+            ELog.debug("화면 전환이 이루어집니다.")
+            ELog.debug(SignUpBaseProperty.nickname)
+            ELog.debug(SignUpBaseProperty.fieldType?.rawValue)
             
             for (index, isSelected) in SignUpBaseProperty.detailSelectedIndexList.enumerated() {
                 if isSelected {
                     if SignUpBaseProperty.fieldType == .development {
-                        ELog.debug(message: "\(JobType.Develop.allCases[index].rawValue)")
+                        ELog.debug("\(JobType.Develop.allCases[index].rawValue)")
                     } else {
-                        ELog.debug(message: "\(JobType.Design.allCases[index].rawValue)")
+                        ELog.debug("\(JobType.Design.allCases[index].rawValue)")
                     }
                 }
             }
@@ -132,7 +132,7 @@ public class SignUpViewController: BaseViewController {
         } else {
             self.collectionPageView?.scrollToItem(at: IndexPath(row: currentPage, section: 0), at: .centeredHorizontally, animated: false)
             if currentPage == 2 && SignUpBaseProperty.isReloadDetailCell {
-                ELog.debug(message: "Update Detail")
+                ELog.debug("Update Detail")
                 SignUpBaseProperty.detailSelectedIndexList = SignUpBaseProperty.detailSelectedIndexList.map { $0 && false }
                 SignUpBaseProperty.isReloadDetailCell = false
                 self.collectionPageView?.reloadItems(at: [IndexPath(row: 2, section: 0)])
@@ -201,7 +201,7 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        ELog.debug(message: "setButton Current Page : \(self.currentPage)")
+        ELog.debug("setButton Current Page : \(self.currentPage)")
     }
     
 }

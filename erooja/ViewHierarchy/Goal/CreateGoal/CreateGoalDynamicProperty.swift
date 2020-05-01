@@ -28,7 +28,7 @@ public struct CreateGoalDynamicProperty {
     public static var detailGoalList = [String]()
     
     public static func printPropertyInfo() {
-        ELog.debug(message: getDebugPropertyInfo())
+        ELog.debug(getDebugPropertyInfo())
     }
     
     public static func getDebugPropertyInfo() -> String {

@@ -37,6 +37,7 @@
 		B05DC3A22438FCD500626501 /* EroojaDevViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DC3A12438FCD500626501 /* EroojaDevViewModel.swift */; };
 		B05DC3E72439A2D100626501 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B05DC3E62439A2D100626501 /* Common.xcassets */; };
 		B05DC3E92439AB9500626501 /* SignUpDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DC3E82439AB9500626501 /* SignUpDetailViewModel.swift */; };
+		B084D3BD245BBE5B0098DB2F /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B084D3BC245BBE5B0098DB2F /* TokenModel.swift */; };
 		B08AD99D242F42CD001CE297 /* EroojaCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; };
 		B08AD99E242F42CD001CE297 /* EroojaCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B08AD998242F41D8001CE297 /* EroojaCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B08F09132442F5ED001AA193 /* CreateGoalFourthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08F090D2442F5ED001AA193 /* CreateGoalFourthCell.swift */; };
@@ -199,6 +200,7 @@
 		B05DC3A12438FCD500626501 /* EroojaDevViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaDevViewModel.swift; sourceTree = "<group>"; };
 		B05DC3E62439A2D100626501 /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
 		B05DC3E82439AB9500626501 /* SignUpDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailViewModel.swift; sourceTree = "<group>"; };
+		B084D3BC245BBE5B0098DB2F /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		B08AD993242F41D8001CE297 /* EroojaCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaCommon.xcodeproj; path = EroojaCommon/EroojaCommon.xcodeproj; sourceTree = "<group>"; };
 		B08AD9DB242F60F1001CE297 /* EroojaUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EroojaUI.xcodeproj; path = EroojaUI/EroojaUI.xcodeproj; sourceTree = "<group>"; };
 		B08F090D2442F5ED001AA193 /* CreateGoalFourthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGoalFourthCell.swift; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 			children = (
 				B0C0310E243639C0008771BB /* JobModel.swift */,
 				B031CFA52436F88500BDD599 /* PortfolioModel.swift */,
+				B084D3BC245BBE5B0098DB2F /* TokenModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -997,6 +1000,7 @@
 				DEB7E3F82446F3490085322F /* GoalDetailItemCell.swift in Sources */,
 				B09CD5D22436C1210073733D /* SignUpDetailViewCell.swift in Sources */,
 				B0C0310F243639C0008771BB /* JobModel.swift in Sources */,
+				B084D3BD245BBE5B0098DB2F /* TokenModel.swift in Sources */,
 				B0F98E922442EB3D00F7510E /* CreateGoalThirdCell.swift in Sources */,
 				B0462B1D242B95CF00B51854 /* AlertController.swift in Sources */,
 				B08F09132442F5ED001AA193 /* CreateGoalFourthCell.swift in Sources */,

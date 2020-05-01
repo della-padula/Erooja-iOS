@@ -14,7 +14,7 @@ public class CreateGoalDetailViewModel {
     
     func append(item: String) {
         detailList.valueForBind.append(item)
-        ELog.debug(message: "detailList count : \(detailList.valueForBind.count)")
+        ELog.debug("detailList count : \(detailList.valueForBind.count)")
     }
     
     // MARK: Not Yet

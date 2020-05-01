@@ -35,7 +35,7 @@ public class CreateGoalDetailView: UICollectionViewCell {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        ELog.debug(message: "CreateGoalDetailView")
+        ELog.debug("CreateGoalDetailView")
         bindViewModel()
         setViewLayout()
     }
@@ -98,7 +98,7 @@ public class CreateGoalDetailView: UICollectionViewCell {
     }
     
     @objc func keyboardWasShown (notification: NSNotification) {
-        ELog.debug(message: "keyboard was shown")
+        ELog.debug("keyboard was shown")
         let info = notification.userInfo
         if let value = info?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue {
             self.keyboardSize = value.cgRectValue.size
@@ -112,7 +112,7 @@ public class CreateGoalDetailView: UICollectionViewCell {
     
     @objc
     public func onClickRightButton(_ notification: Notification) -> Void {
-        ELog.debug(message: "Save Detail List to Property")
+        ELog.debug("Save Detail List to Property")
         CreateGoalDynamicProperty.detailGoalList = detailList
         CreateGoalDynamicProperty.printPropertyInfo()
     }
@@ -171,7 +171,7 @@ extension CreateGoalDetailView: GoalDetailInputDelegate {
     public func returnKeyEvent(_ textField: UITextField, content: String?) {
         let strongContent = content ?? ""
         if strongContent.isEmpty {
-            ELog.debug(message: "세부 항목을 입력해주세요.")
+            ELog.debug("세부 항목을 입력해주세요.")
         } else {
             isKeyboardShown = true
             viewModel.append(item: strongContent)

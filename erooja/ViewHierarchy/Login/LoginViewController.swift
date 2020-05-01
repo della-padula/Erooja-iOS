@@ -8,6 +8,7 @@
 
 import UIKit
 import EroojaUI
+import EroojaNetwork
 import EroojaCommon
 
 public class LoginViewController: UIViewController {
@@ -123,28 +124,39 @@ public class LoginViewController: UIViewController {
         session.open { (error) in
             if error != nil || !session.isOpen() { return }
             
-            ELog.debug(message: "Session.token.accessToken : \(session.token?.accessToken)")
-            ELog.debug(message: "Session.token.accessTokenExpiresAt : \(session.token?.accessTokenExpiresAt)")
+            ELog.debug("Session.token.accessToken : \(session.token?.accessToken)")
+            ELog.debug("Session.token.accessTokenExpiresAt : \(session.token?.accessTokenExpiresAt)")
             
             KOSessionTask.accessTokenInfoTask(completionHandler: { (token, error) in
-                ELog.debug(message: "token        : \(String(describing: token.unsafelyUnwrapped))")
-                ELog.debug(message: "token(id)    : \(String(describing: token?.id))")
+                ELog.debug("token        : \(String(describing: token.unsafelyUnwrapped))")
+                ELog.debug("token(id)    : \(String(describing: token?.id))")
                 
-                ELog.debug(message: "token(expire): \(String(describing: token?.expiresInMillis))")
+                ELog.debug("token(expire): \(String(describing: token?.expiresInMillis))")
             })
             
             KOSessionTask.userMeTask(completion: { (error, user) in
-                ELog.debug(message: "id          : \(String(describing: user?.id))")
-                ELog.debug(message: "email       : \(String(describing: user?.account?.email))")
-                ELog.debug(message: "birthday    : \(String(describing: user?.account?.birthday))")
-                ELog.debug(message: "birthYear   : \(String(describing: user?.account?.birthyear))")
-                ELog.debug(message: "phoneNumber : \(String(describing: user?.account?.phoneNumber))")
-                ELog.debug(message: "gender      : \(String(describing: user?.account?.gender.rawValue))")
-                ELog.debug(message: "nickname    : \(String(describing: user?.account?.profile?.nickname))")
+                ELog.debug("id          : \(String(describing: user?.id))")
+                ELog.debug("email       : \(String(describing: user?.account?.email))")
+                ELog.debug("birthday    : \(String(describing: user?.account?.birthday))")
+                ELog.debug("birthYear   : \(String(describing: user?.account?.birthyear))")
+                ELog.debug("phoneNumber : \(String(describing: user?.account?.phoneNumber))")
+                ELog.debug("gender      : \(String(describing: user?.account?.gender.rawValue))")
+                ELog.debug("nickname    : \(String(describing: user?.account?.profile?.nickname))")
                 
-                guard let user = user,
-                    let email = user.account?.email,
-                    let nickname = user.account?.profile?.nickname else { return }
+                guard let user = user else { return }
+//                    let email = user.account?.email,
+//                    let nickname = user.account?.profile?.nickname else { return }
+                
+                let request = EroojaAPIRequest()
+                request.requestTokenByKakao(id: user.id, accessToken: nil, completion: { result in
+                    switch result {
+                    case .success(let dict):
+                        
+                        break
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                })
             })
             
             let signUpVC = SignUpViewController()

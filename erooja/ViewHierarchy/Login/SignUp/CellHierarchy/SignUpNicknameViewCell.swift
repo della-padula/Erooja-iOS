@@ -76,7 +76,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
     // PUBLIC
     public func checkButtonState() {
         isInitialShown = true
-        ELog.debug(message: "isNicknameValid : \(isNicknameValid)")
+        ELog.debug("isNicknameValid : \(isNicknameValid)")
         delegate?.setButtonStyle(forState: isNicknameValid ? .active : .inActive)
     }
     
@@ -101,7 +101,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
     
     private func setupNicknameView() {
         if isInitialShown {
-            ELog.debug(message: "isInitialShown : \(isInitialShown)")
+            ELog.debug("isInitialShown : \(isInitialShown)")
             checkBadgeView.image = UIImage(named: "signup_error")
             checkBadgeView.isHidden = true
             bottomHintLabel.isHidden = true
@@ -113,7 +113,7 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
         textFieldView.textAlignment = .center
         textFieldView.placeholder = "한글 2자 이상 ~ 5자 이내"
         textFieldView.debounce(delay: 0.3) { (text) in
-            ELog.debug(message: "Debounce Text : \(text ?? "nil"), Length : \(text?.count ?? 0)")
+            ELog.debug("Debounce Text : \(text ?? "nil"), Length : \(text?.count ?? 0)")
             let inputText = text ?? ""
             
             if inputText.isEmpty {

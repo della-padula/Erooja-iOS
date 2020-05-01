@@ -122,7 +122,7 @@ public class SignUpFieldViewCell: UICollectionViewCell {
 
 extension SignUpFieldViewCell: SignUpFieldButtonDelegate {
     public func fieldButton(selectedFieldType: FieldType) {
-        ELog.debug(message: "Selected : \(selectedFieldType)")
+        ELog.debug("Selected : \(selectedFieldType)")
         
         self.setButtonState(fieldType: selectedFieldType)
         self.isFieldValid = true

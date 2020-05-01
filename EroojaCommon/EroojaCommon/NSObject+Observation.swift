@@ -213,18 +213,18 @@ public extension NSObjectProtocol where Self: NSObject {
 
             let newValue = sself[keyPath: keyPath]
             let oldValue = change.oldValue
-            ELog.debug(message:"\(indent)[NSObjectProtocol] observer ---------------------------------------")
-            ELog.debug(message:"\(indent)keyPath: \(String(describing: type(of: sself))).\(NSExpression(forKeyPath: keyPath).keyPath)")
-            ELog.debug(message:"\(indent)filter: \(String(describing: filter))")
-            ELog.debug(message:"\(indent)name: \(String(describing: name))")
-            ELog.debug(message:"\(indent)newValue: \(String(describing: newValue))")
-            ELog.debug(message:"\(indent)oldValue: \(String(describing: oldValue))")
+            ELog.debug("\(indent)[NSObjectProtocol] observer ---------------------------------------")
+            ELog.debug("\(indent)keyPath: \(String(describing: type(of: sself))).\(NSExpression(forKeyPath: keyPath).keyPath)")
+            ELog.debug("\(indent)filter: \(String(describing: filter))")
+            ELog.debug("\(indent)name: \(String(describing: name))")
+            ELog.debug("\(indent)newValue: \(String(describing: newValue))")
+            ELog.debug("\(indent)oldValue: \(String(describing: oldValue))")
 
             let filtered = (filter != nil) ? filter!(newValue) : true
-            ELog.debug(message:"\(indent)filtered: \(String(describing: filtered))")
+            ELog.debug("\(indent)filtered: \(String(describing: filtered))")
 
             if filtered && oldValue != newValue {
-                ELog.debug(message:"\(indent)onChange(\(String(describing: newValue)) !!!!!!!!!!!")
+                ELog.debug("\(indent)onChange(\(String(describing: newValue)) !!!!!!!!!!!")
                 onChange(newValue)
             }
 
@@ -243,23 +243,23 @@ public extension NSObjectProtocol where Self: NSObject {
 
             let srcValue = sself[keyPath: keyPath]
             let tgTgtValue = starget[keyPath: tgtKeyPath]
-            ELog.debug(message:"\(indent)[NSObjectProtocol] binder ---------------------------------------")
-            ELog.debug(message:"\(indent)keyPath: \(String(describing: type(of: sself))).\(NSExpression(forKeyPath: keyPath).keyPath) ->> \(String(describing: type(of: target))).\(NSExpression(forKeyPath: tgtKeyPath).keyPath)")
-            ELog.debug(message:"\(indent)filter: \(String(describing: filter))")
-            ELog.debug(message:"\(indent)name: \(String(describing: name))")
-            ELog.debug(message:"\(indent)srcValue: \(String(describing: srcValue))")
-            ELog.debug(message:"\(indent)tgTgtValue: \(String(describing: tgTgtValue))")
+            ELog.debug("\(indent)[NSObjectProtocol] binder ---------------------------------------")
+            ELog.debug("\(indent)keyPath: \(String(describing: type(of: sself))).\(NSExpression(forKeyPath: keyPath).keyPath) ->> \(String(describing: type(of: target))).\(NSExpression(forKeyPath: tgtKeyPath).keyPath)")
+            ELog.debug("\(indent)filter: \(String(describing: filter))")
+            ELog.debug("\(indent)name: \(String(describing: name))")
+            ELog.debug("\(indent)srcValue: \(String(describing: srcValue))")
+            ELog.debug("\(indent)tgTgtValue: \(String(describing: tgTgtValue))")
 
             if (filter == nil) && (srcValue is TgtValue == false) {
-                ELog.debug(message:"\(indent)can not bind on target: (\(String(describing: Value.self)) -> \(String(describing: TgtValue.self))) !!!!!!!!!!!")
+                ELog.debug("\(indent)can not bind on target: (\(String(describing: Value.self)) -> \(String(describing: TgtValue.self))) !!!!!!!!!!!")
                 return
             }
 
             let filtered = (filter != nil) ? filter!(srcValue) : (srcValue as! TgtValue)
-            ELog.debug(message:"\(indent)filtered: \(String(describing: filtered))")
+            ELog.debug("\(indent)filtered: \(String(describing: filtered))")
 
             if tgTgtValue != filtered {
-                ELog.debug(message:"\(indent)binding(\(String(describing: tgTgtValue)) -> \(String(describing: filtered))) !!!!!!!!!!!")
+                ELog.debug("\(indent)binding(\(String(describing: tgTgtValue)) -> \(String(describing: filtered))) !!!!!!!!!!!")
                 starget[keyPath: tgtKeyPath] = filtered
             }
 
@@ -450,20 +450,20 @@ public class Disposer {
     var disposables = [Disposable]()
 
     deinit {
-        ELog.debug(message:"[Disposer] deinit: \(self.disposables))")
+        ELog.debug("[Disposer] deinit: \(self.disposables))")
         self.removeAll()
     }
 
     public init() {}
 
     public func add(_ disposable: Disposable) {
-        ELog.debug(message:"[Disposer] add(disposable: \(String(describing: disposable.name)))")
+        ELog.debug("[Disposer] add(disposable: \(String(describing: disposable.name)))")
         self.removeWithName(disposable.name)
         self.disposables.append(disposable)
     }
 
     public func add(disposeBlock: @escaping () -> Void, name: String? = nil) {
-        ELog.debug(message:"[Disposer] add(disposeBlock: \(String(describing: name)))")
+        ELog.debug("[Disposer] add(disposeBlock: \(String(describing: name)))")
         self.add(DisposableBlock(disposeBlock, name: name))
     }
 
@@ -473,19 +473,19 @@ public class Disposer {
 
     public func removeWithName(_ name: String?) {
         if let name = name, let index = self.disposables.firstIndex(where: { $0.name == name }) {
-            ELog.debug(message:"[Disposer] removeWithName: \(name))")
+            ELog.debug("[Disposer] removeWithName: \(name))")
             self.disposables[index].dispose()
             self.disposables.remove(at: index)
         }
     }
 
     public func removeAll() {
-        ELog.debug(message:"[Disposer] removeAll")
+        ELog.debug("[Disposer] removeAll")
 
         self.disposables.forEach {
-            ELog.debug(message:"[Disposer] dispose: \(String(describing: $0.name)))")
+            ELog.debug("[Disposer] dispose: \(String(describing: $0.name)))")
             if let name = $0.name, name.contains("ColorBit") {
-                ELog.debug(message:"------------------------------------------------------------------------)")
+                ELog.debug("------------------------------------------------------------------------)")
             }
             $0.dispose()
         }

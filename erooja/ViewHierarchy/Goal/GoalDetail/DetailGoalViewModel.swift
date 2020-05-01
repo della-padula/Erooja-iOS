@@ -34,7 +34,7 @@ public class DetailGoalViewModel {
     }
     
     public func setCheckItem(index: Int, isChecked: Bool) {
-        ELog.debug(message: "View Model setCheckItem --- Index : \(index), Is Checked : \(isChecked)")
+        ELog.debug("View Model setCheckItem --- Index : \(index), Is Checked : \(isChecked)")
         todoItems.valueForBind[index].isChecked = isChecked
         setPercentValue()
     }
