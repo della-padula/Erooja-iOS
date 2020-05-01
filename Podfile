@@ -9,6 +9,7 @@ target 'erooja' do
 
   # Pods for erooja
   pod 'Alamofire'
+  pod 'AlamofireNetworkActivityLogger'
   pod 'KMPlaceholderTextView', '~> 1.4.0'
   pod 'SwiftLint'
   pod 'Kingfisher'
@@ -21,6 +22,7 @@ target 'EroojaNetwork' do
   use_frameworks!
   
   pod 'Alamofire'
+  pod 'AlamofireNetworkActivityLogger'
   pod 'SwiftLint'
   pod 'PromisesSwift'
 end

@@ -20,11 +20,11 @@ public struct AuthAPIRequest {
             let baseURL = URL(string: EURLConstant.hostURLString)!
             switch self {
             case let .kakaoToken(type, _):
-                let tempRequestURL = baseURL.appendingPathComponent("auth").appendingPathComponent("kakao")
+                let tempRequestURL = baseURL.appendingPathComponent("auth")
                 if type == .id {
-                    compositeRequestURL = tempRequestURL.appendingPathComponent("?by=ID")
+                    compositeRequestURL = tempRequestURL.appendingPathComponent("kakao?by=ID")
                 } else {
-                    compositeRequestURL = tempRequestURL.appendingPathComponent("?by=ACCESS_TOKEN")
+                    compositeRequestURL = tempRequestURL.appendingPathComponent("kakao?by=ACCESS_TOKEN")
                 }
             case .login:
                 // MARK: TEMP (Need to be updated)

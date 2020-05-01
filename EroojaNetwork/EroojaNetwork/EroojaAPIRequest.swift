@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireNetworkActivityLogger
 import EroojaCommon
 
 public enum KakaoTokenReqType {
@@ -109,9 +110,14 @@ public enum EroojaAPIError: Error {
 }
 
 public class EroojaAPIRequest {
-    public init() { }
+    public init() {
+        #if DEBUG
+            NetworkActivityLogger.shared.level = .debug
+            NetworkActivityLogger.shared.startLogging()
+        #endif
+    }
     
-    public func requestTokenByKakao(id: String?, accessToken: String?, completion: @escaping (Result<[String : Any], EroojaAPIError>) -> Void) {
+    public func requestTokenByKakao(id: String?, accessToken: String?, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
         
         ELog.debug("[EroojaAPIRequest] - requestTokenByKakao")
         
@@ -124,16 +130,23 @@ public class EroojaAPIRequest {
         
         let parameters = (id != nil) ? AuthAPIRequest.RequestType.kakaoToken(.id, id!).requestParameter
                                      : AuthAPIRequest.RequestType.kakaoToken(.token, accessToken!).requestParameter
+        
         let urlString = url.requestURL.absoluteString.replacingOccurrences(of: "%3F", with: "?")
-
+        ELog.debug("[EroojaAPIRequest] - Request URL : \(urlString)")
+        ELog.debug("[EroojaAPIRequest] - Request Parameters : \(parameters)")
+        
         AF.request(urlString, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).responseJSON(completionHandler: { response in
             switch response.result {
             case .success(_):
-                ELog.debug("[EroojaAPIRequest] - Response.value : \(String(describing: response.value))")
-                let decoder = JSONDecoder()
-                guard let responseValue = response.value as? String else { completion(.failure(.)) }
-                completion(.success(["isAdditionalInfoNeeded":"sample"]))
-                break
+                ELog.debug("[EroojaAPIRequest] - Response.value : \(response.value)")
+                
+                if let responseValue = (response.value as? NSDictionary) {
+                    completion(.success(responseValue))
+//                    if let data = try? Data(contentsOf: responseValue) {
+//                    }
+                } else {
+                    completion(.failure(.decodeError))
+                }
             case .failure(let error):
                 ELog.error(error.localizedDescription)
                 completion(.failure(.urlRequestError)) // TEMP Error

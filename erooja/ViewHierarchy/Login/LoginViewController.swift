@@ -144,17 +144,26 @@ public class LoginViewController: UIViewController {
                 ELog.debug("nickname    : \(String(describing: user?.account?.profile?.nickname))")
                 
                 guard let user = user else { return }
-//                    let email = user.account?.email,
-//                    let nickname = user.account?.profile?.nickname else { return }
-                
                 let request = EroojaAPIRequest()
                 request.requestTokenByKakao(id: user.id, accessToken: nil, completion: { result in
                     switch result {
-                    case .success(let dict):
-                        
-                        break
+                    case .success(let responseValue):
+                        do {
+                            let decoder = JSONDecoder()
+                            let jsonData = try JSONSerialization.data(withJSONObject: responseValue, options: .prettyPrinted)
+//                            let decoded = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                            
+                            let tokenInfo = try decoder.decode(TokenModel.self, from: jsonData)
+                            ELog.debug("[LoginViewController] Token : \(tokenInfo.token)")
+                            ELog.debug("[LoginViewController] RefreshToken : \(tokenInfo.refreshToken)")
+                            ELog.debug("[LoginViewController] isAdditionalInfoNeeded : \(tokenInfo.isAdditionalInfoNeeded)")
+                        } catch {
+                            ELog.error("[LoginViewController] JSON Decode Error")
+                        }
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        ELog.error(error.localizedDescription)
+                        ELog.error(error.statusCode)
+                        ELog.error(error.errorMessage)
                     }
                 })
             })
