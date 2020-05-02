@@ -167,7 +167,27 @@ public class UserAPIViewController: BaseViewController {
     }
     
     @IBAction func onClickGetProfileHistory(_ sender: UIButton) {
-        
+        self.view.endEditing(true)
+        if let token = accessTokenTf.text {
+            if token.isEmpty {
+                userInfoLogView.text = "Token을 입력해주세요."
+                return
+            }
+            
+            EroojaAPIRequest().requestProfileImageHistory(token: token, completion: { result in
+                switch result {
+                case .success(let imageList):
+                    var debugLogText = ""
+                    for url in imageList {
+                        debugLogText += url
+                        debugLogText += "\n"
+                    }
+                    self.userInfoLogView.text = debugLogText
+                case .failure(_):
+                    self.userInfoLogView.text = "URL Request Failed"
+                }
+            })
+        }
     }
     
     @IBAction func onClickLoadImage(_ sender: UIButton) {

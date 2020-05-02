@@ -300,14 +300,12 @@
                                                 <state key="normal" title="Get Profile Image History"/>
                                                 <connections>
                                                     <action selector="onClickGetProfileHistory:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="zuP-4Y-O8M"/>
-                                                    <action selector="onClickGetUserInfo:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="LRN-74-o6d"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bX8-V5-IaY">
                                                 <rect key="frame" x="22" y="1021" width="370" height="30"/>
                                                 <state key="normal" title="Load Image"/>
                                                 <connections>
-                                                    <action selector="onClickGetUserInfo:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="aum-n5-fen"/>
                                                     <action selector="onClickLoadImage:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="dPV-zl-ZFL"/>
                                                 </connections>
                                             </button>
@@ -315,7 +313,6 @@
                                                 <rect key="frame" x="22" y="1109" width="370" height="30"/>
                                                 <state key="normal" title="Upload Image"/>
                                                 <connections>
-                                                    <action selector="onClickGetUserInfo:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="Rte-cc-eXm"/>
                                                     <action selector="onClickUploadImage:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="u33-4O-tIJ"/>
                                                 </connections>
                                             </button>

@@ -110,4 +110,22 @@ public extension EroojaAPIRequest {
             }
         })
     }
+    
+    func requestProfileImageHistory(token: String, completion: @escaping (Result<[String], EroojaAPIError>) -> Void) {
+        let urlString = UserAPIRequest.RequestType.getProfileImageHistory.requestURL
+        let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
+        
+        AF.request(urlString, method: .get, headers: headers).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                if let responseValue = (response.value as? [String]) {
+                    completion(.success(responseValue))
+                } else {
+                    completion(.failure(.decodeError))
+                }
+            case .failure(_):
+                completion(.failure(.urlRequestError))
+            }
+        })
+    }
 }
