@@ -547,19 +547,19 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Job Single Item Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rrb-Xk-VCd">
-                                                <rect key="frame" x="22" y="179" width="372" height="34"/>
+                                                <rect key="frame" x="22" y="221" width="372" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tie-wX-6TO">
-                                                <rect key="frame" x="22" y="217" width="372" height="30"/>
+                                                <rect key="frame" x="22" y="259" width="372" height="30"/>
                                                 <state key="normal" title="Fetch Job Single Item"/>
                                                 <connections>
                                                     <action selector="onClickFetchJobSingleItem:" destination="FT4-Sm-yct" eventType="touchUpInside" id="4DY-uG-2cm"/>
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Log Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yUL-kh-7yQ">
-                                                <rect key="frame" x="22" y="249" width="372" height="191"/>
+                                                <rect key="frame" x="22" y="291" width="372" height="191"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="191" id="N9J-TS-NuQ"/>
@@ -573,12 +573,19 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnU-RQ-y6p">
+                                                <rect key="frame" x="22" y="183" width="372" height="30"/>
+                                                <state key="normal" title="Fetch Job Single List"/>
+                                                <connections>
+                                                    <action selector="onClickFetchJobSingleItemList:" destination="FT4-Sm-yct" eventType="touchUpInside" id="nLb-wQ-mGH"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="Tie-wX-6TO" firstAttribute="leading" secondItem="Rrb-Xk-VCd" secondAttribute="leading" id="0NC-kT-PB1"/>
                                             <constraint firstAttribute="trailing" secondItem="E1a-Ml-c5v" secondAttribute="trailing" constant="20" id="1SO-Wm-3KZ"/>
-                                            <constraint firstItem="Rrb-Xk-VCd" firstAttribute="top" secondItem="pyL-dd-d1G" secondAttribute="bottom" constant="4" id="7xG-XS-PzD"/>
+                                            <constraint firstItem="Rrb-Xk-VCd" firstAttribute="top" secondItem="gnU-RQ-y6p" secondAttribute="bottom" constant="8" id="9FR-ph-jqr"/>
                                             <constraint firstItem="yUL-kh-7yQ" firstAttribute="top" secondItem="Tie-wX-6TO" secondAttribute="bottom" constant="2" id="9tB-uJ-5ld"/>
                                             <constraint firstItem="MHB-mr-tRw" firstAttribute="leading" secondItem="9Rz-HC-Byu" secondAttribute="leading" constant="22" id="Eph-bh-kMx"/>
                                             <constraint firstItem="MHB-mr-tRw" firstAttribute="top" secondItem="9Rz-HC-Byu" secondAttribute="top" constant="16" id="M4r-gO-N3a"/>
@@ -590,12 +597,15 @@
                                             <constraint firstItem="pyL-dd-d1G" firstAttribute="top" secondItem="Ybk-Pg-l8Y" secondAttribute="bottom" constant="4" id="UVu-sy-CDB"/>
                                             <constraint firstItem="E1a-Ml-c5v" firstAttribute="top" secondItem="MHB-mr-tRw" secondAttribute="bottom" constant="10" id="V8S-LN-ILa"/>
                                             <constraint firstItem="Ybk-Pg-l8Y" firstAttribute="leading" secondItem="E1a-Ml-c5v" secondAttribute="leading" id="Vos-4h-Ezd"/>
+                                            <constraint firstItem="gnU-RQ-y6p" firstAttribute="trailing" secondItem="pyL-dd-d1G" secondAttribute="trailing" id="aXk-SL-4Iq"/>
                                             <constraint firstItem="pyL-dd-d1G" firstAttribute="trailing" secondItem="E1a-Ml-c5v" secondAttribute="trailing" id="cfo-cs-2NL"/>
+                                            <constraint firstItem="gnU-RQ-y6p" firstAttribute="top" secondItem="pyL-dd-d1G" secondAttribute="bottom" constant="8" id="epg-YU-LPF"/>
                                             <constraint firstItem="E1a-Ml-c5v" firstAttribute="centerX" secondItem="MHB-mr-tRw" secondAttribute="centerX" id="l5v-fa-gZW"/>
                                             <constraint firstItem="Ybk-Pg-l8Y" firstAttribute="top" secondItem="E1a-Ml-c5v" secondAttribute="bottom" constant="15" id="lfK-7d-NPx"/>
                                             <constraint firstItem="Rrb-Xk-VCd" firstAttribute="trailing" secondItem="pyL-dd-d1G" secondAttribute="trailing" id="ogt-jo-GY8"/>
                                             <constraint firstItem="E1a-Ml-c5v" firstAttribute="leading" secondItem="MHB-mr-tRw" secondAttribute="leading" id="uUB-aZ-m6n"/>
                                             <constraint firstItem="yUL-kh-7yQ" firstAttribute="leading" secondItem="Tie-wX-6TO" secondAttribute="leading" id="wdX-cU-ARh"/>
+                                            <constraint firstItem="gnU-RQ-y6p" firstAttribute="leading" secondItem="pyL-dd-d1G" secondAttribute="leading" id="xIa-xH-Kv7"/>
                                             <constraint firstAttribute="height" constant="600" id="y0r-T2-g4n"/>
                                             <constraint firstItem="Tie-wX-6TO" firstAttribute="trailing" secondItem="Rrb-Xk-VCd" secondAttribute="trailing" id="yER-rD-NIZ"/>
                                         </constraints>

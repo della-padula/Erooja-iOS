@@ -30,7 +30,7 @@ public extension EroojaAPIRequest {
         })
     }
     
-    func fetchJobListByJobGroup(jobGroupId: Int, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+    func fetchJobListByJobGroup(jobGroupId: String, token: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
         let urlString = JobAPIRequest.RequestType.fetchJobListFromGroupId(jobGroupId).requestURL
         
         AF.request(urlString, method: .get).responseJSON(completionHandler: { response in
@@ -48,7 +48,7 @@ public extension EroojaAPIRequest {
         })
     }
     
-    func fetchJobItemFromId(jobItemId: Int, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+    func fetchJobItemFromId(jobItemId: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
         let urlString = JobAPIRequest.RequestType.fetchJobFromItemId(jobItemId).requestURL
         
         AF.request(urlString, method: .get).responseJSON(completionHandler: { response in
