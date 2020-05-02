@@ -98,6 +98,39 @@ public class UserAPIViewController: BaseViewController {
     
     @IBAction func onClickModifyUserInfo(_ sender: UIButton) {
         self.view.endEditing(true)
+        
+        if let token = accessTokenTf.text, let nickname = userInfoNicknameTf.text, let imageURL = userInfoImageURLTf.text {
+            if token.isEmpty || nickname.isEmpty || imageURL.isEmpty {
+                userInfoLogView.text = "하나 이상의 입력되지 않은 값이 있습니다."
+                return
+            }
+            EroojaAPIRequest().requestUpdateUserInfo(nickname: nickname, imageURL: imageURL, token: token, completion: { result in
+                switch result {
+                case .success(let responseValue):
+                    do {
+                        let decoder = JSONDecoder()
+                        let jsonData = try JSONSerialization.data(withJSONObject: responseValue, options: .prettyPrinted)
+                        
+                        let userInfo = try decoder.decode(UserModel.self, from: jsonData)
+                        var debugLogText = ""
+                        debugLogText += "uid : \(userInfo.uid)\n"
+                        debugLogText += "nickname : \(userInfo.nickname)\n"
+                        debugLogText += "imagePath : \(userInfo.imagePath)"
+                        
+                        self.userInfoLogView.text = debugLogText
+                    } catch {
+                        var debugLogText = ""
+                        let message: String = (responseValue["message"] as? String) ?? ""
+                        debugLogText += "\(responseValue["status"])\n"
+                        debugLogText += "\(message.removingPercentEncoding)\n"
+                        debugLogText += "JSON Decode Error"
+                        self.userInfoLogView.text = debugLogText
+                    }
+                case .failure(let error):
+                    self.userInfoLogView.text = error.localizedDescription
+                }
+            })
+        }
     }
     
     @IBAction func onClickLoadImage(_ sender: UIButton) {

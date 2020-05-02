@@ -97,7 +97,7 @@ public extension EroojaAPIRequest {
         let parameters = UserAPIRequest.RequestType.userUpdate(nickname, imageURL).requestParameter
         let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
         
-        AF.request(urlString, method: .put, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).responseJSON(completionHandler: { response in
+        AF.request(urlString, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).responseJSON(completionHandler: { response in
             switch response.result {
             case .success(_):
                 if let responseValue = (response.value as? NSDictionary) {
