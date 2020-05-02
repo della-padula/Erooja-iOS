@@ -94,6 +94,39 @@ public class UserAPIViewController: BaseViewController {
     
     @IBAction func onClickGetUserInfo(_ sender: UIButton) {
         self.view.endEditing(true)
+        
+        if let token = accessTokenTf.text {
+            if token.isEmpty {
+                userInfoLogView.text = "Token을 입력해주세요."
+            }
+            
+            EroojaAPIRequest().requestGetUserInfo(token: token, completion: { result in
+                switch result {
+                case .success(let responseValue):
+                    do {
+                        let decoder = JSONDecoder()
+                        let jsonData = try JSONSerialization.data(withJSONObject: responseValue, options: .prettyPrinted)
+                        
+                        let userInfo = try decoder.decode(UserModel.self, from: jsonData)
+                        var debugLogText = ""
+                        debugLogText += "uid : \(userInfo.uid)\n"
+                        debugLogText += "nickname : \(userInfo.nickname)\n"
+                        debugLogText += "imagePath : \(userInfo.imagePath)"
+                        
+                        self.userInfoLogView.text = debugLogText
+                    } catch {
+                        var debugLogText = ""
+                        let message: String = (responseValue["message"] as? String) ?? ""
+                        debugLogText += "\(responseValue["status"])\n"
+                        debugLogText += "\(message.removingPercentEncoding)\n"
+                        debugLogText += "JSON Decode Error"
+                        self.userInfoLogView.text = debugLogText
+                    }
+                case .failure(let error):
+                    self.userInfoLogView.text = error.localizedDescription
+                }
+            })
+        }
     }
     
     @IBAction func onClickModifyUserInfo(_ sender: UIButton) {
@@ -131,6 +164,10 @@ public class UserAPIViewController: BaseViewController {
                 }
             })
         }
+    }
+    
+    @IBAction func onClickGetProfileHistory(_ sender: UIButton) {
+        
     }
     
     @IBAction func onClickLoadImage(_ sender: UIButton) {
