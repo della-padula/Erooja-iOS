@@ -11,5 +11,7 @@ import Alamofire
 import EroojaCommon
 
 public extension EroojaAPIRequest {
-    
+    func requestSearchGoal(searchModel: GoalSearchModel, token: String, completion: @escaping (Result<Bool, EroojaAPIError>) -> Void) {
+        
+    }
 }
