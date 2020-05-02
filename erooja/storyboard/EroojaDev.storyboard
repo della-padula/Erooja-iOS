@@ -681,6 +681,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyX-Nd-vml">
                                                 <rect key="frame" x="22" y="1116" width="372" height="30"/>
                                                 <state key="normal" title="Create Goal"/>
+                                                <connections>
+                                                    <action selector="onClickCreateGoal:" destination="IhW-NR-HZQ" eventType="touchUpInside" id="yxL-Ga-dH6"/>
+                                                </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Log Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m1C-rK-hr6">
                                                 <rect key="frame" x="22" y="680" width="372" height="191"/>
@@ -775,6 +778,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="eQx-nX-Z7D">
                                                 <rect key="frame" x="300" y="1076" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="didChangeValue:" destination="IhW-NR-HZQ" eventType="valueChanged" id="Uy6-Zg-ZaP"/>
+                                                </connections>
                                             </stepper>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-P6-EV3">
                                                 <rect key="frame" x="22" y="646" width="372" height="30"/>
@@ -877,8 +883,13 @@
                         <viewLayoutGuide key="safeArea" id="TID-fE-30B"/>
                     </view>
                     <connections>
+                        <outlet property="createGoalLogView" destination="Tqz-Xc-X77" id="VnE-0D-JJJ"/>
+                        <outlet property="lblNumberOfToDo" destination="ALh-5O-zUt" id="UKi-HU-G0x"/>
                         <outlet property="searchGoalLogView" destination="m1C-rK-hr6" id="LOd-Az-5qM"/>
                         <outlet property="tfAccessToken" destination="SHc-wl-jog" id="yPg-jP-1UY"/>
+                        <outlet property="tfCreateGoalDesc" destination="AbB-vy-yCh" id="Jbe-7X-1Lx"/>
+                        <outlet property="tfCreateGoalTitle" destination="CWx-3b-HSp" id="bgY-qw-3Sa"/>
+                        <outlet property="tfCreateToDoTitle" destination="Eoq-GU-M4X" id="loS-gY-82N"/>
                         <outlet property="tfDirection" destination="ALd-1x-D8s" id="FvH-7N-ymB"/>
                         <outlet property="tfFilterBy" destination="66f-ut-xc9" id="mMD-fZ-gh3"/>
                         <outlet property="tfFromDt" destination="7bi-hZ-uZv" id="8JA-I1-fLi"/>

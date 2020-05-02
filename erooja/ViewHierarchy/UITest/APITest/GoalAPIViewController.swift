@@ -26,6 +26,21 @@ public class GoalAPIViewController: BaseViewController {
     
     @IBOutlet weak var searchGoalLogView: UITextView!
     
+    // Create Goal
+    @IBOutlet weak var tfCreateGoalTitle: UITextField!
+    @IBOutlet weak var tfCreateGoalDesc: UITextField!
+    @IBOutlet weak var tfCreateToDoTitle: UITextField!
+    @IBOutlet weak var lblNumberOfToDo: UILabel!
+    @IBOutlet weak var createGoalLogView: UITextView!
+    
+    @IBAction func didChangeValue(_ sender: UIStepper) {
+        self.lblNumberOfToDo.text = "Number of ToDo : \(sender.value)"
+    }
+    
+    @IBAction func onClickCreateGoal(_ sender: UIButton) {
+        
+    }
+    
     @IBAction func onClickSearchByGoalID(_ sender: UIButton) {
         EroojaAPIRequest().requestSearchGoalByID(goalId: tfGoalID.text!, completion: { result in
             //GoalSearchResponseModel
