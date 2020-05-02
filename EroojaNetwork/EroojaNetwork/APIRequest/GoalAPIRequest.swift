@@ -41,6 +41,7 @@ public struct GoalAPIRequest {
         // goalSortBy (String), direction (String), size (Int), page (Int)
         case searchGoal(String, String, String, String, [Int], String, String, Int, Int)
         case createGoal
+        case searchGoalByGoalID(String)
         
         var requestURL: URL{
             let compositeRequestURL: URL
@@ -72,6 +73,8 @@ public struct GoalAPIRequest {
                 compositeRequestURL = result
             case .createGoal:
                 compositeRequestURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("goal")
+            case let .searchGoalByGoalID(id):
+                compositeRequestURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("goal/\(id)")
             }
             return compositeRequestURL
         }

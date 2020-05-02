@@ -22,8 +22,47 @@ public class GoalAPIViewController: BaseViewController {
     @IBOutlet weak var tfSize: UITextField!
     @IBOutlet weak var tfPage: UITextField!
     @IBOutlet weak var tfAccessToken: UITextField!
+    @IBOutlet weak var tfGoalID: UITextField!
     
     @IBOutlet weak var searchGoalLogView: UITextView!
+    
+    @IBAction func onClickSearchByGoalID(_ sender: UIButton) {
+        EroojaAPIRequest().requestSearchGoalByID(goalId: tfGoalID.text!, completion: { result in
+            //GoalSearchResponseModel
+            switch result {
+            case .success(let item):
+                var debugLogText = ""
+                do {
+                    let decoder = JSONDecoder()
+                    let jsonData = try JSONSerialization.data(withJSONObject: item, options: .prettyPrinted)
+                    
+                    let goalItem = try decoder.decode(GoalSearchResponseModel.self, from: jsonData)
+                    debugLogText += "createDt : \(goalItem.createDt)\n"
+                    debugLogText += "updateDt : \(goalItem.updateDt)\n"
+                    debugLogText += "id : \(goalItem.id)\n"
+                    debugLogText += "title : \(goalItem.title)\n"
+                    debugLogText += "description : \(goalItem.description)\n"
+                    debugLogText += "joinCount : \(goalItem.joinCount)\n"
+                    debugLogText += "isEnd : \(goalItem.isEnd)\n"
+                    debugLogText += "isDateFixed : \(goalItem.isDateFixed)\n"
+                    debugLogText += "startDt : \(goalItem.startDt)\n"
+                    debugLogText += "endDt : \(goalItem.endDt)\n"
+                } catch {
+                    if let messageData = item as? NSDictionary {
+                        debugLogText = ""
+                        let message: String = (messageData["message"] as? String) ?? ""
+                        debugLogText += "\(messageData["status"])\n"
+                        debugLogText += "\(message.removingPercentEncoding)\n"
+                        debugLogText += "JSON Decode Error"
+                        break
+                    }
+                }
+                self.searchGoalLogView.text = debugLogText
+            case .failure(_):
+                self.searchGoalLogView.text = "URLRequestError... Please Try Again"
+            }
+        })
+    }
     
     @IBAction func onClickSearchGoal(_ sender: UIButton) {
         var interests: [Int] = [Int]()

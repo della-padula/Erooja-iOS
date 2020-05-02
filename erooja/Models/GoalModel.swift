@@ -36,6 +36,19 @@ public struct GoalTypeModel: Codable {
     var jobInterests: [JobInterestType]
 }
 
+public struct GoalSearchResponseModel: Codable {
+    var createDt: String
+    var updateDt: String
+    var id: Int
+    var title: String
+    var description: String
+    var joinCount: Int
+    var isEnd: Bool
+    var isDateFixed: Bool
+    var startDt: String
+    var endDt: String
+}
+
 public struct SortType: Codable {
     var sorted: Bool
     var unsorted: Bool
