@@ -23,8 +23,20 @@ public class UserAPIViewController: BaseViewController {
     @IBOutlet weak var nicknameLogView: UITextView!
     @IBOutlet weak var userInfoLogView: UITextView!
     
+    @IBOutlet weak var lblImageFileName: UILabel!
+    @IBOutlet weak var imageUploadLogView: UITextView!
+    
+    private let picker = UIImagePickerController()
+    private var imageData: Data?
+    
     @IBAction func onClickCheckDuplicity(_ sender: UIButton) {
+        self.view.endEditing(true)
         guard let nickname = existNicknameTf.text, let token = existNicknameAccessTokenTf.text else {
+            nicknameLogView.text = "Please enter your nickname and access token."
+            return
+        }
+        
+        if nickname.isEmpty || token.isEmpty {
             nicknameLogView.text = "Please enter your nickname and access token."
             return
         }
@@ -40,7 +52,13 @@ public class UserAPIViewController: BaseViewController {
     }
     
     @IBAction func onClickUpdateNickname(_ sender: UIButton) {
+        self.view.endEditing(true)
         guard let nickname = updateNicknameTf.text, let token = existNicknameAccessTokenTf.text else {
+            nicknameLogView.text = "Please enter your nickname and access token."
+            return
+        }
+        
+        if nickname.isEmpty || token.isEmpty {
             nicknameLogView.text = "Please enter your nickname and access token."
             return
         }
@@ -74,15 +92,85 @@ public class UserAPIViewController: BaseViewController {
     }
     
     @IBAction func onClickGetUserInfo(_ sender: UIButton) {
-        
+        self.view.endEditing(true)
     }
     
     @IBAction func onClickModifyUserInfo(_ sender: UIButton) {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func onClickLoadImage(_ sender: UIButton) {
+        showLoadImageAlertView()
+    }
+    
+    @IBAction func onClickUploadImage(_ sender: UIButton) {
+        if imageData == nil {
+            self.imageUploadLogView.text = "Image is not loaded"
+        }
         
     }
     
-    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    fileprivate func showLoadImageAlertView() {
+        let alert   =  UIAlertController(title: "사진 불러오기", message: "원하는 항목을 선택하세요", preferredStyle: .actionSheet)
+        let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary() }
+        let camera  =  UIAlertAction(title: "카메라", style: .default) { (action) in self.openCamera() }
+        let cancel  = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(library)
+        alert.addAction(camera)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        picker.delegate = self
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    private func openLibrary() {
+        picker.sourceType = .photoLibrary
+        present(picker, animated: false, completion: nil)
+    }
+    
+    private func openCamera() {
+        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+            picker.sourceType = .camera
+            present(picker, animated: false, completion: nil)
+        } else {
+            ELog.debug("Camera not available")
+        }
+    }
+}
 
+extension UserAPIViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage, let imgData = image.jpegData(compressionQuality: 0.2) {
+            ELog.debug("Image Load Finished")
+            var debugLog = "Image Load Finished\n"
+            debugLog += "Image URL : \(info[UIImagePickerController.InfoKey.imageURL])"
+            imageUploadLogView.text = debugLog
+            self.imageData = imgData
+        } else {
+            imageUploadLogView.text = "Image Load Error"
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+//    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//        if let _ = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage{
+//            //                imageView.image = image
+//            ELog.debug(info)
+//        }
+//        dismiss(animated: true, completion: nil)
+//    }
 }

@@ -14,8 +14,8 @@ import EroojaCommon
 public class EroojaAPIRequest {
     public init() {
         #if DEBUG
-            NetworkActivityLogger.shared.level = .debug
-            NetworkActivityLogger.shared.startLogging()
+        NetworkActivityLogger.shared.level = .debug
+        NetworkActivityLogger.shared.startLogging()
         #endif
     }
     
@@ -25,10 +25,10 @@ public class EroojaAPIRequest {
         }
         
         let url = (id != nil) ? AuthAPIRequest.RequestType.kakaoToken(.id, id!)
-                              : AuthAPIRequest.RequestType.kakaoToken(.token, accessToken!)
+            : AuthAPIRequest.RequestType.kakaoToken(.token, accessToken!)
         
         let parameters = (id != nil) ? AuthAPIRequest.RequestType.kakaoToken(.id, id!).requestParameter
-                                     : AuthAPIRequest.RequestType.kakaoToken(.token, accessToken!).requestParameter
+            : AuthAPIRequest.RequestType.kakaoToken(.token, accessToken!).requestParameter
         
         let urlString = url.requestURL.absoluteString.replacingOccurrences(of: "%3F", with: "?")
         ELog.debug("[EroojaAPIRequest] - Request URL : \(urlString)")
@@ -98,6 +98,26 @@ public class EroojaAPIRequest {
         let parameters = UserAPIRequest.RequestType.nicknameUpdate(nickname).requestParameter
         
         AF.request(urlString, method: .put, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                if let responseValue = (response.value as? NSDictionary) {
+                    completion(.success(responseValue))
+                } else {
+                    completion(.failure(.decodeError))
+                }
+            case .failure(_):
+                completion(.failure(.urlRequestError))
+            }
+        })
+    }
+    
+    public func requestUploadImage(imageData: Data, token: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+        let urlString = UserAPIRequest.RequestType.profileImageUpdate.requestURL
+        let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)", "Content-Type":"multipart/form-data"]
+        
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(imageData, withName: "fileset", fileName: "file.jpg", mimeType: "image/jpg")
+        }, to: urlString, headers: headers).responseJSON(completionHandler: { response in
             switch response.result {
             case .success(_):
                 if let responseValue = (response.value as? NSDictionary) {

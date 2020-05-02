@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>사용자의 프로필 이미지를 설정하기 위한 사진 선택을 위해 접근이 필요합니다.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>사용자의 프로필 이미지를 설정하기 위한 사진 촬영을 위해 접근이 필요합니다.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
