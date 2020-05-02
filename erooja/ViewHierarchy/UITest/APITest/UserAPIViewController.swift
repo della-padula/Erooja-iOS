@@ -40,7 +40,37 @@ public class UserAPIViewController: BaseViewController {
     }
     
     @IBAction func onClickUpdateNickname(_ sender: UIButton) {
+        guard let nickname = updateNicknameTf.text, let token = existNicknameAccessTokenTf.text else {
+            nicknameLogView.text = "Please enter your nickname and access token."
+            return
+        }
         
+        EroojaAPIRequest().requestNicknameUpdate(nickname: nickname, token: token, completion: { result in
+            switch result {
+            case .success(let responseValue):
+                do {
+                    let decoder = JSONDecoder()
+                    let jsonData = try JSONSerialization.data(withJSONObject: responseValue, options: .prettyPrinted)
+                    
+                    let userInfo = try decoder.decode(UserModel.self, from: jsonData)
+                    var debugLogText = ""
+                    debugLogText += "uid : \(userInfo.uid)\n"
+                    debugLogText += "nickname : \(userInfo.nickname)\n"
+                    debugLogText += "imagePath : \(userInfo.imagePath)"
+                    
+                    self.nicknameLogView.text = debugLogText
+                } catch {
+                    var debugLogText = ""
+                    let message: String = (responseValue["message"] as? String) ?? ""
+                    debugLogText += "\(responseValue["status"])\n"
+                    debugLogText += "\(message.removingPercentEncoding)\n"
+                    debugLogText += "JSON Decode Error"
+                    self.nicknameLogView.text = debugLogText
+                }
+            case .failure(let error):
+                self.nicknameLogView.text = error.localizedDescription
+            }
+        })
     }
     
     @IBAction func onClickGetUserInfo(_ sender: UIButton) {

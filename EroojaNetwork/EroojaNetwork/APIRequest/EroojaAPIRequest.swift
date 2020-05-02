@@ -86,7 +86,26 @@ public class EroojaAPIRequest {
                 } else {
                     completion(.failure(.decodeError))
                 }
-            case .failure(let _):
+            case .failure(_):
+                completion(.failure(.urlRequestError))
+            }
+        })
+    }
+    
+    public func requestNicknameUpdate(nickname: String, token: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+        let urlString = UserAPIRequest.RequestType.nicknameUpdate(nickname).requestURL.absoluteString
+        let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
+        let parameters = UserAPIRequest.RequestType.nicknameUpdate(nickname).requestParameter
+        
+        AF.request(urlString, method: .put, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                if let responseValue = (response.value as? NSDictionary) {
+                    completion(.success(responseValue))
+                } else {
+                    completion(.failure(.decodeError))
+                }
+            case .failure(_):
                 completion(.failure(.urlRequestError))
             }
         })

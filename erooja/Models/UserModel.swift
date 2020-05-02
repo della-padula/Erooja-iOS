@@ -9,7 +9,7 @@
 import Foundation
 
 public struct UserModel: Codable {
-    var uid: Int
+    var uid: String
     var nickname: String
-    var imagePath: String
+    var imagePath: String?
 }
