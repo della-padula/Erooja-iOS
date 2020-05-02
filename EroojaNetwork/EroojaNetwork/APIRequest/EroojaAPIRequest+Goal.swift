@@ -106,4 +106,21 @@ public extension EroojaAPIRequest {
             }
         })
     }
+    
+    func requestSearchGoalByInterest(interestId: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+        let urlString = GoalAPIRequest.RequestType.searchGoalByInterestId(interestId).requestURL
+        AF.request(urlString).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                if let responseValue = (response.value as? NSDictionary) {
+                    completion(.success(responseValue))
+                } else {
+                    completion(.failure(.decodeError))
+                }
+            case .failure(let error):
+                ELog.error(error.localizedDescription)
+                completion(.failure(.urlRequestError)) // TEMP Error
+            }
+        })
+    }
 }
