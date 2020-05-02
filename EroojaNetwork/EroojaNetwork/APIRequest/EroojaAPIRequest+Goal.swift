@@ -27,11 +27,25 @@ public struct GoalCreateRequestModel: Codable {
                 "interestIdList": interestIdList,
                 "todoList": todoList]
     }
+    
+    public init(title: String, description: String, isDateFixed: Bool, endDt: String, interestIdList: [Int], todoList: [ToDoRequestModel]) {
+        self.title = title
+        self.description = description
+        self.isDateFixed = isDateFixed
+        self.endDt = endDt
+        self.interestIdList = interestIdList
+        self.todoList = todoList
+    }
 }
 
 public struct ToDoRequestModel: Codable {
     var content: String
     var priority: Int
+    
+    public init(content: String, priority: Int) {
+        self.content = content
+        self.priority = priority
+    }
 }
 
 public extension EroojaAPIRequest {
@@ -57,15 +71,11 @@ public extension EroojaAPIRequest {
         })
     }
     
-    func requestCreateGoal(createGoalModel: GoalCreateRequestModel?, token: String?, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+    func requestCreateGoal(createGoalModel: GoalCreateRequestModel, token: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
         let urlString = GoalAPIRequest.RequestType.createGoal.requestURL
         let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
-        let aa = GoalCreateRequestModel(title: "TestTest", description: "DesDes", isDateFixed: true, endDt: "2020-05-20T00:00:00", interestIdList: [1, 4, 6, 8], todoList: [ToDoRequestModel(content: "TODO1", priority: 0), ToDoRequestModel(content: "TODO2", priority: 1)])
-        let parameters = aa.dictionary
         
-        ELog.debug("parameters : \(parameters)")
-        
-        AF.request(urlString, method: .post, parameters: createGoalModel!, encoder: JSONParameterEncoder.default, headers: headers).responseJSON(completionHandler: { response in
+        AF.request(urlString, method: .post, parameters: createGoalModel, encoder: JSONParameterEncoder.default, headers: headers).responseJSON(completionHandler: { response in
             switch response.result {
             case .success(_):
                 if let responseValue = (response.value as? NSDictionary) {
