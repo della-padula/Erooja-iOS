@@ -10,6 +10,16 @@ import Foundation
 
 public struct GoalModel: Codable {
     var content: [GoalTypeModel]
+    var pageable: Pageable
+    var last: Bool
+    var totalPages: Int
+    var totalElements: Int
+    var size: Int
+    var number: Int
+    var numberOfElements: Int
+    var sort: SortType
+    var first: Bool
+    var empty: Bool
 }
 
 public struct GoalTypeModel: Codable {
@@ -24,4 +34,19 @@ public struct GoalTypeModel: Codable {
     var startDt: String
     var endDt: String
     var jobInterests: [JobInterestType]
+}
+
+public struct SortType: Codable {
+    var sorted: Bool
+    var unsorted: Bool
+    var empty: Bool
+}
+
+public struct Pageable: Codable {
+    var sort: SortType
+    var offset: Int
+    var pageNumber: Int
+    var pageSize: Int
+    var unpaged: Bool
+    var paged: Bool
 }

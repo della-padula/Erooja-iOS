@@ -40,6 +40,8 @@ public struct GoalAPIRequest {
         // goalFilterBy (String), keyword (String), fromDt (String), toDt (String), jobInterestIds ([Int])
         // goalSortBy (String), direction (String), size (Int), page (Int)
         case searchGoal(String, String, String, String, [Int], String, String, Int, Int)
+        case createGoal
+        
         var requestURL: URL{
             let compositeRequestURL: URL
             switch self {
@@ -68,6 +70,8 @@ public struct GoalAPIRequest {
                 let result = urlComps.url!
                 ELog.debug(result)
                 compositeRequestURL = result
+            case .createGoal:
+                compositeRequestURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("goal")
             }
             return compositeRequestURL
         }

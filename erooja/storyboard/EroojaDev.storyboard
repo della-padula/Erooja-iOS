@@ -643,7 +643,7 @@
         <!--GoalAPI View Controller-->
         <scene sceneID="lqi-xw-ZxL">
             <objects>
-                <viewController storyboardIdentifier="apiTestJobInfoVC" id="IhW-NR-HZQ" customClass="GoalAPIViewController" customModule="erooja" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="apiTestGoalVC" id="IhW-NR-HZQ" customClass="GoalAPIViewController" customModule="erooja" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bZx-Zn-bZL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
