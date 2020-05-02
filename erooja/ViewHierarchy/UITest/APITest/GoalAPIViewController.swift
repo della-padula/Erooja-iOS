@@ -139,8 +139,9 @@ public class GoalAPIViewController: BaseViewController {
                         let decoder = JSONDecoder()
                         let jsonData = try JSONSerialization.data(withJSONObject: item, options: .prettyPrinted)
                         
-                        let goalItem = try decoder.decode(GoalModel.self, from: jsonData)
+                        debugLogText += item.debugDescription
                         
+//                        let goalItem = try decoder.decode(GoalModel.self, from: jsonData)
                     } catch {
                         if let messageData = item as? NSDictionary {
                             debugLogText = ""
@@ -148,7 +149,6 @@ public class GoalAPIViewController: BaseViewController {
                             debugLogText += "\(messageData["status"])\n"
                             debugLogText += "\(message.removingPercentEncoding)\n"
                             debugLogText += "JSON Decode Error"
-                            break
                         }
                     }
                     self.searchGoalLogView.text = debugLogText
