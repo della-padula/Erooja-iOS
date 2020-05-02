@@ -19,6 +19,20 @@ public struct GoalSearchModel {
     public var direction: String
     public var size: Int
     public var page: Int
+    
+    public init(goalFilterBy: String, keyword: String, fromDt: String, toDt: String,
+                jobInterestIds: [Int], goalSortBy: String,
+                direction: String, size: Int, page: Int) {
+        self.goalFilterBy = goalFilterBy
+        self.keyword = keyword
+        self.fromDt = fromDt
+        self.toDt = toDt
+        self.jobInterestIds = jobInterestIds
+        self.goalSortBy = goalSortBy
+        self.direction = direction
+        self.size = size
+        self.page = page
+    }
 }
 
 public struct GoalAPIRequest {
@@ -30,14 +44,13 @@ public struct GoalAPIRequest {
             let compositeRequestURL: URL
             switch self {
             case let .searchGoal(goalFilterBy, keyword, fromDt, toDt, jobInterestIds, goalSortBy, direction, size, page):
-                var jobInterestIdString = "["
+                var jobInterestIdString = ""
                 for (index, interest) in jobInterestIds.enumerated() {
                     jobInterestIdString += "\(interest)"
                     if index < jobInterestIds.count - 1 {
                         jobInterestIdString += ", "
                     }
                 }
-                jobInterestIdString += "]"
                 
                 let queryItems = [URLQueryItem(name: "goalFilterBy", value: goalFilterBy),
                                   URLQueryItem(name: "keyword", value: keyword),
