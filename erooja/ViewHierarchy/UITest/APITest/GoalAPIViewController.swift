@@ -24,6 +24,8 @@ public class GoalAPIViewController: BaseViewController {
     @IBOutlet weak var tfAccessToken: UITextField!
     @IBOutlet weak var tfGoalID: UITextField!
     
+    @IBOutlet weak var tfInterestID: UITextField!
+    
     @IBOutlet weak var searchGoalLogView: UITextView!
     
     // Create Goal
@@ -125,6 +127,36 @@ public class GoalAPIViewController: BaseViewController {
                 self.searchGoalLogView.text = "URLRequestError... Please Try Again"
             }
         })
+    }
+    
+    @IBAction func onClickSearchGoalByInterest(_ sender: UIButton) {
+        if let interestID = tfInterestID.text {
+            EroojaAPIRequest().requestSearchGoalByInterest(interestId: interestID, completion: { result in
+                switch result {
+                case .success(let item):
+                    var debugLogText = ""
+                    do {
+                        let decoder = JSONDecoder()
+                        let jsonData = try JSONSerialization.data(withJSONObject: item, options: .prettyPrinted)
+                        
+                        let goalItem = try decoder.decode(GoalModel.self, from: jsonData)
+                        
+                    } catch {
+                        if let messageData = item as? NSDictionary {
+                            debugLogText = ""
+                            let message: String = (messageData["message"] as? String) ?? ""
+                            debugLogText += "\(messageData["status"])\n"
+                            debugLogText += "\(message.removingPercentEncoding)\n"
+                            debugLogText += "JSON Decode Error"
+                            break
+                        }
+                    }
+                    self.searchGoalLogView.text = debugLogText
+                case .failure(_):
+                    self.searchGoalLogView.text = "URLRequestError... Please Try Again"
+                }
+            })
+        }
     }
     
     @IBAction func onClickSearchGoal(_ sender: UIButton) {
