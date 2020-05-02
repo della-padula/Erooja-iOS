@@ -116,8 +116,8 @@ public class EroojaAPIRequest {
         let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)", "Content-Type":"multipart/form-data"]
         
         AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(imageData, withName: "fileset", fileName: "file.jpg", mimeType: "image/jpg")
-        }, to: urlString, headers: headers).responseJSON(completionHandler: { response in
+            multipartFormData.append(imageData, withName: "multipartImageFile", fileName: "file.jpg", mimeType: "image/jpg")
+        }, to: urlString, method: .put, headers: headers).responseJSON(completionHandler: { response in
             switch response.result {
             case .success(_):
                 if let responseValue = (response.value as? NSDictionary) {

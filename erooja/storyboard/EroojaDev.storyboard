@@ -250,7 +250,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o70-f9-jwk">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1350"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRI-C1-5bN">
                                                 <rect key="frame" x="22" y="16" width="372" height="32"/>
@@ -298,7 +298,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMe-ql-tRg">
-                                                <rect key="frame" x="22" y="1021" width="370" height="30"/>
+                                                <rect key="frame" x="22" y="1071" width="370" height="30"/>
                                                 <state key="normal" title="Upload Image"/>
                                                 <connections>
                                                     <action selector="onClickGetUserInfo:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="Rte-cc-eXm"/>
@@ -359,6 +359,16 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Log Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pWg-fg-muu">
+                                                <rect key="frame" x="22" y="1118" width="370" height="191"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="191" id="UH1-hq-W1S"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Access Token" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ol8-QO-kqk">
                                                 <rect key="frame" x="22" y="107" width="372" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -370,20 +380,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Log Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pWg-fg-muu">
-                                                <rect key="frame" x="22" y="1068" width="370" height="191"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="191" id="UH1-hq-W1S"/>
-                                                </constraints>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Access Token" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEv-V3-tvB">
+                                                <rect key="frame" x="22" y="1021" width="370" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="AMe-ql-tRg" firstAttribute="top" secondItem="bX8-V5-IaY" secondAttribute="bottom" constant="8" id="1l7-NS-S4H"/>
                                             <constraint firstItem="ila-GX-6bZ" firstAttribute="trailing" secondItem="8Vi-EW-TIK" secondAttribute="trailing" id="1nh-zB-O1a"/>
                                             <constraint firstItem="9Pz-Yo-fYz" firstAttribute="leading" secondItem="SX2-xS-J2I" secondAttribute="leading" id="2pT-Bn-g4J"/>
                                             <constraint firstItem="24V-xd-rBe" firstAttribute="trailing" secondItem="wed-sN-dO6" secondAttribute="trailing" id="3De-Av-jEf"/>
@@ -413,12 +417,15 @@
                                             <constraint firstItem="JOe-r3-t5R" firstAttribute="leading" secondItem="9Pz-Yo-fYz" secondAttribute="leading" id="OGY-tS-KvK"/>
                                             <constraint firstItem="pWg-fg-muu" firstAttribute="leading" secondItem="AMe-ql-tRg" secondAttribute="leading" id="PwU-HP-2Hw"/>
                                             <constraint firstItem="ila-GX-6bZ" firstAttribute="top" secondItem="8Vi-EW-TIK" secondAttribute="bottom" constant="2" id="SRL-6U-7qu"/>
+                                            <constraint firstItem="eEv-V3-tvB" firstAttribute="top" secondItem="bX8-V5-IaY" secondAttribute="bottom" constant="8" id="SS3-CQ-els"/>
                                             <constraint firstItem="3Tx-OG-KYC" firstAttribute="leading" secondItem="gRI-C1-5bN" secondAttribute="leading" id="U1a-Qm-abQ"/>
                                             <constraint firstItem="bX8-V5-IaY" firstAttribute="trailing" secondItem="JOe-r3-t5R" secondAttribute="trailing" id="Uan-aq-UYn"/>
                                             <constraint firstAttribute="bottom" secondItem="pWg-fg-muu" secondAttribute="bottom" constant="41" id="Umx-xq-ouB"/>
+                                            <constraint firstItem="eEv-V3-tvB" firstAttribute="leading" secondItem="bX8-V5-IaY" secondAttribute="leading" id="VGh-II-WcF"/>
                                             <constraint firstItem="gRI-C1-5bN" firstAttribute="top" secondItem="o70-f9-jwk" secondAttribute="top" constant="16" id="YA0-qQ-hyf"/>
                                             <constraint firstItem="m8j-FM-DOA" firstAttribute="centerX" secondItem="o70-f9-jwk" secondAttribute="centerX" id="Zgf-nu-7sI"/>
                                             <constraint firstItem="SX2-xS-J2I" firstAttribute="leading" secondItem="wed-sN-dO6" secondAttribute="leading" id="ZwY-fI-krH"/>
+                                            <constraint firstItem="eEv-V3-tvB" firstAttribute="centerX" secondItem="bX8-V5-IaY" secondAttribute="centerX" id="b1X-HY-fm8"/>
                                             <constraint firstItem="pWg-fg-muu" firstAttribute="trailing" secondItem="AMe-ql-tRg" secondAttribute="trailing" id="cS8-4b-g2E"/>
                                             <constraint firstItem="SXN-VH-UgB" firstAttribute="leading" secondItem="3Tx-OG-KYC" secondAttribute="leading" id="ecO-S4-7un"/>
                                             <constraint firstItem="JOe-r3-t5R" firstAttribute="trailing" secondItem="9Pz-Yo-fYz" secondAttribute="trailing" id="eeD-Rp-ojh"/>
@@ -439,8 +446,9 @@
                                             <constraint firstItem="hMI-ba-6qB" firstAttribute="trailing" secondItem="24V-xd-rBe" secondAttribute="trailing" id="u2Q-rn-gnW"/>
                                             <constraint firstItem="J3v-uo-qg0" firstAttribute="trailing" secondItem="m8j-FM-DOA" secondAttribute="trailing" id="uGp-Om-qfJ"/>
                                             <constraint firstItem="pWg-fg-muu" firstAttribute="top" secondItem="AMe-ql-tRg" secondAttribute="bottom" constant="17" id="vFr-tW-UAo"/>
+                                            <constraint firstItem="AMe-ql-tRg" firstAttribute="top" secondItem="eEv-V3-tvB" secondAttribute="bottom" constant="16" id="vYS-2m-YYc"/>
                                             <constraint firstItem="24V-xd-rBe" firstAttribute="top" secondItem="wed-sN-dO6" secondAttribute="bottom" constant="8" id="xmJ-sb-2S0"/>
-                                            <constraint firstAttribute="height" constant="1300" id="yJT-Ar-Zg2"/>
+                                            <constraint firstAttribute="height" constant="1350" id="yJT-Ar-Zg2"/>
                                             <constraint firstItem="m8j-FM-DOA" firstAttribute="leading" secondItem="o70-f9-jwk" secondAttribute="leading" constant="22" id="z7O-AQ-a3o"/>
                                         </constraints>
                                     </view>
@@ -471,6 +479,7 @@
                         <outlet property="lblImageFileName" destination="JOe-r3-t5R" id="gHg-B1-mE5"/>
                         <outlet property="nicknameLogView" destination="ila-GX-6bZ" id="aic-Vc-4Oz"/>
                         <outlet property="updateNicknameTf" destination="yoy-xe-8Do" id="d7N-wL-zuo"/>
+                        <outlet property="uploadImageTokenTf" destination="eEv-V3-tvB" id="1gz-Yb-QeW"/>
                         <outlet property="userInfoImageURLTf" destination="MzN-dJ-ggS" id="BOe-b2-XJR"/>
                         <outlet property="userInfoLogView" destination="SX2-xS-J2I" id="Mo3-dK-f8P"/>
                         <outlet property="userInfoNicknameTf" destination="24V-xd-rBe" id="pAp-II-ERc"/>

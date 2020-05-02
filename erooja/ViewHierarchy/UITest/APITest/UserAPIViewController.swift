@@ -24,6 +24,7 @@ public class UserAPIViewController: BaseViewController {
     @IBOutlet weak var userInfoLogView: UITextView!
     
     @IBOutlet weak var lblImageFileName: UILabel!
+    @IBOutlet weak var uploadImageTokenTf: UITextField!
     @IBOutlet weak var imageUploadLogView: UITextView!
     
     private let picker = UIImagePickerController()
@@ -104,10 +105,36 @@ public class UserAPIViewController: BaseViewController {
     }
     
     @IBAction func onClickUploadImage(_ sender: UIButton) {
-        if imageData == nil {
-            self.imageUploadLogView.text = "Image is not loaded"
+        if imageData == nil || (uploadImageTokenTf.text ?? "").isEmpty {
+            self.imageUploadLogView.text = "Image is not loaded OR Token is Empty"
         }
         
+        EroojaAPIRequest().requestUploadImage(imageData: imageData!, token: uploadImageTokenTf.text!, completion: { result in
+            switch result {
+            case .success(let responseValue):
+                do {
+                    let decoder = JSONDecoder()
+                    let jsonData = try JSONSerialization.data(withJSONObject: responseValue, options: .prettyPrinted)
+                    
+                    let userInfo = try decoder.decode(UserModel.self, from: jsonData)
+                    var debugLogText = ""
+                    debugLogText += "uid : \(userInfo.uid)\n"
+                    debugLogText += "nickname : \(userInfo.nickname)\n"
+                    debugLogText += "imagePath : \(userInfo.imagePath)"
+                    
+                    self.imageUploadLogView.text = debugLogText
+                } catch {
+                    var debugLogText = ""
+                    let message: String = (responseValue["message"] as? String) ?? ""
+                    debugLogText += "\(responseValue["status"])\n"
+                    debugLogText += "\(message.removingPercentEncoding)\n"
+                    debugLogText += "JSON Decode Error"
+                    self.imageUploadLogView.text = debugLogText
+                }
+            case .failure(let error):
+                self.imageUploadLogView.text = error.localizedDescription
+            }
+        })
     }
     
     fileprivate func showLoadImageAlertView() {
@@ -158,6 +185,7 @@ extension UserAPIViewController : UIImagePickerControllerDelegate, UINavigationC
             var debugLog = "Image Load Finished\n"
             debugLog += "Image URL : \(info[UIImagePickerController.InfoKey.imageURL])"
             imageUploadLogView.text = debugLog
+            lblImageFileName.text = "\(info[UIImagePickerController.InfoKey.imageURL])"
             self.imageData = imgData
         } else {
             imageUploadLogView.text = "Image Load Error"
