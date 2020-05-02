@@ -14,9 +14,9 @@ public struct JobAPIRequest {
         // 직군 불러오기
         case fetchJobGroupList
         // 직군, 직무 함께 조회
-        case fetchJobListFromGroupId(Int)
+        case fetchJobListFromGroupId(String)
         // 직군,직무 단일 조회
-        case fetchJobFromItemId(Int)
+        case fetchJobFromItemId(String)
         
         var requestURL: URL{
             let compositeRequestURL: URL

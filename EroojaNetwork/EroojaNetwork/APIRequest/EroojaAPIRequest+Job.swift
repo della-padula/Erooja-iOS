@@ -11,14 +11,14 @@ import Alamofire
 import EroojaCommon
 
 public extension EroojaAPIRequest {
-    func fetchJobGroupList(token: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+    func fetchJobGroupList(token: String, completion: @escaping (Result<Any, EroojaAPIError>) -> Void) {
         let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
         let urlString = JobAPIRequest.RequestType.fetchJobGroupList.requestURL
         
         AF.request(urlString, method: .get, headers: headers).responseJSON(completionHandler: { response in
             switch response.result {
             case .success(_):
-                if let responseValue = (response.value as? NSDictionary) {
+                if let responseValue = (response.value) {
                     completion(.success(responseValue))
                 } else {
                     completion(.failure(.decodeError))
@@ -30,7 +30,7 @@ public extension EroojaAPIRequest {
         })
     }
     
-    func fetchJobListByJobGroup(jobGroupId: Int, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+    func fetchJobListByJobGroup(jobGroupId: String, token: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
         let urlString = JobAPIRequest.RequestType.fetchJobListFromGroupId(jobGroupId).requestURL
         
         AF.request(urlString, method: .get).responseJSON(completionHandler: { response in
@@ -48,7 +48,7 @@ public extension EroojaAPIRequest {
         })
     }
     
-    func fetchJobItemFromId(jobItemId: Int, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+    func fetchJobItemFromId(jobItemId: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
         let urlString = JobAPIRequest.RequestType.fetchJobFromItemId(jobItemId).requestURL
         
         AF.request(urlString, method: .get).responseJSON(completionHandler: { response in
