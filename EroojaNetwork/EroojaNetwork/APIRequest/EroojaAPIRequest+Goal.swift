@@ -35,11 +35,26 @@ public struct ToDoRequestModel: Codable {
 }
 
 public extension EroojaAPIRequest {
-    func requestSearchGoal(searchModel: GoalSearchModel, token: String, completion: @escaping (Result<Bool, EroojaAPIError>) -> Void) {
+    func requestSearchGoal(searchModel: GoalSearchModel, token: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
         let urlString = GoalAPIRequest.RequestType.searchGoal(searchModel.goalFilterBy, searchModel.keyword, searchModel.fromDt,
                                                               searchModel.toDt, searchModel.jobInterestIds, searchModel.goalSortBy,
                                                               searchModel.direction, searchModel.size, searchModel.page).requestURL
+        
         ELog.debug("urlString : \(urlString)")
+        
+        AF.request(urlString, method: .get).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                if let responseValue = (response.value as? NSDictionary) {
+                    completion(.success(responseValue))
+                } else {
+                    completion(.failure(.decodeError))
+                }
+            case .failure(let error):
+                ELog.error(error.localizedDescription)
+                completion(.failure(.urlRequestError)) // TEMP Error
+            }
+        })
     }
     
     func requestCreateGoal(createGoalModel: GoalCreateRequestModel?, token: String?, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {

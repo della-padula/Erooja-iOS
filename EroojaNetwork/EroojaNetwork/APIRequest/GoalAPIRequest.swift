@@ -50,13 +50,13 @@ public struct GoalAPIRequest {
                 for (index, interest) in jobInterestIds.enumerated() {
                     jobInterestIdString += "\(interest)"
                     if index < jobInterestIds.count - 1 {
-                        jobInterestIdString += ", "
+                        jobInterestIdString += ","
                     }
                 }
                 
                 let queryItems = [URLQueryItem(name: "goalFilterBy", value: goalFilterBy),
                                   URLQueryItem(name: "keyword", value: keyword),
-                                  URLQueryItem(name: "fromDt", value: keyword),
+                                  URLQueryItem(name: "fromDt", value: fromDt),
                                   URLQueryItem(name: "toDt", value: toDt),
                                   URLQueryItem(name: "jobInterestIds", value: jobInterestIdString),
                                   URLQueryItem(name: "goalSortBy", value: goalSortBy),
@@ -64,7 +64,7 @@ public struct GoalAPIRequest {
                                   URLQueryItem(name: "size", value: "\(size)"),
                                   URLQueryItem(name: "page", value: "\(page)")]
                 
-                var urlComps = URLComponents(string: EroojaURLConstant.hostURLString)!
+                var urlComps = URLComponents(string: "\(EroojaURLConstant.hostURLString)goal")!
                 urlComps.queryItems = queryItems
                 
                 let result = urlComps.url!
