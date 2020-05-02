@@ -10,15 +10,15 @@ import Foundation
 import EroojaCommon
 
 public struct GoalSearchModel {
-    var goalFilterBy: String
-    var keyword: String
-    var fromDt: String
-    var toDt: String
-    var jobInterestIds: [Int]
-    var goalSortBy: String
-    var direction: String
-    var size: Int
-    var page: Int
+    public var goalFilterBy: String
+    public var keyword: String
+    public var fromDt: String
+    public var toDt: String
+    public var jobInterestIds: [Int]
+    public var goalSortBy: String
+    public var direction: String
+    public var size: Int
+    public var page: Int
 }
 
 public struct GoalAPIRequest {
