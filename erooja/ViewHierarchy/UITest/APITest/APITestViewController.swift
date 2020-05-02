@@ -70,6 +70,9 @@ extension APITestViewController: UITableViewDelegate, UITableViewDataSource {
         case .memberAPI:
             let vc = storyboard?.instantiateViewController(withIdentifier: "apiTestUserInfoVC") as! UserAPIViewController
             navigationController?.pushViewController(vc, animated: true)
+        case .jobInterestAPI:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "apiTestJobInfoVC") as! JobAPIViewController
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }

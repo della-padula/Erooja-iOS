@@ -11,14 +11,14 @@ import Alamofire
 import EroojaCommon
 
 public extension EroojaAPIRequest {
-    func fetchJobGroupList(token: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+    func fetchJobGroupList(token: String, completion: @escaping (Result<Any, EroojaAPIError>) -> Void) {
         let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
         let urlString = JobAPIRequest.RequestType.fetchJobGroupList.requestURL
         
         AF.request(urlString, method: .get, headers: headers).responseJSON(completionHandler: { response in
             switch response.result {
             case .success(_):
-                if let responseValue = (response.value as? NSDictionary) {
+                if let responseValue = (response.value) {
                     completion(.success(responseValue))
                 } else {
                     completion(.failure(.decodeError))

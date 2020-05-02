@@ -514,5 +514,121 @@
             </objects>
             <point key="canvasLocation" x="1737.68115942029" y="1571.6517857142856"/>
         </scene>
+        <!--JobAPI View Controller-->
+        <scene sceneID="O0f-at-nfW">
+            <objects>
+                <viewController storyboardIdentifier="apiTestJobInfoVC" id="FT4-Sm-yct" customClass="JobAPIViewController" customModule="erooja" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ene-9R-ujl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfo-ZR-Xlg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Rz-HC-Byu">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHB-mr-tRw">
+                                                <rect key="frame" x="22" y="16" width="372" height="32"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Access Token" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E1a-Ml-c5v">
+                                                <rect key="frame" x="22" y="58" width="372" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyL-dd-d1G">
+                                                <rect key="frame" x="22" y="145" width="372" height="30"/>
+                                                <state key="normal" title="Fetch Job Group List"/>
+                                                <connections>
+                                                    <action selector="onClickFetchJobGroupList:" destination="FT4-Sm-yct" eventType="touchUpInside" id="2AJ-h8-KBJ"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Job Single Item Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rrb-Xk-VCd">
+                                                <rect key="frame" x="22" y="179" width="372" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tie-wX-6TO">
+                                                <rect key="frame" x="22" y="217" width="372" height="30"/>
+                                                <state key="normal" title="Fetch Job Single Item"/>
+                                                <connections>
+                                                    <action selector="onClickFetchJobSingleItem:" destination="FT4-Sm-yct" eventType="touchUpInside" id="4DY-uG-2cm"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Log Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yUL-kh-7yQ">
+                                                <rect key="frame" x="22" y="249" width="372" height="191"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="191" id="N9J-TS-NuQ"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Job Group Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ybk-Pg-l8Y">
+                                                <rect key="frame" x="22" y="107" width="372" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Tie-wX-6TO" firstAttribute="leading" secondItem="Rrb-Xk-VCd" secondAttribute="leading" id="0NC-kT-PB1"/>
+                                            <constraint firstAttribute="trailing" secondItem="E1a-Ml-c5v" secondAttribute="trailing" constant="20" id="1SO-Wm-3KZ"/>
+                                            <constraint firstItem="Rrb-Xk-VCd" firstAttribute="top" secondItem="pyL-dd-d1G" secondAttribute="bottom" constant="4" id="7xG-XS-PzD"/>
+                                            <constraint firstItem="yUL-kh-7yQ" firstAttribute="top" secondItem="Tie-wX-6TO" secondAttribute="bottom" constant="2" id="9tB-uJ-5ld"/>
+                                            <constraint firstItem="MHB-mr-tRw" firstAttribute="leading" secondItem="9Rz-HC-Byu" secondAttribute="leading" constant="22" id="Eph-bh-kMx"/>
+                                            <constraint firstItem="MHB-mr-tRw" firstAttribute="top" secondItem="9Rz-HC-Byu" secondAttribute="top" constant="16" id="M4r-gO-N3a"/>
+                                            <constraint firstItem="Tie-wX-6TO" firstAttribute="top" secondItem="Rrb-Xk-VCd" secondAttribute="bottom" constant="4" id="MeG-4c-jid"/>
+                                            <constraint firstItem="yUL-kh-7yQ" firstAttribute="trailing" secondItem="Tie-wX-6TO" secondAttribute="trailing" id="NUc-Ui-lcA"/>
+                                            <constraint firstItem="pyL-dd-d1G" firstAttribute="leading" secondItem="E1a-Ml-c5v" secondAttribute="leading" id="Og9-aD-aph"/>
+                                            <constraint firstItem="Ybk-Pg-l8Y" firstAttribute="trailing" secondItem="E1a-Ml-c5v" secondAttribute="trailing" id="STM-64-wlb"/>
+                                            <constraint firstItem="Rrb-Xk-VCd" firstAttribute="leading" secondItem="pyL-dd-d1G" secondAttribute="leading" id="TFc-g7-GIw"/>
+                                            <constraint firstItem="pyL-dd-d1G" firstAttribute="top" secondItem="Ybk-Pg-l8Y" secondAttribute="bottom" constant="4" id="UVu-sy-CDB"/>
+                                            <constraint firstItem="E1a-Ml-c5v" firstAttribute="top" secondItem="MHB-mr-tRw" secondAttribute="bottom" constant="10" id="V8S-LN-ILa"/>
+                                            <constraint firstItem="Ybk-Pg-l8Y" firstAttribute="leading" secondItem="E1a-Ml-c5v" secondAttribute="leading" id="Vos-4h-Ezd"/>
+                                            <constraint firstItem="pyL-dd-d1G" firstAttribute="trailing" secondItem="E1a-Ml-c5v" secondAttribute="trailing" id="cfo-cs-2NL"/>
+                                            <constraint firstItem="E1a-Ml-c5v" firstAttribute="centerX" secondItem="MHB-mr-tRw" secondAttribute="centerX" id="l5v-fa-gZW"/>
+                                            <constraint firstItem="Ybk-Pg-l8Y" firstAttribute="top" secondItem="E1a-Ml-c5v" secondAttribute="bottom" constant="15" id="lfK-7d-NPx"/>
+                                            <constraint firstItem="Rrb-Xk-VCd" firstAttribute="trailing" secondItem="pyL-dd-d1G" secondAttribute="trailing" id="ogt-jo-GY8"/>
+                                            <constraint firstItem="E1a-Ml-c5v" firstAttribute="leading" secondItem="MHB-mr-tRw" secondAttribute="leading" id="uUB-aZ-m6n"/>
+                                            <constraint firstItem="yUL-kh-7yQ" firstAttribute="leading" secondItem="Tie-wX-6TO" secondAttribute="leading" id="wdX-cU-ARh"/>
+                                            <constraint firstAttribute="height" constant="600" id="y0r-T2-g4n"/>
+                                            <constraint firstItem="Tie-wX-6TO" firstAttribute="trailing" secondItem="Rrb-Xk-VCd" secondAttribute="trailing" id="yER-rD-NIZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="9Rz-HC-Byu" secondAttribute="bottom" id="Cuw-2z-ijE"/>
+                                    <constraint firstItem="9Rz-HC-Byu" firstAttribute="leading" secondItem="pfo-ZR-Xlg" secondAttribute="leading" id="HBS-ra-abk"/>
+                                    <constraint firstItem="9Rz-HC-Byu" firstAttribute="width" secondItem="pfo-ZR-Xlg" secondAttribute="width" id="Hxm-xJ-dRe"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Rz-HC-Byu" secondAttribute="trailing" id="I6H-rx-KhW"/>
+                                    <constraint firstItem="9Rz-HC-Byu" firstAttribute="top" secondItem="pfo-ZR-Xlg" secondAttribute="top" id="TC4-fy-qWf"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pfo-ZR-Xlg" firstAttribute="top" secondItem="KQd-Jp-U16" secondAttribute="top" id="6sd-Kw-qdV"/>
+                            <constraint firstItem="pfo-ZR-Xlg" firstAttribute="leading" secondItem="KQd-Jp-U16" secondAttribute="leading" id="nkd-dE-rdA"/>
+                            <constraint firstItem="KQd-Jp-U16" firstAttribute="trailing" secondItem="pfo-ZR-Xlg" secondAttribute="trailing" id="vAd-e6-88G"/>
+                            <constraint firstItem="KQd-Jp-U16" firstAttribute="bottom" secondItem="pfo-ZR-Xlg" secondAttribute="bottom" id="vf3-RE-GaA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KQd-Jp-U16"/>
+                    </view>
+                    <connections>
+                        <outlet property="jobLogView" destination="yUL-kh-7yQ" id="6Nv-FR-h9g"/>
+                        <outlet property="tfAccessToken" destination="E1a-Ml-c5v" id="5Rx-nE-XQ6"/>
+                        <outlet property="tfJobGroupID" destination="Ybk-Pg-l8Y" id="5DX-FO-U6C"/>
+                        <outlet property="tfJobSingleId" destination="Rrb-Xk-VCd" id="tEI-U8-Q0v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z77-S4-4Rx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2562" y="1572"/>
+        </scene>
     </scenes>
 </document>
