@@ -45,6 +45,7 @@ public struct GoalAPIRequest {
         case searchGoalByGoalID(String)
         
         case searchMemberListByGoalId(String, String, String)
+        case searchGoalListByUserId(String, Int, Int, String, String, Bool)
         
         var requestURL: URL{
             let compositeRequestURL: URL
@@ -74,6 +75,21 @@ public struct GoalAPIRequest {
                 let result = urlComps.url!
                 ELog.debug(result)
                 compositeRequestURL = result
+            case let .searchGoalListByUserId(uid, size, page, sortBy, direction, endDtIsBeforeNow):
+                let queryItems = [URLQueryItem(name: "uid", value: uid),
+                                  URLQueryItem(name: "size", value: "\(size)"),
+                                  URLQueryItem(name: "page", value: "\(page)"),
+                                  URLQueryItem(name: "sortBy", value: sortBy),
+                                  URLQueryItem(name: "direction", value: direction),
+                                  URLQueryItem(name: "endDtIsBeforeNow", value: endDtIsBeforeNow ? "true" : "false")]
+                
+                var urlComps = URLComponents(string: "\(EroojaURLConstant.hostURLString)membergoal")!
+                urlComps.queryItems = queryItems
+                
+                let result = urlComps.url!
+                ELog.debug(result)
+                compositeRequestURL = result
+                break
             case let .searchGoalByInterestId(interestId):
                 compositeRequestURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("goal/interest/\(interestId)")
             case .createGoal:

@@ -140,4 +140,24 @@ public extension EroojaAPIRequest {
             }
         })
     }
+    
+    func requestGoalListByUserId(userId: String, size: Int, page: Int, sortBy: String,
+                                 direction: String, endDtIsBeforeNow: Bool,
+                                 completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+        let urlString = GoalAPIRequest.RequestType.searchGoalListByUserId(userId, size, page, sortBy,
+                                                                          direction, endDtIsBeforeNow).requestURL
+        AF.request(urlString, method: .get).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                if let responseValue = (response.value as? NSDictionary) {
+                    completion(.success(responseValue))
+                } else {
+                    completion(.failure(.decodeError))
+                }
+            case .failure(let error):
+                ELog.error(error.localizedDescription)
+                completion(.failure(.urlRequestError)) // TEMP Error
+            }
+        })
+    }
 }
