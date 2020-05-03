@@ -36,7 +36,106 @@ public class GoalAPIViewController: BaseViewController {
     @IBOutlet weak var lblNumberOfToDo: UILabel!
     @IBOutlet weak var createGoalLogView: UITextView!
     
+    // Fetch Member
+    @IBOutlet weak var tfGoalId: UITextField!
+    @IBOutlet weak var tvFetchMemberLogView: UITextView!
+    
     private var todoCount = 0
+    
+    @IBAction func onClickFindMembers(_ sender: UIButton) {
+        self.view.endEditing(true)
+        EroojaAPIRequest().requestMemberListByGoalId(goalId: Int(tfGoalId.text!)!, size: 100, page: 0, completion: { result in
+            switch result {
+            case .success(let item):
+                var debugLogText = ""
+                do {
+                    let decoder = JSONDecoder()
+                    let jsonData = try JSONSerialization.data(withJSONObject: item, options: .prettyPrinted)
+                    
+                    let memberResponse = try decoder.decode(MemberResponse.self, from: jsonData)
+                    debugLogText += "Members : \n"
+                    for member in memberResponse.members {
+                        debugLogText += "\(member.uid) / \(member.nickname)\n"
+                        debugLogText += "\(member.imagePath ?? "no image")\n"
+                        debugLogText += "jobInterests : \(member.jobInterests.count)\n"
+                    }
+                    debugLogText += "size : \(memberResponse.size)\n"
+                    debugLogText += "totalPages : \(memberResponse.totalPages)\n"
+                    debugLogText += "totalElement : \(memberResponse.totalElement)\n"
+                } catch {
+                    if let messageData = item as? NSDictionary {
+                        debugLogText = ""
+                        let message: String = (messageData["message"] as? String) ?? ""
+                        debugLogText += "\(messageData["status"])\n"
+                        debugLogText += "\(message.removingPercentEncoding)\n"
+                        debugLogText += "JSON Decode Error"
+                    }
+                }
+                self.tvFetchMemberLogView.text = debugLogText
+            case .failure(_):
+                self.tvFetchMemberLogView.text = "URLRequestError... Please Try Again"
+            }
+        })
+    }
+    
+    @IBAction func onClickSearchToDoByGoalId(_ sender: UIButton) {
+        self.view.endEditing(true)
+        EroojaAPIRequest().requestToDoListByGoalId(goalId: tfGoalID.text!, completion: { result in
+            switch result {
+                        case .success(let item):
+                            var debugLogText = ""
+                            do {
+            //                    let decoder = JSONDecoder()
+                                let jsonData = try JSONSerialization.data(withJSONObject: item, options: .prettyPrinted)
+                                
+            //                    let goalModel = try decoder.decode(UserGoalModel.self, from: jsonData)
+                                debugLogText = "\(item.debugDescription)"
+                            } catch {
+            //                    if let messageData = item as? NSDictionary {
+            //                        debugLogText = ""
+            //                        let message: String = (messageData["message"] as? String) ?? ""
+            //                        debugLogText += "\(messageData["status"])\n"
+            //                        debugLogText += "\(message.removingPercentEncoding)\n"
+            //                        debugLogText += "JSON Decode Error"
+            //                    }
+                                debugLogText = "Error"
+                            }
+                            self.searchGoalLogView.text = debugLogText
+                        case .failure(_):
+                            self.searchGoalLogView.text = "URLRequestError... Please Try Again"
+                        }
+        })
+    }
+    
+    @IBAction func onClickSearchGoalByUserId(_ sender: UIButton) {
+        self.view.endEditing(true)
+        EroojaAPIRequest().requestGoalListByUserId(userId: tfInterestID.text!, size: Int(tfSize.text!)!, page: Int(tfPage.text!)!, sortBy: tfDirection.text!, direction: tfSort.text!, endDtIsBeforeNow: false, completion: { result in
+            switch result {
+            case .success(let item):
+                var debugLogText = ""
+                do {
+//                    let decoder = JSONDecoder()
+                    let jsonData = try JSONSerialization.data(withJSONObject: item, options: .prettyPrinted)
+                    
+//                    let goalModel = try decoder.decode(UserGoalModel.self, from: jsonData)
+                    debugLogText = "\(item.debugDescription)"
+                } catch {
+//                    if let messageData = item as? NSDictionary {
+//                        debugLogText = ""
+//                        let message: String = (messageData["message"] as? String) ?? ""
+//                        debugLogText += "\(messageData["status"])\n"
+//                        debugLogText += "\(message.removingPercentEncoding)\n"
+//                        debugLogText += "JSON Decode Error"
+//                    }
+                    debugLogText = "Error"
+                }
+                self.searchGoalLogView.text = debugLogText
+            case .failure(_):
+                self.searchGoalLogView.text = "URLRequestError... Please Try Again"
+            }
+        })
+    }
+    
     
     @IBAction func didChangeValue(_ sender: UIStepper) {
         self.view.endEditing(true)
@@ -141,7 +240,7 @@ public class GoalAPIViewController: BaseViewController {
                         
                         debugLogText += item.debugDescription
                         
-//                        let goalItem = try decoder.decode(GoalModel.self, from: jsonData)
+                        //                        let goalItem = try decoder.decode(GoalModel.self, from: jsonData)
                     } catch {
                         if let messageData = item as? NSDictionary {
                             debugLogText = ""
@@ -178,9 +277,9 @@ public class GoalAPIViewController: BaseViewController {
         
         let searchModel = GoalSearchModel(goalFilterBy: "TITLE", keyword: "test", fromDt: "2020-04-22T00:18:26", toDt: "2020-05-02T00:00:00", jobInterestIds: [1, 2], goalSortBy: "TITLE", direction: "ASC", size: 10, page: 0)
         
-//        EroojaAPIRequest().requestCreateGoal(createGoalModel: nil, token: nil, completion: { result in
-//
-//        })
+        //        EroojaAPIRequest().requestCreateGoal(createGoalModel: nil, token: nil, completion: { result in
+        //
+        //        })
         
         EroojaAPIRequest().requestSearchGoal(searchModel: searchModel, token: "Test Token", completion: { result in
             

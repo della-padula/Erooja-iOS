@@ -10,6 +10,22 @@ import Foundation
 import EroojaCommon
 import Alamofire
 
+public struct AddJobList: Codable {
+    public var ids: [Int]
+    
+    public init(ids: [Int]) {
+        self.ids = ids
+    }
+}
+
+public struct AddJobItem: Codable {
+    public var id: Int
+    
+    public init(id: Int) {
+        self.id = id
+    }
+}
+
 public extension EroojaAPIRequest {
     func requestNicknameExist(nickname: String, token: String, completion: @escaping (Result<Bool, EroojaAPIError>) -> Void) {
         let urlString = UserAPIRequest.RequestType.nicknameExist(nickname).requestURL.absoluteString
@@ -123,6 +139,58 @@ public extension EroojaAPIRequest {
                 } else {
                     completion(.failure(.decodeError))
                 }
+            case .failure(_):
+                completion(.failure(.urlRequestError))
+            }
+        })
+    }
+    
+    func requestAddJobList(token: String, requestList: AddJobList, completion: @escaping (Result<String, EroojaAPIError>) -> Void) {
+        let urlString = UserAPIRequest.RequestType.addJobInterestList.requestURL
+        let parameters = requestList
+        let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
+        
+        AF.request(urlString, method: .put, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                var debugLogText = ""
+                if let statusCode = response.response?.statusCode, statusCode < 300 {
+                    // SUCCESS
+                    debugLogText = "SUCCESS"
+                } else {
+                    // FAILURE
+                    if let responseValue = (response.value as? NSDictionary) {
+                        debugLogText += "Status : \(responseValue["status"] ?? "Unknown Status Code")\n"
+                        debugLogText += "Message : \(responseValue["message"] ?? "Unknown Message")\n"
+                    }
+                }
+                completion(.success(debugLogText))
+            case .failure(_):
+                completion(.failure(.urlRequestError))
+            }
+        })
+    }
+    
+    func requestAddJobItem(token: String, requestItem: AddJobItem, completion: @escaping (Result<String, EroojaAPIError>) -> Void) {
+        let urlString = UserAPIRequest.RequestType.addJobInterestItem.requestURL
+        let parameters = requestItem
+        let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
+        
+        AF.request(urlString, method: .put, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                var debugLogText = ""
+                if let statusCode = response.response?.statusCode, statusCode < 300 {
+                    // SUCCESS
+                    debugLogText = "SUCCESS"
+                } else {
+                    // FAILURE
+                    if let responseValue = (response.value as? NSDictionary) {
+                        debugLogText += "Status : \(responseValue["status"] ?? "Unknown Status Code")\n"
+                        debugLogText += "Message : \(responseValue["message"] ?? "Unknown Message")\n"
+                    }
+                }
+                completion(.success(debugLogText))
             case .failure(_):
                 completion(.failure(.urlRequestError))
             }

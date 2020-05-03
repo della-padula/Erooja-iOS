@@ -26,8 +26,20 @@ public struct JobInterest: Codable {
     var jobGroupId: Int
 }
 
+//public struct JobInterestType: Codable {
+//    var uid: String
+//    var name: String
+//    var jobInterestType: String
+//}
+
+// MARK: - JobInterest
 public struct JobInterestType: Codable {
-    var uid: String
-    var name: String
-    var jobInterestType: String
+    let id: Int
+    let name: String
+    let jobInterestType: JobInterestTypeVal
+}
+
+public enum JobInterestTypeVal: String, Codable {
+    case jobGroup = "JOB_GROUP"
+    case jobInterest = "JOB_INTEREST"
 }

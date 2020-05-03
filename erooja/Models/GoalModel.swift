@@ -63,3 +63,97 @@ public struct Pageable: Codable {
     var unpaged: Bool
     var paged: Bool
 }
+
+/*
+   MARK: Fetch Todo List by Goal ID
+*/
+
+public struct ToDoGoalModel: Codable {
+    var content: [ToDoContent]
+    var pageable: Pageable
+    var last: Bool
+    var totalPages: Int
+    var totalElements: Int
+    var size: Int
+    var number: Int
+    var numberOfElements: Int
+    var sort: SortType
+    var first: Bool
+    var empty: Bool
+}
+
+// MARK: - Content
+public struct ToDoContent: Codable {
+    let uid: String
+    let goalID: Int
+    let role: String
+    let isEnd: Bool
+    let copyCount: Int
+    let startDt, endDt: String
+    let todoList: [TodoList]
+    let nickName: String
+
+    enum CodingKeys: String, CodingKey {
+        case uid
+        case goalID = "goalId"
+        case role, isEnd, copyCount, startDt, endDt, todoList, nickName
+    }
+}
+
+// MARK: - TodoList
+struct TodoList: Codable {
+    let createDt, updateDt: String
+    let id: Int
+    let content: String
+    let isEnd: Bool
+    let priority: Int
+}
+
+/*
+   MARK: Fetch Goal List by User ID
+*/
+
+// MARK: - Query UserGoal
+public struct UserGoalModel: Codable {
+    var content: [Content]
+    var pageable: Pageable
+    var last: Bool
+    var totalPages: Int
+    var totalElements: Int
+    var size: Int
+    var number: Int
+    var numberOfElements: Int
+    var sort: SortType
+    var first: Bool
+    var empty: Bool
+}
+
+// MARK: - Content
+public struct Content: Codable {
+    let goalID: Int
+    let role: String
+    let isEnd: Bool
+    let copyCount: Int
+    let startDt, endDt: String
+    let minimalGoalDetail: MinimalGoalDetail
+
+    enum CodingKeys: String, CodingKey {
+        case goalID = "goalId"
+        case role, isEnd, copyCount, startDt, endDt, minimalGoalDetail
+    }
+}
+
+// MARK: - MinimalGoalDetail
+struct MinimalGoalDetail: Codable {
+    let id: Int
+    let title, minimalGoalDetailDescription: String
+    let joinCount: Int
+    let isEnd, isDateFixed: Bool
+    let jobInterests: [JobInterest]
+
+    enum CodingKeys: String, CodingKey {
+        case id, title
+        case minimalGoalDetailDescription = "description"
+        case joinCount, isEnd, isDateFixed, jobInterests
+    }
+}

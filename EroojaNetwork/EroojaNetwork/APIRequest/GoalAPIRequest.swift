@@ -44,6 +44,10 @@ public struct GoalAPIRequest {
         case searchGoalByInterestId(String)
         case searchGoalByGoalID(String)
         
+        case searchMemberListByGoalId(String, String, String)
+        case searchGoalListByUserId(String, Int, Int, String, String, Bool)
+        case searchTodoListByGoalId(String)
+        
         var requestURL: URL{
             let compositeRequestURL: URL
             switch self {
@@ -72,12 +76,38 @@ public struct GoalAPIRequest {
                 let result = urlComps.url!
                 ELog.debug(result)
                 compositeRequestURL = result
+            case let .searchGoalListByUserId(uid, size, page, sortBy, direction, endDtIsBeforeNow):
+                let queryItems = [URLQueryItem(name: "uid", value: uid),
+                                  URLQueryItem(name: "size", value: "\(size)"),
+                                  URLQueryItem(name: "page", value: "\(page)"),
+                                  URLQueryItem(name: "sortBy", value: sortBy),
+                                  URLQueryItem(name: "direction", value: direction),
+                                  URLQueryItem(name: "endDtIsBeforeNow", value: endDtIsBeforeNow ? "true" : "false")]
+                
+                var urlComps = URLComponents(string: "\(EroojaURLConstant.hostURLString)membergoal")!
+                urlComps.queryItems = queryItems
+                
+                let result = urlComps.url!
+                ELog.debug(result)
+                compositeRequestURL = result
+                break
             case let .searchGoalByInterestId(interestId):
                 compositeRequestURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("goal/interest/\(interestId)")
             case .createGoal:
                 compositeRequestURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("goal")
             case let .searchGoalByGoalID(id):
                 compositeRequestURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("goal/\(id)")
+            case let .searchTodoListByGoalId(goalId):
+                compositeRequestURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("membergoal/\(goalId)/todo")
+            case let .searchMemberListByGoalId(id, size, page):
+                let queryItems = [ URLQueryItem(name: "size", value: "\(size)"),
+                                   URLQueryItem(name: "page", value: "\(page)") ]
+                
+                var urlComps = URLComponents(string: "\(EroojaURLConstant.hostURLString)membergoal/\(id)")!
+                urlComps.queryItems = queryItems
+                
+                let result = urlComps.url!
+                compositeRequestURL = result
             }
             return compositeRequestURL
         }

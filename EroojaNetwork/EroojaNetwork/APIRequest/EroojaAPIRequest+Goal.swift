@@ -123,4 +123,58 @@ public extension EroojaAPIRequest {
             }
         })
     }
+    
+    func requestMemberListByGoalId(goalId: Int, size: Int, page: Int, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+        let urlString = GoalAPIRequest.RequestType.searchMemberListByGoalId("\(goalId)", "\(size)", "\(page)").requestURL
+        AF.request(urlString).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                if let responseValue = (response.value as? NSDictionary) {
+                    completion(.success(responseValue))
+                } else {
+                    completion(.failure(.decodeError))
+                }
+            case .failure(let error):
+                ELog.error(error.localizedDescription)
+                completion(.failure(.urlRequestError)) // TEMP Error
+            }
+        })
+    }
+    
+    func requestGoalListByUserId(userId: String, size: Int, page: Int, sortBy: String,
+                                 direction: String, endDtIsBeforeNow: Bool,
+                                 completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+        let urlString = GoalAPIRequest.RequestType.searchGoalListByUserId(userId, size, page, sortBy,
+                                                                          direction, endDtIsBeforeNow).requestURL
+        AF.request(urlString, method: .get).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                if let responseValue = (response.value as? NSDictionary) {
+                    completion(.success(responseValue))
+                } else {
+                    completion(.failure(.decodeError))
+                }
+            case .failure(let error):
+                ELog.error(error.localizedDescription)
+                completion(.failure(.urlRequestError)) // TEMP Error
+            }
+        })
+    }
+    
+    func requestToDoListByGoalId(goalId: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+        let urlString = GoalAPIRequest.RequestType.searchTodoListByGoalId(goalId).requestURL
+        AF.request(urlString, method: .get).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                if let responseValue = (response.value as? NSDictionary) {
+                    completion(.success(responseValue))
+                } else {
+                    completion(.failure(.decodeError))
+                }
+            case .failure(let error):
+                ELog.error(error.localizedDescription)
+                completion(.failure(.urlRequestError)) // TEMP Error
+            }
+        })
+    }
 }
