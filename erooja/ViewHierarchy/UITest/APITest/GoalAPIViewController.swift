@@ -78,6 +78,35 @@ public class GoalAPIViewController: BaseViewController {
         })
     }
     
+    @IBAction func onClickSearchToDoByGoalId(_ sender: UIButton) {
+        self.view.endEditing(true)
+        EroojaAPIRequest().requestToDoListByGoalId(goalId: tfGoalID.text!, completion: { result in
+            switch result {
+                        case .success(let item):
+                            var debugLogText = ""
+                            do {
+            //                    let decoder = JSONDecoder()
+                                let jsonData = try JSONSerialization.data(withJSONObject: item, options: .prettyPrinted)
+                                
+            //                    let goalModel = try decoder.decode(UserGoalModel.self, from: jsonData)
+                                debugLogText = "\(item.debugDescription)"
+                            } catch {
+            //                    if let messageData = item as? NSDictionary {
+            //                        debugLogText = ""
+            //                        let message: String = (messageData["message"] as? String) ?? ""
+            //                        debugLogText += "\(messageData["status"])\n"
+            //                        debugLogText += "\(message.removingPercentEncoding)\n"
+            //                        debugLogText += "JSON Decode Error"
+            //                    }
+                                debugLogText = "Error"
+                            }
+                            self.searchGoalLogView.text = debugLogText
+                        case .failure(_):
+                            self.searchGoalLogView.text = "URLRequestError... Please Try Again"
+                        }
+        })
+    }
+    
     @IBAction func onClickSearchGoalByUserId(_ sender: UIButton) {
         self.view.endEditing(true)
         EroojaAPIRequest().requestGoalListByUserId(userId: tfInterestID.text!, size: Int(tfSize.text!)!, page: Int(tfPage.text!)!, sortBy: tfDirection.text!, direction: tfSort.text!, endDtIsBeforeNow: false, completion: { result in

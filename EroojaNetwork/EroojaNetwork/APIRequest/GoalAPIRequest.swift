@@ -46,6 +46,7 @@ public struct GoalAPIRequest {
         
         case searchMemberListByGoalId(String, String, String)
         case searchGoalListByUserId(String, Int, Int, String, String, Bool)
+        case searchTodoListByGoalId(String)
         
         var requestURL: URL{
             let compositeRequestURL: URL
@@ -96,6 +97,8 @@ public struct GoalAPIRequest {
                 compositeRequestURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("goal")
             case let .searchGoalByGoalID(id):
                 compositeRequestURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("goal/\(id)")
+            case let .searchTodoListByGoalId(goalId):
+                compositeRequestURL = URL(string: EroojaURLConstant.hostURLString)!.appendingPathComponent("membergoal/\(goalId)/todo")
             case let .searchMemberListByGoalId(id, size, page):
                 let queryItems = [ URLQueryItem(name: "size", value: "\(size)"),
                                    URLQueryItem(name: "page", value: "\(page)") ]

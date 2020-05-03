@@ -160,4 +160,21 @@ public extension EroojaAPIRequest {
             }
         })
     }
+    
+    func requestToDoListByGoalId(goalId: String, completion: @escaping (Result<NSDictionary, EroojaAPIError>) -> Void) {
+        let urlString = GoalAPIRequest.RequestType.searchTodoListByGoalId(goalId).requestURL
+        AF.request(urlString, method: .get).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(_):
+                if let responseValue = (response.value as? NSDictionary) {
+                    completion(.success(responseValue))
+                } else {
+                    completion(.failure(.decodeError))
+                }
+            case .failure(let error):
+                ELog.error(error.localizedDescription)
+                completion(.failure(.urlRequestError)) // TEMP Error
+            }
+        })
+    }
 }
