@@ -13,3 +13,17 @@ public struct UserModel: Codable {
     var nickname: String
     var imagePath: String?
 }
+
+public struct MemberResponse: Codable {
+    var members: [Member]
+    var size: Int
+    var totalPages: Int
+    var totalElement: Int
+}
+
+public struct Member: Codable {
+    var uid: String
+    var nickname: String
+    var imagePath: String?
+    var jobInterests: [Int]
+}
