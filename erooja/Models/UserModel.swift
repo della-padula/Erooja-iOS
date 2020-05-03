@@ -25,5 +25,5 @@ public struct Member: Codable {
     var uid: String
     var nickname: String
     var imagePath: String?
-    var jobInterests: [Int]
+    var jobInterests: [JobInterest]
 }

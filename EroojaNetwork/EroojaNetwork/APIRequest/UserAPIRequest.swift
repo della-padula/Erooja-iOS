@@ -18,8 +18,8 @@ public struct UserAPIRequest {
         case getProfileImageHistory
         
         case getJobInterestList
-        case addJobInterestList([Int])
-        case addJobInterestItem(Int)
+        case addJobInterestList
+        case addJobInterestItem
         
         
         var requestURL: URL{
@@ -55,18 +55,18 @@ public struct UserAPIRequest {
             case let.userUpdate(nickname, imageURL):
                 parameters["nickname"] = nickname
                 parameters["imagePath"] = imageURL
-            case let.addJobInterestList(ids):
-                var idsString = "["
-                for (index, id) in ids.enumerated() {
-                    idsString += "\(id)"
-                    if index < ids.count - 1 {
-                        idsString += ", "
-                    }
-                }
-                idsString += "]"
-                parameters["ids"] = idsString
-            case let.addJobInterestItem(id):
-                parameters["id"] = "\(id)"
+//            case let.addJobInterestList(ids):
+//                var idsString = "["
+//                for (index, id) in ids.enumerated() {
+//                    idsString += "\(id)"
+//                    if index < ids.count - 1 {
+//                        idsString += ", "
+//                    }
+//                }
+//                idsString += "]"
+//                parameters["ids"] = idsString
+//            case let.addJobInterestItem(id):
+//                parameters["id"] = "\(id)"
             default:
                 break
             }

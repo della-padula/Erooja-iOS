@@ -27,8 +27,20 @@ public class UserAPIViewController: BaseViewController {
     @IBOutlet weak var uploadImageTokenTf: UITextField!
     @IBOutlet weak var imageUploadLogView: UITextView!
     
+    // MARK: Job Interests
+    @IBOutlet weak var tfJobAccessToken: UITextField!
+    @IBOutlet weak var tfJobIdOrIds: UITextField!
+    
     private let picker = UIImagePickerController()
     private var imageData: Data?
+    
+    @IBAction func onClickAddJobList(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func onClickAddJobItem(_ sender: UIButton) {
+        
+    }
     
     @IBAction func onClickCheckDuplicity(_ sender: UIButton) {
         self.view.endEditing(true)

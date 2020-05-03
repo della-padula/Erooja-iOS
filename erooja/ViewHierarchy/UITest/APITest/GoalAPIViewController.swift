@@ -57,6 +57,7 @@ public class GoalAPIViewController: BaseViewController {
                     for member in memberResponse.members {
                         debugLogText += "\(member.uid) / \(member.nickname)\n"
                         debugLogText += "\(member.imagePath ?? "no image")\n"
+                        debugLogText += "jobInterests : \(member.jobInterests.count)\n"
                     }
                     debugLogText += "size : \(memberResponse.size)\n"
                     debugLogText += "totalPages : \(memberResponse.totalPages)\n"
