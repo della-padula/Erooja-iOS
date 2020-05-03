@@ -314,7 +314,6 @@
                                                 <state key="normal" title="Add Job List"/>
                                                 <connections>
                                                     <action selector="onClickAddJobList:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="5XG-YJ-ge2"/>
-                                                    <action selector="onClickLoadImage:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="EUz-cl-AfO"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfQ-Zf-lAv">
@@ -322,7 +321,6 @@
                                                 <state key="normal" title="Add Job Item"/>
                                                 <connections>
                                                     <action selector="onClickAddJobItem:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="Z9w-2v-tCm"/>
-                                                    <action selector="onClickLoadImage:" destination="jUE-JG-Dyg" eventType="touchUpInside" id="e3T-WY-XIT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMe-ql-tRg">
@@ -547,6 +545,7 @@
                         <outlet property="nicknameLogView" destination="ila-GX-6bZ" id="aic-Vc-4Oz"/>
                         <outlet property="tfJobAccessToken" destination="iY0-Bl-74b" id="IuG-xk-xwH"/>
                         <outlet property="tfJobIdOrIds" destination="puj-R6-ihb" id="wt9-AR-54k"/>
+                        <outlet property="tvJobLogView" destination="nwA-lU-ecq" id="F2y-AM-HSg"/>
                         <outlet property="updateNicknameTf" destination="yoy-xe-8Do" id="d7N-wL-zuo"/>
                         <outlet property="uploadImageTokenTf" destination="eEv-V3-tvB" id="1gz-Yb-QeW"/>
                         <outlet property="userInfoImageURLTf" destination="MzN-dJ-ggS" id="BOe-b2-XJR"/>

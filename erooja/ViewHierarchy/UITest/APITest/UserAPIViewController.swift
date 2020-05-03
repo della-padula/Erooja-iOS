@@ -30,16 +30,48 @@ public class UserAPIViewController: BaseViewController {
     // MARK: Job Interests
     @IBOutlet weak var tfJobAccessToken: UITextField!
     @IBOutlet weak var tfJobIdOrIds: UITextField!
+    @IBOutlet weak var tvJobLogView: UITextView!
     
     private let picker = UIImagePickerController()
     private var imageData: Data?
     
     @IBAction func onClickAddJobList(_ sender: UIButton) {
-        
+        if let ids = tfJobIdOrIds.text {
+            var idList = [Int]()
+            for idString in ids.split(separator: ",") {
+                idList.append(Int(String(idString))!)
+            }
+            let addJobList = AddJobList(ids: idList)
+            
+            EroojaAPIRequest().requestAddJobList(token: tfJobAccessToken.text!, requestList: addJobList, completion: { result in
+                switch result {
+                case .success(let debugText):
+                    self.tvJobLogView.text = debugText
+                case .failure(_):
+                    self.tvJobLogView.text = "Unknown Error"
+                }
+            })
+        } else {
+            self.tvJobLogView.text = "올바른 값을 입력해주세요."
+        }
     }
     
     @IBAction func onClickAddJobItem(_ sender: UIButton) {
-        
+        if let ids = tfJobIdOrIds.text {
+            var idList = [Int]()
+            let addJobItem = AddJobItem(id: Int(tfJobIdOrIds.text!)!)
+            
+            EroojaAPIRequest().requestAddJobItem(token: tfJobAccessToken.text!, requestItem: addJobItem, completion: { result in
+                switch result {
+                case .success(let debugText):
+                    self.tvJobLogView.text = debugText
+                case .failure(_):
+                    self.tvJobLogView.text = "Unknown Error"
+                }
+            })
+        } else {
+            self.tvJobLogView.text = "올바른 값을 입력해주세요."
+        }
     }
     
     @IBAction func onClickCheckDuplicity(_ sender: UIButton) {
