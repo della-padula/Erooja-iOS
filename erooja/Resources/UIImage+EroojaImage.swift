@@ -109,4 +109,36 @@ public extension UIImage {
     class var signup_field_design_on: UIImage {
         return UIImage(named: "signup_field_design_on")!
     }
+    
+    class var tabMainInActive: UIImage {
+        return UIImage(named: "tab_main")!
+    }
+    
+    class var tabMainActive: UIImage {
+        return UIImage(named: "tab_main_active")!
+    }
+    
+    class var tabSearchInActive: UIImage {
+        return UIImage(named: "tab_search")!
+    }
+    
+    class var tabSearchActive: UIImage {
+        return UIImage(named: "tab_search_active")!
+    }
+    
+    class var tabMypageInActive: UIImage {
+        return UIImage(named: "tab_mypage")!
+    }
+    
+    class var tabMypageActive: UIImage {
+        return UIImage(named: "tab_mypage_active")!
+    }
+    
+    class var navNotification: UIImage {
+        return UIImage(named: "nav_notification")!
+    }
+    
+    class var navSearch: UIImage {
+        return UIImage(named: "nav_search")!
+    }
 }

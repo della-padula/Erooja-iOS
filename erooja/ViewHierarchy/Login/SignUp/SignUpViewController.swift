@@ -8,6 +8,7 @@
 
 import Foundation
 import EroojaCommon
+import EroojaNetwork
 import EroojaUI
 import UIKit
 
@@ -124,11 +125,11 @@ public class SignUpViewController: BaseViewController {
             }
             SignUpBaseProperty.detailSelectedIndexList = SignUpBaseProperty.detailSelectedIndexList.map { $0 && false }
             
-            #if DEBUG
-            LoginSwitcher.updateRootVC(type: .uitest)
-            #else
-            
-            #endif
+//            #if DEBUG
+//            LoginSwitcher.updateRootVC(type: .uitest)
+//            #else
+            LoginSwitcher.updateRootVC(type: .main)
+//            #endif
         } else {
             self.collectionPageView?.scrollToItem(at: IndexPath(row: currentPage, section: 0), at: .centeredHorizontally, animated: false)
             if currentPage == 2 && SignUpBaseProperty.isReloadDetailCell {
@@ -207,9 +208,9 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
 }
 
 extension SignUpViewController: SignUpCellDelegate {
-//    public func nicknameValidation(isValid: Bool) {
-//        self.setButtonStyle(forState: isValid ? .active : .inActive)
-//    }
+    public func nicknameValidation(isValid: Bool) {
+        self.setButtonStyle(forState: isValid ? .active : .inActive)
+    }
     
     public func setButtonStyle(forState: ButtonState) {
         switch forState {

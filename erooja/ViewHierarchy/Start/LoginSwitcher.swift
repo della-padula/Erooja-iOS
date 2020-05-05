@@ -23,7 +23,8 @@ public class LoginSwitcher {
         
         switch(type) {
         case .main:
-            break
+            rootVC = MainViewController()
+            appDelegate.window?.rootViewController = rootVC
         case .login:
             rootVC = LoginViewController()
             appDelegate.window?.rootViewController = rootVC

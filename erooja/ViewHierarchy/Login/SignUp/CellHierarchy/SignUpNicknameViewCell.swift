@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 import EroojaUI
+import EroojaNetwork
 import EroojaCommon
+import NotificationCenter
 
 public enum SignUpType {
     case nickname
@@ -71,6 +73,23 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupCell()
+        self.addNotificationObserver()
+    }
+    
+    private func addNotificationObserver() {
+        NotificationCenter.default.addObserver(forName: Notification.Name(EroojaNotifications.EroojaNicknameAlreadyExist),
+                                               object: nil,
+                                               queue: nil) { [weak self] _ in
+                                                ELog.debug("Nickname Already Exist")
+                                                self?.setBadgeState(isValid: false, errorType: .duplicate)
+        }
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name(EroojaNotifications.EroojaNicknameAvailable),
+                                               object: nil,
+                                               queue: nil) { [weak self] _ in
+                                                ELog.debug("Nickname Available")
+                                                self?.setBadgeState(isValid: true, errorType: .success)
+        }
     }
     
     // PUBLIC
@@ -97,6 +116,25 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
     
     private func setupDetailViewLayout() {
         setupNicknameView()
+    }
+    
+    private func setBadgeState(isValid: Bool, errorType: TextFieldErrorType?) {
+        if isValid {
+            self.isNicknameValid = true
+            self.bottomHintLabel.isHidden = true
+            self.checkBadgeView.isHidden = false
+            self.checkBadgeView.image = UIImage(named: "signup_check")
+            SignUpBaseProperty.nickname = textFieldView.text
+        } else {
+            self.isInitialShown = false
+            
+            self.bottomHintLabel.isHidden = false
+            self.bottomHintLabel.text = errorType?.rawValue
+            self.isNicknameValid = false
+            self.checkBadgeView.isHidden = false
+            self.checkBadgeView.image = UIImage(named: "signup_error")
+        }
+        self.delegate?.setButtonStyle(forState: isValid ? .active : .inActive)
     }
     
     private func setupNicknameView() {
@@ -126,7 +164,6 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
                 }
             } else {
                 var errorType: TextFieldErrorType?
-                var isValid = false
                 self.isInitialShown = false
                 
                 if (text ?? "").count > 5 || (text ?? "").count < 2 {
@@ -138,15 +175,11 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
                     self.checkBadgeView.image = UIImage(named: "signup_error")
                 } else {
                     // request nickname check
-                    self.isNicknameValid = true
-                    self.bottomHintLabel.isHidden = true
-                    self.checkBadgeView.isHidden = false
-                    self.checkBadgeView.image = UIImage(named: "signup_check")
-                    SignUpBaseProperty.nickname = text
-                    isValid = true
+                    if let text = text {
+                        self.requestNicknameValidation(nickname: text)
+                    }
                 }
                 self.bottomBorderView.backgroundColor = EroojaColorSet.shared.orgDefault400
-                self.delegate?.setButtonStyle(forState: isValid ? .active : .inActive)
             }
         }
         textFieldView.font = .SpoqaBold15P
@@ -192,6 +225,21 @@ public class SignUpNicknameViewCell: UICollectionViewCell {
         bottomHintLabel.topAnchor.constraint(equalTo: bottomBorderView.bottomAnchor, constant: 12).isActive = true
         bottomHintLabel.leadingAnchor.constraint(equalTo: bottomBorderView.leadingAnchor).isActive = true
         bottomHintLabel.trailingAnchor.constraint(equalTo: bottomBorderView.trailingAnchor).isActive = true
+    }
+    
+    private func requestNicknameValidation(nickname: String) {
+        EroojaAPIRequest().requestNicknameExist(nickname: nickname, token: EroojaProperty.loadAccessToken()!, completion: { result in
+            switch result {
+            case .success(let isAvailable):
+                if isAvailable {
+                    NotificationCenter.default.post(name: Notification.Name(EroojaNotifications.EroojaNicknameAvailable), object: nil)
+                } else {
+                    NotificationCenter.default.post(name: Notification.Name(EroojaNotifications.EroojaNicknameAlreadyExist), object: nil)
+                }
+            case .failure(_):
+                NotificationCenter.default.post(name: Notification.Name(EroojaNotifications.EroojaNicknameAvailable), object: nil)
+            }
+        })
     }
     
     private func setFieldButtonState() {

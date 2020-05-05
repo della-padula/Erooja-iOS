@@ -151,6 +151,20 @@ public class LoginViewController: UIViewController {
                             ELog.debug("\(String(describing: self)) Token : \(tokenInfo.token)")
                             ELog.debug("\(String(describing: self)) RefreshToken : \(tokenInfo.refreshToken)")
                             ELog.debug("\(String(describing: self)) isAdditionalInfoNeeded : \(tokenInfo.isAdditionalInfoNeeded)")
+                            
+                            EroojaProperty.accessToken = tokenInfo.token
+                            EroojaProperty.refreshToken = tokenInfo.refreshToken
+                            EroojaProperty.isAdditionalInfoNeeded = tokenInfo.isAdditionalInfoNeeded
+                            EroojaProperty.userId = user.id
+                            
+                            EroojaProperty.setStoredUserID(userId: user.id!)
+                            EroojaProperty.setAccessToken(accessToken: tokenInfo.token)
+                            EroojaProperty.setRefreshToken(refreshToken: tokenInfo.refreshToken)
+                            
+                            let signUpVC = SignUpViewController()
+                            signUpVC.modalPresentationStyle = .fullScreen
+                            self.present(signUpVC, animated: true, completion: nil)
+                            
                         } catch {
                             ELog.error("\(String(describing: self)) JSON Decode Error")
                         }
@@ -160,10 +174,6 @@ public class LoginViewController: UIViewController {
                     }
                 })
             })
-            
-            let signUpVC = SignUpViewController()
-            signUpVC.modalPresentationStyle = .fullScreen
-            self.present(signUpVC, animated: true, completion: nil)
         }
     }
     

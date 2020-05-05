@@ -68,12 +68,13 @@ public class StartViewController: BaseViewController {
         switch(status) {
         case .success:
             // Have Config, Have Account
-            LoginSwitcher.updateRootVC(type: .main)
+            // MARK: TEMP
+            LoginSwitcher.updateRootVC(type: .login)
         case .noConfig:
             LoginSwitcher.updateRootVC(type: .onboarding)
             break
         case .noAccount:
-            // Have Config, No Account
+            LoginSwitcher.updateRootVC(type: .login)
             break
         case .error:
             // Error (Terminate)

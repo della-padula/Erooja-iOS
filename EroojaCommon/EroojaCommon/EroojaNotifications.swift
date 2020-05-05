@@ -13,6 +13,9 @@ public struct EroojaNotifications {
     public static var EroojaDidEnterBackgroundNotification = "EroojaDidEnterBackgroundNotification"
     public static var EroojaWillEnterForegroundNotification = "EroojaWillEnterForegroundNotification"
     
+    public static var EroojaNicknameAlreadyExist = "EroojaNicknameAlreadyExist"
+    public static var EroojaNicknameAvailable = "EroojaNicknameAvailable"
+    
     public static var EroojaNeedToReregisterNotification = "EroojaNeedToReregisterNotification"
     public static var EroojaAutoLoginAvailable = "EroojaAutoLoginAvailable"
     public static var EroojaAutoLoginUnAvailable = "EroojaAutoLoginUnAvailable"

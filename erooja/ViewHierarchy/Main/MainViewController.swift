@@ -11,5 +11,17 @@ import EroojaUI
 import EroojaCommon
 
 public class MainViewController: BaseViewController {
+    @IBOutlet weak var navHeaderView: EUIHeaderView!
     
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        ELog.debug("Main View Controller - viewDidLoad()")
+        configHeaderView()
+    }
+    
+    private func configHeaderView() {
+        navHeaderView.barOptions = [.rightFirstButton, .rightSecondButton]
+        navHeaderView.setRightButtonImage(position: .first, image: .navNotification)
+        navHeaderView.setRightButtonImage(position: .second, image: .navSearch)
+    }
 }
