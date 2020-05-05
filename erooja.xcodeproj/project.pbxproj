@@ -74,6 +74,7 @@
 		B0D1145D244BEC4F00FE7C0C /* DetailGoalToDoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1145C244BEC4F00FE7C0C /* DetailGoalToDoItemView.swift */; };
 		B0D1145F244BF3A700FE7C0C /* DetailGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1145E244BF3A700FE7C0C /* DetailGoalViewModel.swift */; };
 		B0F1BB322436BC5800D04DD5 /* SignUpFieldViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F1BB312436BC5800D04DD5 /* SignUpFieldViewCell.swift */; };
+		B0F2DB9424614C9A000ADB23 /* EroojaNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F2DB9324614C9A000ADB23 /* EroojaNotificationManager.swift */; };
 		B0F98E6E2442914B00F7510E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E6D2442914B00F7510E /* SearchTableViewCell.swift */; };
 		B0F98E812442A06500F7510E /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E802442A06500F7510E /* CreateGoalViewController.swift */; };
 		B0F98E832442A07100F7510E /* CreateGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F98E822442A07100F7510E /* CreateGoalViewModel.swift */; };
@@ -245,6 +246,7 @@
 		B0D1145C244BEC4F00FE7C0C /* DetailGoalToDoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGoalToDoItemView.swift; sourceTree = "<group>"; };
 		B0D1145E244BF3A700FE7C0C /* DetailGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGoalViewModel.swift; sourceTree = "<group>"; };
 		B0F1BB312436BC5800D04DD5 /* SignUpFieldViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFieldViewCell.swift; sourceTree = "<group>"; };
+		B0F2DB9324614C9A000ADB23 /* EroojaNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaNotificationManager.swift; sourceTree = "<group>"; };
 		B0F98E6D2442914B00F7510E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		B0F98E802442A06500F7510E /* CreateGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
 		B0F98E822442A07100F7510E /* CreateGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewModel.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 		B0462ACD242B8E5F00B51854 /* erooja */ = {
 			isa = PBXGroup;
 			children = (
+				B0F2DB8E24614C86000ADB23 /* Property */,
 				B0462B2A242BAAA400B51854 /* Extensions */,
 				B0C0310D2436399C008771BB /* Models */,
 				B0A8C55F243338FF002B2C83 /* Resources */,
@@ -623,6 +626,14 @@
 				B09CD5D12436C1200073733D /* SignUpDetailViewCell.swift */,
 			);
 			path = CellHierarchy;
+			sourceTree = "<group>";
+		};
+		B0F2DB8E24614C86000ADB23 /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				B0F2DB9324614C9A000ADB23 /* EroojaNotificationManager.swift */,
+			);
+			path = Property;
 			sourceTree = "<group>";
 		};
 		B0F98E7B2442A05700F7510E /* CreateGoal */ = {
@@ -1050,6 +1061,7 @@
 				B04B4EE12436F23900EA438B /* MainViewController.swift in Sources */,
 				B084D3D4245BEBD40098DB2F /* JobTypeModel.swift in Sources */,
 				B0F1BB322436BC5800D04DD5 /* SignUpFieldViewCell.swift in Sources */,
+				B0F2DB9424614C9A000ADB23 /* EroojaNotificationManager.swift in Sources */,
 				B0C0311B24366241008771BB /* SignUpBaseProperty.swift in Sources */,
 				B05DC3E92439AB9500626501 /* SignUpDetailViewModel.swift in Sources */,
 				DE808FD62446ADEF0097C31E /* CreateGoalDynamicProperty.swift in Sources */,

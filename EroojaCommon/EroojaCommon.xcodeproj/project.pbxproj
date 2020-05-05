@@ -14,6 +14,7 @@
 		B08AD99A242F41E8001CE297 /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD999242F41E8001CE297 /* AES256CBC.swift */; };
 		B08AD99C242F4220001CE297 /* ECrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD99B242F4220001CE297 /* ECrypto.swift */; };
 		B08AD9A3242F453C001CE297 /* ELog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AD9A2242F453C001CE297 /* ELog.swift */; };
+		B0F2DB9A24614E13000ADB23 /* EroojaNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F2DB9924614E13000ADB23 /* EroojaNotifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B08AD999242F41E8001CE297 /* AES256CBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
 		B08AD99B242F4220001CE297 /* ECrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECrypto.swift; sourceTree = "<group>"; };
 		B08AD9A2242F453C001CE297 /* ELog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELog.swift; sourceTree = "<group>"; };
+		B0F2DB9924614E13000ADB23 /* EroojaNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EroojaNotifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				B0168180243CC216008497E2 /* NSObject+Observation.swift */,
 				B0168182243CC27B008497E2 /* AnyObject+AssociatedObject.swift */,
 				B016818B243CC9E0008497E2 /* Optional+Extensions.swift */,
+				B0F2DB9924614E13000ADB23 /* EroojaNotifications.swift */,
 			);
 			path = EroojaCommon;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0168181243CC216008497E2 /* NSObject+Observation.swift in Sources */,
+				B0F2DB9A24614E13000ADB23 /* EroojaNotifications.swift in Sources */,
 				B016818C243CC9E0008497E2 /* Optional+Extensions.swift in Sources */,
 				B0168183243CC27B008497E2 /* AnyObject+AssociatedObject.swift in Sources */,
 				B08AD99C242F4220001CE297 /* ECrypto.swift in Sources */,
