@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-259" y="767"/>
         </scene>
-        <!--Item-->
+        <!--메인-->
         <scene sceneID="S3A-MQ-PNL">
             <objects>
                 <viewController id="nMb-bg-JPT" customClass="MainViewController" customModule="erooja" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,13 +38,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1nB-yF-ca6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="1St-C3-p9s"/>
+                    <tabBarItem key="tabBarItem" title="메인" image="tab_main" id="1St-C3-p9s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yk-i3-olZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1509" y="63"/>
         </scene>
-        <!--Item-->
+        <!--탐색-->
         <scene sceneID="joM-ey-H7T">
             <objects>
                 <viewController id="6RI-sS-9wt" sceneMemberID="viewController">
@@ -53,13 +54,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="jHV-fl-5wH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="i9A-AW-exa"/>
+                    <tabBarItem key="tabBarItem" title="탐색" image="tab_search" id="i9A-AW-exa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xD-rh-NfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1509" y="767"/>
         </scene>
-        <!--Item-->
+        <!--MY-->
         <scene sceneID="KsX-qr-JIk">
             <objects>
                 <viewController id="PYH-Bl-typ" sceneMemberID="viewController">
@@ -69,11 +70,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="sJi-cv-YbT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="IOZ-ml-vOy"/>
+                    <tabBarItem key="tabBarItem" title="MY" image="tab_mypage" id="IOZ-ml-vOy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHp-kh-G83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1509" y="1476"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_main" width="36" height="36"/>
+        <image name="tab_mypage" width="48" height="48"/>
+        <image name="tab_search" width="48" height="48"/>
+    </resources>
 </document>
