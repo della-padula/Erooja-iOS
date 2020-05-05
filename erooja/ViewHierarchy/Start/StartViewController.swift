@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 import EroojaUI
+import EroojaCommon
+import EroojaNetwork
+import NotificationCenter
 
 public enum AppStatus {
     case error
@@ -40,14 +43,28 @@ public class StartViewController: BaseViewController {
     private func checkSignedStatus() {
         // TEST
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-            self.routeViewController(status: .noConfig)
+            self.checkIsAutoLoginAvailable()
         })
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name(EroojaNotifications.EroojaAutoLoginAvailable),
+                                               object: nil,
+                                               queue: nil) { [weak self] _ in
+                                                ELog.debug("Notification Post - AutoLogin Avaialble")
+                                                self?.routeViewController(status: .success)
+        }
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name(EroojaNotifications.EroojaAutoLoginUnAvailable),
+                                               object: nil,
+                                               queue: nil) { [weak self] _ in
+                                                ELog.debug("Notification Post - AutoLogin Unavaialble")
+                                                self?.routeViewController(status: .noConfig)
+        }
     }
     
     private func routeViewController(status: AppStatus) {
-        #if DEBUG
-        LoginSwitcher.updateRootVC(type: .uitest)
-        #else
+//        #if DEBUG
+//        LoginSwitcher.updateRootVC(type: .uitest)
+//        #else
         switch(status) {
         case .success:
             // Have Config, Have Account
@@ -64,7 +81,7 @@ public class StartViewController: BaseViewController {
                 exit(0)
             })
         }
-        #endif
+//        #endif
     }
     
     private func loadLogoView(completion: @escaping (Bool) -> Void) {
@@ -82,5 +99,13 @@ public class StartViewController: BaseViewController {
             completion(true)
         })
     }
+    
+    private func checkIsAutoLoginAvailable() {
+        if let userId = EroojaProperty.loadStoredUserID() {
+            ELog.debug("Stored User ID : \(userId)")
+            NotificationCenter.default.post(name: Notification.Name(rawValue: EroojaNotifications.EroojaAutoLoginAvailable), object: nil)
+        } else {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: EroojaNotifications.EroojaAutoLoginUnAvailable), object: nil)
+        }
+    }
 }
-
