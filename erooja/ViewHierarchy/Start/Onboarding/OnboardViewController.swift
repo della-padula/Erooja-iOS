@@ -141,11 +141,11 @@ public class OnboardViewController: UIViewController {
     }
     
     private func goToLoginView() {
-        #if DEBUG
-        LoginSwitcher.updateRootVC(type: .uitest)
-        #else
+//        #if DEBUG
+//        LoginSwitcher.updateRootVC(type: .uitest)
+//        #else
         LoginSwitcher.updateRootVC(type: .login)
-        #endif
+//        #endif
     }
 }
 

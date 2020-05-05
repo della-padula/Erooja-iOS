@@ -17,6 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.95294117649999999" green="0.34901960780000002" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="nMb-bg-JPT" kind="relationship" relationship="viewControllers" id="MM4-71-bvv"/>
@@ -31,14 +32,16 @@
         <!--메인-->
         <scene sceneID="S3A-MQ-PNL">
             <objects>
-                <viewController id="nMb-bg-JPT" customClass="MainViewController" customModule="erooja" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" id="nMb-bg-JPT" customClass="MainViewController" customModule="erooja" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L91-qc-i4b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1nB-yF-ca6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="메인" image="tab_main" id="1St-C3-p9s"/>
+                    <tabBarItem key="tabBarItem" title="메인" image="tab_main" selectedImage="tab_main_active" id="1St-C3-p9s">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yk-i3-olZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,14 +50,16 @@
         <!--탐색-->
         <scene sceneID="joM-ey-H7T">
             <objects>
-                <viewController id="6RI-sS-9wt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchVC" id="6RI-sS-9wt" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vgi-Xc-ZLS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="jHV-fl-5wH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="탐색" image="tab_search" id="i9A-AW-exa"/>
+                    <tabBarItem key="tabBarItem" title="탐색" image="tab_search" selectedImage="tab_search_active" id="i9A-AW-exa">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xD-rh-NfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,14 +68,16 @@
         <!--MY-->
         <scene sceneID="KsX-qr-JIk">
             <objects>
-                <viewController id="PYH-Bl-typ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myVC" id="PYH-Bl-typ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DtH-pb-Jr7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="sJi-cv-YbT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MY" image="tab_mypage" id="IOZ-ml-vOy"/>
+                    <tabBarItem key="tabBarItem" title="MY" image="tab_mypage" selectedImage="tab_mypage_active" id="IOZ-ml-vOy">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHp-kh-G83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,8 +85,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tab_main" width="36" height="36"/>
+        <image name="tab_main" width="48" height="48"/>
+        <image name="tab_main_active" width="48" height="48"/>
         <image name="tab_mypage" width="48" height="48"/>
+        <image name="tab_mypage_active" width="48" height="48"/>
         <image name="tab_search" width="48" height="48"/>
+        <image name="tab_search_active" width="48" height="48"/>
     </resources>
 </document>

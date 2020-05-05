@@ -11,5 +11,8 @@ import EroojaUI
 import EroojaCommon
 
 public class MainViewController: BaseViewController {
-    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        ELog.debug("Main View Controller - viewDidLoad()")
+    }
 }
