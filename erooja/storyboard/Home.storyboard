@@ -36,16 +36,33 @@
                     <view key="view" contentMode="scaleToFill" id="L91-qc-i4b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wy5-CO-uY5" customClass="EUIHeaderView" customModule="EroojaUI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bFs-0a-2wn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Wy5-CO-uY5" firstAttribute="top" secondItem="1nB-yF-ca6" secondAttribute="top" id="jRA-SI-HLU"/>
+                            <constraint firstItem="Wy5-CO-uY5" firstAttribute="leading" secondItem="1nB-yF-ca6" secondAttribute="leading" id="kIv-Yj-z0H"/>
+                            <constraint firstItem="1nB-yF-ca6" firstAttribute="trailing" secondItem="Wy5-CO-uY5" secondAttribute="trailing" id="ubn-91-NLF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1nB-yF-ca6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="메인" image="tab_main" selectedImage="tab_main_active" id="1St-C3-p9s">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="6"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="navHeaderView" destination="Wy5-CO-uY5" id="Uch-bW-aBN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yk-i3-olZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1509" y="63"/>
+            <point key="canvasLocation" x="1508.6956521739132" y="62.946428571428569"/>
         </scene>
         <!--탐색-->
         <scene sceneID="joM-ey-H7T">

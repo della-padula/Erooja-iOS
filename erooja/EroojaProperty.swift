@@ -9,7 +9,8 @@
 import Foundation
 
 public struct EroojaProperty {
-    public var accessToken: String?
-    public var refreshToken: String?
-    public var userId: String? // e.g) KAKAO@00000
+    public static var accessToken: String?
+    public static var refreshToken: String?
+    public static var userId: String? // e.g) KAKAO@00000
+    public static var isAdditionalInfoNeeded: Bool?
 }

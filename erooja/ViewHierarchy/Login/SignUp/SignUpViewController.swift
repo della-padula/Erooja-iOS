@@ -8,6 +8,7 @@
 
 import Foundation
 import EroojaCommon
+import EroojaNetwork
 import EroojaUI
 import UIKit
 
@@ -207,9 +208,9 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
 }
 
 extension SignUpViewController: SignUpCellDelegate {
-//    public func nicknameValidation(isValid: Bool) {
-//        self.setButtonStyle(forState: isValid ? .active : .inActive)
-//    }
+    public func nicknameValidation(isValid: Bool) {
+        self.setButtonStyle(forState: isValid ? .active : .inActive)
+    }
     
     public func setButtonStyle(forState: ButtonState) {
         switch forState {
